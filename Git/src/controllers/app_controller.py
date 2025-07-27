@@ -254,13 +254,13 @@ class AppController(QObject):
 
             # 3. JV-Link設定はレジストリで管理（JVSetUIProperties()で設定）
             logging.info(
-                "JV-Link設定はWindowsレジストリで管理されます。設定画面から公式ダイアログを開いて設定してください。")
+            "JV-Link設定はWindowsレジストリで管理されます。設定画面から公式ダイアログを開いて設定してください。")
 
             # 4. 初期のダッシュボード更新
             summary = self.db_manager.get_data_summary()
             if hasattr(
-                    self.main_window,
-                    'dashboard_view') and self.main_window.dashboard_view:
+                self.main_window,
+                'dashboard_view') and self.main_window.dashboard_view:
                 self.main_window.dashboard_view.update_dashboard_summary(summary)
 
             logging.info("アプリケーションの初期化が完了しました。")
@@ -658,7 +658,7 @@ class AppController(QObject):
 
             # ダッシュボードを更新
             self.main_window.dashboard_view.update_db_info(db_info)
-            
+
             # データサマリーも更新（接続されている場合）
             if is_connected and data_summary:
                 self.main_window.dashboard_view.update_dashboard_summary(data_summary)
@@ -919,23 +919,23 @@ class AppController(QObject):
                 
                 from PySide6.QtWidgets import QMessageBox
                 reply = QMessageBox.question(
-                    self.main_window,
-                    'セットアップデータ取得確認',
-                    confirmation_text,
-                    QMessageBox.Yes | QMessageBox.No,
-                    QMessageBox.No
-                )
-                
+                self.main_window,
+                        'セットアップデータ取得確認',
+                        confirmation_text,
+                QMessageBox.Yes | QMessageBox.No,
+                QMessageBox.No
+                ) 
+
                 if reply == QMessageBox.Yes:
-                    # セットアップデータ取得を開始（統合データ取得フレームワーク使用）
-                    return self.start_data_acquisition(
-                        mode="setup",
-                        from_date=start_date,
-                        selected_data_types=selected_data_types
-                    )
+                            # セットアップデータ取得を開始（統合データ取得フレームワーク使用）
+                            return self.start_data_acquisition(
+                                mode="setup",
+                                from_date=start_date,
+                                selected_data_types=selected_data_types
+                            )
                 else:
-                    self.emit_log("INFO", "ユーザーによりセットアップデータ取得がキャンセルされました")
-                    return False
+                            self.emit_log("INFO", "ユーザーによりセットアップデータ取得がキャンセルされました")
+                            return False
             else:
                 # ダイアログでキャンセルが選択された場合
                 self.emit_log("INFO", "セットアップデータ取得設定がキャンセルされました")

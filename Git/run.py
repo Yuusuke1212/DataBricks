@@ -189,17 +189,17 @@ def setup_unicode_environment():
 if __name__ == "__main__":
     logging.info("🚀 JRA-Data Collector エントリーポイント開始")
     print("🚀 JRA-Data Collector を起動しています...")
-    
+
     try:
         # 管理者権限ヘルパーをインポート
         from src.admin_helper import is_admin, run_as_admin, get_elevation_status
-        
+
         if is_admin():
             # === 管理者権限で実行されている場合 ===
             # メインアプリケーションのロジックを直接実行
             logging.info("🔐 管理者権限で実行中です")
             print("🔐 管理者権限で実行されています。")
-            
+
             # 実行環境の詳細表示
             try:
                 elevation_status = get_elevation_status()
@@ -210,7 +210,7 @@ if __name__ == "__main__":
             except Exception as e:
                 logging.warning(f"実行環境取得エラー: {e}")
                 print(f"⚠️  実行環境取得エラー: {e}")
-            
+
             # メインアプリケーションを実行
             logging.info("メインアプリケーション関数を呼び出します")
             exit_code = run_main_application()
@@ -218,7 +218,7 @@ if __name__ == "__main__":
             
             # 明示的に終了コードで終了
             sys.exit(exit_code)
-            
+
         else:
             # === 非管理者権限で実行されている場合 ===
             # UACプロンプトを表示して自己昇格を試みる
@@ -226,7 +226,7 @@ if __name__ == "__main__":
             print("🔒 JV-Link COMコンポーネントの適切な動作のため、管理者権限が必要です。")
             print("   UACプロンプトが表示されますので、「はい」を選択してください。")
             print()
-            
+
             # 管理者権限で自己再起動（現在のプロセスは終了される）
             logging.info("管理者権限昇格を実行します...")
             run_as_admin()  # この関数は管理者権限でスクリプトを再起動する
@@ -235,13 +235,13 @@ if __name__ == "__main__":
             logging.warning("run_as_admin()から制御が戻りました。昇格が失敗した可能性があります")
             print("⚠️  管理者権限昇格に失敗した可能性があります")
             sys.exit(1)  # 元の非管理者プロセスはここで完全に終了する
-            
+
     except ImportError as import_error:
         error_msg = f"管理者権限ヘルパーの読み込みに失敗: {import_error}"
         logging.error(error_msg)
         print(f"❌ {error_msg}")
         print("   管理者権限なしで継続しますが、JV-Link機能に制限が生じる可能性があります。")
-        
+
         # フォールバック: 管理者権限なしでアプリケーションを実行
         try:
             logging.info("フォールバック実行: 管理者権限なしでアプリケーションを起動")
@@ -253,7 +253,7 @@ if __name__ == "__main__":
             print(f"❌ {fallback_error_msg}")
             input("Enterキーを押して終了...")
             sys.exit(1)
-            
+
     except Exception as critical_error:
         critical_error_msg = f"アプリケーション起動で予期しないエラー: {critical_error}"
         logging.critical(critical_error_msg)

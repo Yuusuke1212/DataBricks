@@ -3579,3 +3579,622 @@ TypeError: QWidget(parent: Optional[QWidget] = None, flags: Union[Qt.WindowFlags
 2025-07-27 13:27:26 [    INFO] Statemachine.Idle:68 - Entering state: Idle
 2025-07-27 13:27:26 [   DEBUG] Statemachine.Idle:94 - UI status update not available for state: Idle
 2025-07-27 13:27:26 [    INFO] root:182 - State transition completed: -> Idle
+2025-07-27 18:33:44,462 [INFO] root - ============================================================
+2025-07-27 18:33:44,462 [INFO] root - 🚀 JRA-Data Collector アプリケーション起動
+2025-07-27 18:33:44,462 [INFO] root - 📝 ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 18:33:44,462 [INFO] root - 🖥️  Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 18:33:44,462 [INFO] root - 📂 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 18:33:44,462 [INFO] root - ============================================================
+2025-07-27 18:33:44,463 [INFO] root - 🚀 JRA-Data Collector エントリーポイント開始
+2025-07-27 18:33:44,472 [INFO] root - 🔒 非管理者権限で実行中。昇格を試みます
+2025-07-27 18:33:44,472 [INFO] root - 管理者権限昇格を実行します...
+2025-07-27 18:33:44,472 [INFO] root - 管理者権限を要求しています...
+2025-07-27 18:33:44,472 [INFO] root - Python実行ファイル: c:\Users\yuusu\.rye\py\cpython@3.12.2\python.exe
+2025-07-27 18:33:44,472 [INFO] root - スクリプトパス: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py
+2025-07-27 18:33:44,472 [INFO] root - 引数: 
+2025-07-27 18:33:44,472 [INFO] root - 実行コマンド: c:\Users\yuusu\.rye\py\cpython@3.12.2\python.exe "C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py"
+2025-07-27 18:33:46,450 [INFO] root - 管理者権限での再起動を開始しました（結果コード: 42）
+2025-07-27 18:33:46,450 [INFO] root - 現在のプロセスを終了します
+2025-07-27 18:33:46,581 [INFO] root - ============================================================
+2025-07-27 18:33:46,581 [INFO] root - 🚀 JRA-Data Collector アプリケーション起動
+2025-07-27 18:33:46,582 [INFO] root - 📝 ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 18:33:46,582 [INFO] root - 🖥️  Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 18:33:46,582 [INFO] root - 📂 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 18:33:46,582 [INFO] root - ============================================================
+2025-07-27 18:33:46,583 [INFO] root - 🚀 JRA-Data Collector エントリーポイント開始
+2025-07-27 18:33:46,595 [INFO] root - 🔐 管理者権限で実行中です
+2025-07-27 18:33:46,598 [INFO] root - 📊 実行環境: 64bit Python, PID: 36420
+2025-07-27 18:33:46,598 [INFO] root - メインアプリケーション関数を呼び出します
+2025-07-27 18:33:46,598 [INFO] root - 管理者権限で実行中。アプリケーションを初期化します。
+2025-07-27 18:33:46,649 [INFO] root - ファイルシステムエンコーディング: utf-8
+2025-07-27 18:33:46,649 [INFO] root - 標準出力エンコーディング: utf-8
+2025-07-27 18:33:46,649 [INFO] root - Unicode環境設定が完了しました
+2025-07-27 18:33:46,650 [INFO] root - 🔍 Python アーキテクチャ: 64bit
+2025-07-27 18:33:46,650 [INFO] root - 🔧 64bit Python環境を検出。JV-LinkのCOMサロゲート設定を確認・構成します...
+2025-07-27 18:33:46,651 [INFO] root - === JV-Link DLLサロゲート設定を開始（64bit/32bit対応版） ===
+2025-07-27 18:33:46,651 [INFO] root - 実行環境: 64bit Python
+2025-07-27 18:33:46,651 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 18:33:46,651 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 18:33:46,651 [INFO] root - ProgID 'JVDTLab.JVLink' のCLSID: {2AB1774D-0C41-11D7-916F-0003479BEB3F} (preferred レジストリビューで発見)
+2025-07-27 18:33:46,651 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 18:33:46,652 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 18:33:46,652 [INFO] root - CLSID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' は preferred レジストリビューに登録されています
+2025-07-27 18:33:46,652 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 18:33:46,652 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 18:33:46,652 [INFO] root - CLSID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' のAppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F} (preferred レジストリビューで発見)
+2025-07-27 18:33:46,652 [INFO] root - 使用するAppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F}
+2025-07-27 18:33:46,652 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 18:33:46,652 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 18:33:46,652 [INFO] root - AppID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' のDllSurrogate: '' (preferred レジストリビューで発見)
+2025-07-27 18:33:46,652 [INFO] root - ✅ DLLサロゲートは既に有効化されています (AppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F})
+2025-07-27 18:33:46,653 [INFO] root - === JV-Link DLLサロゲート設定を終了 ===
+2025-07-27 18:33:46,653 [INFO] root - ✅ レジストリ設定が完了しました。
+2025-07-27 18:33:46,653 [INFO] root - 🚀 メインGUIアプリケーションを起動します...
+2025-07-27 18:34:00,578 [INFO] root - ============================================================
+2025-07-27 18:34:00,579 [INFO] root - 🚀 JRA-Data Collector アプリケーション起動
+2025-07-27 18:34:00,579 [INFO] root - 📝 ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 18:34:00,579 [INFO] root - 🖥️  Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 18:34:00,579 [INFO] root - 📂 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 18:34:00,579 [INFO] root - ============================================================
+2025-07-27 18:34:00,580 [INFO] root - 🚀 JRA-Data Collector エントリーポイント開始
+2025-07-27 18:34:00,583 [INFO] root - 🔒 非管理者権限で実行中。昇格を試みます
+2025-07-27 18:34:00,583 [INFO] root - 管理者権限昇格を実行します...
+2025-07-27 18:34:00,583 [INFO] root - 管理者権限を要求しています...
+2025-07-27 18:34:00,583 [INFO] root - Python実行ファイル: c:\Users\yuusu\.rye\py\cpython@3.12.2\python.exe
+2025-07-27 18:34:00,583 [INFO] root - スクリプトパス: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py
+2025-07-27 18:34:00,583 [INFO] root - 引数: 
+2025-07-27 18:34:00,583 [INFO] root - 実行コマンド: c:\Users\yuusu\.rye\py\cpython@3.12.2\python.exe "C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py"
+2025-07-27 18:34:02,741 [INFO] root - 管理者権限での再起動を開始しました（結果コード: 42）
+2025-07-27 18:34:02,741 [INFO] root - 現在のプロセスを終了します
+2025-07-27 18:34:02,909 [INFO] root - ============================================================
+2025-07-27 18:34:02,909 [INFO] root - 🚀 JRA-Data Collector アプリケーション起動
+2025-07-27 18:34:02,910 [INFO] root - 📝 ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 18:34:02,910 [INFO] root - 🖥️  Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 18:34:02,910 [INFO] root - 📂 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 18:34:02,910 [INFO] root - ============================================================
+2025-07-27 18:34:02,910 [INFO] root - 🚀 JRA-Data Collector エントリーポイント開始
+2025-07-27 18:34:02,921 [INFO] root - 🔐 管理者権限で実行中です
+2025-07-27 18:34:02,923 [INFO] root - 📊 実行環境: 64bit Python, PID: 20552
+2025-07-27 18:34:02,923 [INFO] root - メインアプリケーション関数を呼び出します
+2025-07-27 18:34:02,923 [INFO] root - 管理者権限で実行中。アプリケーションを初期化します。
+2025-07-27 18:34:02,971 [INFO] root - ファイルシステムエンコーディング: utf-8
+2025-07-27 18:34:02,971 [INFO] root - 標準出力エンコーディング: utf-8
+2025-07-27 18:34:02,972 [INFO] root - Unicode環境設定が完了しました
+2025-07-27 18:34:02,972 [INFO] root - 🔍 Python アーキテクチャ: 64bit
+2025-07-27 18:34:02,972 [INFO] root - 🔧 64bit Python環境を検出。JV-LinkのCOMサロゲート設定を確認・構成します...
+2025-07-27 18:34:02,972 [INFO] root - === JV-Link DLLサロゲート設定を開始（64bit/32bit対応版） ===
+2025-07-27 18:34:02,972 [INFO] root - 実行環境: 64bit Python
+2025-07-27 18:34:02,973 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 18:34:02,973 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 18:34:02,973 [INFO] root - ProgID 'JVDTLab.JVLink' のCLSID: {2AB1774D-0C41-11D7-916F-0003479BEB3F} (preferred レジストリビューで発見)
+2025-07-27 18:34:02,973 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 18:34:02,973 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 18:34:02,973 [INFO] root - CLSID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' は preferred レジストリビューに登録されています
+2025-07-27 18:34:02,973 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 18:34:02,973 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 18:34:02,973 [INFO] root - CLSID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' のAppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F} (preferred レジストリビューで発見)
+2025-07-27 18:34:02,974 [INFO] root - 使用するAppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F}
+2025-07-27 18:34:02,974 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 18:34:02,974 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 18:34:02,974 [INFO] root - AppID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' のDllSurrogate: '' (preferred レジストリビューで発見)
+2025-07-27 18:34:02,974 [INFO] root - ✅ DLLサロゲートは既に有効化されています (AppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F})
+2025-07-27 18:34:02,974 [INFO] root - === JV-Link DLLサロゲート設定を終了 ===
+2025-07-27 18:34:02,974 [INFO] root - ✅ レジストリ設定が完了しました。
+2025-07-27 18:34:02,974 [INFO] root - 🚀 メインGUIアプリケーションを起動します...
+2025-07-27 18:34:03,725 [INFO] root - launch_gui()関数を呼び出します
+2025-07-27 18:34:03,725 [INFO] root - launch_gui()関数を開始します
+2025-07-27 18:34:03,726 [INFO] root - ============================================================
+2025-07-27 18:34:03,726 [INFO] root - JRA-Data Collector GUIアプリケーションを開始
+2025-07-27 18:34:03,726 [INFO] root - Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 18:34:03,726 [INFO] root - 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 18:34:03,727 [INFO] root - ファイルシステムエンコーディング: utf-8
+2025-07-27 18:34:03,727 [INFO] root - 引数: ['C:\\Users\\yuusu\\Desktop\\JRA-VANアプリ\\DataBriocks\\run.py']
+2025-07-27 18:34:03,727 [INFO] root - ============================================================
+2025-07-27 18:34:03,727 [INFO] root - QApplicationの高DPI設定を構成します
+2025-07-27 18:34:03,728 [INFO] root - QApplicationインスタンスを作成します
+2025-07-27 18:34:03,739 [INFO] root - QApplicationインスタンスの作成が完了しました
+2025-07-27 18:34:03,745 [WARNING] root - 翻訳設定エラー: 'str' object is not callable
+2025-07-27 18:34:03,746 [INFO] root - QFluent モンキーパッチ適用完了
+2025-07-27 18:34:11,682 [INFO] root - ============================================================
+2025-07-27 18:34:11,683 [INFO] root - 🚀 JRA-Data Collector アプリケーション起動
+2025-07-27 18:34:11,683 [INFO] root - 📝 ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 18:34:11,683 [INFO] root - 🖥️  Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 18:34:11,683 [INFO] root - 📂 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 18:34:11,683 [INFO] root - ============================================================
+2025-07-27 18:34:11,683 [INFO] root - 🚀 JRA-Data Collector エントリーポイント開始
+2025-07-27 18:34:11,686 [INFO] root - 🔒 非管理者権限で実行中。昇格を試みます
+2025-07-27 18:34:11,686 [INFO] root - 管理者権限昇格を実行します...
+2025-07-27 18:34:11,687 [INFO] root - 管理者権限を要求しています...
+2025-07-27 18:34:11,687 [INFO] root - Python実行ファイル: c:\Users\yuusu\.rye\py\cpython@3.12.2\python.exe
+2025-07-27 18:34:11,687 [INFO] root - スクリプトパス: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py
+2025-07-27 18:34:11,687 [INFO] root - 引数: 
+2025-07-27 18:34:11,687 [INFO] root - 実行コマンド: c:\Users\yuusu\.rye\py\cpython@3.12.2\python.exe "C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py"
+2025-07-27 18:34:13,871 [INFO] root - 管理者権限での再起動を開始しました（結果コード: 42）
+2025-07-27 18:34:13,871 [INFO] root - 現在のプロセスを終了します
+2025-07-27 18:34:13,989 [INFO] root - ============================================================
+2025-07-27 18:34:13,989 [INFO] root - 🚀 JRA-Data Collector アプリケーション起動
+2025-07-27 18:34:13,989 [INFO] root - 📝 ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 18:34:13,989 [INFO] root - 🖥️  Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 18:34:13,989 [INFO] root - 📂 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 18:34:13,989 [INFO] root - ============================================================
+2025-07-27 18:34:13,989 [INFO] root - 🚀 JRA-Data Collector エントリーポイント開始
+2025-07-27 18:34:13,998 [INFO] root - 🔐 管理者権限で実行中です
+2025-07-27 18:34:13,998 [INFO] root - 📊 実行環境: 64bit Python, PID: 15288
+2025-07-27 18:34:13,998 [INFO] root - メインアプリケーション関数を呼び出します
+2025-07-27 18:34:13,999 [INFO] root - 管理者権限で実行中。アプリケーションを初期化します。
+2025-07-27 18:34:14,046 [INFO] root - ファイルシステムエンコーディング: utf-8
+2025-07-27 18:34:14,047 [INFO] root - 標準出力エンコーディング: utf-8
+2025-07-27 18:34:14,047 [INFO] root - Unicode環境設定が完了しました
+2025-07-27 18:34:14,047 [INFO] root - 🔍 Python アーキテクチャ: 64bit
+2025-07-27 18:34:14,047 [INFO] root - 🔧 64bit Python環境を検出。JV-LinkのCOMサロゲート設定を確認・構成します...
+2025-07-27 18:34:14,048 [INFO] root - === JV-Link DLLサロゲート設定を開始（64bit/32bit対応版） ===
+2025-07-27 18:34:14,048 [INFO] root - 実行環境: 64bit Python
+2025-07-27 18:34:14,048 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 18:34:14,048 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 18:34:14,048 [INFO] root - ProgID 'JVDTLab.JVLink' のCLSID: {2AB1774D-0C41-11D7-916F-0003479BEB3F} (preferred レジストリビューで発見)
+2025-07-27 18:34:14,049 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 18:34:14,051 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 18:34:14,051 [INFO] root - CLSID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' は preferred レジストリビューに登録されています
+2025-07-27 18:34:14,051 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 18:34:14,052 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 18:34:14,052 [INFO] root - CLSID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' のAppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F} (preferred レジストリビューで発見)
+2025-07-27 18:34:14,052 [INFO] root - 使用するAppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F}
+2025-07-27 18:34:14,052 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 18:34:14,052 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 18:34:14,053 [INFO] root - AppID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' のDllSurrogate: '' (preferred レジストリビューで発見)
+2025-07-27 18:34:14,053 [INFO] root - ✅ DLLサロゲートは既に有効化されています (AppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F})
+2025-07-27 18:34:14,053 [INFO] root - === JV-Link DLLサロゲート設定を終了 ===
+2025-07-27 18:34:14,053 [INFO] root - ✅ レジストリ設定が完了しました。
+2025-07-27 18:34:14,053 [INFO] root - 🚀 メインGUIアプリケーションを起動します...
+2025-07-27 18:34:14,800 [INFO] root - launch_gui()関数を呼び出します
+2025-07-27 18:34:14,801 [INFO] root - launch_gui()関数を開始します
+2025-07-27 18:34:14,801 [INFO] root - ============================================================
+2025-07-27 18:34:14,801 [INFO] root - JRA-Data Collector GUIアプリケーションを開始
+2025-07-27 18:34:14,802 [INFO] root - Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 18:34:14,802 [INFO] root - 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 18:34:14,802 [INFO] root - ファイルシステムエンコーディング: utf-8
+2025-07-27 18:34:14,802 [INFO] root - 引数: ['C:\\Users\\yuusu\\Desktop\\JRA-VANアプリ\\DataBriocks\\run.py']
+2025-07-27 18:34:14,803 [INFO] root - ============================================================
+2025-07-27 18:34:14,803 [INFO] root - QApplicationの高DPI設定を構成します
+2025-07-27 18:34:14,803 [INFO] root - QApplicationインスタンスを作成します
+2025-07-27 18:34:14,816 [INFO] root - QApplicationインスタンスの作成が完了しました
+2025-07-27 18:34:14,819 [WARNING] root - 翻訳設定エラー: 'str' object is not callable
+2025-07-27 18:34:14,819 [INFO] root - QFluent モンキーパッチ適用完了
+2025-07-27 18:34:25,021 [INFO] root - ============================================================
+2025-07-27 18:34:25,021 [INFO] root - 🚀 JRA-Data Collector アプリケーション起動
+2025-07-27 18:34:25,021 [INFO] root - 📝 ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 18:34:25,022 [INFO] root - 🖥️  Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 18:34:25,022 [INFO] root - 📂 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 18:34:25,022 [INFO] root - ============================================================
+2025-07-27 18:34:25,022 [INFO] root - 🚀 JRA-Data Collector エントリーポイント開始
+2025-07-27 18:34:25,032 [INFO] root - 🔒 非管理者権限で実行中。昇格を試みます
+2025-07-27 18:34:25,033 [INFO] root - 管理者権限昇格を実行します...
+2025-07-27 18:34:25,033 [INFO] root - 管理者権限を要求しています...
+2025-07-27 18:34:25,033 [INFO] root - Python実行ファイル: C:\Users\yuusu\.rye\py\cpython@3.12.2\python.exe
+2025-07-27 18:34:25,033 [INFO] root - スクリプトパス: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py
+2025-07-27 18:34:25,033 [INFO] root - 引数: 
+2025-07-27 18:34:25,033 [INFO] root - 実行コマンド: C:\Users\yuusu\.rye\py\cpython@3.12.2\python.exe "C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py"
+2025-07-27 18:34:27,522 [INFO] root - 管理者権限での再起動を開始しました（結果コード: 42）
+2025-07-27 18:34:27,522 [INFO] root - 現在のプロセスを終了します
+2025-07-27 18:34:27,696 [INFO] root - ============================================================
+2025-07-27 18:34:27,696 [INFO] root - 🚀 JRA-Data Collector アプリケーション起動
+2025-07-27 18:34:27,696 [INFO] root - 📝 ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 18:34:27,697 [INFO] root - 🖥️  Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 18:34:27,697 [INFO] root - 📂 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 18:34:27,697 [INFO] root - ============================================================
+2025-07-27 18:34:27,697 [INFO] root - 🚀 JRA-Data Collector エントリーポイント開始
+2025-07-27 18:34:27,709 [INFO] root - 🔐 管理者権限で実行中です
+2025-07-27 18:34:27,710 [INFO] root - 📊 実行環境: 64bit Python, PID: 5108
+2025-07-27 18:34:27,710 [INFO] root - メインアプリケーション関数を呼び出します
+2025-07-27 18:34:27,710 [INFO] root - 管理者権限で実行中。アプリケーションを初期化します。
+2025-07-27 18:34:27,766 [INFO] root - ファイルシステムエンコーディング: utf-8
+2025-07-27 18:34:27,767 [INFO] root - 標準出力エンコーディング: utf-8
+2025-07-27 18:34:27,767 [INFO] root - Unicode環境設定が完了しました
+2025-07-27 18:34:27,767 [INFO] root - 🔍 Python アーキテクチャ: 64bit
+2025-07-27 18:34:27,767 [INFO] root - 🔧 64bit Python環境を検出。JV-LinkのCOMサロゲート設定を確認・構成します...
+2025-07-27 18:34:27,767 [INFO] root - === JV-Link DLLサロゲート設定を開始（64bit/32bit対応版） ===
+2025-07-27 18:34:27,768 [INFO] root - 実行環境: 64bit Python
+2025-07-27 18:34:27,768 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 18:34:27,768 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 18:34:27,768 [INFO] root - ProgID 'JVDTLab.JVLink' のCLSID: {2AB1774D-0C41-11D7-916F-0003479BEB3F} (preferred レジストリビューで発見)
+2025-07-27 18:34:27,768 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 18:34:27,769 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 18:34:27,769 [INFO] root - CLSID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' は preferred レジストリビューに登録されています
+2025-07-27 18:34:27,769 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 18:34:27,769 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 18:34:27,769 [INFO] root - CLSID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' のAppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F} (preferred レジストリビューで発見)
+2025-07-27 18:34:27,769 [INFO] root - 使用するAppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F}
+2025-07-27 18:34:27,769 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 18:34:27,769 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 18:34:27,769 [INFO] root - AppID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' のDllSurrogate: '' (preferred レジストリビューで発見)
+2025-07-27 18:34:27,770 [INFO] root - ✅ DLLサロゲートは既に有効化されています (AppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F})
+2025-07-27 18:34:27,770 [INFO] root - === JV-Link DLLサロゲート設定を終了 ===
+2025-07-27 18:34:27,770 [INFO] root - ✅ レジストリ設定が完了しました。
+2025-07-27 18:34:27,770 [INFO] root - 🚀 メインGUIアプリケーションを起動します...
+2025-07-27 18:34:28,526 [INFO] root - launch_gui()関数を呼び出します
+2025-07-27 18:34:28,527 [INFO] root - launch_gui()関数を開始します
+2025-07-27 18:34:28,527 [INFO] root - ============================================================
+2025-07-27 18:34:28,528 [INFO] root - JRA-Data Collector GUIアプリケーションを開始
+2025-07-27 18:34:28,528 [INFO] root - Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 18:34:28,528 [INFO] root - 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 18:34:28,528 [INFO] root - ファイルシステムエンコーディング: utf-8
+2025-07-27 18:34:28,529 [INFO] root - 引数: ['C:\\Users\\yuusu\\Desktop\\JRA-VANアプリ\\DataBriocks\\run.py']
+2025-07-27 18:34:28,529 [INFO] root - ============================================================
+2025-07-27 18:34:28,529 [INFO] root - QApplicationの高DPI設定を構成します
+2025-07-27 18:34:28,529 [INFO] root - QApplicationインスタンスを作成します
+2025-07-27 18:34:28,540 [INFO] root - QApplicationインスタンスの作成が完了しました
+2025-07-27 18:34:28,558 [WARNING] root - 翻訳設定エラー: 'str' object is not callable
+2025-07-27 18:34:28,558 [INFO] root - QFluent モンキーパッチ適用完了
+2025-07-27 18:34:28,843 [INFO] src.services.settings_manager - 設定ファイルパス: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 18:34:28,844 [INFO] src.services.settings_manager - 設定ファイル読み込み成功: 5 セクション
+2025-07-27 18:34:28,855 [WARNING] root - psutil not available. Process management will be limited.
+2025-07-27 18:34:28,856 [INFO] root - JvLinkManager初期化 - 最大スレッド数: 32
+2025-07-27 18:34:28,856 [WARNING] root - 従来のJV-Linkマネージャーを使用します
+2025-07-27 18:34:28,856 [INFO] root - ExportManager initialized with 32 threads.
+2025-07-27 18:34:28,856 [INFO] root - Pipeline configuration loaded: {'raw_queue_size': 1000, 'processed_queue_size': 500, 'etl_batch_size': 10, 'db_batch_size': 100, 'db_commit_interval': 1000}
+2025-07-27 18:34:28,856 [INFO] root - PipelineCoordinator initialized successfully
+2025-07-27 18:34:28 [    INFO] root:157 - ============================================================
+2025-07-27 18:34:28 [    INFO] root:158 - JRA-Data Collector アプリケーションを開始しました
+2025-07-27 18:34:28 [    INFO] root:159 - ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 18:34:28 [    INFO] root:160 - ログレベル: ファイル=DEBUG, コンソール=INFO
+2025-07-27 18:34:28 [    INFO] root:161 - ============================================================
+2025-07-27 18:34:28 [    INFO] Statemachine.Idle:68 - Entering state: Idle
+2025-07-27 18:34:28 [   DEBUG] Statemachine.Idle:94 - UI status update not available for state: Idle
+2025-07-27 18:34:28 [    INFO] root:182 - State transition completed: -> Idle
+2025-07-27 18:34:29 [    INFO] root:246 - アプリケーションの初期化を開始します。
+2025-07-27 18:34:29 [    INFO] root:277 - UIとコントローラーの接続を初期化します。
+2025-07-27 18:34:29 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 18:34:29 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 18:34:29 [    INFO] root:256 - JV-Link設定はWindowsレジストリで管理されます。設定画面から公式ダイアログを開いて設定してください。
+2025-07-27 18:34:29 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 18:34:29 [    INFO] root:266 - アプリケーションの初期化が完了しました。
+2025-07-27 18:34:29 [    INFO] root:230 - アプリケーション初期化完了
+2025-07-27 18:34:29 [    INFO] root:233 - メインウィンドウを表示します
+2025-07-27 18:34:29 [    INFO] root:237 - 🎯 QtアプリケーションのメインループCapp.exec())を開始します
+2025-07-27 18:38:43,900 [INFO] root - ============================================================
+2025-07-27 18:38:43,900 [INFO] root - 🚀 JRA-Data Collector アプリケーション起動
+2025-07-27 18:38:43,900 [INFO] root - 📝 ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 18:38:43,900 [INFO] root - 🖥️  Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 18:38:43,900 [INFO] root - 📂 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 18:38:43,901 [INFO] root - ============================================================
+2025-07-27 18:38:43,901 [INFO] root - 🚀 JRA-Data Collector エントリーポイント開始
+2025-07-27 18:38:43,910 [INFO] root - 🔒 非管理者権限で実行中。昇格を試みます
+2025-07-27 18:38:43,910 [INFO] root - 管理者権限昇格を実行します...
+2025-07-27 18:38:43,910 [INFO] root - 管理者権限を要求しています...
+2025-07-27 18:38:43,911 [INFO] root - Python実行ファイル: C:\Users\yuusu\.rye\py\cpython@3.12.2\python.exe
+2025-07-27 18:38:43,911 [INFO] root - スクリプトパス: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py
+2025-07-27 18:38:43,911 [INFO] root - 引数: 
+2025-07-27 18:38:43,911 [INFO] root - 実行コマンド: C:\Users\yuusu\.rye\py\cpython@3.12.2\python.exe "C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py"
+2025-07-27 18:39:28,895 [INFO] root - ============================================================
+2025-07-27 18:39:28,895 [INFO] root - 🚀 JRA-Data Collector アプリケーション起動
+2025-07-27 18:39:28,895 [INFO] root - 📝 ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 18:39:28,895 [INFO] root - 🖥️  Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 18:39:28,895 [INFO] root - 📂 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 18:39:28,895 [INFO] root - ============================================================
+2025-07-27 18:39:28,895 [INFO] root - 🚀 JRA-Data Collector エントリーポイント開始
+2025-07-27 18:39:28,905 [INFO] root - 🔒 非管理者権限で実行中。昇格を試みます
+2025-07-27 18:39:28,906 [INFO] root - 管理者権限昇格を実行します...
+2025-07-27 18:39:28,906 [INFO] root - 管理者権限を要求しています...
+2025-07-27 18:39:28,906 [INFO] root - Python実行ファイル: C:\Users\yuusu\.rye\py\cpython@3.12.2\python.exe
+2025-07-27 18:39:28,906 [INFO] root - スクリプトパス: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py
+2025-07-27 18:39:28,906 [INFO] root - 引数: 
+2025-07-27 18:39:28,906 [INFO] root - 実行コマンド: C:\Users\yuusu\.rye\py\cpython@3.12.2\python.exe "C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py"
+2025-07-27 18:40:46,435 [WARNING] root - ユーザーがUACプロンプトをキャンセルしました
+2025-07-27 18:42:51,066 [WARNING] root - ユーザーがUACプロンプトをキャンセルしました
+2025-07-27 18:43:13,473 [INFO] root - ============================================================
+2025-07-27 18:43:13,473 [INFO] root - 🚀 JRA-Data Collector アプリケーション起動
+2025-07-27 18:43:13,473 [INFO] root - 📝 ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 18:43:13,473 [INFO] root - 🖥️  Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 18:43:13,473 [INFO] root - 📂 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 18:43:13,473 [INFO] root - ============================================================
+2025-07-27 18:43:13,474 [INFO] root - 🚀 JRA-Data Collector エントリーポイント開始
+2025-07-27 18:43:13,482 [INFO] root - 🔒 非管理者権限で実行中。昇格を試みます
+2025-07-27 18:43:13,483 [INFO] root - 管理者権限昇格を実行します...
+2025-07-27 18:43:13,483 [INFO] root - 管理者権限を要求しています...
+2025-07-27 18:43:13,483 [INFO] root - Python実行ファイル: C:\Users\yuusu\.rye\py\cpython@3.12.2\python.exe
+2025-07-27 18:43:13,483 [INFO] root - スクリプトパス: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py
+2025-07-27 18:43:13,483 [INFO] root - 引数: 
+2025-07-27 18:43:13,484 [INFO] root - 実行コマンド: C:\Users\yuusu\.rye\py\cpython@3.12.2\python.exe "C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py"
+2025-07-27 18:45:16,036 [WARNING] root - ユーザーがUACプロンプトをキャンセルしました
+2025-07-27 19:13:33 [    INFO] root:239 - Qtアプリケーションが終了しました。終了コード: 0
+2025-07-27 19:13:33 [    INFO] root:114 - launch_gui()から戻りました。終了コード: 0
+2025-07-27 19:13:33 [    INFO] root:217 - アプリケーション終了（終了コード: 0）
+2025-07-27 19:13:40,072 [INFO] root - ============================================================
+2025-07-27 19:13:40,072 [INFO] root - 🚀 JRA-Data Collector アプリケーション起動
+2025-07-27 19:13:40,072 [INFO] root - 📝 ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 19:13:40,073 [INFO] root - 🖥️  Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 19:13:40,073 [INFO] root - 📂 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 19:13:40,073 [INFO] root - ============================================================
+2025-07-27 19:13:40,073 [INFO] root - 🚀 JRA-Data Collector エントリーポイント開始
+2025-07-27 19:13:40,082 [INFO] root - 🔒 非管理者権限で実行中。昇格を試みます
+2025-07-27 19:13:40,082 [INFO] root - 管理者権限昇格を実行します...
+2025-07-27 19:13:40,082 [INFO] root - 管理者権限を要求しています...
+2025-07-27 19:13:40,083 [INFO] root - Python実行ファイル: C:\Users\yuusu\.rye\py\cpython@3.12.2\python.exe
+2025-07-27 19:13:40,083 [INFO] root - スクリプトパス: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py
+2025-07-27 19:13:40,083 [INFO] root - 引数: 
+2025-07-27 19:13:40,083 [INFO] root - 実行コマンド: C:\Users\yuusu\.rye\py\cpython@3.12.2\python.exe "C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py"
+2025-07-27 19:13:42,611 [INFO] root - 管理者権限での再起動を開始しました（結果コード: 42）
+2025-07-27 19:13:42,611 [INFO] root - 現在のプロセスを終了します
+2025-07-27 19:13:42,733 [INFO] root - ============================================================
+2025-07-27 19:13:42,734 [INFO] root - 🚀 JRA-Data Collector アプリケーション起動
+2025-07-27 19:13:42,734 [INFO] root - 📝 ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 19:13:42,734 [INFO] root - 🖥️  Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 19:13:42,735 [INFO] root - 📂 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 19:13:42,735 [INFO] root - ============================================================
+2025-07-27 19:13:42,735 [INFO] root - 🚀 JRA-Data Collector エントリーポイント開始
+2025-07-27 19:13:42,745 [INFO] root - 🔐 管理者権限で実行中です
+2025-07-27 19:13:42,745 [INFO] root - 📊 実行環境: 64bit Python, PID: 34620
+2025-07-27 19:13:42,745 [INFO] root - メインアプリケーション関数を呼び出します
+2025-07-27 19:13:42,746 [INFO] root - 管理者権限で実行中。アプリケーションを初期化します。
+2025-07-27 19:13:42,801 [INFO] root - ファイルシステムエンコーディング: utf-8
+2025-07-27 19:13:42,802 [INFO] root - 標準出力エンコーディング: utf-8
+2025-07-27 19:13:42,802 [INFO] root - Unicode環境設定が完了しました
+2025-07-27 19:13:42,802 [INFO] root - 🔍 Python アーキテクチャ: 64bit
+2025-07-27 19:13:42,802 [INFO] root - 🔧 64bit Python環境を検出。JV-LinkのCOMサロゲート設定を確認・構成します...
+2025-07-27 19:13:42,803 [INFO] root - === JV-Link DLLサロゲート設定を開始（64bit/32bit対応版） ===
+2025-07-27 19:13:42,803 [INFO] root - 実行環境: 64bit Python
+2025-07-27 19:13:42,803 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 19:13:42,803 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 19:13:42,804 [INFO] root - ProgID 'JVDTLab.JVLink' のCLSID: {2AB1774D-0C41-11D7-916F-0003479BEB3F} (preferred レジストリビューで発見)
+2025-07-27 19:13:42,804 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 19:13:42,804 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 19:13:42,804 [INFO] root - CLSID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' は preferred レジストリビューに登録されています
+2025-07-27 19:13:42,805 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 19:13:42,805 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 19:13:42,805 [INFO] root - CLSID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' のAppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F} (preferred レジストリビューで発見)
+2025-07-27 19:13:42,805 [INFO] root - 使用するAppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F}
+2025-07-27 19:13:42,805 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 19:13:42,805 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 19:13:42,806 [INFO] root - AppID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' のDllSurrogate: '' (preferred レジストリビューで発見)
+2025-07-27 19:13:42,806 [INFO] root - ✅ DLLサロゲートは既に有効化されています (AppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F})
+2025-07-27 19:13:42,806 [INFO] root - === JV-Link DLLサロゲート設定を終了 ===
+2025-07-27 19:13:42,806 [INFO] root - ✅ レジストリ設定が完了しました。
+2025-07-27 19:13:42,806 [INFO] root - 🚀 メインGUIアプリケーションを起動します...
+2025-07-27 19:13:42,809 [ERROR] root - アプリケーションの実行中に致命的なエラーが発生しました: expected 'except' or 'finally' block (main.py, line 168)
+Traceback (most recent call last):
+  File "C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py", line 109, in run_main_application
+    from src.main import launch_gui
+  File "C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\src\main.py", line 168
+    sys.excepthook = handle_unicode_exception
+    ^^^
+SyntaxError: expected 'except' or 'finally' block
+2025-07-27 19:13:44,886 [INFO] root - アプリケーション終了（終了コード: 1）
+2025-07-27 19:13:59,946 [INFO] root - ============================================================
+2025-07-27 19:13:59,946 [INFO] root - 🚀 JRA-Data Collector アプリケーション起動
+2025-07-27 19:13:59,947 [INFO] root - 📝 ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 19:13:59,947 [INFO] root - 🖥️  Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 19:13:59,947 [INFO] root - 📂 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 19:13:59,947 [INFO] root - ============================================================
+2025-07-27 19:13:59,947 [INFO] root - 🚀 JRA-Data Collector エントリーポイント開始
+2025-07-27 19:13:59,957 [INFO] root - 🔒 非管理者権限で実行中。昇格を試みます
+2025-07-27 19:13:59,957 [INFO] root - 管理者権限昇格を実行します...
+2025-07-27 19:13:59,957 [INFO] root - 管理者権限を要求しています...
+2025-07-27 19:13:59,957 [INFO] root - Python実行ファイル: C:\Users\yuusu\.rye\py\cpython@3.12.2\python.exe
+2025-07-27 19:13:59,957 [INFO] root - スクリプトパス: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py
+2025-07-27 19:13:59,957 [INFO] root - 引数: 
+2025-07-27 19:13:59,957 [INFO] root - 実行コマンド: C:\Users\yuusu\.rye\py\cpython@3.12.2\python.exe "C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py"
+2025-07-27 19:14:01,926 [INFO] root - 管理者権限での再起動を開始しました（結果コード: 42）
+2025-07-27 19:14:01,927 [INFO] root - 現在のプロセスを終了します
+2025-07-27 19:14:02,030 [INFO] root - ============================================================
+2025-07-27 19:14:02,030 [INFO] root - 🚀 JRA-Data Collector アプリケーション起動
+2025-07-27 19:14:02,031 [INFO] root - 📝 ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 19:14:02,031 [INFO] root - 🖥️  Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 19:14:02,031 [INFO] root - 📂 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 19:14:02,031 [INFO] root - ============================================================
+2025-07-27 19:14:02,032 [INFO] root - 🚀 JRA-Data Collector エントリーポイント開始
+2025-07-27 19:14:02,043 [INFO] root - 🔐 管理者権限で実行中です
+2025-07-27 19:14:02,043 [INFO] root - 📊 実行環境: 64bit Python, PID: 19708
+2025-07-27 19:14:02,043 [INFO] root - メインアプリケーション関数を呼び出します
+2025-07-27 19:14:02,043 [INFO] root - 管理者権限で実行中。アプリケーションを初期化します。
+2025-07-27 19:14:02,124 [INFO] root - ファイルシステムエンコーディング: utf-8
+2025-07-27 19:14:02,124 [INFO] root - 標準出力エンコーディング: utf-8
+2025-07-27 19:14:02,124 [INFO] root - Unicode環境設定が完了しました
+2025-07-27 19:14:02,124 [INFO] root - 🔍 Python アーキテクチャ: 64bit
+2025-07-27 19:14:02,124 [INFO] root - 🔧 64bit Python環境を検出。JV-LinkのCOMサロゲート設定を確認・構成します...
+2025-07-27 19:14:02,126 [INFO] root - === JV-Link DLLサロゲート設定を開始（64bit/32bit対応版） ===
+2025-07-27 19:14:02,126 [INFO] root - 実行環境: 64bit Python
+2025-07-27 19:14:02,126 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 19:14:02,126 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 19:14:02,126 [INFO] root - ProgID 'JVDTLab.JVLink' のCLSID: {2AB1774D-0C41-11D7-916F-0003479BEB3F} (preferred レジストリビューで発見)
+2025-07-27 19:14:02,126 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 19:14:02,126 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 19:14:02,126 [INFO] root - CLSID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' は preferred レジストリビューに登録されています
+2025-07-27 19:14:02,126 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 19:14:02,127 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 19:14:02,127 [INFO] root - CLSID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' のAppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F} (preferred レジストリビューで発見)
+2025-07-27 19:14:02,127 [INFO] root - 使用するAppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F}
+2025-07-27 19:14:02,127 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 19:14:02,127 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 19:14:02,127 [INFO] root - AppID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' のDllSurrogate: '' (preferred レジストリビューで発見)
+2025-07-27 19:14:02,127 [INFO] root - ✅ DLLサロゲートは既に有効化されています (AppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F})
+2025-07-27 19:14:02,127 [INFO] root - === JV-Link DLLサロゲート設定を終了 ===
+2025-07-27 19:14:02,127 [INFO] root - ✅ レジストリ設定が完了しました。
+2025-07-27 19:14:02,127 [INFO] root - 🚀 メインGUIアプリケーションを起動します...
+2025-07-27 19:14:02,130 [ERROR] root - アプリケーションの実行中に致命的なエラーが発生しました: expected 'except' or 'finally' block (main.py, line 168)
+Traceback (most recent call last):
+  File "C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py", line 109, in run_main_application
+    from src.main import launch_gui
+  File "C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\src\main.py", line 168
+    sys.excepthook = handle_unicode_exception
+    ^^^
+SyntaxError: expected 'except' or 'finally' block
+2025-07-27 19:15:07,586 [INFO] root - アプリケーション終了（終了コード: 1）
+2025-07-27 19:15:11,166 [INFO] root - ============================================================
+2025-07-27 19:15:11,167 [INFO] root - 🚀 JRA-Data Collector アプリケーション起動
+2025-07-27 19:15:11,167 [INFO] root - 📝 ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 19:15:11,167 [INFO] root - 🖥️  Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 19:15:11,168 [INFO] root - 📂 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 19:15:11,168 [INFO] root - ============================================================
+2025-07-27 19:15:11,168 [INFO] root - 🚀 JRA-Data Collector エントリーポイント開始
+2025-07-27 19:15:11,178 [INFO] root - 🔒 非管理者権限で実行中。昇格を試みます
+2025-07-27 19:15:11,178 [INFO] root - 管理者権限昇格を実行します...
+2025-07-27 19:15:11,178 [INFO] root - 管理者権限を要求しています...
+2025-07-27 19:15:11,178 [INFO] root - Python実行ファイル: C:\Users\yuusu\.rye\py\cpython@3.12.2\python.exe
+2025-07-27 19:15:11,178 [INFO] root - スクリプトパス: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py
+2025-07-27 19:15:11,178 [INFO] root - 引数: 
+2025-07-27 19:15:11,178 [INFO] root - 実行コマンド: C:\Users\yuusu\.rye\py\cpython@3.12.2\python.exe "C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py"
+2025-07-27 19:15:13,132 [INFO] root - 管理者権限での再起動を開始しました（結果コード: 42）
+2025-07-27 19:15:13,132 [INFO] root - 現在のプロセスを終了します
+2025-07-27 19:15:13,271 [INFO] root - ============================================================
+2025-07-27 19:15:13,271 [INFO] root - 🚀 JRA-Data Collector アプリケーション起動
+2025-07-27 19:15:13,271 [INFO] root - 📝 ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 19:15:13,272 [INFO] root - 🖥️  Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 19:15:13,272 [INFO] root - 📂 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 19:15:13,272 [INFO] root - ============================================================
+2025-07-27 19:15:13,272 [INFO] root - 🚀 JRA-Data Collector エントリーポイント開始
+2025-07-27 19:15:13,284 [INFO] root - 🔐 管理者権限で実行中です
+2025-07-27 19:15:13,287 [INFO] root - 📊 実行環境: 64bit Python, PID: 23840
+2025-07-27 19:15:13,287 [INFO] root - メインアプリケーション関数を呼び出します
+2025-07-27 19:15:13,287 [INFO] root - 管理者権限で実行中。アプリケーションを初期化します。
+2025-07-27 19:15:13,334 [INFO] root - ファイルシステムエンコーディング: utf-8
+2025-07-27 19:15:13,334 [INFO] root - 標準出力エンコーディング: utf-8
+2025-07-27 19:15:13,334 [INFO] root - Unicode環境設定が完了しました
+2025-07-27 19:15:13,334 [INFO] root - 🔍 Python アーキテクチャ: 64bit
+2025-07-27 19:15:13,334 [INFO] root - 🔧 64bit Python環境を検出。JV-LinkのCOMサロゲート設定を確認・構成します...
+2025-07-27 19:15:13,335 [INFO] root - === JV-Link DLLサロゲート設定を開始（64bit/32bit対応版） ===
+2025-07-27 19:15:13,335 [INFO] root - 実行環境: 64bit Python
+2025-07-27 19:15:13,335 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 19:15:13,335 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 19:15:13,335 [INFO] root - ProgID 'JVDTLab.JVLink' のCLSID: {2AB1774D-0C41-11D7-916F-0003479BEB3F} (preferred レジストリビューで発見)
+2025-07-27 19:15:13,335 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 19:15:13,335 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 19:15:13,335 [INFO] root - CLSID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' は preferred レジストリビューに登録されています
+2025-07-27 19:15:13,335 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 19:15:13,335 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 19:15:13,336 [INFO] root - CLSID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' のAppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F} (preferred レジストリビューで発見)
+2025-07-27 19:15:13,336 [INFO] root - 使用するAppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F}
+2025-07-27 19:15:13,336 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 19:15:13,336 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 19:15:13,336 [INFO] root - AppID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' のDllSurrogate: '' (preferred レジストリビューで発見)
+2025-07-27 19:15:13,336 [INFO] root - ✅ DLLサロゲートは既に有効化されています (AppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F})
+2025-07-27 19:15:13,336 [INFO] root - === JV-Link DLLサロゲート設定を終了 ===
+2025-07-27 19:15:13,337 [INFO] root - ✅ レジストリ設定が完了しました。
+2025-07-27 19:15:13,337 [INFO] root - 🚀 メインGUIアプリケーションを起動します...
+2025-07-27 19:15:13,347 [ERROR] root - アプリケーションの実行中に致命的なエラーが発生しました: expected an indented block after 'try' statement on line 245 (app_controller.py, line 246)
+Traceback (most recent call last):
+  File "C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py", line 109, in run_main_application
+    from src.main import launch_gui
+  File "C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\src\main.py", line 10, in <module>
+    from .controllers.app_controller import AppController
+  File "C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\src\controllers\app_controller.py", line 246
+    logging.info("アプリケーションの初期化を開始します。")
+    ^^^^^^^
+IndentationError: expected an indented block after 'try' statement on line 245
+2025-07-27 19:15:19,092 [INFO] root - アプリケーション終了（終了コード: 1）
+2025-07-27 19:18:35,496 [INFO] root - ============================================================
+2025-07-27 19:18:35,496 [INFO] root - 🚀 JRA-Data Collector アプリケーション起動
+2025-07-27 19:18:35,497 [INFO] root - 📝 ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 19:18:35,497 [INFO] root - 🖥️  Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 19:18:35,497 [INFO] root - 📂 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 19:18:35,497 [INFO] root - ============================================================
+2025-07-27 19:18:35,497 [INFO] root - 🚀 JRA-Data Collector エントリーポイント開始
+2025-07-27 19:18:35,505 [INFO] root - 🔒 非管理者権限で実行中。昇格を試みます
+2025-07-27 19:18:35,505 [INFO] root - 管理者権限昇格を実行します...
+2025-07-27 19:18:35,505 [INFO] root - 管理者権限を要求しています...
+2025-07-27 19:18:35,506 [INFO] root - Python実行ファイル: C:\Users\yuusu\.rye\py\cpython@3.12.2\python.exe
+2025-07-27 19:18:35,506 [INFO] root - スクリプトパス: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py
+2025-07-27 19:18:35,506 [INFO] root - 引数: 
+2025-07-27 19:18:35,506 [INFO] root - 実行コマンド: C:\Users\yuusu\.rye\py\cpython@3.12.2\python.exe "C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py"
+2025-07-27 19:18:37,488 [INFO] root - 管理者権限での再起動を開始しました（結果コード: 42）
+2025-07-27 19:18:37,488 [INFO] root - 現在のプロセスを終了します
+2025-07-27 19:18:37,623 [INFO] root - ============================================================
+2025-07-27 19:18:37,623 [INFO] root - 🚀 JRA-Data Collector アプリケーション起動
+2025-07-27 19:18:37,623 [INFO] root - 📝 ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 19:18:37,623 [INFO] root - 🖥️  Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 19:18:37,624 [INFO] root - 📂 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 19:18:37,624 [INFO] root - ============================================================
+2025-07-27 19:18:37,624 [INFO] root - 🚀 JRA-Data Collector エントリーポイント開始
+2025-07-27 19:18:37,634 [INFO] root - 🔐 管理者権限で実行中です
+2025-07-27 19:18:37,638 [INFO] root - 📊 実行環境: 64bit Python, PID: 18256
+2025-07-27 19:18:37,638 [INFO] root - メインアプリケーション関数を呼び出します
+2025-07-27 19:18:37,638 [INFO] root - 管理者権限で実行中。アプリケーションを初期化します。
+2025-07-27 19:18:37,688 [INFO] root - ファイルシステムエンコーディング: utf-8
+2025-07-27 19:18:37,689 [INFO] root - 標準出力エンコーディング: utf-8
+2025-07-27 19:18:37,689 [INFO] root - Unicode環境設定が完了しました
+2025-07-27 19:18:37,689 [INFO] root - 🔍 Python アーキテクチャ: 64bit
+2025-07-27 19:18:37,689 [INFO] root - 🔧 64bit Python環境を検出。JV-LinkのCOMサロゲート設定を確認・構成します...
+2025-07-27 19:18:37,689 [INFO] root - === JV-Link DLLサロゲート設定を開始（64bit/32bit対応版） ===
+2025-07-27 19:18:37,690 [INFO] root - 実行環境: 64bit Python
+2025-07-27 19:18:37,690 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 19:18:37,690 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 19:18:37,690 [INFO] root - ProgID 'JVDTLab.JVLink' のCLSID: {2AB1774D-0C41-11D7-916F-0003479BEB3F} (preferred レジストリビューで発見)
+2025-07-27 19:18:37,691 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 19:18:37,691 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 19:18:37,691 [INFO] root - CLSID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' は preferred レジストリビューに登録されています
+2025-07-27 19:18:37,691 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 19:18:37,691 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 19:18:37,691 [INFO] root - CLSID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' のAppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F} (preferred レジストリビューで発見)
+2025-07-27 19:18:37,691 [INFO] root - 使用するAppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F}
+2025-07-27 19:18:37,691 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 19:18:37,691 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 19:18:37,692 [INFO] root - AppID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' のDllSurrogate: '' (preferred レジストリビューで発見)
+2025-07-27 19:18:37,692 [INFO] root - ✅ DLLサロゲートは既に有効化されています (AppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F})
+2025-07-27 19:18:37,692 [INFO] root - === JV-Link DLLサロゲート設定を終了 ===
+2025-07-27 19:18:37,692 [INFO] root - ✅ レジストリ設定が完了しました。
+2025-07-27 19:18:37,692 [INFO] root - 🚀 メインGUIアプリケーションを起動します...
+2025-07-27 19:18:38,476 [INFO] root - launch_gui()関数を呼び出します
+2025-07-27 19:18:38,476 [INFO] root - launch_gui()関数を開始します
+2025-07-27 19:18:38,476 [INFO] root - ============================================================
+2025-07-27 19:18:38,476 [INFO] root - JRA-Data Collector GUIアプリケーションを開始
+2025-07-27 19:18:38,476 [INFO] root - Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 19:18:38,477 [INFO] root - 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 19:18:38,477 [INFO] root - ファイルシステムエンコーディング: utf-8
+2025-07-27 19:18:38,477 [INFO] root - 引数: ['C:\\Users\\yuusu\\Desktop\\JRA-VANアプリ\\DataBriocks\\run.py']
+2025-07-27 19:18:38,477 [INFO] root - ============================================================
+2025-07-27 19:18:38,478 [INFO] root - QApplicationの高DPI設定を構成します
+2025-07-27 19:18:38,478 [INFO] root - QApplicationインスタンスを作成します
+2025-07-27 19:18:38,490 [INFO] root - QApplicationインスタンスの作成が完了しました
+2025-07-27 19:18:38,494 [WARNING] root - 翻訳設定エラー: 'str' object is not callable
+2025-07-27 19:18:38,494 [INFO] root - QFluent モンキーパッチ適用完了
+2025-07-27 19:18:38,847 [INFO] src.services.settings_manager - 設定ファイルパス: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 19:18:38,847 [INFO] src.services.settings_manager - 設定ファイル読み込み成功: 5 セクション
+2025-07-27 19:18:38,859 [WARNING] root - psutil not available. Process management will be limited.
+2025-07-27 19:18:38,860 [INFO] root - JvLinkManager初期化 - 最大スレッド数: 32
+2025-07-27 19:18:38,860 [WARNING] root - 従来のJV-Linkマネージャーを使用します
+2025-07-27 19:18:38,860 [INFO] root - ExportManager initialized with 32 threads.
+2025-07-27 19:18:38,861 [INFO] root - Pipeline configuration loaded: {'raw_queue_size': 1000, 'processed_queue_size': 500, 'etl_batch_size': 10, 'db_batch_size': 100, 'db_commit_interval': 1000}
+2025-07-27 19:18:38,861 [INFO] root - PipelineCoordinator initialized successfully
+2025-07-27 19:18:38 [    INFO] root:157 - ============================================================
+2025-07-27 19:18:38 [    INFO] root:158 - JRA-Data Collector アプリケーションを開始しました
+2025-07-27 19:18:38 [    INFO] root:159 - ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 19:18:38 [    INFO] root:160 - ログレベル: ファイル=DEBUG, コンソール=INFO
+2025-07-27 19:18:38 [    INFO] root:161 - ============================================================
+2025-07-27 19:18:38 [    INFO] Statemachine.Idle:68 - Entering state: Idle
+2025-07-27 19:18:38 [   DEBUG] Statemachine.Idle:94 - UI status update not available for state: Idle
+2025-07-27 19:18:38 [    INFO] root:182 - State transition completed: -> Idle
+2025-07-27 19:18:39 [    INFO] root:246 - アプリケーションの初期化を開始します。
+2025-07-27 19:18:39 [    INFO] root:277 - UIとコントローラーの接続を初期化します。
+2025-07-27 19:18:39 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 19:18:39 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 19:18:39 [    INFO] root:256 - JV-Link設定はWindowsレジストリで管理されます。設定画面から公式ダイアログを開いて設定してください。
+2025-07-27 19:18:39 [    INFO] root:1185 - データサマリーを取得します。
+2025-07-27 19:18:39 [    INFO] root:266 - アプリケーションの初期化が完了しました。
+2025-07-27 19:18:39 [    INFO] root:230 - アプリケーション初期化完了
+2025-07-27 19:18:39 [    INFO] root:233 - メインウィンドウを表示します
+2025-07-27 19:18:39 [    INFO] root:237 - 🎯 QtアプリケーションのメインループCapp.exec())を開始します
+2025-07-27 19:18:44 [    INFO] root:1890 - JV-Link公式設定ダイアログを開きます。
+2025-07-27 19:18:46 [    INFO] root:1930 - JV-Link設定ダイアログが正常に完了しました。
+2025-07-27 19:18:49 [    INFO] root:1555 - データベース接続テストを開始します: PostgreSQL
+2025-07-27 19:18:51 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 19:18:51 [    INFO] root:556 - 設定保存が完了しました。
+2025-07-27 19:18:51 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 19:18:51 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 19:18:51 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 19:18:51 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 19:18:51 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 19:18:51 [    INFO] root:1516 - データベース設定が更新されました。
+2025-07-27 19:18:51 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 19:18:51 [    INFO] root:556 - 設定保存が完了しました。
+2025-07-27 19:18:51 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 19:18:51 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 19:18:51 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 19:18:51 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 19:18:51 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 19:18:51 [    INFO] root:1538 - 設定が正常に保存されました。
+2025-07-27 19:19:03 [    INFO] root:346 - JV-Link状態変更: UNINITIALIZED -> INITIALIZING
+2025-07-27 19:19:03 [    INFO] root:380 - JV-Linkの初期化を開始します...
+2025-07-27 19:19:03 [    INFO] root:386 - JV-Linkファイルが見つかりました: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\JV-Link\JV-Link.exe
+2025-07-27 19:19:03 [    INFO] root:405 - COMオブジェクト 'JVDTLab.JVLink' を試行中...
+2025-07-27 19:19:03 [    INFO] root:407 - COMオブジェクト 'JVDTLab.JVLink' の作成に成功
+2025-07-27 19:19:03 [   ERROR] root:421 - JV-Linkの認証に失敗しました。エラーコード: -101 - ファイルが見つかりません。
+2025-07-27 19:19:03 [    INFO] root:346 - JV-Link状態変更: INITIALIZING -> INITIALIZED

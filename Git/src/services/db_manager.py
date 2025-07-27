@@ -579,6 +579,56 @@ class DatabaseManager(LoggerMixin):
             self.emit_log("ERROR", error_msg)
             raise ValueError(error_msg)
 
+    def connect_without_fallback(self, db_config: dict) -> tuple[bool, str]:
+        """
+        フォールバックなしでデータベースに接続する（reconnect専用）
+        
+        Args:
+            db_config: データベース設定辞書
+            
+        Returns:
+            (接続成功フラグ, メッセージ)
+        """
+        try:
+            db_type = db_config.get('type')
+            if not db_type:
+                return False, "データベースタイプが指定されていません"
+            
+            # 一時的にDB情報を保存
+            original_db_type = self._db_type
+            original_db_name = self._db_name
+            original_engine = self.engine
+            original_session = self.Session
+            
+            # 新しい設定で接続を試行
+            self._db_type = db_type.lower()
+            
+            try:
+                if db_type == "SQLite":
+                    return self._connect_sqlite_with_result(db_config)
+                elif db_type == "MySQL":
+                    return self._connect_mysql_with_result(db_config)
+                elif db_type == "PostgreSQL":
+                    return self._connect_postgresql_with_result(db_config)
+                else:
+                    # 元の状態に戻す
+                    self._db_type = original_db_type
+                    self._db_name = original_db_name
+                    self.engine = original_engine
+                    self.Session = original_session
+                    return False, f"未サポートのデータベース種別: {db_type}"
+                    
+            except Exception as e:
+                # エラー時は元の状態に戻す
+                self._db_type = original_db_type
+                self._db_name = original_db_name
+                self.engine = original_engine
+                self.Session = original_session
+                return False, f"接続エラー: {e}"
+                
+        except Exception as e:
+            return False, f"設定処理エラー: {e}"
+
     def _connect_sqlite(self, db_config: dict):
         """
         SQLite接続（Unicode対応強化版）
@@ -1239,39 +1289,50 @@ class DatabaseManager(LoggerMixin):
                     return False, f"設定更新エラー: {e}"
 
             # 新しい設定で再接続を試行
-            try:
-                self.connect()
-                
-                # 最終的な接続状態を確認
-                if self.engine is not None:
-                    try:
-                        # 実際に接続をテスト
-                        with self.engine.connect() as conn:
-                            # 簡単な接続テスト
-                            if self._db_type == 'sqlite':
-                                conn.execute(text("SELECT 1"))
-                            elif self._db_type == 'mysql':
-                                conn.execute(text("SELECT 1"))
-                            elif self._db_type == 'postgresql':
-                                conn.execute(text("SELECT 1"))
-                        
-                        # 接続テストに成功した場合
-                        success_msg = f"{self._db_type} データベース '{self._db_name}' への再接続に成功しました"
-                        self.emit_log("INFO", success_msg)
-                        return True, success_msg
-                        
-                    except Exception as test_error:
-                        self.emit_log("ERROR", f"データベース接続テストに失敗: {test_error}")
-                        return False, f"接続テストに失敗しました: {test_error}"
+            if new_db_config:
+                # フォールバックなしで接続を試行
+                success, message = self.connect_without_fallback(new_db_config)
+                if success:
+                    self.emit_log("INFO", f"データベースへの再接続に成功しました: {self._db_type}")
+                    return True, f"再接続に成功しました: {self._db_type}"
                 else:
-                    error_msg = "データベースエンジンの初期化に失敗しました"
+                    self.emit_log("ERROR", f"データベースへの再接続に失敗しました: {message}")
+                    return False, f"再接続に失敗しました: {message}"
+            else:
+                # 設定が提供されていない場合は現在の設定で再接続
+                try:
+                    self.connect()
+                    
+                    # 最終的な接続状態を確認
+                    if self.engine is not None:
+                        try:
+                            # 実際に接続をテスト
+                            with self.engine.connect() as conn:
+                                # 簡単な接続テスト
+                                if self._db_type == 'sqlite':
+                                    conn.execute(text("SELECT 1"))
+                                elif self._db_type == 'mysql':
+                                    conn.execute(text("SELECT 1"))
+                                elif self._db_type == 'postgresql':
+                                    conn.execute(text("SELECT 1"))
+                            
+                            # 接続テストに成功した場合
+                            success_msg = f"{self._db_type} データベース '{self._db_name}' への再接続に成功しました"
+                            self.emit_log("INFO", success_msg)
+                            return True, success_msg
+                            
+                        except Exception as test_error:
+                            self.emit_log("ERROR", f"データベース接続テストに失敗: {test_error}")
+                            return False, f"接続テストに失敗しました: {test_error}"
+                    else:
+                        error_msg = "データベースエンジンの初期化に失敗しました"
+                        self.emit_log("ERROR", error_msg)
+                        return False, error_msg
+
+                except Exception as connect_error:
+                    error_msg = f"データベース再接続に失敗: {connect_error}"
                     self.emit_log("ERROR", error_msg)
                     return False, error_msg
-
-            except Exception as connect_error:
-                error_msg = f"データベース再接続に失敗: {connect_error}"
-                self.emit_log("ERROR", error_msg)
-                return False, error_msg
 
         except Exception as e:
             critical_error_msg = f"データベース再接続処理中に予期しないエラー: {e}"
@@ -1547,3 +1608,198 @@ class DatabaseManager(LoggerMixin):
         既存のbulk_insertメソッドの最適化版
         """
         return self.upsert_records(table_name, records, primary_keys)
+
+    def _connect_postgresql_with_result(self, db_config: dict) -> tuple[bool, str]:
+        """
+        PostgreSQL接続（戻り値付き、フォールバックなし）
+        
+        Args:
+            db_config: データベース設定辞書
+            
+        Returns:
+            (接続成功フラグ, メッセージ)
+        """
+        import urllib.parse
+
+        host = db_config.get('host', 'localhost')
+        try:
+            port = int(db_config.get('port', 5432)) if db_config.get('port') else 5432
+        except (ValueError, TypeError):
+            port = 5432
+        
+        username = db_config.get('username', 'postgres')
+        password = db_config.get('password', '')
+        database = db_config.get('database') or db_config.get('db_name', 'jra_data')
+
+        self._db_name = database
+
+        # 強化されたUnicodeエンコーディング処理
+        try:
+            # 文字列の安全な正規化
+            username = str(username).strip() if username else 'postgres'
+            password = str(password).strip() if password else ''
+            database = str(database).strip() if database else 'jra_data'
+            host = str(host).strip() if host else 'localhost'
+
+            # UTF-8エンコーディングの確認と修正
+            username = username.encode('utf-8', errors='replace').decode('utf-8')
+            password = password.encode('utf-8', errors='replace').decode('utf-8')
+            database = database.encode('utf-8', errors='replace').decode('utf-8')
+
+            # URLエンコーディング（safe文字を明示的に指定）
+            username_encoded = urllib.parse.quote(username, safe='', encoding='utf-8')
+            password_encoded = urllib.parse.quote(password, safe='', encoding='utf-8')
+            database_encoded = urllib.parse.quote(database, safe='', encoding='utf-8')
+
+        except Exception as encoding_error:
+            error_msg = f"PostgreSQL接続パラメータのエンコーディングエラー: {encoding_error}"
+            self.emit_log("ERROR", error_msg)
+            return False, error_msg
+
+        # 接続文字列の生成
+        import platform
+        if platform.system() == 'Windows':
+            if host in ['localhost', '127.0.0.1']:
+                host = '127.0.0.1'
+
+        connection_attempts = [
+            f"postgresql+psycopg2://{username_encoded}:{password_encoded}@{host}:{port}/{database_encoded}?client_encoding=utf8",
+            f"postgresql://{username_encoded}:{password_encoded}@{host}:{port}/{database_encoded}?client_encoding=utf8"
+        ]
+
+        for attempt_num, connection_string in enumerate(connection_attempts, 1):
+            try:
+                self.emit_log("INFO", f"PostgreSQL接続試行 {attempt_num}: {connection_string.replace(password_encoded, '***')}")
+
+                # SQLAlchemy接続オプションでUnicode対応を強化
+                connect_args = {
+                    'client_encoding': 'utf8',
+                    'application_name': 'JRA-Data-Collector',
+                    'connect_timeout': 30
+                }
+
+                self.engine = create_engine(
+                    connection_string,
+                    echo=False,
+                    connect_args=connect_args,
+                    pool_pre_ping=True,
+                    pool_recycle=3600
+                )
+
+                # 接続をテスト
+                with self.engine.connect() as connection:
+                    result = connection.execute(text("SELECT version()"))
+                    version_info = result.fetchone()[0]
+                    self.emit_log("INFO", f"PostgreSQL接続成功（試行{attempt_num}）: {version_info[:100]}...")
+
+                self.Session = sessionmaker(bind=self.engine)
+                return True, f"PostgreSQL接続に成功しました: {database}"
+
+            except Exception as e:
+                error_msg = f"PostgreSQL接続試行{attempt_num}でエラー: {e}"
+                self.emit_log("WARNING", error_msg)
+                if attempt_num == len(connection_attempts):
+                    # 最後の試行も失敗した場合
+                    return False, f"PostgreSQL接続に失敗しました: {e}"
+                continue
+
+        # ここには到達しないはずだが、安全のため
+        return False, "PostgreSQL接続の全ての試行が失敗しました"
+
+    def _connect_sqlite_with_result(self, db_config: dict) -> tuple[bool, str]:
+        """
+        SQLite接続（戻り値付き）
+        
+        Args:
+            db_config: データベース設定辞書
+            
+        Returns:
+            (接続成功フラグ, メッセージ)
+        """
+        try:
+            import os
+            # ベースパス取得
+            db_path = db_config.get('path', db_config.get('db_name', 'jra_data.db'))
+            
+            # 相対パスの場合は絶対パスに変換
+            if not os.path.isabs(db_path):
+                db_path = os.path.join(os.getcwd(), db_path)
+            
+            # ディレクトリが存在しない場合は作成
+            db_dir = os.path.dirname(db_path)
+            if db_dir and not os.path.exists(db_dir):
+                os.makedirs(db_dir, exist_ok=True)
+                self.emit_log("INFO", f"SQLiteディレクトリを作成: {db_dir}")
+
+            self._db_name = db_path
+            self.emit_log("INFO", f"SQLite接続を試行: {db_path}")
+
+            self.engine = create_engine(f'sqlite:///{db_path}', echo=False)
+
+            # 接続テスト
+            with self.engine.connect() as connection:
+                connection.execute(text("SELECT 1"))
+                self.emit_log("INFO", f"SQLite接続成功: {db_path}")
+
+            self.Session = sessionmaker(bind=self.engine)
+            return True, f"SQLite接続に成功しました: {db_path}"
+
+        except Exception as e:
+            error_msg = f"SQLite接続に失敗しました: {e}"
+            self.emit_log("ERROR", error_msg)
+            return False, error_msg
+
+    def _connect_mysql_with_result(self, db_config: dict) -> tuple[bool, str]:
+        """
+        MySQL接続（戻り値付き、フォールバックなし）
+        
+        Args:
+            db_config: データベース設定辞書
+            
+        Returns:
+            (接続成功フラグ, メッセージ)
+        """
+        import urllib.parse
+
+        host = db_config.get('host', 'localhost')
+        try:
+            port = int(db_config.get('port', 3306)) if db_config.get('port') else 3306
+        except (ValueError, TypeError):
+            port = 3306
+        
+        username = db_config.get('username', 'root')
+        password = db_config.get('password', '')
+        database = db_config.get('database') or db_config.get('db_name', 'jra_data')
+
+        self._db_name = database
+
+        try:
+            # URLエンコーディング
+            username_encoded = urllib.parse.quote(username, safe='', encoding='utf-8')
+            password_encoded = urllib.parse.quote(password, safe='', encoding='utf-8')
+            database_encoded = urllib.parse.quote(database, safe='', encoding='utf-8')
+
+            connection_string = f"mysql+pymysql://{username_encoded}:{password_encoded}@{host}:{port}/{database_encoded}?charset=utf8mb4"
+            
+            self.emit_log("INFO", f"MySQL接続を試行: {connection_string.replace(password_encoded, '***')}")
+
+            self.engine = create_engine(
+                connection_string,
+                echo=False,
+                pool_pre_ping=True,
+                pool_recycle=3600
+            )
+
+            # 接続をテスト
+            with self.engine.connect() as connection:
+                result = connection.execute(text("SELECT VERSION()"))
+                version_info = result.fetchone()[0]
+                self.emit_log("INFO", f"MySQL接続成功: {version_info}")
+
+            self.Session = sessionmaker(bind=self.engine)
+            return True, f"MySQL接続に成功しました: {database}"
+
+        except Exception as e:
+            error_msg = f"MySQL接続に失敗しました: {e}"
+            self.emit_log("ERROR", error_msg)
+            return False, error_msg
