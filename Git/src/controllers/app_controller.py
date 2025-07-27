@@ -359,8 +359,20 @@ class AppController(QObject):
 
     def start_setup_data_acquisition(self):
         """
-        セットアップデータ取得を開始
+        セットアップデータ取得を開始（従来のメソッド - 下位互換性のため）
         JVOpen option=4 (セットアップデータ)
+        """
+        # デフォルトのデータ種別でセットアップを実行
+        default_data_types = ["RACE", "SE", "HR", "KS"]
+        return self.start_setup_data_acquisition_with_types("19860101", default_data_types)
+    
+    def start_setup_data_acquisition_with_types(self, from_date: str, selected_data_types: list):
+        """
+        指定されたデータ種別でセットアップデータ取得を開始
+        
+        Args:
+            from_date: 取得開始日（YYYYMMDD形式）
+            selected_data_types: 取得するデータ種別のリスト
         """
         # JV-Link初期化チェック
         if not self.jvlink_manager.is_initialized():
@@ -371,35 +383,46 @@ class AppController(QObject):
         if not self.jvlink_manager.can_start_data_operation():
             error_msg = f"データ取得を開始できません。現在の状態: {
                 self.jvlink_manager.current_state.value}"
-            logging.error(error_msg)
-            if hasattr(self.main_window, 'statusBar'):
-                self.main_window.statusBar().showMessage(error_msg, 5000)
+            self.emit_log("ERROR", error_msg)
+            self._show_status_message(error_msg, 5000)
             return False
 
         try:
-            logging.info("セットアップデータ取得を開始します。")
-            if hasattr(self.main_window, 'statusBar'):
-                self.main_window.statusBar().showMessage("セットアップデータ取得を開始しています...", 0)
+            self.emit_log("INFO", f"セットアップデータ取得を開始: 開始日={from_date}, データ種別={selected_data_types}")
+            self._show_status_message("セットアップデータ取得を開始しています...", 0)
 
-            # オプション4（セットアップデータ）でデータ取得
+            # オプション4（セットアップデータ）で選択されたデータ種別を取得
+            # from_dateが指定されている場合は開始日として使用、空の場合は全期間
+            formatted_date = f"{from_date}000000" if from_date else ""
+            
             self.jvlink_manager.get_data_async(
                 option=4,
-                from_date="",  # セットアップは全期間
-                data_spec_list=["RACE", "SE", "HR", "KS"]  # 基本的なデータ種別
+                from_date=formatted_date,
+                data_spec_list=selected_data_types
             )
             return True
 
         except Exception as e:
-            logging.error(f"セットアップデータ取得開始エラー: {e}")
-            if hasattr(self.main_window, 'statusBar'):
-                self.main_window.statusBar().showMessage(
-                    f"セットアップデータ取得開始エラー: {e}", 5000)
+            error_msg = f"セットアップデータ取得開始エラー: {e}"
+            self.emit_log("ERROR", error_msg)
+            self._show_status_message(error_msg, 5000)
             return False
 
     def start_differential_data_acquisition(self):
         """
-        差分データ取得を開始
+        差分データ取得を開始（従来のメソッド - 下位互換性のため）
         JVOpen option=1 (差分データ)
+        """
+        # デフォルトのデータ種別で差分更新を実行
+        default_data_types = ["RACE", "SE", "HR", "KS"]
+        return self.start_differential_data_acquisition_with_types(default_data_types)
+    
+    def start_differential_data_acquisition_with_types(self, selected_data_types: list):
+        """
+        指定されたデータ種別で差分データ取得を開始
+        
+        Args:
+            selected_data_types: 取得するデータ種別のリスト（例: ["RACE", "SE", "HR"]）
         """
         # JV-Link初期化チェック
         if not self.jvlink_manager.is_initialized():
@@ -410,56 +433,136 @@ class AppController(QObject):
         if not self.jvlink_manager.can_start_data_operation():
             error_msg = f"データ取得を開始できません。現在の状態: {
                 self.jvlink_manager.current_state.value}"
-            logging.error(error_msg)
-            if hasattr(self.main_window, 'statusBar'):
-                self.main_window.statusBar().showMessage(error_msg, 5000)
+            self.emit_log("ERROR", error_msg)
+            self._show_status_message(error_msg, 5000)
             return False
 
         try:
             # 最終更新タイムスタンプを取得
             last_timestamp = self.settings_manager.get_last_file_timestamp()
             if not last_timestamp:
-                warning_msg = "最終更新タイムスタンプが設定されていません。まずセットアップデータを取得することを推奨します。"
-                logging.warning(warning_msg)
-                if hasattr(self.main_window, 'statusBar'):
-                    self.main_window.statusBar().showMessage(warning_msg, 5000)
+                self.emit_log("WARNING", "最終更新タイムスタンプが未設定のため、全データを取得します")
                 last_timestamp = ""
 
-            logging.info(f"差分データ取得を開始します。開始タイムスタンプ: {last_timestamp}")
-            if hasattr(self.main_window, 'statusBar'):
-                self.main_window.statusBar().showMessage("差分データ取得を開始しています...", 0)
+            self.emit_log("INFO", f"差分データ取得を開始: タイムスタンプ={last_timestamp}, データ種別={selected_data_types}")
+            self._show_status_message("差分データ取得を開始しています...", 0)
 
-            # オプション1（差分データ）でデータ取得
+            # オプション1（差分データ）で選択されたデータ種別を取得
             self.jvlink_manager.get_data_async(
                 option=1,
                 from_date=last_timestamp,
-                data_spec_list=["RACE", "SE", "HR", "KS"]
+                data_spec_list=selected_data_types
             )
             return True
 
         except Exception as e:
-            logging.error(f"差分データ取得開始エラー: {e}")
-            if hasattr(self.main_window, 'statusBar'):
-                self.main_window.statusBar().showMessage(
-                    f"差分データ取得開始エラー: {e}", 5000)
+            error_msg = f"差分データ取得開始エラー: {e}"
+            self.emit_log("ERROR", error_msg)
+            self._show_status_message(error_msg, 5000)
             return False
 
     # === 設定変更通知の処理（新機能）===
 
     @Slot(dict)
     def on_database_config_updated(self, db_config: dict):
-        logging.info("データベース設定変更を検知しました。ダッシュボードを更新します。")
+        """
+        データベース設定変更通知を受信し、再接続とUI更新を実行
+        
+        Args:
+            db_config: 更新されたデータベース設定辞書
+        """
+        self.emit_log("INFO", f"データベース設定変更を検知: {db_config.get('type', 'Unknown')} データベース")
+        
         try:
-            if self.db_manager:
-                self.db_manager.close()
-            self.db_manager = DatabaseManager(self.settings_manager)
-            self._update_dashboard_db_info()
-            if hasattr(self.main_window, 'statusBar'):
-                self.main_window.statusBar().showMessage("データベース設定が更新されました。", 3000)
+            if not self.db_manager:
+                # DatabaseManagerが存在しない場合は新規作成
+                self.emit_log("INFO", "DatabaseManagerを新規作成します")
+                self.db_manager = DatabaseManager(self.settings_manager)
+                self._update_dashboard_db_info()
+                self._show_status_message("データベースマネージャーを初期化しました。", 3000)
+                return
+
+            # 既存のDatabaseManagerで再接続を試行
+            self.emit_log("INFO", "既存のDatabaseManagerで再接続を実行中...")
+            success, message = self.db_manager.reconnect(db_config)
+            
+            if success:
+                # 再接続成功時の処理
+                self.emit_log("INFO", f"データベース再接続成功: {message}")
+                
+                # ダッシュボードのDB情報を更新
+                self._update_dashboard_db_info()
+                
+                # 必要に応じてテーブル作成
+                self._ensure_database_tables()
+                
+                # 成功メッセージを表示
+                self._show_status_message("データベース設定が正常に更新されました。", 3000)
+                
+                # データサマリーも更新
+                try:
+                    summary = self.db_manager.get_data_summary()
+                    if hasattr(self.main_window, 'dashboard_view'):
+                        self.main_window.dashboard_view.update_dashboard_summary(summary)
+                except Exception as summary_error:
+                    self.emit_log("WARNING", f"データサマリー更新エラー: {summary_error}")
+                
+            else:
+                # 再接続失敗時の処理
+                self.emit_log("ERROR", f"データベース再接続失敗: {message}")
+                
+                # エラー状態をダッシュボードに反映
+                error_info = {
+                    'connected': False,
+                    'type': db_config.get('type', 'エラー'),
+                    'name': 'N/A',
+                    'tables_count': 0,
+                    'last_updated': 'エラー'
+                }
+                
+                if hasattr(self.main_window, 'dashboard_view'):
+                    self.main_window.dashboard_view.update_db_info(error_info)
+                
+                # エラーメッセージを表示
+                self._show_status_message(f"データベース設定更新エラー: {message}", 8000)
+                
         except Exception as e:
-            logging.error(f"データベース設定更新中にエラー: {e}")
-            if hasattr(self.main_window, 'statusBar'):
-                self.main_window.statusBar().showMessage(f"エラー: データベース設定更新に失敗しました。", 5000)
+            critical_error_msg = f"データベース設定更新処理中に予期しないエラー: {e}"
+            self.emit_log("ERROR", critical_error_msg)
+            
+            # クリティカルエラー時のフォールバック処理
+            try:
+                # DatabaseManagerを再作成
+                self.db_manager = DatabaseManager(self.settings_manager)
+                self._update_dashboard_db_info()
+                self._show_status_message("データベースマネージャーを再作成しました。", 5000)
+                
+            except Exception as fallback_error:
+                self.emit_log("CRITICAL", f"フォールバック処理も失敗: {fallback_error}")
+                self._show_status_message(f"データベース設定更新に失敗しました: {e}", 10000)
+
+    def _ensure_database_tables(self):
+        """
+        データベーステーブルの存在を確認し、必要に応じて作成
+        """
+        try:
+            if self.db_manager and self.db_manager.engine:
+                from ..models.tables import Base
+                Base.metadata.create_all(self.db_manager.engine)
+                self.emit_log("INFO", "データベーステーブルの初期化が完了しました")
+        except Exception as e:
+            self.emit_log("WARNING", f"テーブル作成エラー: {e}")
+
+    def _show_status_message(self, message: str, timeout: int = 5000):
+        """
+        ステータスバーにメッセージを表示（ヘルパーメソッド）
+        
+        Args:
+            message: 表示するメッセージ
+            timeout: 表示時間（ミリ秒）
+        """
+        if hasattr(self.main_window, 'statusBar'):
+            self.main_window.statusBar().showMessage(message, timeout)
 
     @Slot()
     def on_settings_saved(self):
@@ -476,59 +579,115 @@ class AppController(QObject):
 
     def _update_dashboard_db_info(self):
         """
-        修正点4: ダッシュボードのデータベース接続情報を更新
+        ダッシュボードのデータベース接続情報を更新（強化版）
+        設定変更後の接続状態確認とUI反映を行う
         """
         try:
-            if not self.db_manager or not hasattr(
-                    self.main_window, 'dashboard_view'):
+            if not hasattr(self.main_window, 'dashboard_view'):
+                self.emit_log("WARNING", "ダッシュボードビューが見つかりません")
                 return
 
-            # データベース接続状態を取得
-            db_type = self.db_manager.get_db_type()
-            db_name = self.db_manager.get_db_name()
+            if not self.db_manager:
+                # DatabaseManagerが存在しない場合
+                self.emit_log("WARNING", "DatabaseManagerが存在しません")
+                offline_info = {
+                    'connected': False,
+                    'type': 'オフライン',
+                    'name': '未接続',
+                    'tables_count': 0,
+                    'last_updated': datetime.now().isoformat()
+                }
+                self.main_window.dashboard_view.update_db_info(offline_info)
+                return
 
-            # 接続テストを実行（ダイアログなし）
-            db_config = self.settings_manager.get_db_config()
-            is_connected, _ = self.db_manager.test_connection(
-                db_config, show_create_dialog=False)
+            # データベース基本情報を取得
+            db_type = self.db_manager.get_db_type() or 'Unknown'
+            db_name = self.db_manager.get_db_name() or 'Unknown'
+            
+            self.emit_log("INFO", f"ダッシュボードDB情報更新: {db_type} - {db_name}")
 
-            # テーブル数を取得
+            # 接続状態の確認
+            is_connected = False
+            error_message = ""
+            
+            try:
+                if self.db_manager.engine:
+                    # エンジンが存在する場合は簡単な接続テストを実行
+                    with self.db_manager.engine.connect() as conn:
+                        # データベース種別に応じたテストクエリ
+                        if db_type.lower() == 'sqlite':
+                            conn.execute(text("SELECT sqlite_version()"))
+                        elif db_type.lower() == 'mysql':
+                            conn.execute(text("SELECT VERSION()"))
+                        elif db_type.lower() == 'postgresql':
+                            conn.execute(text("SELECT version()"))
+                        else:
+                            conn.execute(text("SELECT 1"))
+                    
+                    is_connected = True
+                    self.emit_log("INFO", f"データベース接続確認成功: {db_type}")
+                    
+                else:
+                    error_message = "データベースエンジンが初期化されていません"
+                    self.emit_log("WARNING", error_message)
+                    
+            except Exception as conn_error:
+                error_message = f"データベース接続テストエラー: {conn_error}"
+                self.emit_log("WARNING", error_message)
+                is_connected = False
+
+            # テーブル数とデータサマリーを取得
             tables_count = 0
+            data_summary = {}
+            
             if is_connected:
                 try:
-                    summary = self.db_manager.get_data_summary()
-                    tables_count = len(summary) if summary else 0
-                except Exception as e:
-                    logging.warning(f"テーブル数取得エラー: {e}")
+                    data_summary = self.db_manager.get_data_summary()
+                    tables_count = len(data_summary) if data_summary else 0
+                    self.emit_log("INFO", f"データサマリー取得成功: {tables_count}テーブル")
+                    
+                except Exception as summary_error:
+                    error_message = f"データサマリー取得エラー: {summary_error}"
+                    self.emit_log("WARNING", error_message)
 
             # ダッシュボード用のDB情報を構築
             db_info = {
                 'connected': is_connected,
-                'type': db_type if db_type else 'N/A',
-                'name': db_name if db_name else 'N/A',
+                'type': db_type,
+                'name': db_name,
                 'tables_count': tables_count,
-                'last_updated': datetime.now().isoformat()
+                'last_updated': datetime.now().isoformat(),
+                'error_message': error_message if error_message else None
             }
 
             # ダッシュボードを更新
             self.main_window.dashboard_view.update_db_info(db_info)
+            
+            # データサマリーも更新（接続されている場合）
+            if is_connected and data_summary:
+                self.main_window.dashboard_view.update_dashboard_summary(data_summary)
 
-            logging.info(f"ダッシュボードDB情報更新完了: {db_type} ({db_name})")
+            self.emit_log("INFO", f"ダッシュボードDB情報更新完了: {db_type} ({db_name}) - 接続状態: {is_connected}")
 
         except Exception as e:
-            logging.error(f"ダッシュボードDB情報更新エラー: {e}")
+            critical_error_msg = f"ダッシュボードDB情報更新で予期しないエラー: {e}"
+            self.emit_log("ERROR", critical_error_msg)
 
-            # エラー時も基本情報だけは表示
-            error_info = {
+            # クリティカルエラー時のフォールバック情報
+            fallback_info = {
                 'connected': False,
-                'type': 'エラー',
+                'type': 'システムエラー',
                 'name': 'N/A',
                 'tables_count': 0,
-                'last_updated': 'エラー'
+                'last_updated': datetime.now().isoformat(),
+                'error_message': str(e)
             }
 
-            if hasattr(self.main_window, 'dashboard_view'):
-                self.main_window.dashboard_view.update_db_info(error_info)
+            try:
+                if hasattr(self.main_window, 'dashboard_view'):
+                    self.main_window.dashboard_view.update_db_info(fallback_info)
+            except Exception as fallback_error:
+                self.emit_log("CRITICAL", f"フォールバック情報更新も失敗: {fallback_error}")
 
     def handle_db_connection_success(self):
         """
@@ -728,48 +887,158 @@ class AppController(QObject):
 
     def show_setup_dialog(self):
         """
-        セットアップデータ取得ダイアログを表示（または直接実行）
+        セットアップデータ取得設定ダイアログを表示
+        ユーザーが日付とデータ種別を選択してからデータ取得を開始
         """
-        logging.info("セットアップデータ取得を開始します。")
+        self.emit_log("INFO", "セットアップデータ取得設定ダイアログを表示します")
 
-        # 確認ダイアログを表示
-        from PyQt5.QtWidgets import QMessageBox
-        reply = QMessageBox.question(
-            self.main_window,
-            'セットアップデータ取得',
-            'セットアップデータの取得を開始しますか？\n\n'
-            '※ 大量のデータをダウンロードするため、時間がかかる場合があります。',
-            QMessageBox.Yes | QMessageBox.No,
-            QMessageBox.No
-        )
-
-        if reply == QMessageBox.Yes:
-            return self.start_setup_data_acquisition()
-        else:
-            logging.info("セットアップデータ取得がキャンセルされました。")
+        try:
+            # 新しいデータ選択ダイアログを表示
+            from ..views.data_selection_dialog import DataSelectionDialog
+            
+            dialog = DataSelectionDialog(mode="setup", parent=self.main_window)
+            
+            if dialog.exec() == QDialog.Accepted:
+                # ダイアログでOKが選択された場合
+                selection_summary = dialog.get_selection_summary()
+                start_date = selection_summary.get("start_date", "")
+                selected_data_types = selection_summary.get("data_types", [])
+                
+                self.emit_log("INFO", f"セットアップデータ取得設定完了: 開始日={start_date}, データ種別={len(selected_data_types)}種類")
+                
+                if not selected_data_types:
+                    self._show_status_message("データ種別が選択されていません。", 5000)
+                    return False
+                
+                # 選択内容の確認ダイアログ
+                data_names = [DataSelectionDialog.get_data_type_name(dt) for dt in selected_data_types]
+                confirmation_text = (
+                    f"以下の設定でセットアップデータ取得を開始しますか？\n\n"
+                    f"開始日: {start_date}\n"
+                    f"データ種別: {', '.join(data_names[:5])}"
+                    f"{'...' if len(data_names) > 5 else ''} "
+                    f"(合計{len(data_names)}種類)\n\n"
+                    f"※ 大量のデータをダウンロードするため、時間がかかる場合があります。"
+                )
+                
+                from PyQt5.QtWidgets import QMessageBox
+                reply = QMessageBox.question(
+                    self.main_window,
+                    'セットアップデータ取得確認',
+                    confirmation_text,
+                    QMessageBox.Yes | QMessageBox.No,
+                    QMessageBox.No
+                )
+                
+                if reply == QMessageBox.Yes:
+                    # セットアップデータ取得を開始
+                    return self.start_full_setup(start_date, selected_data_types)
+                else:
+                    self.emit_log("INFO", "ユーザーによりセットアップデータ取得がキャンセルされました")
+                    return False
+            else:
+                # ダイアログでキャンセルが選択された場合
+                self.emit_log("INFO", "セットアップデータ取得設定がキャンセルされました")
+                return False
+                
+        except Exception as e:
+            error_msg = f"セットアップデータ取得設定中にエラー: {e}"
+            self.emit_log("ERROR", error_msg)
+            self._show_status_message(f"設定エラー: {e}", 8000)
             return False
 
     def start_diff_update(self):
         """
-        差分データ更新を開始する（ダッシュボードボタンから呼び出し）
+        差分データ更新設定ダイアログを表示
+        ユーザーがデータ種別を選択してから差分更新を開始
         """
-        logging.info("差分データ更新を開始します。")
-        return self.start_differential_data_acquisition()
+        self.emit_log("INFO", "差分データ更新設定ダイアログを表示します")
+
+        try:
+            # 新しいデータ選択ダイアログを表示
+            from ..views.data_selection_dialog import DataSelectionDialog
+            
+            dialog = DataSelectionDialog(mode="differential", parent=self.main_window)
+            
+            if dialog.exec() == QDialog.Accepted:
+                # ダイアログでOKが選択された場合
+                selection_summary = dialog.get_selection_summary()
+                selected_data_types = selection_summary.get("data_types", [])
+                
+                self.emit_log("INFO", f"差分データ更新設定完了: データ種別={len(selected_data_types)}種類")
+                
+                if not selected_data_types:
+                    self._show_status_message("データ種別が選択されていません。", 5000)
+                    return False
+                
+                # 最終更新タイムスタンプを取得
+                last_timestamp = self.settings_manager.get_last_file_timestamp()
+                if not last_timestamp:
+                    warning_msg = "最終更新タイムスタンプが設定されていません。まずセットアップデータを取得することを推奨します。"
+                    self.emit_log("WARNING", warning_msg)
+                    
+                    from PyQt5.QtWidgets import QMessageBox
+                    reply = QMessageBox.question(
+                        self.main_window,
+                        '差分更新確認',
+                        f"{warning_msg}\n\n続行しますか？",
+                        QMessageBox.Yes | QMessageBox.No,
+                        QMessageBox.No
+                    )
+                    
+                    if reply != QMessageBox.Yes:
+                        return False
+                    
+                    last_timestamp = ""  # 空の場合は全データ取得
+                
+                # 選択内容の確認
+                data_names = [DataSelectionDialog.get_data_type_name(dt) for dt in selected_data_types]
+                confirmation_text = (
+                    f"以下の設定で差分データ更新を開始しますか？\n\n"
+                    f"最終更新: {last_timestamp or '未設定（全データ取得）'}\n"
+                    f"データ種別: {', '.join(data_names[:5])}"
+                    f"{'...' if len(data_names) > 5 else ''} "
+                    f"(合計{len(data_names)}種類)"
+                )
+                
+                from PyQt5.QtWidgets import QMessageBox
+                reply = QMessageBox.question(
+                    self.main_window,
+                    '差分データ更新確認',
+                    confirmation_text,
+                    QMessageBox.Yes | QMessageBox.No,
+                    QMessageBox.Yes  # 差分更新はデフォルトでYes
+                )
+                
+                if reply == QMessageBox.Yes:
+                    # 差分データ取得を開始
+                    return self.start_differential_data_acquisition_with_types(selected_data_types)
+                else:
+                    self.emit_log("INFO", "ユーザーにより差分データ更新がキャンセルされました")
+                    return False
+            else:
+                # ダイアログでキャンセルが選択された場合
+                self.emit_log("INFO", "差分データ更新設定がキャンセルされました")
+                return False
+                
+        except Exception as e:
+            error_msg = f"差分データ更新設定中にエラー: {e}"
+            self.emit_log("ERROR", error_msg)
+            self._show_status_message(f"設定エラー: {e}", 8000)
+            return False
 
     def start_full_setup(self, from_date: str, selected_data_types: list):
         """
         「一括データを取得」の処理を開始する
+        
         Args:
-            from_date: 取得開始日
+            from_date: 取得開始日（YYYYMMDD形式）
             selected_data_types: 取得するデータ種別のリスト
         """
-        # State Machineを使用して処理開始
-        params = {
-            'from_date': from_date + "000000",
-            'data_spec_list': selected_data_types,
-            'option': 3  # セットアップ
-        }
-        self.request_start(params)
+        self.emit_log("INFO", f"一括データ取得を開始: 開始日={from_date}, データ種別数={len(selected_data_types)}")
+        
+        # 新しいセットアップメソッドを使用
+        return self.start_setup_data_acquisition_with_types(from_date, selected_data_types)
 
     # === State Machineとの互換性のための補助メソッド ===
 

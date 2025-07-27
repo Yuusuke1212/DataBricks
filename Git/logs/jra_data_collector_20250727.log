@@ -42,3 +42,117 @@
 2025-07-27 08:57:41 [ WARNING] root:1115 - データベースにデータが存在しません。まずセットアップまたは差分データを取得してください。
 2025-07-27 08:57:41 [    INFO] root:1143 - 速報イベントの監視停止を指示します。
 2025-07-27 08:57:41 [ WARNING] root:534 - 速報イベントは監視されていません。
+2025-07-27 09:30:58,522 [INFO] root - ============================================================
+2025-07-27 09:30:58,524 [INFO] root - 🚀 JRA-Data Collector アプリケーション起動
+2025-07-27 09:30:58,524 [INFO] root - 📝 ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 09:30:58,524 [INFO] root - 🖥️  Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 09:30:58,524 [INFO] root - 📂 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 09:30:58,524 [INFO] root - ============================================================
+2025-07-27 09:30:58,525 [INFO] root - 🚀 JRA-Data Collector エントリーポイント開始
+2025-07-27 09:30:58,528 [INFO] root - 🔒 非管理者権限で実行中。昇格を試みます
+2025-07-27 09:30:58,529 [INFO] root - 管理者権限昇格を実行します...
+2025-07-27 09:30:58,529 [INFO] root - 管理者権限を要求しています...
+2025-07-27 09:30:58,529 [INFO] root - 再起動対象: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py
+2025-07-27 09:30:58,529 [INFO] root - 引数: 
+2025-07-27 09:31:00,703 [INFO] root - 管理者権限での再起動を開始しました。現在のプロセスを終了します。
+2025-07-27 09:31:00,849 [INFO] root - ============================================================
+2025-07-27 09:31:00,849 [INFO] root - 🚀 JRA-Data Collector アプリケーション起動
+2025-07-27 09:31:00,850 [INFO] root - 📝 ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 09:31:00,850 [INFO] root - 🖥️  Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 09:31:00,851 [INFO] root - 📂 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 09:31:00,851 [INFO] root - ============================================================
+2025-07-27 09:31:00,851 [INFO] root - 🚀 JRA-Data Collector エントリーポイント開始
+2025-07-27 09:31:00,860 [INFO] root - 🔐 管理者権限で実行中です
+2025-07-27 09:31:00,867 [INFO] root - 📊 実行環境: 64bit Python, PID: 15560
+2025-07-27 09:31:00,867 [INFO] root - 🎯 管理者権限でアプリケーション初期化を開始します
+2025-07-27 09:31:00,916 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 09:31:00,916 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 09:31:00,916 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 09:31:00,916 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 09:31:00,916 [INFO] root - ProgID 'JVDTLab.JVLink' のCLSID: {2AB1774D-0C41-11D7-916F-0003479BEB3F} (preferred レジストリビューで発見)
+2025-07-27 09:31:00,917 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 09:31:00,917 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 09:31:00,917 [INFO] root - CLSID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' は preferred レジストリビューに登録されています
+2025-07-27 09:31:00,917 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 09:31:00,917 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 09:31:00,917 [INFO] root - CLSID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' のAppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F} (preferred レジストリビューで発見)
+2025-07-27 09:31:00,917 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 09:31:00,918 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 09:31:00,918 [INFO] root - AppID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' のDllSurrogate: '' (preferred レジストリビューで発見)
+2025-07-27 09:31:00,918 [INFO] root - 🚀 メインGUIアプリケーションを起動します
+2025-07-27 09:31:30,737 [INFO] root - ============================================================
+2025-07-27 09:31:30,737 [INFO] root - 🚀 JRA-Data Collector アプリケーション起動
+2025-07-27 09:31:30,737 [INFO] root - 📝 ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 09:31:30,737 [INFO] root - 🖥️  Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 09:31:30,738 [INFO] root - 📂 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 09:31:30,738 [INFO] root - ============================================================
+2025-07-27 09:31:30,738 [INFO] root - 🚀 JRA-Data Collector エントリーポイント開始
+2025-07-27 09:31:30,741 [INFO] root - 🔒 非管理者権限で実行中。昇格を試みます
+2025-07-27 09:31:30,742 [INFO] root - 管理者権限昇格を実行します...
+2025-07-27 09:31:30,742 [INFO] root - 管理者権限を要求しています...
+2025-07-27 09:31:30,742 [INFO] root - 再起動対象: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py
+2025-07-27 09:31:30,742 [INFO] root - 引数: 
+2025-07-27 09:31:32,592 [INFO] root - 管理者権限での再起動を開始しました。現在のプロセスを終了します。
+2025-07-27 09:31:32,696 [INFO] root - ============================================================
+2025-07-27 09:31:32,696 [INFO] root - 🚀 JRA-Data Collector アプリケーション起動
+2025-07-27 09:31:32,697 [INFO] root - 📝 ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 09:31:32,697 [INFO] root - 🖥️  Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 09:31:32,697 [INFO] root - 📂 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 09:31:32,697 [INFO] root - ============================================================
+2025-07-27 09:31:32,697 [INFO] root - 🚀 JRA-Data Collector エントリーポイント開始
+2025-07-27 09:31:32,707 [INFO] root - 🔐 管理者権限で実行中です
+2025-07-27 09:31:32,707 [INFO] root - 📊 実行環境: 64bit Python, PID: 6964
+2025-07-27 09:31:32,707 [INFO] root - 🎯 管理者権限でアプリケーション初期化を開始します
+2025-07-27 09:31:32,769 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 09:31:32,769 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 09:31:32,769 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 09:31:32,769 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 09:31:32,770 [INFO] root - ProgID 'JVDTLab.JVLink' のCLSID: {2AB1774D-0C41-11D7-916F-0003479BEB3F} (preferred レジストリビューで発見)
+2025-07-27 09:31:32,770 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 09:31:32,770 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 09:31:32,770 [INFO] root - CLSID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' は preferred レジストリビューに登録されています
+2025-07-27 09:31:32,770 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 09:31:32,770 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 09:31:32,770 [INFO] root - CLSID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' のAppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F} (preferred レジストリビューで発見)
+2025-07-27 09:31:32,771 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 09:31:32,771 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 09:31:32,771 [INFO] root - AppID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' のDllSurrogate: '' (preferred レジストリビューで発見)
+2025-07-27 09:31:32,771 [INFO] root - 🚀 メインGUIアプリケーションを起動します
+2025-07-27 09:32:12,463 [INFO] root - ============================================================
+2025-07-27 09:32:12,463 [INFO] root - 🚀 JRA-Data Collector アプリケーション起動
+2025-07-27 09:32:12,463 [INFO] root - 📝 ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 09:32:12,463 [INFO] root - 🖥️  Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 09:32:12,463 [INFO] root - 📂 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 09:32:12,464 [INFO] root - ============================================================
+2025-07-27 09:32:12,464 [INFO] root - 🚀 JRA-Data Collector エントリーポイント開始
+2025-07-27 09:32:12,467 [INFO] root - 🔒 非管理者権限で実行中。昇格を試みます
+2025-07-27 09:32:12,468 [INFO] root - 管理者権限昇格を実行します...
+2025-07-27 09:32:12,468 [INFO] root - 管理者権限を要求しています...
+2025-07-27 09:32:12,468 [INFO] root - 再起動対象: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py
+2025-07-27 09:32:12,468 [INFO] root - 引数: 
+2025-07-27 09:32:14,427 [INFO] root - 管理者権限での再起動を開始しました。現在のプロセスを終了します。
+2025-07-27 09:32:14,613 [INFO] root - ============================================================
+2025-07-27 09:32:14,613 [INFO] root - 🚀 JRA-Data Collector アプリケーション起動
+2025-07-27 09:32:14,614 [INFO] root - 📝 ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 09:32:14,614 [INFO] root - 🖥️  Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 09:32:14,614 [INFO] root - 📂 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 09:32:14,614 [INFO] root - ============================================================
+2025-07-27 09:32:14,614 [INFO] root - 🚀 JRA-Data Collector エントリーポイント開始
+2025-07-27 09:32:14,627 [INFO] root - 🔐 管理者権限で実行中です
+2025-07-27 09:32:14,627 [INFO] root - 📊 実行環境: 64bit Python, PID: 26372
+2025-07-27 09:32:14,627 [INFO] root - 🎯 管理者権限でアプリケーション初期化を開始します
+2025-07-27 09:32:14,678 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 09:32:14,678 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 09:32:14,678 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 09:32:14,678 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 09:32:14,679 [INFO] root - ProgID 'JVDTLab.JVLink' のCLSID: {2AB1774D-0C41-11D7-916F-0003479BEB3F} (preferred レジストリビューで発見)
+2025-07-27 09:32:14,679 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 09:32:14,679 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 09:32:14,679 [INFO] root - CLSID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' は preferred レジストリビューに登録されています
+2025-07-27 09:32:14,679 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 09:32:14,679 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 09:32:14,679 [INFO] root - CLSID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' のAppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F} (preferred レジストリビューで発見)
+2025-07-27 09:32:14,679 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 09:32:14,679 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 09:32:14,680 [INFO] root - AppID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' のDllSurrogate: '' (preferred レジストリビューで発見)
+2025-07-27 09:32:14,680 [INFO] root - 🚀 メインGUIアプリケーションを起動します

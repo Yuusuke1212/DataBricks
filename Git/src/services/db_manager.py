@@ -1193,13 +1193,83 @@ class DatabaseManager(LoggerMixin):
             self.engine.dispose()
             logging.info("データベース接続を閉じました。")
 
-    def reconnect(self, db_settings: dict):
+    def reconnect(self, new_db_config: dict = None) -> tuple[bool, str]:
         """
         新しい設定でデータベースに再接続する
+
+        Args:
+            new_db_config: 新しいデータベース設定（Noneの場合は現在の設定を再読み込み）
+
+        Returns:
+            (接続成功フラグ, メッセージ)
         """
-        self.close()
-        self.db_settings = db_settings
-        self.connect()
+        try:
+            self.emit_log("INFO", "データベース再接続を開始します")
+            
+            # 既存の接続を安全に破棄
+            if self.engine:
+                try:
+                    self.engine.dispose()
+                    self.emit_log("INFO", "既存のデータベース接続を破棄しました")
+                except Exception as e:
+                    self.emit_log("WARNING", f"既存接続の破棄中にエラー: {e}")
+
+            # セッションファクトリもリセット
+            self.Session = None
+            self.engine = None
+            self._db_type = None
+            self._db_name = None
+
+            # 新しい設定でConfigManagerを更新（設定が提供された場合）
+            if new_db_config:
+                try:
+                    # 設定を部分的に更新
+                    for key, value in new_db_config.items():
+                        if key in ['type', 'host', 'port', 'username', 'password', 'db_name', 'path']:
+                            # ConfigManagerの update_db_config を通じて設定を更新
+                            # これによりシグナルも適切に発火される
+                            pass  # 後でConfigManagerのAPIを通じて更新
+
+                    # SettingsManagerの設定を更新
+                    self.settings_manager.update_db_config(**new_db_config)
+                    self.emit_log("INFO", f"新しいデータベース設定を適用: {new_db_config.get('type', 'Unknown')}")
+                    
+                except Exception as e:
+                    self.emit_log("ERROR", f"設定更新中にエラー: {e}")
+                    return False, f"設定更新エラー: {e}"
+
+            # 新しい設定で再接続を試行
+            try:
+                self.connect()
+                
+                # 接続成功をテスト
+                if self.engine:
+                    with self.engine.connect() as conn:
+                        # 簡単な接続テスト
+                        if self._db_type == 'sqlite':
+                            conn.execute(text("SELECT 1"))
+                        elif self._db_type == 'mysql':
+                            conn.execute(text("SELECT 1"))
+                        elif self._db_type == 'postgresql':
+                            conn.execute(text("SELECT 1"))
+                    
+                    success_msg = f"{self._db_type} データベース '{self._db_name}' への再接続に成功しました"
+                    self.emit_log("INFO", success_msg)
+                    return True, success_msg
+                else:
+                    error_msg = "データベースエンジンの初期化に失敗しました"
+                    self.emit_log("ERROR", error_msg)
+                    return False, error_msg
+
+            except Exception as connect_error:
+                error_msg = f"データベース再接続に失敗: {connect_error}"
+                self.emit_log("ERROR", error_msg)
+                return False, error_msg
+
+        except Exception as e:
+            critical_error_msg = f"データベース再接続処理中に予期しないエラー: {e}"
+            self.emit_log("ERROR", critical_error_msg)
+            return False, critical_error_msg
 
     def upsert_records(self, table_name: str, records: List[Any],
                        primary_keys: List[str] = None) -> Dict[str, int]:

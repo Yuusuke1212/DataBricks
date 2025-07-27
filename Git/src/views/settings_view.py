@@ -1,4 +1,5 @@
 import logging
+from datetime import datetime
 from PySide6.QtCore import Signal, Qt
 from PySide6.QtWidgets import (
     QWidget,
@@ -9,6 +10,7 @@ from PySide6.QtWidgets import (
     QFileDialog,
     QMessageBox,
     QGroupBox,
+    QDialog,
 )
 
 # qfluentwidgets components
@@ -54,9 +56,11 @@ class SettingsView(QWidget):
 
         jv_link_tab = self._create_jv_link_tab()
         db_tab = self._create_db_tab()
+        realtime_tab = self._create_realtime_tab()
 
         tab_widget.addTab(jv_link_tab, "JV-Link 設定")
         tab_widget.addTab(db_tab, "データベース設定")
+        tab_widget.addTab(realtime_tab, "📡 速報設定")
 
         layout.addWidget(tab_widget)
 
@@ -168,6 +172,56 @@ class SettingsView(QWidget):
         # 初期状態
         self._on_db_type_changed("SQLite")
 
+        main_layout.addStretch(1)
+
+        return widget
+
+    def _create_realtime_tab(self):
+        """速報設定タブを作成"""
+        widget = QWidget()
+        main_layout = QVBoxLayout(widget)
+        main_layout.setContentsMargins(20, 20, 20, 20)
+        main_layout.setSpacing(20)
+
+        # 速報設定カード
+        realtime_card = CardWidget(widget)
+        card_layout = QVBoxLayout(realtime_card)
+        card_layout.setContentsMargins(24, 24, 24, 24)
+        card_layout.setSpacing(16)
+
+        # タイトル
+        card_title = StrongBodyLabel("📡 速報受信設定", realtime_card)
+        card_layout.addWidget(card_title)
+
+        # 説明文
+        description = BodyLabel(
+            "受信したい速報イベントを選択してください。\n"
+            "※ 多くのイベントを選択すると、システムリソースを多く消費します。\n"
+            "※ 設定は次回の速報受信開始時から有効になります。",
+            realtime_card
+        )
+        description.setWordWrap(True)
+        card_layout.addWidget(description)
+
+        # 速報設定ダイアログ開くボタン
+        self.open_realtime_dialog_button = PrimaryPushButton(
+            "📡 速報受信イベントを設定", realtime_card)
+        self.open_realtime_dialog_button.setIcon(FIF.TILES)
+        self.open_realtime_dialog_button.setFixedHeight(40)
+        self.open_realtime_dialog_button.clicked.connect(
+            self._on_open_realtime_dialog)
+        card_layout.addWidget(self.open_realtime_dialog_button)
+
+        # 現在の速報設定状況を表示
+        self.realtime_status_label = BodyLabel(
+            "現在の設定: 未設定（デフォルトイベントのみ受信）",
+            realtime_card
+        )
+        self.realtime_status_label.setStyleSheet("color: #666666; font-size: 12px;")
+        self.realtime_status_label.setWordWrap(True)
+        card_layout.addWidget(self.realtime_status_label)
+
+        main_layout.addWidget(realtime_card)
         main_layout.addStretch(1)
 
         return widget
@@ -369,3 +423,113 @@ class SettingsView(QWidget):
                 duration=5000,
                 parent=self
             )
+
+    def _on_open_realtime_dialog(self):
+        """速報設定ダイアログを開く"""
+        try:
+            from .data_selection_dialog import DataSelectionDialog
+            
+            dialog = DataSelectionDialog(mode="realtime", parent=self)
+            
+            if dialog.exec() == QDialog.Accepted:
+                # 選択された速報イベントを取得
+                selected_events = dialog.get_selected_realtime_events()
+                
+                # 設定をsettings.iniに保存
+                self._save_realtime_settings(selected_events)
+                
+                # ステータス表示を更新
+                self._update_realtime_status(selected_events)
+                
+                InfoBar.success(
+                    title="速報設定完了",
+                    content=f"{len(selected_events)}個の速報イベントを設定しました",
+                    orient=Qt.Horizontal,
+                    isClosable=True,
+                    position=InfoBarPosition.TOP,
+                    duration=3000,
+                    parent=self
+                )
+                
+        except Exception as e:
+            InfoBar.error(
+                title="速報設定エラー",
+                content=f"速報設定中にエラーが発生しました: {e}",
+                orient=Qt.Horizontal,
+                isClosable=True,
+                position=InfoBarPosition.TOP,
+                duration=5000,
+                parent=self
+            )
+
+    def _save_realtime_settings(self, selected_events: list):
+        """速報設定をsettings.iniに保存"""
+        try:
+            # ConfigManagerまたはSettingsManagerを通じて設定を保存
+            # 実装では、settings.iniの[Realtime]セクションに保存
+            import configparser
+            import os
+            
+            # 設定ファイルのパスを取得
+            config_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "settings.ini")
+            
+            config = configparser.ConfigParser()
+            if os.path.exists(config_path):
+                config.read(config_path, encoding='utf-8')
+            
+            # Realtimeセクションを追加/更新
+            if not config.has_section('Realtime'):
+                config.add_section('Realtime')
+            
+            # 選択されたイベントをカンマ区切りで保存
+            config.set('Realtime', 'selected_events', ','.join(selected_events))
+            config.set('Realtime', 'last_updated', str(datetime.now().isoformat()))
+            
+            # ファイルに保存
+            with open(config_path, 'w', encoding='utf-8') as f:
+                config.write(f)
+                
+        except Exception as e:
+            raise Exception(f"速報設定の保存に失敗: {e}")
+
+    def _update_realtime_status(self, selected_events: list):
+        """速報設定ステータス表示を更新"""
+        if not selected_events:
+            status_text = "現在の設定: イベント未選択"
+        elif len(selected_events) <= 3:
+            from .data_selection_dialog import DataSelectionDialog
+            event_names = []
+            for event_id in selected_events:
+                # イベント名を取得（簡易実装）
+                for category in DataSelectionDialog.REALTIME_EVENTS.values():
+                    if event_id in category:
+                        event_names.append(category[event_id][0])
+                        break
+            status_text = f"現在の設定: {', '.join(event_names)} など {len(selected_events)}個のイベント"
+        else:
+            status_text = f"現在の設定: {len(selected_events)}個のイベントを受信"
+            
+        self.realtime_status_label.setText(status_text)
+
+    def load_realtime_settings(self):
+        """速報設定を読み込んでステータス表示を更新"""
+        try:
+            import configparser
+            import os
+            
+            config_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "settings.ini")
+            
+            if not os.path.exists(config_path):
+                return
+                
+            config = configparser.ConfigParser()
+            config.read(config_path, encoding='utf-8')
+            
+            if config.has_section('Realtime') and config.has_option('Realtime', 'selected_events'):
+                events_str = config.get('Realtime', 'selected_events')
+                selected_events = [e.strip() for e in events_str.split(',') if e.strip()]
+                self._update_realtime_status(selected_events)
+            
+        except Exception:
+            # エラーが発生してもアプリケーションは継続
+            pass
