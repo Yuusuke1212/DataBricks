@@ -161,29 +161,35 @@ def launch_gui():
 
     run.pyから呼び出されることを想定したGUI起動のエントリーポイント
     """
-    # グローバル例外ハンドラーを設定
-    sys.excepthook = handle_unicode_exception
-
-    # Unicode対応ログ設定
-    setup_unicode_logging()
-
     try:
+        logging.info("launch_gui()関数を開始します")
+        
+        # グローバル例外ハンドラーを設定
+        sys.excepthook = handle_unicode_exception
+
+        # Unicode対応ログ設定
+        setup_unicode_logging()
+
         logging.info(
             "============================================================")
-        logging.info("JRA-Data Collector アプリケーションを開始")
+        logging.info("JRA-Data Collector GUIアプリケーションを開始")
         logging.info(f"Python バージョン: {sys.version}")
         logging.info(f"作業ディレクトリ: {Path.cwd()}")
         logging.info(f"ファイルシステムエンコーディング: {sys.getfilesystemencoding()}")
+        logging.info(f"引数: {sys.argv}")
         logging.info(
             "============================================================")
 
         # アプリケーション設定
+        logging.info("QApplicationの高DPI設定を構成します")
         QApplication.setHighDpiScaleFactorRoundingPolicy(
             Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
         QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
         QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
 
+        logging.info("QApplicationインスタンスを作成します")
         app = QApplication(sys.argv)
+        logging.info("QApplicationインスタンスの作成が完了しました")
 
         # Unicode対応フォント設定
         try:
@@ -224,10 +230,15 @@ def launch_gui():
             logging.info("アプリケーション初期化完了")
 
             # メインウィンドウを表示
+            logging.info("メインウィンドウを表示します")
             main_win.show()
 
-            # アプリケーション実行
-            return app.exec()
+            # アプリケーション実行（メインイベントループ開始）
+            logging.info("🎯 QtアプリケーションのメインループCapp.exec())を開始します")
+            exit_code = app.exec()
+            logging.info(f"Qtアプリケーションが終了しました。終了コード: {exit_code}")
+            
+            return exit_code
 
         except UnicodeDecodeError as e:
             error_msg = f"アプリケーション初期化時のUnicodeエラー: {e}"
@@ -256,9 +267,22 @@ def launch_gui():
             return 1
 
     except Exception as e:
-        error_msg = f"アプリケーション起動時の致命的エラー: {e}"
-        print(error_msg)
-        logging.error(error_msg)
+        error_msg = f"GUIアプリケーション起動時の致命的エラー: {e}"
+        logging.exception(error_msg)  # スタックトレースも含めてログに記録
+        print(f"❌ {error_msg}")
+        
+        # 可能であればエラーダイアログも表示
+        try:
+            # QApplicationは既にインポート済みなので、ローカルインポートは不要
+            if not QApplication.instance():
+                _ = QApplication(sys.argv)
+            QMessageBox.critical(None, "アプリケーション起動エラー", 
+                               f"GUIアプリケーションの起動に失敗しました:\n{e}")
+        except ImportError:
+            print("GUI環境でないため、エラーダイアログを表示できません")
+        except Exception as dialog_error:
+            logging.warning(f"エラーダイアログの表示に失敗: {dialog_error}")
+        
         return 1
 
 

@@ -156,3 +156,1372 @@
 2025-07-27 09:32:14,679 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
 2025-07-27 09:32:14,680 [INFO] root - AppID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' のDllSurrogate: '' (preferred レジストリビューで発見)
 2025-07-27 09:32:14,680 [INFO] root - 🚀 メインGUIアプリケーションを起動します
+2025-07-27 09:45:45,360 [INFO] root - ============================================================
+2025-07-27 09:45:45,360 [INFO] root - 🚀 JRA-Data Collector アプリケーション起動
+2025-07-27 09:45:45,360 [INFO] root - 📝 ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 09:45:45,360 [INFO] root - 🖥️  Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 09:45:45,360 [INFO] root - 📂 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 09:45:45,360 [INFO] root - ============================================================
+2025-07-27 09:45:45,360 [INFO] root - 🚀 JRA-Data Collector エントリーポイント開始
+2025-07-27 09:45:45,372 [INFO] root - 🔒 非管理者権限で実行中。昇格を試みます
+2025-07-27 09:45:45,372 [INFO] root - 管理者権限昇格を実行します...
+2025-07-27 09:45:45,372 [INFO] root - 管理者権限を要求しています...
+2025-07-27 09:45:45,372 [INFO] root - Python実行ファイル: C:\Users\yuusu\.rye\py\cpython@3.12.2\python.exe
+2025-07-27 09:45:45,372 [INFO] root - スクリプトパス: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py
+2025-07-27 09:45:45,372 [INFO] root - 引数: 
+2025-07-27 09:45:45,372 [INFO] root - 実行コマンド: C:\Users\yuusu\.rye\py\cpython@3.12.2\python.exe "C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py"
+2025-07-27 09:45:47,492 [INFO] root - 管理者権限での再起動を開始しました（結果コード: 42）
+2025-07-27 09:45:47,492 [INFO] root - 現在のプロセスを終了します
+2025-07-27 09:45:47,600 [INFO] root - ============================================================
+2025-07-27 09:45:47,600 [INFO] root - 🚀 JRA-Data Collector アプリケーション起動
+2025-07-27 09:45:47,600 [INFO] root - 📝 ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 09:45:47,600 [INFO] root - 🖥️  Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 09:45:47,600 [INFO] root - 📂 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 09:45:47,600 [INFO] root - ============================================================
+2025-07-27 09:45:47,600 [INFO] root - 🚀 JRA-Data Collector エントリーポイント開始
+2025-07-27 09:45:47,608 [INFO] root - 🔐 管理者権限で実行中です
+2025-07-27 09:45:47,608 [INFO] root - 📊 実行環境: 64bit Python, PID: 7664
+2025-07-27 09:45:47,608 [INFO] root - メインアプリケーション関数を呼び出します
+2025-07-27 09:45:47,609 [INFO] root - 管理者権限で実行中。アプリケーションを初期化します。
+2025-07-27 09:45:47,658 [INFO] root - ファイルシステムエンコーディング: utf-8
+2025-07-27 09:45:47,658 [INFO] root - 標準出力エンコーディング: utf-8
+2025-07-27 09:45:47,658 [INFO] root - Unicode環境設定が完了しました
+2025-07-27 09:45:47,658 [INFO] root - 🔍 Python アーキテクチャ: 64bit
+2025-07-27 09:45:47,658 [INFO] root - 🔧 64bit Python環境を検出。JV-LinkのCOMサロゲート設定を確認・構成します...
+2025-07-27 09:45:47,659 [INFO] root - === JV-Link DLLサロゲート設定を開始（64bit/32bit対応版） ===
+2025-07-27 09:45:47,659 [INFO] root - 実行環境: 64bit Python
+2025-07-27 09:45:47,659 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 09:45:47,659 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 09:45:47,659 [INFO] root - ProgID 'JVDTLab.JVLink' のCLSID: {2AB1774D-0C41-11D7-916F-0003479BEB3F} (preferred レジストリビューで発見)
+2025-07-27 09:45:47,659 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 09:45:47,659 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 09:45:47,659 [INFO] root - CLSID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' は preferred レジストリビューに登録されています
+2025-07-27 09:45:47,659 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 09:45:47,659 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 09:45:47,659 [INFO] root - CLSID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' のAppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F} (preferred レジストリビューで発見)
+2025-07-27 09:45:47,659 [INFO] root - 使用するAppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F}
+2025-07-27 09:45:47,660 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 09:45:47,670 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 09:45:47,671 [INFO] root - AppID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' のDllSurrogate: '' (preferred レジストリビューで発見)
+2025-07-27 09:45:47,671 [INFO] root - ✅ DLLサロゲートは既に有効化されています (AppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F})
+2025-07-27 09:45:47,671 [INFO] root - === JV-Link DLLサロゲート設定を終了 ===
+2025-07-27 09:45:47,671 [INFO] root - ✅ レジストリ設定が完了しました。
+2025-07-27 09:45:47,672 [INFO] root - 🚀 メインGUIアプリケーションを起動します...
+2025-07-27 09:45:48,425 [INFO] root - launch_gui()関数を呼び出します
+2025-07-27 09:45:48,426 [INFO] root - launch_gui()関数を開始します
+2025-07-27 09:45:48,427 [INFO] root - ============================================================
+2025-07-27 09:45:48,427 [INFO] root - JRA-Data Collector GUIアプリケーションを開始
+2025-07-27 09:45:48,427 [INFO] root - Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 09:45:48,427 [INFO] root - 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 09:45:48,427 [INFO] root - ファイルシステムエンコーディング: utf-8
+2025-07-27 09:45:48,427 [INFO] root - 引数: ['C:\\Users\\yuusu\\Desktop\\JRA-VANアプリ\\DataBriocks\\run.py']
+2025-07-27 09:45:48,428 [INFO] root - ============================================================
+2025-07-27 09:45:48,428 [INFO] root - QApplicationの高DPI設定を構成します
+2025-07-27 09:45:48,428 [ERROR] root - GUIアプリケーション起動時の致命的エラー: cannot access local variable 'QApplication' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\src\main.py", line 185, in launch_gui
+    QApplication.setHighDpiScaleFactorRoundingPolicy(
+    ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'QApplication' where it is not associated with a value
+2025-07-27 09:45:50,880 [INFO] root - launch_gui()から戻りました。終了コード: 1
+2025-07-27 09:45:50,881 [INFO] root - アプリケーション終了（終了コード: 1）
+2025-07-27 09:49:05,870 [INFO] root - ============================================================
+2025-07-27 09:49:05,870 [INFO] root - 🚀 JRA-Data Collector アプリケーション起動
+2025-07-27 09:49:05,870 [INFO] root - 📝 ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 09:49:05,870 [INFO] root - 🖥️  Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 09:49:05,870 [INFO] root - 📂 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 09:49:05,871 [INFO] root - ============================================================
+2025-07-27 09:49:05,871 [INFO] root - 🚀 JRA-Data Collector エントリーポイント開始
+2025-07-27 09:49:05,880 [INFO] root - 🔒 非管理者権限で実行中。昇格を試みます
+2025-07-27 09:49:05,881 [INFO] root - 管理者権限昇格を実行します...
+2025-07-27 09:49:05,881 [INFO] root - 管理者権限を要求しています...
+2025-07-27 09:49:05,881 [INFO] root - Python実行ファイル: C:\Users\yuusu\.rye\py\cpython@3.12.2\python.exe
+2025-07-27 09:49:05,882 [INFO] root - スクリプトパス: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py
+2025-07-27 09:49:05,882 [INFO] root - 引数: 
+2025-07-27 09:49:05,882 [INFO] root - 実行コマンド: C:\Users\yuusu\.rye\py\cpython@3.12.2\python.exe "C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py"
+2025-07-27 09:49:07,875 [INFO] root - 管理者権限での再起動を開始しました（結果コード: 42）
+2025-07-27 09:49:07,876 [INFO] root - 現在のプロセスを終了します
+2025-07-27 09:49:07,993 [INFO] root - ============================================================
+2025-07-27 09:49:07,993 [INFO] root - 🚀 JRA-Data Collector アプリケーション起動
+2025-07-27 09:49:07,993 [INFO] root - 📝 ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 09:49:07,993 [INFO] root - 🖥️  Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 09:49:07,994 [INFO] root - 📂 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 09:49:07,994 [INFO] root - ============================================================
+2025-07-27 09:49:07,994 [INFO] root - 🚀 JRA-Data Collector エントリーポイント開始
+2025-07-27 09:49:08,004 [INFO] root - 🔐 管理者権限で実行中です
+2025-07-27 09:49:08,006 [INFO] root - 📊 実行環境: 64bit Python, PID: 22296
+2025-07-27 09:49:08,006 [INFO] root - メインアプリケーション関数を呼び出します
+2025-07-27 09:49:08,007 [INFO] root - 管理者権限で実行中。アプリケーションを初期化します。
+2025-07-27 09:49:08,062 [INFO] root - ファイルシステムエンコーディング: utf-8
+2025-07-27 09:49:08,062 [INFO] root - 標準出力エンコーディング: utf-8
+2025-07-27 09:49:08,062 [INFO] root - Unicode環境設定が完了しました
+2025-07-27 09:49:08,062 [INFO] root - 🔍 Python アーキテクチャ: 64bit
+2025-07-27 09:49:08,062 [INFO] root - 🔧 64bit Python環境を検出。JV-LinkのCOMサロゲート設定を確認・構成します...
+2025-07-27 09:49:08,064 [INFO] root - === JV-Link DLLサロゲート設定を開始（64bit/32bit対応版） ===
+2025-07-27 09:49:08,066 [INFO] root - 実行環境: 64bit Python
+2025-07-27 09:49:08,066 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 09:49:08,066 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 09:49:08,066 [INFO] root - ProgID 'JVDTLab.JVLink' のCLSID: {2AB1774D-0C41-11D7-916F-0003479BEB3F} (preferred レジストリビューで発見)
+2025-07-27 09:49:08,066 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 09:49:08,067 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 09:49:08,067 [INFO] root - CLSID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' は preferred レジストリビューに登録されています
+2025-07-27 09:49:08,067 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 09:49:08,067 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 09:49:08,067 [INFO] root - CLSID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' のAppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F} (preferred レジストリビューで発見)
+2025-07-27 09:49:08,067 [INFO] root - 使用するAppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F}
+2025-07-27 09:49:08,067 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 09:49:08,067 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 09:49:08,068 [INFO] root - AppID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' のDllSurrogate: '' (preferred レジストリビューで発見)
+2025-07-27 09:49:08,068 [INFO] root - ✅ DLLサロゲートは既に有効化されています (AppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F})
+2025-07-27 09:49:08,068 [INFO] root - === JV-Link DLLサロゲート設定を終了 ===
+2025-07-27 09:49:08,068 [INFO] root - ✅ レジストリ設定が完了しました。
+2025-07-27 09:49:08,068 [INFO] root - 🚀 メインGUIアプリケーションを起動します...
+2025-07-27 09:49:08,929 [INFO] root - launch_gui()関数を呼び出します
+2025-07-27 09:49:08,930 [INFO] root - launch_gui()関数を開始します
+2025-07-27 09:49:08,930 [INFO] root - ============================================================
+2025-07-27 09:49:08,931 [INFO] root - JRA-Data Collector GUIアプリケーションを開始
+2025-07-27 09:49:08,931 [INFO] root - Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 09:49:08,931 [INFO] root - 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 09:49:08,931 [INFO] root - ファイルシステムエンコーディング: utf-8
+2025-07-27 09:49:08,931 [INFO] root - 引数: ['C:\\Users\\yuusu\\Desktop\\JRA-VANアプリ\\DataBriocks\\run.py']
+2025-07-27 09:49:08,931 [INFO] root - ============================================================
+2025-07-27 09:49:08,931 [INFO] root - QApplicationの高DPI設定を構成します
+2025-07-27 09:49:08,931 [INFO] root - QApplicationインスタンスを作成します
+2025-07-27 09:49:08,945 [INFO] root - QApplicationインスタンスの作成が完了しました
+2025-07-27 09:49:08,949 [WARNING] root - 翻訳設定エラー: 'str' object is not callable
+2025-07-27 09:49:08,949 [INFO] root - QFluent モンキーパッチ適用完了
+2025-07-27 09:49:09,291 [ERROR] root - GUIアプリケーション起動時の致命的エラー: QWidget(parent: Optional[QWidget] = None, flags: Union[Qt.WindowFlags, Qt.WindowType] = Qt.WindowFlags()): argument 1 has unexpected type 'MainWindow'
+Traceback (most recent call last):
+  File "C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\src\main.py", line 220, in launch_gui
+    main_win = MainWindow()
+               ^^^^^^^^^^^^
+  File "C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\src\views\main_window.py", line 69, in __init__
+    self.initStatusBar()
+  File "C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\src\views\main_window.py", line 154, in initStatusBar
+    self.custom_status_bar = CustomStatusBar(self)
+                             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\src\views\main_window.py", line 19, in __init__
+    super().__init__(parent)
+TypeError: QWidget(parent: Optional[QWidget] = None, flags: Union[Qt.WindowFlags, Qt.WindowType] = Qt.WindowFlags()): argument 1 has unexpected type 'MainWindow'
+2025-07-27 09:49:11,935 [INFO] root - launch_gui()から戻りました。終了コード: 1
+2025-07-27 09:49:11,936 [INFO] root - アプリケーション終了（終了コード: 1）
+2025-07-27 09:50:54,484 [INFO] root - ============================================================
+2025-07-27 09:50:54,484 [INFO] root - 🚀 JRA-Data Collector アプリケーション起動
+2025-07-27 09:50:54,484 [INFO] root - 📝 ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 09:50:54,484 [INFO] root - 🖥️  Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 09:50:54,484 [INFO] root - 📂 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 09:50:54,484 [INFO] root - ============================================================
+2025-07-27 09:50:54,484 [INFO] root - 🚀 JRA-Data Collector エントリーポイント開始
+2025-07-27 09:50:54,493 [INFO] root - 🔒 非管理者権限で実行中。昇格を試みます
+2025-07-27 09:50:54,493 [INFO] root - 管理者権限昇格を実行します...
+2025-07-27 09:50:54,493 [INFO] root - 管理者権限を要求しています...
+2025-07-27 09:50:54,494 [INFO] root - Python実行ファイル: C:\Users\yuusu\.rye\py\cpython@3.12.2\python.exe
+2025-07-27 09:50:54,494 [INFO] root - スクリプトパス: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py
+2025-07-27 09:50:54,494 [INFO] root - 引数: 
+2025-07-27 09:50:54,494 [INFO] root - 実行コマンド: C:\Users\yuusu\.rye\py\cpython@3.12.2\python.exe "C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py"
+2025-07-27 09:50:56,593 [INFO] root - 管理者権限での再起動を開始しました（結果コード: 42）
+2025-07-27 09:50:56,593 [INFO] root - 現在のプロセスを終了します
+2025-07-27 09:50:56,694 [INFO] root - ============================================================
+2025-07-27 09:50:56,694 [INFO] root - 🚀 JRA-Data Collector アプリケーション起動
+2025-07-27 09:50:56,695 [INFO] root - 📝 ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 09:50:56,695 [INFO] root - 🖥️  Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 09:50:56,695 [INFO] root - 📂 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 09:50:56,695 [INFO] root - ============================================================
+2025-07-27 09:50:56,695 [INFO] root - 🚀 JRA-Data Collector エントリーポイント開始
+2025-07-27 09:50:56,707 [INFO] root - 🔐 管理者権限で実行中です
+2025-07-27 09:50:56,710 [INFO] root - 📊 実行環境: 64bit Python, PID: 17856
+2025-07-27 09:50:56,710 [INFO] root - メインアプリケーション関数を呼び出します
+2025-07-27 09:50:56,710 [INFO] root - 管理者権限で実行中。アプリケーションを初期化します。
+2025-07-27 09:50:56,818 [INFO] root - ファイルシステムエンコーディング: utf-8
+2025-07-27 09:50:56,818 [INFO] root - 標準出力エンコーディング: utf-8
+2025-07-27 09:50:56,819 [INFO] root - Unicode環境設定が完了しました
+2025-07-27 09:50:56,819 [INFO] root - 🔍 Python アーキテクチャ: 64bit
+2025-07-27 09:50:56,819 [INFO] root - 🔧 64bit Python環境を検出。JV-LinkのCOMサロゲート設定を確認・構成します...
+2025-07-27 09:50:56,820 [INFO] root - === JV-Link DLLサロゲート設定を開始（64bit/32bit対応版） ===
+2025-07-27 09:50:56,820 [INFO] root - 実行環境: 64bit Python
+2025-07-27 09:50:56,820 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 09:50:56,820 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 09:50:56,820 [INFO] root - ProgID 'JVDTLab.JVLink' のCLSID: {2AB1774D-0C41-11D7-916F-0003479BEB3F} (preferred レジストリビューで発見)
+2025-07-27 09:50:56,821 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 09:50:56,821 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 09:50:56,821 [INFO] root - CLSID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' は preferred レジストリビューに登録されています
+2025-07-27 09:50:56,821 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 09:50:56,821 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 09:50:56,821 [INFO] root - CLSID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' のAppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F} (preferred レジストリビューで発見)
+2025-07-27 09:50:56,821 [INFO] root - 使用するAppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F}
+2025-07-27 09:50:56,822 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 09:50:56,822 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 09:50:56,822 [INFO] root - AppID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' のDllSurrogate: '' (preferred レジストリビューで発見)
+2025-07-27 09:50:56,822 [INFO] root - ✅ DLLサロゲートは既に有効化されています (AppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F})
+2025-07-27 09:50:56,822 [INFO] root - === JV-Link DLLサロゲート設定を終了 ===
+2025-07-27 09:50:56,822 [INFO] root - ✅ レジストリ設定が完了しました。
+2025-07-27 09:50:56,822 [INFO] root - 🚀 メインGUIアプリケーションを起動します...
+2025-07-27 09:50:57,714 [INFO] root - launch_gui()関数を呼び出します
+2025-07-27 09:50:57,715 [INFO] root - launch_gui()関数を開始します
+2025-07-27 09:50:57,715 [INFO] root - ============================================================
+2025-07-27 09:50:57,716 [INFO] root - JRA-Data Collector GUIアプリケーションを開始
+2025-07-27 09:50:57,716 [INFO] root - Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 09:50:57,716 [INFO] root - 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 09:50:57,716 [INFO] root - ファイルシステムエンコーディング: utf-8
+2025-07-27 09:50:57,717 [INFO] root - 引数: ['C:\\Users\\yuusu\\Desktop\\JRA-VANアプリ\\DataBriocks\\run.py']
+2025-07-27 09:50:57,717 [INFO] root - ============================================================
+2025-07-27 09:50:57,717 [INFO] root - QApplicationの高DPI設定を構成します
+2025-07-27 09:50:57,717 [INFO] root - QApplicationインスタンスを作成します
+2025-07-27 09:50:57,729 [INFO] root - QApplicationインスタンスの作成が完了しました
+2025-07-27 09:50:57,739 [WARNING] root - 翻訳設定エラー: 'str' object is not callable
+2025-07-27 09:50:57,739 [INFO] root - QFluent モンキーパッチ適用完了
+2025-07-27 09:50:58,077 [INFO] src.services.settings_manager - 設定ファイルパス: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:50:58,077 [INFO] src.services.settings_manager - 設定ファイル読み込み成功: 4 セクション
+2025-07-27 09:50:58,219 [WARNING] root - psutil not available. Process management will be limited.
+2025-07-27 09:50:58,220 [INFO] root - JvLinkManager初期化 - 最大スレッド数: 32
+2025-07-27 09:50:58,222 [WARNING] root - 従来のJV-Linkマネージャーを使用します
+2025-07-27 09:50:58,222 [INFO] root - ExportManager initialized with 32 threads.
+2025-07-27 09:50:58,223 [INFO] root - Pipeline configuration loaded: {'raw_queue_size': 1000, 'processed_queue_size': 500, 'etl_batch_size': 10, 'db_batch_size': 100, 'db_commit_interval': 1000}
+2025-07-27 09:50:58,223 [INFO] root - PipelineCoordinator initialized successfully
+2025-07-27 09:50:58 [    INFO] root:154 - ============================================================
+2025-07-27 09:50:58 [    INFO] root:155 - JRA-Data Collector アプリケーションを開始しました
+2025-07-27 09:50:58 [    INFO] root:156 - ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 09:50:58 [    INFO] root:157 - ログレベル: ファイル=DEBUG, コンソール=INFO
+2025-07-27 09:50:58 [    INFO] root:158 - ============================================================
+2025-07-27 09:50:58 [    INFO] Statemachine.Idle:68 - Entering state: Idle
+2025-07-27 09:50:58 [   DEBUG] Statemachine.Idle:94 - UI status update not available for state: Idle
+2025-07-27 09:50:58 [    INFO] root:179 - State transition completed: -> Idle
+2025-07-27 09:50:58 [   ERROR] root:260 - アプリケーション初期化エラー: arguments did not match any overloaded call:
+  QVBoxLayout(): too many arguments
+  QVBoxLayout(parent: Optional[QWidget]): argument 1 has unexpected type 'DashboardView'
+2025-07-27 09:51:00 [    INFO] root:114 - launch_gui()から戻りました。終了コード: 1
+2025-07-27 09:51:00 [    INFO] root:217 - アプリケーション終了（終了コード: 1）
+2025-07-27 09:52:26,904 [INFO] root - ============================================================
+2025-07-27 09:52:26,904 [INFO] root - 🚀 JRA-Data Collector アプリケーション起動
+2025-07-27 09:52:26,904 [INFO] root - 📝 ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 09:52:26,904 [INFO] root - 🖥️  Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 09:52:26,904 [INFO] root - 📂 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 09:52:26,905 [INFO] root - ============================================================
+2025-07-27 09:52:26,905 [INFO] root - 🚀 JRA-Data Collector エントリーポイント開始
+2025-07-27 09:52:26,915 [INFO] root - 🔒 非管理者権限で実行中。昇格を試みます
+2025-07-27 09:52:26,916 [INFO] root - 管理者権限昇格を実行します...
+2025-07-27 09:52:26,916 [INFO] root - 管理者権限を要求しています...
+2025-07-27 09:52:26,916 [INFO] root - Python実行ファイル: C:\Users\yuusu\.rye\py\cpython@3.12.2\python.exe
+2025-07-27 09:52:26,916 [INFO] root - スクリプトパス: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py
+2025-07-27 09:52:26,917 [INFO] root - 引数: 
+2025-07-27 09:52:26,917 [INFO] root - 実行コマンド: C:\Users\yuusu\.rye\py\cpython@3.12.2\python.exe "C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\run.py"
+2025-07-27 09:52:28,626 [INFO] root - 管理者権限での再起動を開始しました（結果コード: 42）
+2025-07-27 09:52:28,626 [INFO] root - 現在のプロセスを終了します
+2025-07-27 09:52:28,718 [INFO] root - ============================================================
+2025-07-27 09:52:28,719 [INFO] root - 🚀 JRA-Data Collector アプリケーション起動
+2025-07-27 09:52:28,719 [INFO] root - 📝 ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 09:52:28,720 [INFO] root - 🖥️  Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 09:52:28,720 [INFO] root - 📂 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 09:52:28,720 [INFO] root - ============================================================
+2025-07-27 09:52:28,720 [INFO] root - 🚀 JRA-Data Collector エントリーポイント開始
+2025-07-27 09:52:28,732 [INFO] root - 🔐 管理者権限で実行中です
+2025-07-27 09:52:28,732 [INFO] root - 📊 実行環境: 64bit Python, PID: 25128
+2025-07-27 09:52:28,732 [INFO] root - メインアプリケーション関数を呼び出します
+2025-07-27 09:52:28,732 [INFO] root - 管理者権限で実行中。アプリケーションを初期化します。
+2025-07-27 09:52:28,784 [INFO] root - ファイルシステムエンコーディング: utf-8
+2025-07-27 09:52:28,784 [INFO] root - 標準出力エンコーディング: utf-8
+2025-07-27 09:52:28,784 [INFO] root - Unicode環境設定が完了しました
+2025-07-27 09:52:28,784 [INFO] root - 🔍 Python アーキテクチャ: 64bit
+2025-07-27 09:52:28,784 [INFO] root - 🔧 64bit Python環境を検出。JV-LinkのCOMサロゲート設定を確認・構成します...
+2025-07-27 09:52:28,785 [INFO] root - === JV-Link DLLサロゲート設定を開始（64bit/32bit対応版） ===
+2025-07-27 09:52:28,785 [INFO] root - 実行環境: 64bit Python
+2025-07-27 09:52:28,785 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 09:52:28,786 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 09:52:28,786 [INFO] root - ProgID 'JVDTLab.JVLink' のCLSID: {2AB1774D-0C41-11D7-916F-0003479BEB3F} (preferred レジストリビューで発見)
+2025-07-27 09:52:28,786 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 09:52:28,786 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 09:52:28,786 [INFO] root - CLSID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' は preferred レジストリビューに登録されています
+2025-07-27 09:52:28,786 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 09:52:28,786 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 09:52:28,787 [INFO] root - CLSID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' のAppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F} (preferred レジストリビューで発見)
+2025-07-27 09:52:28,787 [INFO] root - 使用するAppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F}
+2025-07-27 09:52:28,787 [INFO] root - Python アーキテクチャ: 64bit
+2025-07-27 09:52:28,787 [INFO] root - 64bit Python環境: 32bitレジストリビュー（Wow6432Node）を優先使用
+2025-07-27 09:52:28,787 [INFO] root - AppID '{2AB1774D-0C41-11D7-916F-0003479BEB3F}' のDllSurrogate: '' (preferred レジストリビューで発見)
+2025-07-27 09:52:28,787 [INFO] root - ✅ DLLサロゲートは既に有効化されています (AppID: {2AB1774D-0C41-11D7-916F-0003479BEB3F})
+2025-07-27 09:52:28,787 [INFO] root - === JV-Link DLLサロゲート設定を終了 ===
+2025-07-27 09:52:28,788 [INFO] root - ✅ レジストリ設定が完了しました。
+2025-07-27 09:52:28,788 [INFO] root - 🚀 メインGUIアプリケーションを起動します...
+2025-07-27 09:52:29,620 [INFO] root - launch_gui()関数を呼び出します
+2025-07-27 09:52:29,620 [INFO] root - launch_gui()関数を開始します
+2025-07-27 09:52:29,621 [INFO] root - ============================================================
+2025-07-27 09:52:29,621 [INFO] root - JRA-Data Collector GUIアプリケーションを開始
+2025-07-27 09:52:29,621 [INFO] root - Python バージョン: 3.12.2 (main, Feb 25 2024, 03:42:18) [MSC v.1929 64 bit (AMD64)]
+2025-07-27 09:52:29,621 [INFO] root - 作業ディレクトリ: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks
+2025-07-27 09:52:29,621 [INFO] root - ファイルシステムエンコーディング: utf-8
+2025-07-27 09:52:29,621 [INFO] root - 引数: ['C:\\Users\\yuusu\\Desktop\\JRA-VANアプリ\\DataBriocks\\run.py']
+2025-07-27 09:52:29,622 [INFO] root - ============================================================
+2025-07-27 09:52:29,622 [INFO] root - QApplicationの高DPI設定を構成します
+2025-07-27 09:52:29,622 [INFO] root - QApplicationインスタンスを作成します
+2025-07-27 09:52:29,635 [INFO] root - QApplicationインスタンスの作成が完了しました
+2025-07-27 09:52:29,652 [WARNING] root - 翻訳設定エラー: 'str' object is not callable
+2025-07-27 09:52:29,653 [INFO] root - QFluent モンキーパッチ適用完了
+2025-07-27 09:52:30,004 [INFO] src.services.settings_manager - 設定ファイルパス: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:30,006 [INFO] src.services.settings_manager - 設定ファイル読み込み成功: 4 セクション
+2025-07-27 09:52:30,017 [WARNING] root - psutil not available. Process management will be limited.
+2025-07-27 09:52:30,018 [INFO] root - JvLinkManager初期化 - 最大スレッド数: 32
+2025-07-27 09:52:30,019 [WARNING] root - 従来のJV-Linkマネージャーを使用します
+2025-07-27 09:52:30,019 [INFO] root - ExportManager initialized with 32 threads.
+2025-07-27 09:52:30,020 [INFO] root - Pipeline configuration loaded: {'raw_queue_size': 1000, 'processed_queue_size': 500, 'etl_batch_size': 10, 'db_batch_size': 100, 'db_commit_interval': 1000}
+2025-07-27 09:52:30,020 [INFO] root - PipelineCoordinator initialized successfully
+2025-07-27 09:52:30 [    INFO] root:154 - ============================================================
+2025-07-27 09:52:30 [    INFO] root:155 - JRA-Data Collector アプリケーションを開始しました
+2025-07-27 09:52:30 [    INFO] root:156 - ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250727.log
+2025-07-27 09:52:30 [    INFO] root:157 - ログレベル: ファイル=DEBUG, コンソール=INFO
+2025-07-27 09:52:30 [    INFO] root:158 - ============================================================
+2025-07-27 09:52:30 [    INFO] Statemachine.Idle:68 - Entering state: Idle
+2025-07-27 09:52:30 [   DEBUG] Statemachine.Idle:94 - UI status update not available for state: Idle
+2025-07-27 09:52:30 [    INFO] root:179 - State transition completed: -> Idle
+2025-07-27 09:52:30 [    INFO] root:239 - アプリケーションの初期化を開始します。
+2025-07-27 09:52:30 [    INFO] root:263 - UIとコントローラーの接続を初期化します。
+2025-07-27 09:52:30 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:30 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:30 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:30 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:30 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:30 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:30 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:30 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:30 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:30 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:30 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:30 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:30 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:30 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:31 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:31 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:31 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:31 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:31 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:31 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:31 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:31 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:31 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:31 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:31 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:31 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:31 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:31 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:31 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:31 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:31 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:31 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:31 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:31 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:31 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:31 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:31 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:31 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:31 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:31 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:32 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:32 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:32 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:32 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:32 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:32 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:32 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:32 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:32 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:32 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:32 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:32 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:32 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:32 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:32 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:32 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:32 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:32 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:32 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:32 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:33 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:33 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:33 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:33 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:33 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:33 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:33 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:33 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:33 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:33 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:33 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:33 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:33 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:33 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:33 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:33 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:33 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:33 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:33 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:33 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:33 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:33 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:34 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:34 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:34 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:34 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:34 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:34 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:34 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:34 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:34 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:34 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:34 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:34 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:34 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:34 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:34 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:34 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:34 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:34 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:34 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:34 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:34 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:34 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:35 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:35 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:35 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:35 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:35 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:35 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:35 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:35 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:35 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:35 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:35 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:35 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:35 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:35 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:35 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:35 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:35 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:35 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:35 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:35 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:36 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:36 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:36 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:36 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:36 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:36 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:36 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:36 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:36 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:36 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:36 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:36 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:36 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:36 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:36 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:36 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:36 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:36 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:36 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:36 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:37 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:37 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:37 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:37 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:37 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:37 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:37 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:37 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:37 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:37 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:37 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:37 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:37 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:37 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:37 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:37 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:37 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:37 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:37 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:37 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:37 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:37 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:38 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:38 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:38 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:38 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:38 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:38 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:38 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:38 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:38 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:38 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:38 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:38 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:38 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:38 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:38 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:38 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:38 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:38 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:38 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:38 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:38 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:38 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:39 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:39 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:39 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:39 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:39 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:39 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:39 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:39 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:39 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:39 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:39 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:39 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:39 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:39 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:39 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:39 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:39 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:39 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:39 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:39 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:39 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:39 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:40 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:40 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:40 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:40 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:40 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:40 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:40 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:40 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:40 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:40 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:40 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:40 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:40 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:40 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:40 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:40 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:40 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:40 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:41 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:41 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:41 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:41 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:41 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:41 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:41 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:41 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:41 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:41 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:41 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:41 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:41 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:41 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:41 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:41 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:41 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:41 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:41 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:41 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:42 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:42 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:42 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:42 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:42 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:42 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:42 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:42 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:42 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:42 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:42 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:42 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:42 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:42 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:42 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:42 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:42 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:42 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:42 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:42 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:42 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:42 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:42 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:42 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:42 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:42 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:42 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:42 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:42 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:42 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:43 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:43 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:43 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:43 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:43 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:43 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:43 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:43 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:43 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:43 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:43 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:43 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:43 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:43 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:43 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:43 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:43 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:43 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:43 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:43 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:43 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:43 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:43 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:43 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:43 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:43 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:44 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:44 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:44 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:44 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:44 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:44 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:44 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:44 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:44 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:44 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:44 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:44 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:44 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:44 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:44 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:44 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:44 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:44 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:44 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:44 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:44 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:44 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:44 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:44 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:44 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:44 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:44 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:44 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:44 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:44 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:44 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:44 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:44 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:44 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:44 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:44 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:45 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:45 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:45 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:45 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:45 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:45 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:45 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:45 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:45 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:45 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:45 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:45 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:45 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:45 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:45 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:45 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:45 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:45 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:45 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:45 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:45 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:45 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:45 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:45 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:45 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:45 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:45 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:45 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:45 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:45 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:45 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:45 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:46 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:46 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:46 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:46 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:46 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:46 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:46 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:46 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:46 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:46 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:46 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:46 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:46 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:46 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:46 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:46 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:46 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:46 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:46 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:46 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:46 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:46 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:46 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:46 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:46 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:46 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:46 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:46 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:46 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:46 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:46 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:46 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:46 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:46 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:46 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:46 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:46 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:46 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:46 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:46 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:46 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:46 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:46 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:46 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:46 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:47 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:47 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:47 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:47 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:47 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:47 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:47 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:47 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:47 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:47 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:47 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:47 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:47 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:47 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:47 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:47 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:47 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:48 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:48 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:48 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:48 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:48 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:48 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:48 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:48 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:48 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:48 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:48 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:48 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:48 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:48 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:48 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:48 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:48 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:48 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:48 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:48 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:48 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:48 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:48 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:48 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:48 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:48 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:48 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:48 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:48 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:48 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:48 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:48 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:48 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:48 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:48 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:48 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:48 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:48 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:48 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:48 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:48 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:48 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:48 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:48 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:48 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:48 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:48 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:48 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:48 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:48 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:49 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:49 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:49 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:49 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:49 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:49 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:49 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:49 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:49 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:49 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:49 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:49 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:49 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:49 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:49 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:49 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:49 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:49 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:49 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:49 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:49 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:49 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:49 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:49 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:49 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:49 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:49 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:49 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:49 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:49 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:49 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:49 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:49 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:49 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:49 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:49 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:49 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:49 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:49 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:49 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:49 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:49 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:49 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:50 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:50 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:50 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:50 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:50 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:50 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:50 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:50 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:50 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:50 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:50 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:50 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:50 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:50 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:50 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:50 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:50 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:50 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:50 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:50 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:50 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:50 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:50 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:50 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:50 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:50 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:50 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:50 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:50 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:50 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:50 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:50 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:50 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:50 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:50 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:50 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:50 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:50 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:50 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:51 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:51 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:51 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:51 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:51 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:51 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:51 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:51 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:51 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:51 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:51 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:51 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:51 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:51 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:51 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:51 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:51 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:51 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:51 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:51 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:51 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:51 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:51 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:51 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:51 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:51 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:51 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:51 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:51 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:51 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:51 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:51 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:52 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:52 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:52 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:52 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:52 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:52 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:52 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:52 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:52 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:52 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:52 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:52 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:52 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:52 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:52 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:52 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:52 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:52 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:52 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:52 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:52 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:52 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:52 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:52 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:52 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:52 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:52 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:52 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:52 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:52 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:52 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:52 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:52 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:52 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:52 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:52 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:52 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:52 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:52 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:52 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:52 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:52 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:53 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:53 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:53 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:53 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:53 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:53 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:53 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:53 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:53 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:53 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:53 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:53 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:53 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:53 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:53 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:53 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:53 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:53 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:53 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:53 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:53 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:53 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:53 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:53 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:53 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:53 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:53 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:53 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:53 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:53 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:53 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:53 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:53 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:53 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:53 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:53 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:53 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:53 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:53 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:54 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:54 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:54 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:54 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:54 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:54 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:54 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:54 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:54 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:54 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:54 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:54 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:54 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:54 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:54 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:54 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:54 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:54 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:54 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:54 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:54 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:54 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:54 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:54 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:54 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:54 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:54 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:54 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:54 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:54 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:54 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:54 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:54 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:54 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:54 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:54 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:54 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:54 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:54 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:54 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:54 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:54 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:54 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:54 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:55 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:55 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:55 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:55 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:55 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:55 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:55 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:55 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:55 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:55 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:55 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:55 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:55 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:55 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:55 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:55 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:55 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:55 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:55 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:55 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:55 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:55 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:55 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:55 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:55 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:55 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:55 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:55 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:55 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:55 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:55 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:55 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:55 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:55 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:55 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:55 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:55 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:55 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:55 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:55 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:55 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:55 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:55 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:56 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:56 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:56 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:56 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:56 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:56 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:56 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:56 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:56 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:56 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:56 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:56 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:56 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:56 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:56 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:56 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:56 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:56 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:56 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:56 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:56 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:56 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:56 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:56 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:56 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:56 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:56 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:56 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:56 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:56 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:56 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:56 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:56 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:56 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:56 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:56 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:56 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:56 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:56 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:56 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:56 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:56 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:56 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:56 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:56 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:56 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:57 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:57 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:57 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:57 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:57 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:57 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:57 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:57 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:57 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:57 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:57 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:57 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:57 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:57 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:57 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:57 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:57 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:57 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:57 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:57 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:57 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:57 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:57 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:57 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:57 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:57 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:57 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:57 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:57 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:57 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:57 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:57 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:57 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:57 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:57 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:57 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:57 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:57 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:57 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:57 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:58 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:58 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:58 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:58 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:58 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:58 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:58 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:58 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:58 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:58 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:58 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:58 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:58 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:58 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:58 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:58 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:58 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:58 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:58 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:58 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:58 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:58 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:58 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:58 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:58 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:58 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:58 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:58 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:58 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:58 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:58 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:58 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:58 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:58 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:58 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:58 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:58 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:58 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:58 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:58 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:58 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:58 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:58 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:58 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:58 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:59 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:59 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:59 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:59 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:59 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:59 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:59 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:59 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:59 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:59 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:59 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:52:59 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:59 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:59 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:59 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:59 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:59 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:59 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:59 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:59 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:59 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:59 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:59 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:59 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:59 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:59 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:59 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:59 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:59 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:59 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:59 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:59 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:52:59 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:52:59 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:52:59 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:53:00 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:53:00 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:53:00 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:53:00 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:53:00 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:53:00 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:53:00 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:53:00 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:53:00 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:53:00 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:53:00 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:53:00 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:53:00 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:53:00 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:53:00 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:53:00 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:53:00 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:53:00 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:53:00 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:53:00 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:53:00 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:53:01 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:53:01 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:53:01 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:53:01 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:53:01 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:53:01 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:53:01 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:53:01 [    INFO] root:1135 - データサマリーを取得します。
+2025-07-27 09:53:01 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:53:01 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:53:01 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:53:01 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:53:01 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:53:01 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:53:01 [    INFO] root:572 - 設定保存が完了しました。
+2025-07-27 09:53:01 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:53:01 [    INFO] src.services.settings_manager:157 - データベース設定を更新しました
+2025-07-27 09:53:01 [    INFO] src.services.settings_manager:122 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-27 09:53:01 [    INFO] root:572 - 設定保存が完了しました。

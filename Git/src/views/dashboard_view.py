@@ -1,6 +1,6 @@
-from PyQt5.QtCore import pyqtSignal as Signal, Qt, QPropertyAnimation, QEasingCurve
+from PySide6.QtCore import Signal, Qt, QPropertyAnimation, QEasingCurve
 # Widgets
-from PyQt5.QtWidgets import (
+from PySide6.QtWidgets import (
     QWidget,
     QVBoxLayout,
     QHBoxLayout,
@@ -13,8 +13,8 @@ from PyQt5.QtWidgets import (
     QFrame,
     QSplitter,
 )
-from PyQt5.QtGui import QPainter, QPen, QBrush, QFont
-from PyQt5.QtCore import QRect
+from PySide6.QtGui import QPainter, QPen, QBrush, QFont
+from PySide6.QtCore import QRect
 
 # QFluentWidgets components
 from qfluentwidgets import (

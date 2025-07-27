@@ -1,5 +1,5 @@
-from PyQt5.QtCore import Qt, QTimer
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QFrame, QStackedWidget, QLabel, QHBoxLayout
+from PySide6.QtCore import Qt, QTimer
+from PySide6.QtWidgets import QWidget, QVBoxLayout, QFrame, QStackedWidget, QLabel, QHBoxLayout, QStatusBar
 from qfluentwidgets import (NavigationInterface, NavigationItemPosition, MessageBox,
                             SubtitleLabel, setTheme, Theme, FluentWindow, NavigationAvatarWidget,
                             setFont, TitleLabel, InfoBar, InfoBarPosition, BodyLabel)
@@ -10,12 +10,14 @@ from .setup_dialog import SetupDialog
 from .export_view import ExportView
 from .settings_view import SettingsView
 from .etl_setting_view import EtlSettingView
+from typing import Optional
 
 
-class CustomStatusBar(QWidget):
+class CustomStatusBar(QStatusBar):
     """FluentWindow用のカスタムステータスバー"""
 
-    def __init__(self, parent=None):
+    def __init__(self, parent: Optional['QWidget'] = None):
+        # QStatusBarの適切な初期化
         super().__init__(parent)
         self.initUI()
         self.message_timer = QTimer()

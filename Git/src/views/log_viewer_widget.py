@@ -390,7 +390,7 @@ class LogViewerWidget(CardWidget):
 
     def _export_logs(self):
         """ログをファイルにエクスポート"""
-        from PyQt5.QtWidgets import QFileDialog
+        from PySide6.QtWidgets import QFileDialog
 
         filename, _ = QFileDialog.getSaveFileName(
             self,

@@ -37,50 +37,95 @@ def request_admin_privileges() -> None:
 
     UACプロンプトを表示し、ユーザーが許可すると管理者権限で再起動される。
     現在のプロセスは即座に終了する。
+    
+    参考実装: https://gist.github.com/leixingyu/a2cc64cec76638d2367cd4c2fc1b94ec
     """
     try:
         # 現在のスクリプトのパスを取得
         script_path = os.path.abspath(sys.argv[0])
 
-        # 引数を文字列として結合
-        params = ' '.join(sys.argv[1:]) if len(sys.argv) > 1 else ''
+        # 引数の処理（参考実装に基づく改善版）
+        if len(sys.argv) > 1:
+            # 引数がある場合は適切にエスケープ
+            args = []
+            for arg in sys.argv[1:]:
+                if ' ' in arg:
+                    args.append(f'"{arg}"')
+                else:
+                    args.append(arg)
+            params = ' '.join(args)
+        else:
+            params = ''
 
         logging.info("管理者権限を要求しています...")
-        logging.info(f"再起動対象: {script_path}")
+        logging.info(f"Python実行ファイル: {sys.executable}")
+        logging.info(f"スクリプトパス: {script_path}")
         logging.info(f"引数: {params}")
 
+        # パラメータ文字列を構築（参考実装に基づく改良版）
+        if params:
+            command_params = f'"{script_path}" {params}'
+        else:
+            command_params = f'"{script_path}"'
+
+        logging.info(f"実行コマンド: {sys.executable} {command_params}")
+
         # ShellExecuteWでrunas動詞を使用して管理者権限で再起動
+        # https://docs.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shellexecutew
         result = ctypes.windll.shell32.ShellExecuteW(
             None,                    # hwnd (親ウィンドウハンドル)
-            "runas",                 # verb (管理者として実行)
-            sys.executable,          # file (Python実行ファイル)
-            f'"{script_path}" {params}',  # parameters (スクリプトパス + 引数)
-            None,                    # directory (作業ディレクトリ)
-            1                        # show (SW_SHOWNORMAL)
+            "runas",                 # lpVerb (管理者として実行)
+            sys.executable,          # lpFile (Python実行ファイル)
+            command_params,          # lpParameters (スクリプトパス + 引数)
+            None,                    # lpDirectory (作業ディレクトリ)
+            1                        # nShowCmd (SW_SHOWNORMAL)
         )
 
+        # 結果の確認（ShellExecuteWは成功時に32より大きい値を返す）
         if result <= 32:
-            # ShellExecuteWのエラーコード
+            # ShellExecuteWのエラーコード（https://docs.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shellexecutew）
             error_messages = {
-                2: "ファイルが見つかりません",
-                3: "パスが見つかりません",
-                5: "アクセスが拒否されました",
-                8: "メモリが不足しています",
-                26: "共有違反です",
+                0: "システムのメモリまたはリソースが不足しています",
+                2: "指定されたファイルが見つかりませんでした",
+                3: "指定されたパスが見つかりませんでした",
+                5: "オペレーティングシステムがファイルへのアクセスを拒否しました",
+                8: "システムのメモリが不足してファイルを開けませんでした",
+                26: "共有違反が発生しました",
                 27: "ファイル名の関連付けが不完全または無効です",
+                28: "DDE トランザクションがタイムアウトしました",
+                29: "DDE トランザクションが失敗しました",
+                30: "DDE トランザクションがビジー状態のため完了できませんでした",
                 31: "指定された関数はサポートされていません"
             }
             error_msg = error_messages.get(result, f"不明なエラー (コード: {result})")
-            raise RuntimeError(f"管理者権限での再起動に失敗: {error_msg}")
-
-        logging.info("管理者権限での再起動を開始しました。現在のプロセスを終了します。")
+            
+            # 特別なケース：ユーザーがUACをキャンセルした場合（通常はエラーコード5）
+            if result == 5:
+                logging.warning("ユーザーがUACプロンプトをキャンセルしました")
+                print("⚠️  UACプロンプトがキャンセルされました。")
+                print("   管理者権限が必要です。アプリケーションを手動で管理者として実行してください。")
+            else:
+                logging.error(f"管理者権限での再起動に失敗: {error_msg}")
+                print(f"❌ 管理者権限での再起動に失敗: {error_msg}")
+                print("   手動で管理者権限でアプリケーションを起動してください。")
+            
+            input("Enterキーを押して終了...")
+            sys.exit(1)
+        else:
+            # 成功時
+            logging.info(f"管理者権限での再起動を開始しました（結果コード: {result}）")
+            logging.info("現在のプロセスを終了します")
+            
+            # 少し待機してから終了（新しいプロセスの起動を待つ）
+            import time
+            time.sleep(0.5)
 
     except Exception as e:
-        logging.error(f"管理者権限要求エラー: {e}")
-        print(f"\n⚠️  管理者権限が必要です ⚠️")
-        print(f"エラー: {e}")
-        print(f"手動で管理者権限でアプリケーションを起動してください。")
+        logging.error(f"管理者権限要求中に予期しないエラー: {e}")
+        print(f"\n❌ 管理者権限要求エラー: {e}")
+        print("手動で管理者権限でアプリケーションを起動してください。")
         input("Enterキーを押して終了...")
+        sys.exit(1)
 
     # 現在のプロセスを終了
     sys.exit(0)

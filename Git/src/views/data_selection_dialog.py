@@ -7,10 +7,10 @@
 ユーザーが選択できる汎用的なダイアログを提供
 """
 
-from PyQt5.QtCore import QDate, pyqtSignal as Signal, Qt
-from PyQt5.QtWidgets import (
+from PySide6.QtCore import QDate, Signal, Qt
+from PySide6.QtWidgets import (
     QDialog, QVBoxLayout, QHBoxLayout, QDialogButtonBox,
-    QScrollArea, QWidget, QCheckBox, QPushButton, QGroupBox, 
+    QScrollArea, QWidget, QCheckBox, QPushButton, QGroupBox,
     QGridLayout, QTabWidget, QLabel
 )
 from qfluentwidgets import CalendarPicker, SubtitleLabel, BodyLabel, StrongBodyLabel

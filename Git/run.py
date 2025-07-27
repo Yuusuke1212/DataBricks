@@ -59,8 +59,97 @@ def setup_early_logging():
 # 最優先でロギングを初期化
 setup_early_logging()
 
-# 日本語パス対応: 環境変数とエンコーディング設定
+def run_main_application():
+    """
+    メインアプリケーションの初期化と起動をカプセル化する関数。
+    この関数は必ず管理者権限で実行される。
+    """
+    try:
+        logging.info("管理者権限で実行中。アプリケーションを初期化します。")
+        print("🎯 管理者権限でアプリケーションを初期化中...")
+        
+        # Unicode環境設定
+        try:
+            setup_unicode_environment()
+            logging.info("Unicode環境設定が完了しました")
+        except Exception as e:
+            logging.warning(f"Unicode環境設定エラー: {e}")
+        
+        # 64bit環境向けのレジストリ設定を自動構成
+        try:
+            from src.admin_helper import get_python_architecture
+            
+            python_arch = get_python_architecture()
+            logging.info(f"🔍 Python アーキテクチャ: {python_arch}")
+            
+            if python_arch == '64bit':
+                logging.info("🔧 64bit Python環境を検出。JV-LinkのCOMサロゲート設定を確認・構成します...")
+                print("🔧 JV-Link COMサロゲート設定を実行中...")
+                
+                from src.registry_helper import ensure_com_surrogate_for_jvlink
+                ensure_com_surrogate_for_jvlink()
+                
+                logging.info("✅ レジストリ設定が完了しました。")
+                print("✅ レジストリ設定完了")
+            else:
+                logging.info("32bit Python環境のため、DLLサロゲート設定は不要です")
+                
+        except ImportError as reg_error:
+            logging.warning(f"レジストリヘルパーのインポートエラー: {reg_error}")
+            print("⚠️  レジストリ設定をスキップします")
+        except Exception as reg_error:
+            logging.warning(f"レジストリ設定エラー: {reg_error}")
+            print("⚠️  レジストリ設定でエラーが発生しましたが、アプリケーションは継続します")
 
+        # --- ★最重要★ メインアプリケーションのGUIを起動 ---
+        logging.info("🚀 メインGUIアプリケーションを起動します...")
+        print("🚀 GUIアプリケーションを起動中...")
+        
+        # src/main.py に定義されたGUI起動関数を呼び出す
+        from src.main import launch_gui
+        
+        logging.info("launch_gui()関数を呼び出します")
+        exit_code = launch_gui()
+        
+        logging.info(f"launch_gui()から戻りました。終了コード: {exit_code}")
+        return exit_code
+
+    except ImportError as import_error:
+        error_msg = f"重要なモジュールのインポートに失敗しました: {import_error}"
+        logging.error(error_msg)
+        print(f"❌ {error_msg}")
+        
+        # GUIツールキットが利用可能であれば、メッセージボックスを表示
+        try:
+            from PySide6.QtWidgets import QApplication as QApp, QMessageBox
+            # QApplicationインスタンスがなければ作成
+            if not QApp.instance():
+                _ = QApp(sys.argv)
+            QMessageBox.critical(None, "モジュールエラー", f"必要なモジュールの読み込みに失敗しました:\n{import_error}")
+        except ImportError:
+            # GUIが利用できない場合はコンソールに出力
+            print("CRITICAL: 必要なモジュールの読み込みに失敗しました。")
+        
+        return 1
+        
+    except Exception as critical_error:
+        # 予期せぬエラーをログに記録し、ユーザーに通知する
+        error_msg = f"アプリケーションの実行中に致命的なエラーが発生しました: {critical_error}"
+        logging.exception(error_msg)
+        print(f"❌ {error_msg}")
+        
+        # GUIツールキットが利用可能であれば、メッセージボックスを表示
+        try:
+            from PySide6.QtWidgets import QApplication as QApp, QMessageBox
+            # QApplicationインスタンスがなければ作成
+            if not QApp.instance():
+                _ = QApp(sys.argv)
+            QMessageBox.critical(None, "致命的なエラー", "アプリケーションの起動に失敗しました。\n詳細はログファイルを確認してください。")
+        except ImportError:
+            # GUIが利用できない場合はコンソールに出力
+            print("CRITICAL: アプリケーションの起動に失敗しました。詳細はログファイルを確認してください。")
+        
+        return 1
 
 def setup_unicode_environment():
     """
@@ -91,105 +180,26 @@ def setup_unicode_environment():
 
     # ファイルシステムエンコーディングの確認
     fs_encoding = sys.getfilesystemencoding()
-    print(f"ファイルシステムエンコーディング: {fs_encoding}")
+    logging.info(f"ファイルシステムエンコーディング: {fs_encoding}")
 
     # 標準入出力のエンコーディング確認
     stdout_encoding = sys.stdout.encoding
-    print(f"標準出力エンコーディング: {stdout_encoding}")
-
-
-def setup_jvlink_architecture_compatibility():
-    """
-    64bit Python環境で32bit JV-Link COMコンポーネントを使用するための設定
-
-    DLLサロゲート機能を有効化して、アーキテクチャの不一致問題を解決する
-    """
-    try:
-        # admin_helperを動的インポート（管理者権限確保後）
-        from src.admin_helper import get_python_architecture
-
-        # Pythonアーキテクチャの確認
-        python_arch = get_python_architecture()
-        print(f"🔍 Python アーキテクチャ: {python_arch}")
-
-        if python_arch == "64bit":
-            print("📋 64bit Python環境でのJV-Link COMコンポーネント使用のため、DLLサロゲート設定を実行します...")
-
-            # レジストリヘルパーを動的インポート
-            from src.registry_helper import ensure_com_surrogate_for_jvlink, get_jvlink_registry_status
-
-            # 現在の設定状況を確認
-            print("📊 現在のJV-Linkレジストリ設定を確認中...")
-            status = get_jvlink_registry_status()
-
-            if status.get("configuration_complete", False):
-                print("✅ DLLサロゲート設定は既に完了しています。")
-            else:
-                print("⚙️  DLLサロゲート設定を実行中...")
-                success = ensure_com_surrogate_for_jvlink()
-                if success:
-                    print("✅ DLLサロゲート設定が正常に完了しました。")
-                    print("   64bit Python環境からの32bit JV-Link呼び出しが可能になりました。")
-                else:
-                    print("❌ DLLサロゲート設定に失敗しました。")
-        else:
-            print("✅ 32bit Python環境のため、DLLサロゲート設定は不要です。")
-
-    except ImportError as e:
-        print(f"⚠️  ヘルパーモジュールの読み込みに失敗: {e}")
-        print("   JV-Link機能に影響する可能性があります。")
-    except Exception as e:
-        print(f"⚠️  JV-Linkアーキテクチャ互換性設定エラー: {e}")
-        print("   JV-Link機能に影響する可能性がありますが、アプリケーションは継続します。")
-
-
-def launch_main_application():
-    """
-    メインアプリケーションの起動シーケンス
-    管理者権限で実行されることを前提としたアプリケーションの初期化と起動
-    """
-    try:
-        logging.info("🎯 管理者権限でアプリケーション初期化を開始します")
-
-        # Unicode環境設定
-        setup_unicode_environment()
-
-        # 64bit環境向けのJV-Link設定を自動構成
-        setup_jvlink_architecture_compatibility()
-
-        logging.info("🚀 メインGUIアプリケーションを起動します")
-
-        # メインアプリケーションのGUIを起動
-        from src.main import launch_gui
-        return launch_gui()
-
-    except ImportError as e:
-        error_msg = f"モジュールのインポートに失敗しました: {e}"
-        logging.error(error_msg)
-        print(f"❌ {error_msg}")
-        return 1
-
-    except Exception as e:
-        error_msg = f"アプリケーション起動中に致命的なエラーが発生しました: {e}"
-        logging.exception(error_msg)
-        print(f"❌ {error_msg}")
-        print(f"📝 詳細なエラー情報がログファイルに記録されました")
-        return 1
-
+    logging.info(f"標準出力エンコーディング: {stdout_encoding}")
 
 if __name__ == "__main__":
     logging.info("🚀 JRA-Data Collector エントリーポイント開始")
     print("🚀 JRA-Data Collector を起動しています...")
-
+    
     try:
         # 管理者権限ヘルパーをインポート
         from src.admin_helper import is_admin, run_as_admin, get_elevation_status
-
+        
         if is_admin():
-            # === 管理者権限がある場合: アプリケーションを直接起動 ===
+            # === 管理者権限で実行されている場合 ===
+            # メインアプリケーションのロジックを直接実行
             logging.info("🔐 管理者権限で実行中です")
             print("🔐 管理者権限で実行されています。")
-
+            
             # 実行環境の詳細表示
             try:
                 elevation_status = get_elevation_status()
@@ -200,39 +210,42 @@ if __name__ == "__main__":
             except Exception as e:
                 logging.warning(f"実行環境取得エラー: {e}")
                 print(f"⚠️  実行環境取得エラー: {e}")
-
+            
             # メインアプリケーションを実行
-            exit_code = launch_main_application()
+            logging.info("メインアプリケーション関数を呼び出します")
+            exit_code = run_main_application()
             logging.info(f"アプリケーション終了（終了コード: {exit_code}）")
+            
+            # 明示的に終了コードで終了
             sys.exit(exit_code)
-
+            
         else:
-            # === 管理者権限がない場合: 自己昇格を試みる ===
+            # === 非管理者権限で実行されている場合 ===
+            # UACプロンプトを表示して自己昇格を試みる
             logging.info("🔒 非管理者権限で実行中。昇格を試みます")
             print("🔒 JV-Link COMコンポーネントの適切な動作のため、管理者権限が必要です。")
             print("   UACプロンプトが表示されますので、「はい」を選択してください。")
-            print("   これにより64bit Python環境での32bit JV-Link呼び出しが可能になります。")
             print()
-
+            
             # 管理者権限で自己再起動（現在のプロセスは終了される）
             logging.info("管理者権限昇格を実行します...")
-            run_as_admin()  # この呼び出し後、現在のプロセスは終了
-
-            # run_as_admin()が戻ってきた場合（通常は戻らない）
+            run_as_admin()  # この関数は管理者権限でスクリプトを再起動する
+            
+            # 通常、run_as_admin()は戻ってこないが、念のため
             logging.warning("run_as_admin()から制御が戻りました。昇格が失敗した可能性があります")
             print("⚠️  管理者権限昇格に失敗した可能性があります")
-            sys.exit(1)
-
-    except ImportError as e:
-        error_msg = f"管理者権限ヘルパーの読み込みに失敗: {e}"
+            sys.exit(1)  # 元の非管理者プロセスはここで完全に終了する
+            
+    except ImportError as import_error:
+        error_msg = f"管理者権限ヘルパーの読み込みに失敗: {import_error}"
         logging.error(error_msg)
-        print(f"⚠️  {error_msg}")
+        print(f"❌ {error_msg}")
         print("   管理者権限なしで継続しますが、JV-Link機能に制限が生じる可能性があります。")
-
+        
         # フォールバック: 管理者権限なしでアプリケーションを実行
         try:
             logging.info("フォールバック実行: 管理者権限なしでアプリケーションを起動")
-            exit_code = launch_main_application()
+            exit_code = run_main_application()
             sys.exit(exit_code)
         except Exception as fallback_err:
             fallback_error_msg = f"フォールバック実行も失敗しました: {fallback_err}"
@@ -240,9 +253,9 @@ if __name__ == "__main__":
             print(f"❌ {fallback_error_msg}")
             input("Enterキーを押して終了...")
             sys.exit(1)
-
-    except Exception as e:
-        critical_error_msg = f"アプリケーション起動で予期しないエラー: {e}"
+            
+    except Exception as critical_error:
+        critical_error_msg = f"アプリケーション起動で予期しないエラー: {critical_error}"
         logging.critical(critical_error_msg)
         print(f"❌ {critical_error_msg}")
         print("   予期しないエラーが発生しました。")

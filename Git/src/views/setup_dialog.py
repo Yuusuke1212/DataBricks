@@ -1,5 +1,5 @@
-from PyQt5.QtCore import QDate, pyqtSlot as Slot
-from PyQt5.QtWidgets import (
+from PySide6.QtCore import QDate, Slot
+from PySide6.QtWidgets import (
     QDialog, QVBoxLayout, QHBoxLayout, QDialogButtonBox,
     QScrollArea, QWidget, QCheckBox, QPushButton, QGroupBox, QGridLayout
 )
@@ -162,7 +162,7 @@ class SetupDialog(QDialog):
         selected_types = self.get_selected_data_types()
         if not selected_types:
             # 何も選択されていない場合は警告
-            from PyQt5.QtWidgets import QMessageBox
+            from PySide6.QtWidgets import QMessageBox
             QMessageBox.warning(
                 self,
                 "警告",
