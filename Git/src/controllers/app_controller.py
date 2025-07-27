@@ -466,80 +466,42 @@ class AppController(QObject):
     @Slot(dict)
     def on_database_config_updated(self, db_config: dict):
         """
-        データベース設定変更通知を受信し、再接続とUI更新を実行
+        データベース設定変更通知を受信し、再接続とUI更新を実行 (ループ対策済み)
         
         Args:
             db_config: 更新されたデータベース設定辞書
         """
         self.emit_log("INFO", f"データベース設定変更を検知: {db_config.get('type', 'Unknown')} データベース")
         
+        # settings_managerからのシグナルを一時的にブロックし、再入を防ぐ
+        is_blocked = self.settings_manager.signalsBlocked()
+        self.settings_manager.blockSignals(True)
+        
         try:
             if not self.db_manager:
-                # DatabaseManagerが存在しない場合は新規作成
                 self.emit_log("INFO", "DatabaseManagerを新規作成します")
                 self.db_manager = DatabaseManager(self.settings_manager)
-                self._update_dashboard_db_info()
-                self._show_status_message("データベースマネージャーを初期化しました。", 3000)
-                return
-
-            # 既存のDatabaseManagerで再接続を試行
-            self.emit_log("INFO", "既存のDatabaseManagerで再接続を実行中...")
-            success, message = self.db_manager.reconnect(db_config)
-            
-            if success:
-                # 再接続成功時の処理
-                self.emit_log("INFO", f"データベース再接続成功: {message}")
-                
-                # ダッシュボードのDB情報を更新
-                self._update_dashboard_db_info()
-                
-                # 必要に応じてテーブル作成
-                self._ensure_database_tables()
-                
-                # 成功メッセージを表示
-                self._show_status_message("データベース設定が正常に更新されました。", 3000)
-                
-                # データサマリーも更新
-                try:
-                    summary = self.db_manager.get_data_summary()
-                    if hasattr(self.main_window, 'dashboard_view'):
-                        self.main_window.dashboard_view.update_dashboard_summary(summary)
-                except Exception as summary_error:
-                    self.emit_log("WARNING", f"データサマリー更新エラー: {summary_error}")
-                
             else:
-                # 再接続失敗時の処理
-                self.emit_log("ERROR", f"データベース再接続失敗: {message}")
-                
-                # エラー状態をダッシュボードに反映
-                error_info = {
-                    'connected': False,
-                    'type': db_config.get('type', 'エラー'),
-                    'name': 'N/A',
-                    'tables_count': 0,
-                    'last_updated': 'エラー'
-                }
-                
-                if hasattr(self.main_window, 'dashboard_view'):
-                    self.main_window.dashboard_view.update_db_info(error_info)
-                
-                # エラーメッセージを表示
-                self._show_status_message(f"データベース設定更新エラー: {message}", 8000)
-                
-        except Exception as e:
-            critical_error_msg = f"データベース設定更新処理中に予期しないエラー: {e}"
-            self.emit_log("ERROR", critical_error_msg)
+                # 既存のDatabaseManagerで再接続を試行
+                self.emit_log("INFO", "既存のDatabaseManagerで再接続を実行中...")
+                self.db_manager.reconnect(db_config)
             
-            # クリティカルエラー時のフォールバック処理
-            try:
-                # DatabaseManagerを再作成
-                self.db_manager = DatabaseManager(self.settings_manager)
-                self._update_dashboard_db_info()
-                self._show_status_message("データベースマネージャーを再作成しました。", 5000)
-                
-            except Exception as fallback_error:
-                self.emit_log("CRITICAL", f"フォールバック処理も失敗: {fallback_error}")
-                self._show_status_message(f"データベース設定更新に失敗しました: {e}", 10000)
+            # UI更新と状態確認（この処理が副作用で再保存をトリガーしていた）
+            self._update_dashboard_db_info()
+            self._ensure_database_tables()
+            
+            self._show_status_message("データベース設定が正常に更新されました。", 3000)
+
+        except Exception as e:
+            critical_error_msg = f"データベース設定更新処理中にエラー: {e}"
+            self.emit_log("ERROR", critical_error_msg, {"exception": str(e)})
+            self._show_status_message(f"データベース設定更新に失敗しました: {e}", 10000)
+            # エラー発生時もUIを更新して状態を反映
+            self._update_dashboard_db_info()
+
+        finally:
+            # 処理が成功しても失敗しても、必ずシグナルのブロックを解除する
+            self.settings_manager.blockSignals(is_blocked)
 
     def _ensure_database_tables(self):
         """
@@ -567,15 +529,27 @@ class AppController(QObject):
     @Slot()
     def on_settings_saved(self):
         """
-        設定保存完了通知を受信
+        設定保存完了通知を受信 (ループ対策済み)
         """
         logging.info("設定保存が完了しました。")
 
-        # UIの初期設定を再読み込み
-        self.load_and_apply_settings()
+        # settings_managerからのシグナルを一時的にブロックし、再入を防ぐ
+        is_blocked = self.settings_manager.signalsBlocked()
+        self.settings_manager.blockSignals(True)
+        
+        try:
+            # UIの初期設定を再読み込み
+            self.load_and_apply_settings()
 
-        # ダッシュボードを更新
-        self._update_dashboard_db_info()
+            # ダッシュボードを更新
+            self._update_dashboard_db_info()
+            
+        except Exception as e:
+            self.emit_log("ERROR", f"設定保存後処理中にエラー: {e}")
+        
+        finally:
+            # 処理が成功しても失敗しても、必ずシグナルのブロックを解除する
+            self.settings_manager.blockSignals(is_blocked)
 
     def _update_dashboard_db_info(self):
         """
