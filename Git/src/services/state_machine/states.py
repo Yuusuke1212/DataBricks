@@ -26,6 +26,11 @@ class IdleState(AppState):
 
         # データベース設定チェック
         if not self._check_database_config():
+            self.context.emit_log("WARNING", "データベースが正しく設定されていないため、データ取得を開始できません。")
+            self.context.show_error_message_box(
+                "データベース未接続",
+                "データベースが正しく設定されていません。アプリ設定から接続をテストし、設定を保存してください。"
+            )
             return
 
         # リクエスト状態に遷移

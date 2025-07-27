@@ -2,8 +2,8 @@ from __future__ import annotations
 from typing import TYPE_CHECKING, List, Dict, Any
 import logging
 from datetime import datetime, timedelta
-from PyQt5.QtCore import QObject, pyqtSlot as Slot
-from PyQt5.QtWidgets import QDialog
+from PySide6.QtCore import QObject, Slot
+from PySide6.QtWidgets import QDialog
 
 from ..services.settings_manager import SettingsManager
 from ..services.db_manager import DatabaseManager
@@ -721,7 +721,7 @@ class AppController(QObject):
         修正点2: エラーダイアログを表示するスロット
         UIスレッドで安全に実行される
         """
-        from PyQt5.QtWidgets import QMessageBox
+        from PySide6.QtWidgets import QMessageBox
 
         # QMessageBoxはUIコンポーネントなので、親ウィジェットを指定するのが望ましい
         QMessageBox.critical(self.main_window, title, message)
@@ -917,7 +917,7 @@ class AppController(QObject):
                     f"※ 大量のデータをダウンロードするため、時間がかかる場合があります。"
                 )
                 
-                from PyQt5.QtWidgets import QMessageBox
+                from PySide6.QtWidgets import QMessageBox
                 reply = QMessageBox.question(
                     self.main_window,
                     'セットアップデータ取得確認',
@@ -977,7 +977,7 @@ class AppController(QObject):
                     warning_msg = "最終更新タイムスタンプが設定されていません。まずセットアップデータを取得することを推奨します。"
                     self.emit_log("WARNING", warning_msg)
                     
-                    from PyQt5.QtWidgets import QMessageBox
+                    from PySide6.QtWidgets import QMessageBox
                     reply = QMessageBox.question(
                         self.main_window,
                         '差分更新確認',
@@ -1001,7 +1001,7 @@ class AppController(QObject):
                     f"(合計{len(data_names)}種類)"
                 )
                 
-                from PyQt5.QtWidgets import QMessageBox
+                from PySide6.QtWidgets import QMessageBox
                 reply = QMessageBox.question(
                     self.main_window,
                     '差分データ更新確認',
@@ -1345,7 +1345,7 @@ class AppController(QObject):
 
     def _show_config_error(self, message: str):
         """設定エラーメッセージを表示する"""
-        from PyQt5.QtWidgets import QMessageBox
+        from PySide6.QtWidgets import QMessageBox
         QMessageBox.warning(
             self.main_window,
             "設定エラー",
@@ -1505,11 +1505,27 @@ class AppController(QObject):
         JV-Link設定はJVSetUIProperties()で直接レジストリに保存されるため除外
         """
         try:
+            self.emit_log("INFO", "設定が保存されました。適用処理を開始します。")
+            
             # データベース設定の更新
             if 'database' in settings:
                 db_config = settings['database']
+                
+                # SettingsManagerで設定を更新
                 self.settings_manager.update_db_config(**db_config)
                 logging.info("データベース設定が更新されました。")
+                
+                # データベース設定を更新し、再接続を試行
+                success, message = self.db_manager.reconnect(db_config)
+                
+                # ダッシュボードのDB情報を常に更新して最新の状態を反映
+                self._update_dashboard_db_info()
+                
+                if success:
+                    self._show_status_message("データベース設定が正常に適用されました。", 5000)
+                else:
+                    # 再接続失敗時にエラーダイアログを表示
+                    self.show_error_message_box("データベース再接続失敗", message)
 
             # その他の設定（データベース以外）
             for section, section_data in settings.items():
@@ -1525,6 +1541,7 @@ class AppController(QObject):
 
         except Exception as e:
             logging.error(f"設定の保存中にエラーが発生: {e}")
+            self.show_error_message_box("設定保存エラー", f"設定の保存中にエラーが発生しました: {e}")
             if hasattr(self.main_window, 'statusBar'):
                 self.main_window.statusBar().showMessage(f"設定保存エラー: {e}", 5000)
 
@@ -2091,3 +2108,26 @@ class AppController(QObject):
             self.emit_log("ERROR", error_msg)
             self._show_status_message(error_msg, 5000)
             return False
+
+    # === ユーザー通知ヘルパーメソッド ===
+
+    def show_error_message_box(self, title: str, message: str):
+        """
+        ユーザーにエラーメッセージボックスを表示する
+        
+        Args:
+            title: エラーダイアログのタイトル
+            message: エラーメッセージの内容
+        """
+        try:
+            from PySide6.QtWidgets import QMessageBox
+            
+            if self.main_window:
+                QMessageBox.critical(self.main_window, title, message)
+            else:
+                # メインウィンドウが利用できない場合はログに記録
+                self.emit_log("ERROR", f"{title}: {message}")
+                
+        except Exception as e:
+            # GUI表示に失敗した場合はログにフォールバック
+            self.emit_log("ERROR", f"エラーメッセージ表示失敗 - {title}: {message} (原因: {e})")

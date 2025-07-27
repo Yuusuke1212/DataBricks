@@ -1242,20 +1242,27 @@ class DatabaseManager(LoggerMixin):
             try:
                 self.connect()
                 
-                # 接続成功をテスト
-                if self.engine:
-                    with self.engine.connect() as conn:
-                        # 簡単な接続テスト
-                        if self._db_type == 'sqlite':
-                            conn.execute(text("SELECT 1"))
-                        elif self._db_type == 'mysql':
-                            conn.execute(text("SELECT 1"))
-                        elif self._db_type == 'postgresql':
-                            conn.execute(text("SELECT 1"))
-                    
-                    success_msg = f"{self._db_type} データベース '{self._db_name}' への再接続に成功しました"
-                    self.emit_log("INFO", success_msg)
-                    return True, success_msg
+                # 最終的な接続状態を確認
+                if self.engine is not None:
+                    try:
+                        # 実際に接続をテスト
+                        with self.engine.connect() as conn:
+                            # 簡単な接続テスト
+                            if self._db_type == 'sqlite':
+                                conn.execute(text("SELECT 1"))
+                            elif self._db_type == 'mysql':
+                                conn.execute(text("SELECT 1"))
+                            elif self._db_type == 'postgresql':
+                                conn.execute(text("SELECT 1"))
+                        
+                        # 接続テストに成功した場合
+                        success_msg = f"{self._db_type} データベース '{self._db_name}' への再接続に成功しました"
+                        self.emit_log("INFO", success_msg)
+                        return True, success_msg
+                        
+                    except Exception as test_error:
+                        self.emit_log("ERROR", f"データベース接続テストに失敗: {test_error}")
+                        return False, f"接続テストに失敗しました: {test_error}"
                 else:
                     error_msg = "データベースエンジンの初期化に失敗しました"
                     self.emit_log("ERROR", error_msg)
