@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import TYPE_CHECKING, List, Dict, Any
 import logging
-from datetime import datetime
+from datetime import datetime, timedelta
 from PyQt5.QtCore import QObject, pyqtSlot as Slot
 from PyQt5.QtWidgets import QDialog
 
@@ -96,6 +96,9 @@ class AppController(QObject):
         self.log_records: List[LogRecord] = []  # 構造化ログのマスターリスト
 
         self._setup_enhanced_logging()
+
+        # 初期化状態管理フラグ（無限ループ対策）
+        self._is_initializing = False
 
         # State Machineを初期状態（Idle）に設定
         self.transition_to(IdleState())
@@ -236,27 +239,38 @@ class AppController(QObject):
 
         JV-Link自動起動を無効化：ユーザーが必要な時のみ手動で接続
         """
-        logging.info("アプリケーションの初期化を開始します。")
+        # 初期化フラグを設定（シグナル・スロットループ対策）
+        self._is_initializing = True
+        
+        try:
+            logging.info("アプリケーションの初期化を開始します。")
 
-        # シグナル接続
-        self.initialize_connections()
+            # シグナル接続
+            self.initialize_connections()
 
-        # 1. 設定の読み込み (SettingsManagerはコンストラクタで読み込み済み)
+            # 1. 設定の読み込み (SettingsManagerはコンストラクタで読み込み済み)
 
-        # 2. データベースへの接続 (DBManagerのコンストラクタで実行済み)
+            # 2. データベースへの接続 (DBManagerのコンストラクタで実行済み)
 
-        # 3. JV-Link設定はレジストリで管理（JVSetUIProperties()で設定）
-        logging.info(
-            "JV-Link設定はWindowsレジストリで管理されます。設定画面から公式ダイアログを開いて設定してください。")
+            # 3. JV-Link設定はレジストリで管理（JVSetUIProperties()で設定）
+            logging.info(
+                "JV-Link設定はWindowsレジストリで管理されます。設定画面から公式ダイアログを開いて設定してください。")
 
-        # 4. 初期のダッシュボード更新
-        summary = self.db_manager.get_data_summary()
-        if hasattr(
-                self.main_window,
-                'dashboard_view') and self.main_window.dashboard_view:
-            self.main_window.dashboard_view.update_dashboard_summary(summary)
+            # 4. 初期のダッシュボード更新
+            summary = self.db_manager.get_data_summary()
+            if hasattr(
+                    self.main_window,
+                    'dashboard_view') and self.main_window.dashboard_view:
+                self.main_window.dashboard_view.update_dashboard_summary(summary)
 
-        logging.info("アプリケーションの初期化が完了しました。")
+            logging.info("アプリケーションの初期化が完了しました。")
+            
+        except Exception as e:
+            logging.error(f"アプリケーション初期化中にエラーが発生しました: {e}")
+            raise
+        finally:
+            # 初期化完了後、フラグを解除
+            self._is_initializing = False
 
     def initialize_connections(self):
         """UIとコントローラー間のシグナル・スロット接続を確立する"""
@@ -471,6 +485,10 @@ class AppController(QObject):
         Args:
             db_config: 更新されたデータベース設定辞書
         """
+        # 初期化中は処理をスキップ（無限ループ対策）
+        if self._is_initializing:
+            return
+            
         self.emit_log("INFO", f"データベース設定変更を検知: {db_config.get('type', 'Unknown')} データベース")
         
         # settings_managerからのシグナルを一時的にブロックし、再入を防ぐ
@@ -531,6 +549,10 @@ class AppController(QObject):
         """
         設定保存完了通知を受信 (ループ対策済み)
         """
+        # 初期化中は処理をスキップ（無限ループ対策）
+        if self._is_initializing:
+            return
+            
         logging.info("設定保存が完了しました。")
 
         # settings_managerからのシグナルを一時的にブロックし、再入を防ぐ
@@ -905,8 +927,12 @@ class AppController(QObject):
                 )
                 
                 if reply == QMessageBox.Yes:
-                    # セットアップデータ取得を開始
-                    return self.start_full_setup(start_date, selected_data_types)
+                    # セットアップデータ取得を開始（統合データ取得フレームワーク使用）
+                    return self.start_data_acquisition(
+                        mode="setup",
+                        from_date=start_date,
+                        selected_data_types=selected_data_types
+                    )
                 else:
                     self.emit_log("INFO", "ユーザーによりセットアップデータ取得がキャンセルされました")
                     return False
@@ -985,8 +1011,11 @@ class AppController(QObject):
                 )
                 
                 if reply == QMessageBox.Yes:
-                    # 差分データ取得を開始
-                    return self.start_differential_data_acquisition_with_types(selected_data_types)
+                    # 差分データ取得を開始（統合データ取得フレームワーク使用）
+                    return self.start_data_acquisition(
+                        mode="accumulated",
+                        selected_data_types=selected_data_types
+                    )
                 else:
                     self.emit_log("INFO", "ユーザーにより差分データ更新がキャンセルされました")
                     return False
@@ -1904,3 +1933,161 @@ class AppController(QObject):
             if hasattr(self.main_window, 'settings_view'):
                 self.main_window.settings_view.show_jvlink_dialog_result(
                     False, error_msg)
+
+    # === 統合データ取得フレームワーク（報告書フェーズ1.2実装） ===
+    
+    def start_data_acquisition(self, mode: str, from_date: str = "", selected_data_types: list = None) -> bool:
+        """
+        統合データ取得フレームワーク
+        
+        EveryDB2と同等の機能を提供する統一的なデータ取得インターフェース
+        
+        Args:
+            mode: データ取得モード ('setup', 'accumulated', 'realtime')
+            from_date: 取得開始日（YYYYMMDD形式、setupモードで使用）
+            selected_data_types: 取得するデータ種別のリスト
+            
+        Returns:
+            bool: 取得開始の成功/失敗
+        """
+        # デフォルトデータ種別の設定
+        if selected_data_types is None:
+            if mode == 'setup':
+                selected_data_types = ["RACE", "SE", "HR", "UM", "KS"]  # セットアップ推奨
+            elif mode == 'accumulated':
+                selected_data_types = ["RACE", "SE", "HR"]  # 差分更新推奨
+            elif mode == 'realtime':
+                selected_data_types = ["RACE", "SE"]  # 当該週データ
+            else:
+                raise ValueError(f"不正なデータ取得モード: {mode}")
+        
+        # JV-Linkパラメータのマッピング（報告書表1に基づく）
+        if mode == 'setup':
+            return self._execute_setup_acquisition(from_date, selected_data_types)
+        elif mode == 'accumulated':
+            return self._execute_accumulated_acquisition(selected_data_types)
+        elif mode == 'realtime':
+            return self._execute_realtime_acquisition(selected_data_types)
+        else:
+            error_msg = f"サポートされていないデータ取得モード: {mode}"
+            self.emit_log("ERROR", error_msg)
+            self._show_status_message(error_msg, 5000)
+            return False
+    
+    def _execute_setup_acquisition(self, from_date: str, selected_data_types: list) -> bool:
+        """
+        セットアップデータ取得の実行（JVOpen option=4）
+        
+        Args:
+            from_date: 取得開始日（YYYYMMDD形式）
+            selected_data_types: データ種別リスト
+        """
+        try:
+            # JV-Link初期化チェック
+            if not self.jvlink_manager.is_initialized():
+                if not self.connect_jvlink_manually():
+                    return False
+
+            # データ取得中でないことを確認
+            if not self.jvlink_manager.can_start_data_operation():
+                error_msg = f"データ取得を開始できません。現在の状態: {self.jvlink_manager.current_state.value}"
+                self.emit_log("ERROR", error_msg)
+                self._show_status_message(error_msg, 5000)
+                return False
+
+            self.emit_log("INFO", f"セットアップデータ取得開始: 開始日={from_date}, データ種別={selected_data_types}")
+            self._show_status_message("セットアップデータ取得を開始しています...", 0)
+
+            # fromtimeパラメータの設定（報告書仕様に従い）
+            formatted_date = f"{from_date}000000" if from_date else "19860101000000"
+            
+            self.jvlink_manager.get_data_async(
+                option=4,  # セットアップデータ（ダイアログ無し）
+                from_date=formatted_date,
+                data_spec_list=selected_data_types
+            )
+            return True
+
+        except Exception as e:
+            error_msg = f"セットアップデータ取得開始エラー: {e}"
+            self.emit_log("ERROR", error_msg)
+            self._show_status_message(error_msg, 5000)
+            return False
+    
+    def _execute_accumulated_acquisition(self, selected_data_types: list) -> bool:
+        """
+        蓄積系（差分）データ取得の実行（JVOpen option=1）
+        
+        Args:
+            selected_data_types: データ種別リスト
+        """
+        try:
+            # JV-Link初期化チェック
+            if not self.jvlink_manager.is_initialized():
+                if not self.connect_jvlink_manually():
+                    return False
+
+            # データ取得中でないことを確認
+            if not self.jvlink_manager.can_start_data_operation():
+                error_msg = f"データ取得を開始できません。現在の状態: {self.jvlink_manager.current_state.value}"
+                self.emit_log("ERROR", error_msg)
+                self._show_status_message(error_msg, 5000)
+                return False
+
+            self.emit_log("INFO", f"蓄積系データ取得開始: データ種別={selected_data_types}")
+            self._show_status_message("蓄積系データ取得を開始しています...", 0)
+
+            self.jvlink_manager.get_data_async(
+                option=1,  # 通常データ（差分更新）
+                data_spec_list=selected_data_types
+            )
+            return True
+
+        except Exception as e:
+            error_msg = f"蓄積系データ取得開始エラー: {e}"
+            self.emit_log("ERROR", error_msg)
+            self._show_status_message(error_msg, 5000)
+            return False
+    
+    def _execute_realtime_acquisition(self, selected_data_types: list) -> bool:
+        """
+        速報系データ取得の実行（JVOpen option=2）
+        
+        Args:
+            selected_data_types: データ種別リスト
+        """
+        try:
+            # JV-Link初期化チェック
+            if not self.jvlink_manager.is_initialized():
+                if not self.connect_jvlink_manually():
+                    return False
+
+            # データ取得中でないことを確認
+            if not self.jvlink_manager.can_start_data_operation():
+                error_msg = f"データ取得を開始できません。現在の状態: {self.jvlink_manager.current_state.value}"
+                self.emit_log("ERROR", error_msg)
+                self._show_status_message(error_msg, 5000)
+                return False
+
+            self.emit_log("INFO", f"速報系データ取得開始: データ種別={selected_data_types}")
+            self._show_status_message("速報系データ取得を開始しています...", 0)
+
+            # 当該週の開始日時を計算（日曜日開始）
+            from datetime import datetime, timedelta
+            today = datetime.now()
+            days_since_sunday = today.weekday() + 1  # 月曜日=0なので+1で日曜日基準に
+            sunday = today - timedelta(days=days_since_sunday)
+            week_start = sunday.strftime("%Y%m%d") + "000000"
+
+            self.jvlink_manager.get_data_async(
+                option=2,  # 今週データ
+                from_date=week_start,
+                data_spec_list=selected_data_types
+            )
+            return True
+
+        except Exception as e:
+            error_msg = f"速報系データ取得開始エラー: {e}"
+            self.emit_log("ERROR", error_msg)
+            self._show_status_message(error_msg, 5000)
+            return False
