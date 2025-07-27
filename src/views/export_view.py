@@ -1,286 +1,453 @@
+"""
+データ表示・出力画面 - レポート セクション3.3準拠
+
+JVReadで取得した生データを、構造化されたインタラクティブな表形式で表示し、
+分析しやすい形でエクスポートする機能を提供
+"""
+
 import logging
-from PySide6.QtCore import Qt, Signal
+from datetime import datetime
+from typing import Dict, List, Optional
+from PySide6.QtCore import Qt, Signal, QSortFilterProxyModel, QAbstractTableModel, QModelIndex, Slot
 from PySide6.QtWidgets import (
     QWidget,
     QVBoxLayout,
     QHBoxLayout,
-    QStackedWidget,
-    QCheckBox,
-    QGroupBox,
-    QRadioButton,
+    QTableView,
+    QHeaderView,
     QFileDialog,
-    QLineEdit,
-    QLabel,
-    QFormLayout,
-    QScrollArea,
-    QPushButton,
+    QMessageBox,
+    QAbstractItemView,
 )
 
-# QFluentWidgets
+# QFluentWidgets components - レポート セクション3.3準拠
 from qfluentwidgets import (
     TitleLabel,
     SubtitleLabel,
     PrimaryPushButton,
+    PushButton,
     InfoBar,
     InfoBarPosition,
     CardWidget,
     StrongBodyLabel,
     BodyLabel,
+    CaptionLabel,
+    LineEdit,
+    ComboBox,
+    ScrollArea,
 )
 from qfluentwidgets import FluentIcon as FIF
 
+from ..utils.theme_manager import get_theme_manager
 
-class ExportView(QWidget):
-    """
-    データエクスポート画面のUI。
-    ウィザード形式でエクスポート設定を行う。
-    """
-    export_requested = Signal(dict)
 
-    def __init__(self, table_names: list[str], parent=None):
+class DataTableModel(QAbstractTableModel):
+    """データテーブル用のモデル"""
+    
+    def __init__(self, data: List[Dict] = None, headers: List[str] = None, parent=None):
+        super().__init__(parent)
+        self._data = data or []
+        self._headers = headers or []
+        
+    def rowCount(self, parent: QModelIndex = QModelIndex()) -> int:
+        return len(self._data)
+        
+    def columnCount(self, parent: QModelIndex = QModelIndex()) -> int:
+        return len(self._headers)
+        
+    def data(self, index: QModelIndex, role: int = Qt.ItemDataRole.DisplayRole):
+        if not index.isValid() or not (0 <= index.row() < len(self._data)):
+            return None
+            
+        row_data = self._data[index.row()]
+        column_key = self._headers[index.column()]
+        
+        if role == Qt.ItemDataRole.DisplayRole:
+            return str(row_data.get(column_key, ""))
+        
+        return None
+        
+    def headerData(self, section: int, orientation: Qt.Orientation, role: int = Qt.ItemDataRole.DisplayRole):
+        if role == Qt.ItemDataRole.DisplayRole:
+            if orientation == Qt.Orientation.Horizontal:
+                return self._headers[section] if section < len(self._headers) else ""
+            else:
+                return str(section + 1)
+        return None
+        
+    def update_data(self, data: List[Dict], headers: List[str]):
+        """データを更新"""
+        self.beginResetModel()
+        self._data = data
+        self._headers = headers
+        self.endResetModel()
+
+
+class DataExportView(QWidget):
+    """
+    データ表示・出力画面 - レポート セクション3.3準拠
+    
+    JVReadで取得した生データを構造化されたインタラクティブな表形式で表示し、
+    フィルタリング・ソート・エクスポート機能を提供
+    """
+    
+    # シグナル定義
+    data_load_requested = Signal(str)  # データ種別指定でのデータ読み込み要求
+    export_requested = Signal(dict)    # エクスポート要求
+    
+    def __init__(self, table_names: List[str], parent=None):
         super().__init__(parent)
         self.table_names = table_names
-        self.setObjectName("ExportView")
+        self.setObjectName("DataExportView")
+        self.theme_manager = get_theme_manager()
+        
+        # データ管理
+        self.current_data = []
+        self.filtered_data = []
+        self.current_headers = []
+        
         self._init_ui()
+        self._setup_table()
 
     def _init_ui(self):
-        """UIの初期化"""
+        """レポート セクション3.3: データ表示画面レイアウトの実装"""
         layout = QVBoxLayout(self)
         layout.setContentsMargins(30, 20, 30, 20)
-        layout.setSpacing(12)
-
-        # Title
-        title = TitleLabel("データエクスポート", self)
-        layout.addWidget(title)
-
-        # Steps indicator (alternative implementation)
-        steps_card = CardWidget(self)
-        steps_card.setFixedHeight(60)
-        steps_layout = QHBoxLayout(steps_card)
-        steps_layout.setContentsMargins(20, 10, 20, 10)
-
-        self.step_labels = []
-        step_names = ["1️⃣ テーブル選択", "2️⃣ 形式・保存先", "3️⃣ 確認"]
-
-        for i, step_name in enumerate(step_names):
-            step_label = BodyLabel(step_name, steps_card)
-            step_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
-            self.step_labels.append(step_label)
-            steps_layout.addWidget(step_label)
-
-            if i < len(step_names) - 1:
-                arrow_label = BodyLabel("→", steps_card)
-                arrow_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
-                steps_layout.addWidget(arrow_label)
-
-        layout.addWidget(steps_card)
-
-        # Stacked pages
-        self.stacked_widget = QStackedWidget(self)
-        self.step1_widget = self._create_step1_widget()
-        self.step2_widget = self._create_step2_widget()
-        self.step3_widget = self._create_step3_widget()
-
-        self.stacked_widget.addWidget(self.step1_widget)
-        self.stacked_widget.addWidget(self.step2_widget)
-        self.stacked_widget.addWidget(self.step3_widget)
-
-        layout.addWidget(self.stacked_widget)
-
-        # Navigation buttons
-        nav_layout = QHBoxLayout()
-        nav_layout.addStretch(1)
-        self.back_button = PrimaryPushButton("戻る")
-        self.next_button = PrimaryPushButton("次へ")
-        self.export_button = PrimaryPushButton("エクスポート開始")
-
-        nav_layout.addWidget(self.back_button)
-        nav_layout.addWidget(self.next_button)
-        nav_layout.addWidget(self.export_button)
-
-        layout.addLayout(nav_layout)
-
-        # シグナル接続
-        self.back_button.clicked.connect(self._go_back)
-        self.next_button.clicked.connect(self._go_next)
-        self.export_button.clicked.connect(self._emit_export_request)
-
-        self._update_nav_buttons()
-
-    def _create_step1_widget(self) -> QWidget:
-        """ステップ1: データ選択UIを作成"""
-        widget = QWidget()
-        layout = QVBoxLayout(widget)
-        layout.setSpacing(10)
-        subtitle = SubtitleLabel("1. エクスポートするテーブルを選択してください", self)
-        layout.addWidget(subtitle)
-
-        scroll_area = QScrollArea()
-        scroll_area.setWidgetResizable(True)
-        scroll_content = QWidget()
-        self.checkbox_layout = QVBoxLayout(scroll_content)
-        self.checkbox_layout.setSpacing(8)
-
-        self.table_checkboxes = []
-        for table_name in self.table_names:
-            checkbox = QCheckBox(table_name)
-            self.checkbox_layout.addWidget(checkbox)
-            self.table_checkboxes.append(checkbox)
-
-        scroll_area.setWidget(scroll_content)
-        layout.addWidget(scroll_area)
-        return widget
-
-    def _create_step2_widget(self) -> QWidget:
-        """ステップ2: 形式と出力先選択UIを作成"""
-        widget = QWidget()
-        layout = QVBoxLayout(widget)
-        layout.setSpacing(10)
-        subtitle = SubtitleLabel("2. 出力形式と保存先を選択してください", self)
-        layout.addWidget(subtitle)
-
-        form_layout = QFormLayout()
-        form_layout.setRowWrapPolicy(QFormLayout.RowWrapPolicy.DontWrapRows)
-        form_layout.setLabelAlignment(Qt.AlignmentFlag.AlignLeft)
-
-        format_group = QGroupBox("出力形式")
-        format_layout = QHBoxLayout()
-        self.csv_radio = QRadioButton("CSV (カンマ区切り)")
-        self.csv_radio.setChecked(True)
-        self.tsv_radio = QRadioButton("TSV (タブ区切り)")
-        format_layout.addWidget(self.csv_radio)
-        format_layout.addWidget(self.tsv_radio)
-        format_group.setLayout(format_layout)
-        form_layout.addRow(format_group)
-
-        dest_layout = QHBoxLayout()
-        self.path_line_edit = QLineEdit()
-        self.path_line_edit.setReadOnly(True)
-        browse_button = QPushButton("参照...")
-        browse_button.clicked.connect(self._browse_path)
-        dest_layout.addWidget(self.path_line_edit)
-        dest_layout.addWidget(browse_button)
-        form_layout.addRow("保存先:", dest_layout)
-
-        layout.addLayout(form_layout)
-        layout.addStretch()
-        return widget
-
-    def _create_step3_widget(self) -> QWidget:
-        """ステップ3: 実行確認UIを作成（Resultコンポーネント風に改善）"""
-        widget = QWidget()
-        layout = QVBoxLayout(widget)
         layout.setSpacing(20)
 
-        subtitle = SubtitleLabel("✅ 3. 設定を確認してエクスポートを開始", self)
-        layout.addWidget(subtitle)
+        # タイトル
+        title = TitleLabel("データ出力", self)
+        layout.addWidget(title)
 
-        # 確認用カード
-        confirmation_card = CardWidget(self)
-        card_layout = QVBoxLayout(confirmation_card)
+        # データ選択・フィルタリングカード
+        self._create_data_selection_card(layout)
+        
+        # データ表示テーブル（メインコンポーネント）
+        self._create_data_table_card(layout)
+        
+        # エクスポートアクションカード
+        self._create_export_actions_card(layout)
 
-        card_title = StrongBodyLabel("📋 エクスポート設定の確認", confirmation_card)
-        card_layout.addWidget(card_title)
-        card_layout.addSpacing(12)
+    def _create_data_selection_card(self, parent_layout):
+        """データ選択・フィルタリングカード"""
+        card = CardWidget()
+        card_layout = QVBoxLayout(card)
+        card_layout.setContentsMargins(24, 24, 24, 24)
+        card_layout.setSpacing(16)
+        
+        # カードタイトル
+        title = StrongBodyLabel("📊 データ選択・フィルタリング")
+        card_layout.addWidget(title)
+        
+        # データ選択・フィルタリングコントロール
+        controls_layout = QHBoxLayout()
+        
+        # データ種別選択
+        self.data_type_combo = ComboBox()
+        self.data_type_combo.setPlaceholderText("データ種別を選択...")
+        self.data_type_combo.addItems([
+            "レース詳細",
+            "オッズ情報", 
+            "払戻情報",
+            "馬基本情報",
+            "血統情報",
+            "調教情報"
+        ])
+        self.data_type_combo.currentTextChanged.connect(self._on_data_type_changed)
+        controls_layout.addWidget(BodyLabel("データ種別:"))
+        controls_layout.addWidget(self.data_type_combo)
+        
+        # データ読み込みボタン
+        self.load_data_btn = PrimaryPushButton("データを読み込む")
+        self.load_data_btn.setIcon(FIF.UPDATE.icon())  # .icon()メソッドを使用
+        self.load_data_btn.clicked.connect(self._load_data)
+        controls_layout.addWidget(self.load_data_btn)
+        
+        # データ件数表示
+        self.data_count_label = BodyLabel("データ件数: 0")
+        controls_layout.addWidget(self.data_count_label)
+        
+        controls_layout.addStretch()
+        card_layout.addLayout(controls_layout)
+        
+        # フィルタリングコントロール
+        filter_layout = QHBoxLayout()
+        
+        # 検索フィールド
+        self.search_input = LineEdit()
+        self.search_input.setPlaceholderText("データを検索...")
+        self.search_input.textChanged.connect(self._apply_filters)
+        filter_layout.addWidget(BodyLabel("検索:"))
+        filter_layout.addWidget(self.search_input)
+        
+        # 列フィルター
+        self.column_filter_combo = ComboBox()
+        self.column_filter_combo.setPlaceholderText("すべての列")
+        self.column_filter_combo.currentTextChanged.connect(self._apply_filters)
+        filter_layout.addWidget(BodyLabel("列:"))
+        filter_layout.addWidget(self.column_filter_combo)
+        
+        filter_layout.addStretch()
+        card_layout.addLayout(filter_layout)
+        
+        parent_layout.addWidget(card)
 
-        self.summary_label = QLabel()
-        self.summary_label.setWordWrap(True)
-        self.summary_label.setStyleSheet("""
-            QLabel {
-                background-color: rgba(255, 255, 255, 0.1);
-                border: 1px solid rgba(255, 255, 255, 0.2);
-                border-radius: 8px;
-                padding: 16px;
-                font-size: 14px;
-                line-height: 1.5;
-            }
-        """)
-        card_layout.addWidget(self.summary_label)
+    def _create_data_table_card(self, parent_layout):
+        """データ表示テーブルカード"""
+        card = CardWidget()
+        card_layout = QVBoxLayout(card)
+        card_layout.setContentsMargins(24, 24, 24, 24)
+        card_layout.setSpacing(16)
+        
+        # カードタイトル
+        header_layout = QHBoxLayout()
+        title = StrongBodyLabel("📋 データテーブル")
+        self.data_count_label = CaptionLabel("データ件数: 0件")
+        
+        header_layout.addWidget(title)
+        header_layout.addStretch()
+        header_layout.addWidget(self.data_count_label)
+        
+        card_layout.addLayout(header_layout)
+        
+        # TableView（メインコンポーネント）
+        self.data_table = QTableView()
+        self.data_table.setMinimumHeight(400)
+        self.data_table.setAlternatingRowColors(True)
+        self.data_table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
+        self.data_table.setSelectionMode(QAbstractItemView.SelectionMode.MultiSelection)
+        
+        card_layout.addWidget(self.data_table)
+        parent_layout.addWidget(card)
 
-        layout.addWidget(confirmation_card)
-        layout.addStretch(1)
+    def _create_export_actions_card(self, parent_layout):
+        """エクスポートアクションカード"""
+        card = CardWidget()
+        card_layout = QVBoxLayout(card)
+        card_layout.setContentsMargins(24, 24, 24, 24)
+        card_layout.setSpacing(16)
+        
+        # カードタイトル
+        title = StrongBodyLabel("📤 エクスポート")
+        card_layout.addWidget(title)
+        
+        description = CaptionLabel("表示・フィルタリングされているデータを各種形式でエクスポートできます。")
+        card_layout.addWidget(description)
+        
+        # エクスポートボタン群
+        buttons_layout = QHBoxLayout()
+        
+        # CSV エクスポートボタン
+        self.export_csv_btn = PrimaryPushButton("CSV形式でエクスポート")
+        self.export_csv_btn.setIcon(FIF.DOCUMENT.icon())  # .icon()メソッドを使用
+        self.export_csv_btn.clicked.connect(lambda: self._export_data("csv"))
+        buttons_layout.addWidget(self.export_csv_btn)
+        
+        # Excel エクスポートボタン
+        self.export_excel_btn = PushButton("Excel形式でエクスポート")
+        self.export_excel_btn.setIcon(FIF.DOCUMENT.icon())  # .icon()メソッドを使用
+        self.export_excel_btn.clicked.connect(lambda: self._export_data("excel"))
+        buttons_layout.addWidget(self.export_excel_btn)
+        
+        buttons_layout.addStretch()
+        card_layout.addLayout(buttons_layout)
+        
+        parent_layout.addWidget(card)
 
-        return widget
+    def _setup_table(self):
+        """テーブルの設定"""
+        # データモデルの設定
+        self.table_model = DataTableModel()
+        
+        # ソート・フィルタープロキシモデル
+        self.proxy_model = QSortFilterProxyModel()
+        self.proxy_model.setSourceModel(self.table_model)
+        self.proxy_model.setFilterCaseSensitivity(Qt.CaseSensitivity.CaseInsensitive)
+        
+        # テーブルにモデルを設定
+        self.data_table.setModel(self.proxy_model)
+        
+        # ヘッダー設定（ソート機能を有効化）
+        header = self.data_table.horizontalHeader()
+        header.setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
+        header.setStretchLastSection(True)
+        header.setSortIndicatorShown(True)
+        
+        # テーブルクリックでソート
+        self.data_table.setSortingEnabled(True)
 
-    def _go_next(self):
-        """「次へ」ボタンの処理"""
-        current_index = self.stacked_widget.currentIndex()
-        if current_index < self.stacked_widget.count() - 1:
-            if current_index == 0 and not any(cb.isChecked() for cb in self.table_checkboxes):
-                logging.warning("エクスポートするテーブルが選択されていません。")
-                # TODO: Show MessageBox
-                return
-            self.stacked_widget.setCurrentIndex(current_index + 1)
-        self._update_nav_buttons()
-        if self.stacked_widget.currentIndex() == 2:
-            self._update_summary()
+    @Slot(str)
+    def _on_data_type_changed(self, data_type: str):
+        """データ種別変更時の処理"""
+        # 列フィルターコンボボックスをリセット
+        self.column_filter_combo.clear()
+        self.column_filter_combo.addItem("すべての列")
 
-    def _go_back(self):
-        """「戻る」ボタンの処理"""
-        current_index = self.stacked_widget.currentIndex()
-        if current_index > 0:
-            self.stacked_widget.setCurrentIndex(current_index - 1)
-        self._update_nav_buttons()
-
-    def _update_nav_buttons(self):
-        """ナビゲーションボタンの状態を更新"""
-        current_index = self.stacked_widget.currentIndex()
-        self.back_button.setEnabled(current_index > 0)
-        self.next_button.setEnabled(
-            current_index < self.stacked_widget.count() - 1)
-
-        is_last = current_index == self.stacked_widget.count() - 1
-        self.export_button.setEnabled(is_last)
-        self.export_button.setVisible(True)
-
-        # Update steps visual indicator
-        for i, label in enumerate(self.step_labels):
-            if i == current_index:
-                label.setStyleSheet("color: #0078D4; font-weight: bold;")
-            else:
-                label.setStyleSheet("color: #888; font-weight: normal;")
-
-    def _browse_path(self):
-        """保存先を選択するダイアログを開く"""
-        selected_tables = [cb.text()
-                           for cb in self.table_checkboxes if cb.isChecked()]
-        file_format = "csv" if self.csv_radio.isChecked() else "tsv"
-
-        if len(selected_tables) == 1:
-            default_name = f"{selected_tables[0]}.{file_format}"
-            path, _ = QFileDialog.getSaveFileName(
-                self, "保存先を選択", default_name, f"{file_format.upper()} files (*.{file_format});;All files (*)")
-        else:
-            path = QFileDialog.getExistingDirectory(self, "保存先のフォルダを選択")
-
-        if path:
-            self.path_line_edit.setText(path)
-
-    def _update_summary(self):
-        """ステップ3のサマリーを更新"""
-        selected_tables = [cb.text()
-                           for cb in self.table_checkboxes if cb.isChecked()]
-        file_format = "CSV" if self.csv_radio.isChecked() else "TSV"
-        path = self.path_line_edit.text()
-
-        summary_text = f"""
-        <b>エクスポート対象:</b><br> {', '.join(selected_tables)}<br><br>
-        <b>出力形式:</b><br> {file_format}<br><br>
-        <b>保存先:</b><br> {path}
-        """
-        self.summary_label.setText(summary_text)
-
-    def _emit_export_request(self):
-        """エクスポート開始シグナルを発行"""
-        params = {
-            "tables": [cb.text() for cb in self.table_checkboxes if cb.isChecked()],
-            "format": "csv" if self.csv_radio.isChecked() else "tsv",
-            "path": self.path_line_edit.text(),
-        }
-        if not params["tables"] or not params["path"]:
-            logging.error("エクスポートパラメータが不正です")
-            # TODO: MessageBox
+    @Slot()
+    def _load_data(self):
+        """データ読み込み"""
+        selected_type = self.data_type_combo.currentText()
+        if not selected_type:
+            InfoBar.warning(
+                title="選択エラー",
+                content="データ種別を選択してください。",
+                orient=Qt.Orientation.Horizontal,
+                isClosable=True,
+                position=InfoBarPosition.TOP,
+                duration=3000,
+                parent=self
+            )
             return
+            
+        # データ読み込み要求を発行
+        self.data_load_requested.emit(selected_type)
 
-        logging.info(f"エクスポートリクエストを発行します: {params}")
-        self.export_requested.emit(params)
+    def load_sample_data(self):
+        """サンプルデータの読み込み（開発用）"""
+        # JV-Data仕様書に基づくサンプルデータ
+        sample_headers = ["開催日", "レース名", "馬名", "騎手", "着順", "タイム"]
+        sample_data = [
+            {"開催日": "2024-01-27", "レース名": "東京1R", "馬名": "サンプル馬1", "騎手": "佐藤騎手", "着順": "1", "タイム": "1:23.4"},
+            {"開催日": "2024-01-27", "レース名": "東京1R", "馬名": "サンプル馬2", "騎手": "田中騎手", "着順": "2", "タイム": "1:23.8"},
+            {"開催日": "2024-01-27", "レース名": "東京2R", "馬名": "サンプル馬3", "騎手": "鈴木騎手", "着順": "1", "タイム": "1:35.2"},
+        ]
+        
+        self.update_data_display(sample_data, sample_headers)
+
+    def update_data_display(self, data: List[Dict], headers: List[str]):
+        """データ表示を更新"""
+        self.current_data = data
+        self.current_headers = headers
+        self.filtered_data = data.copy()
+        
+        # テーブルモデルを更新
+        self.table_model.update_data(data, headers)
+        
+        # 列フィルターコンボボックスを更新
+        self.column_filter_combo.clear()
+        self.column_filter_combo.addItem("すべての列")
+        self.column_filter_combo.addItems(headers)
+        
+        # データ件数表示を更新
+        self._update_data_count()
+        
+        # 成功通知
+        InfoBar.success(
+            title="データ読み込み完了",
+            content=f"{len(data)}件のデータを読み込みました。",
+            orient=Qt.Orientation.Horizontal,
+            isClosable=True,
+            position=InfoBarPosition.TOP,
+            duration=2000,
+            parent=self
+        )
+
+    @Slot()
+    def _apply_filters(self):
+        """フィルタリングを適用"""
+        search_text = self.search_input.text()
+        selected_column = self.column_filter_combo.currentText()
+        
+        # プロキシモデルにフィルタを設定
+        if search_text:
+            self.proxy_model.setFilterWildcard(f"*{search_text}*")
+        else:
+            self.proxy_model.setFilterWildcard("")
+            
+        # 列フィルター（実装詳細は省略）
+        if selected_column and selected_column != "すべての列":
+            # 特定の列のみをフィルタリング
+            column_index = self.current_headers.index(selected_column) if selected_column in self.current_headers else -1
+            if column_index >= 0:
+                self.proxy_model.setFilterKeyColumn(column_index)
+        else:
+            self.proxy_model.setFilterKeyColumn(-1)  # 全列を対象
+        
+        self._update_data_count()
+
+    def _update_data_count(self):
+        """データ件数表示を更新"""
+        total_count = len(self.current_data)
+        filtered_count = self.proxy_model.rowCount()
+        
+        if total_count == filtered_count:
+            self.data_count_label.setText(f"データ件数: {total_count}件")
+        else:
+            self.data_count_label.setText(f"データ件数: {filtered_count}件 (全{total_count}件中)")
+
+    @Slot(str)
+    def _export_data(self, format_type: str):
+        """データエクスポート"""
+        if not self.current_data:
+            InfoBar.warning(
+                title="エクスポートエラー",
+                content="エクスポートするデータがありません。",
+                orient=Qt.Orientation.Horizontal,
+                isClosable=True,
+                position=InfoBarPosition.TOP,
+                duration=3000,
+                parent=self
+            )
+            return
+        
+        # ファイル選択ダイアログ
+        file_filters = {
+            "csv": "CSV Files (*.csv)",
+            "excel": "Excel Files (*.xlsx)"
+        }
+        
+        filter_string = file_filters.get(format_type, "All Files (*.*)")
+        file_path, _ = QFileDialog.getSaveFileName(
+            self,
+            f"{format_type.upper()}形式でエクスポート",
+            f"export_{datetime.now().strftime('%Y%m%d_%H%M%S')}.{format_type}",
+            filter_string
+        )
+        
+        if file_path:
+            export_settings = {
+                'file_path': file_path,
+                'format': format_type,
+                'data': self._get_filtered_data(),
+                'headers': self.current_headers
+            }
+            
+            self.export_requested.emit(export_settings)
+
+    def _get_filtered_data(self) -> List[Dict]:
+        """フィルタリング後のデータを取得"""
+        filtered_data = []
+        
+        for row in range(self.proxy_model.rowCount()):
+            source_row = self.proxy_model.mapToSource(self.proxy_model.index(row, 0)).row()
+            if source_row < len(self.current_data):
+                filtered_data.append(self.current_data[source_row])
+        
+        return filtered_data
+
+    def on_export_completed(self, success: bool, message: str):
+        """エクスポート完了通知"""
+        if success:
+            InfoBar.success(
+                title="エクスポート完了",
+                content=message,
+                orient=Qt.Orientation.Horizontal,
+                isClosable=True,
+                position=InfoBarPosition.TOP,
+                duration=3000,
+                parent=self
+            )
+        else:
+            InfoBar.error(
+                title="エクスポートエラー",
+                content=message,
+                orient=Qt.Orientation.Horizontal,
+                isClosable=True,
+                position=InfoBarPosition.TOP,
+                duration=5000,
+                parent=self
+            )
+
+
+# 後方互換性のためのエイリアス
+ExportView = DataExportView

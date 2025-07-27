@@ -81,11 +81,15 @@ class LogViewerWidget(CardWidget):
         header_layout.addStretch()
 
         # ヘッダーのコントロール
-        self.clear_button = PushButton(FIF.DELETE, "クリア")
-        self.clear_button.setFixedWidth(80)
-
-        self.export_button = PushButton(FIF.SAVE, "エクスポート")
-        self.export_button.setFixedWidth(100)
+        # クリアボタン
+        self.clear_button = PushButton("クリア")
+        self.clear_button.setIcon(FIF.DELETE.icon())  # コンストラクタではなくsetIconを使用
+        self.clear_button.clicked.connect(self.clear_logs)
+        
+        # エクスポートボタン
+        self.export_button = PushButton("エクスポート")
+        self.export_button.setIcon(FIF.SAVE.icon())  # コンストラクタではなくsetIconを使用
+        self.export_button.clicked.connect(self.export_logs)
 
         header_layout.addWidget(self.clear_button)
         header_layout.addWidget(self.export_button)

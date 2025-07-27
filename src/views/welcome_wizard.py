@@ -139,9 +139,10 @@ class JVLinkSetupPage(QWizardPage):
         button_layout = QHBoxLayout()
         button_layout.addStretch()
 
-        self.setup_button = PrimaryPushButton(FIF.SETTING, "JV-Link設定を開く")
-        self.setup_button.setFixedSize(200, 40)
-        self.setup_button.clicked.connect(self.open_jvlink_settings)
+        # JV-Link設定ボタン
+        self.setup_button = PrimaryPushButton("JV-Link設定を開く")
+        self.setup_button.setIcon(FIF.SETTING.icon())  # コンストラクタではなくsetIconを使用
+        self.setup_button.clicked.connect(self.open_jvlink_setup)
         button_layout.addWidget(self.setup_button)
 
         button_layout.addStretch()
@@ -257,8 +258,9 @@ class DatabaseSetupPage(QWizardPage):
         button_layout = QHBoxLayout()
         button_layout.addStretch()
 
-        self.setup_button = PushButton(FIF.SETTING, "データベース設定を開く")
-        self.setup_button.setFixedSize(200, 40)
+        # データベース設定ボタン
+        self.setup_button = PushButton("データベース設定を開く")
+        self.setup_button.setIcon(FIF.SETTING.icon())  # コンストラクタではなくsetIconを使用
         self.setup_button.clicked.connect(self.open_database_settings)
         button_layout.addWidget(self.setup_button)
 

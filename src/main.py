@@ -204,10 +204,13 @@ def launch_gui():
 
         # 翻訳設定
         try:
-            translator = FluentTranslator(QLocale.Japanese)
+            # FluentTranslatorの正しい初期化方法を使用
+            translator = FluentTranslator(QLocale(QLocale.Language.Japanese, QLocale.Country.Japan))
             app.installTranslator(translator)
         except Exception as e:
             logging.warning(f"翻訳設定エラー: {e}")
+            # フォールバック: 翻訳設定をスキップして続行
+            logging.info("翻訳設定をスキップして続行します")
 
         # モンキーパッチ適用
         try:

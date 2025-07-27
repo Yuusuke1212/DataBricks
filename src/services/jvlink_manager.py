@@ -480,7 +480,10 @@ class JvLinkManager(QObject):
                     "有効なJV-Link COMオブジェクトが見つかりません。JV-Linkが正しくインストール・登録されているか確認してください。")
 
             # JV-Linkの初期化（レジストリから設定を自動読み込み）
-            ret = self._safe_jv_init("")  # 空文字列でレジストリから設定読み込み（ワーキングディレクトリ変更付き）
+            # JV-Link仕様準拠：ソフトウェアIDを明示的に設定
+            software_id = "DataBricks/1.0.0"  # アプリケーションを識別するユニークなID
+            logging.info(f"JV-Linkを初期化します。ソフトウェアID: {software_id}")
+            ret = self._safe_jv_init(software_id)  # 仕様準拠のソフトウェアIDを渡す（ワーキングディレクトリ変更付き）
             if ret != 0:
                 error_msg = self._get_jvlink_error_message(ret)
                 logging.error(f"JV-Linkの認証に失敗しました。エラーコード: {ret} - {error_msg}")

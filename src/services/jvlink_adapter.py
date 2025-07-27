@@ -223,18 +223,17 @@ class JVLinkAdapter:
                 else:
                     self.logger.warning(f"JV-Linkディレクトリが存在しません: {jvlink_dir}")
                 
-                # JVInit実行（実際のCOM呼び出し）
-                # init_result = self.jvlink_com_obj.JVInit(self.service_key)
-
-                # --- 以下はダミーの実装です。実際のCOM呼び出しに置き換えてください ---
-                init_result = 0  # 成功したと仮定
-                # --- ダミー実装ここまで ---
+                # JVInit実行（仕様準拠：ソフトウェアIDを明示的に設定）
+                software_id = "DataBricks/1.0.0"  # アプリケーションを識別するユニークなID
+                self.logger.info(f"JV-Linkを初期化します。ソフトウェアID: {software_id}")
+                
+                init_result = self.jvlink_com_obj.JVInit(software_id)
 
                 # 結果チェック
                 check_jvlink_result(
                     init_result,
                     "JVInit",
-                    # {'service_key': self.service_key[:4] + "****"}  # セキュリティのため一部マスク
+                    {'software_id': software_id}
                 )
 
                 self.logger.info("JV-Linkの初期化に成功しました")
