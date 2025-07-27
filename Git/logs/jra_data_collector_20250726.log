@@ -1,0 +1,422 @@
+2025-07-26 20:50:36 [    INFO] root:145 - ============================================================
+2025-07-26 20:50:36 [    INFO] root:146 - JRA-Data Collector アプリケーションを開始しました
+2025-07-26 20:50:36 [    INFO] root:147 - ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250726.log
+2025-07-26 20:50:36 [    INFO] root:148 - ログレベル: ファイル=DEBUG, コンソール=INFO
+2025-07-26 20:50:36 [    INFO] root:149 - ============================================================
+2025-07-26 20:50:36 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-26 20:50:36 [   DEBUG] Statemachine.Idle:93 - UI status update not available for state: Idle
+2025-07-26 20:50:36 [    INFO] root:170 - State transition completed: -> Idle
+2025-07-26 20:50:36 [    INFO] root:229 - アプリケーションの初期化を開始します。
+2025-07-26 20:50:36 [    INFO] root:255 - UIとコントローラーの接続を初期化します。
+2025-07-26 20:50:36 [    INFO] root:1109 - データベース接続を閉じました。
+2025-07-26 20:50:36 [    INFO] root:244 - JV-Link設定済み。必要に応じて手動で接続してください。
+2025-07-26 20:50:36 [    INFO] root:1055 - データサマリーを取得します。
+2025-07-26 20:50:36 [    INFO] root:251 - アプリケーションの初期化が完了しました。
+2025-07-26 20:50:36 [    INFO] root:209 - アプリケーション初期化完了
+2025-07-26 20:50:53 [    INFO] root:1012 - データベース接続テストを開始します: PostgreSQL
+2025-07-26 20:50:54 [    INFO] root:1012 - データベース接続テストを開始します: PostgreSQL
+2025-07-26 20:58:48 [    INFO] root:995 - 設定が正常に保存されました。
+2025-07-26 20:58:48 [    INFO] root:1109 - データベース接続を閉じました。
+2025-07-26 20:58:48 [    INFO] root:995 - 設定が正常に保存されました。
+2025-07-26 20:58:48 [    INFO] root:1109 - データベース接続を閉じました。
+2025-07-26 21:00:08 [    INFO] Statemachine.Idle:24 - Starting data processing...
+2025-07-26 21:00:08 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-26 21:00:08 [    INFO] Statemachine.RequestingData:67 - Entering state: RequestingData
+2025-07-26 21:00:08 [   DEBUG] Statemachine.RequestingData:93 - UI status update not available for state: RequestingData
+2025-07-26 21:00:08 [   ERROR] Statemachine.RequestingData:242 - Error in state RequestingData: 'JVLinkAdapter' object has no attribute 'get_data_async'
+2025-07-26 21:00:08 [   ERROR] Statemachine.RequestingData:244 - Context: {'operation': 'data_request', 'params': {'from_date': '19860101', 'data_spec_list': ['RACE'], 'option': 3}}
+2025-07-26 21:00:08 [    INFO] Statemachine.RequestingData:80 - Exiting state: RequestingData
+2025-07-26 21:00:08 [    INFO] Statemachine.Error:67 - Entering state: Error
+2025-07-26 21:00:08 [   DEBUG] Statemachine.Error:93 - UI status update not available for state: Error
+2025-07-26 21:00:13 [   ERROR] Statemachine.Error:405 - Error state entered: 'JVLinkAdapter' object has no attribute 'get_data_async'
+2025-07-26 21:00:13 [   ERROR] Statemachine.Error:407 - Context: {'operation': 'data_request', 'params': {'from_date': '19860101', 'data_spec_list': ['RACE'], 'option': 3}}
+2025-07-26 21:00:13 [    INFO] root:170 - State transition completed: -> Error
+2025-07-26 21:00:13 [    INFO] root:170 - State transition completed: -> RequestingData
+2025-07-26 22:02:50 [    INFO] root:145 - ============================================================
+2025-07-26 22:02:50 [    INFO] root:146 - JRA-Data Collector アプリケーションを開始しました
+2025-07-26 22:02:50 [    INFO] root:147 - ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250726.log
+2025-07-26 22:02:50 [    INFO] root:148 - ログレベル: ファイル=DEBUG, コンソール=INFO
+2025-07-26 22:02:50 [    INFO] root:149 - ============================================================
+2025-07-26 22:02:50 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-26 22:02:50 [   DEBUG] Statemachine.Idle:93 - UI status update not available for state: Idle
+2025-07-26 22:02:50 [    INFO] root:170 - State transition completed: -> Idle
+2025-07-26 22:02:50 [    INFO] root:229 - アプリケーションの初期化を開始します。
+2025-07-26 22:02:50 [    INFO] root:255 - UIとコントローラーの接続を初期化します。
+2025-07-26 22:02:50 [    INFO] root:1108 - データベース接続を閉じました。
+2025-07-26 22:02:50 [   ERROR] root:234 - アプリケーション初期化エラー: 'ConfigManager' object has no attribute 'load_etl_rules'
+2025-07-26 22:03:37 [    INFO] root:145 - ============================================================
+2025-07-26 22:03:37 [    INFO] root:146 - JRA-Data Collector アプリケーションを開始しました
+2025-07-26 22:03:37 [    INFO] root:147 - ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250726.log
+2025-07-26 22:03:37 [    INFO] root:148 - ログレベル: ファイル=DEBUG, コンソール=INFO
+2025-07-26 22:03:37 [    INFO] root:149 - ============================================================
+2025-07-26 22:03:37 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-26 22:03:37 [   DEBUG] Statemachine.Idle:93 - UI status update not available for state: Idle
+2025-07-26 22:03:37 [    INFO] root:170 - State transition completed: -> Idle
+2025-07-26 22:03:37 [    INFO] root:229 - アプリケーションの初期化を開始します。
+2025-07-26 22:03:37 [    INFO] root:255 - UIとコントローラーの接続を初期化します。
+2025-07-26 22:03:38 [    INFO] root:1108 - データベース接続を閉じました。
+2025-07-26 22:03:38 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:03:38 [    INFO] root:427 - ダッシュボードDB情報更新完了: sqlite (C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\jra_data_fallback.db)
+2025-07-26 22:03:38 [    INFO] root:244 - JV-Link設定済み。必要に応じて手動で接続してください。
+2025-07-26 22:03:38 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:03:38 [    INFO] root:251 - アプリケーションの初期化が完了しました。
+2025-07-26 22:03:38 [    INFO] root:209 - アプリケーション初期化完了
+2025-07-26 22:03:48 [    INFO] src.services.settings_manager:126 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-26 22:03:48 [    INFO] root:382 - 設定保存が完了しました。
+2025-07-26 22:03:48 [    INFO] root:1108 - データベース接続を閉じました。
+2025-07-26 22:03:48 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:03:48 [    INFO] root:427 - ダッシュボードDB情報更新完了: sqlite (C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\jra_data_fallback.db)
+2025-07-26 22:03:48 [    INFO] src.services.settings_manager:161 - データベース設定を更新しました
+2025-07-26 22:03:48 [    INFO] root:340 - データベース設定変更を検知しました。ダッシュボードを更新します。
+2025-07-26 22:03:48 [    INFO] root:1108 - データベース接続を閉じました。
+2025-07-26 22:03:48 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:03:48 [    INFO] root:427 - ダッシュボードDB情報更新完了: sqlite (C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\jra_data_fallback.db)
+2025-07-26 22:03:48 [    INFO] root:1051 - データベース設定が更新されました。
+2025-07-26 22:03:48 [    INFO] src.services.settings_manager:126 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-26 22:03:48 [    INFO] root:382 - 設定保存が完了しました。
+2025-07-26 22:03:48 [    INFO] root:1108 - データベース接続を閉じました。
+2025-07-26 22:03:49 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:03:49 [    INFO] root:427 - ダッシュボードDB情報更新完了: sqlite (C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\jra_data_fallback.db)
+2025-07-26 22:03:49 [    INFO] src.services.settings_manager:190 - JV-Link設定を更新しました
+2025-07-26 22:03:49 [    INFO] root:371 - JV-Link設定変更を検知しました。
+2025-07-26 22:03:49 [    INFO] root:1057 - JV-Link設定が更新されました。
+2025-07-26 22:03:49 [    INFO] root:1065 - 設定が正常に保存されました。
+2025-07-26 22:03:52 [    INFO] root:1081 - データベース接続テストを開始します: PostgreSQL
+2025-07-26 22:03:54 [    INFO] src.services.settings_manager:126 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-26 22:03:54 [    INFO] root:382 - 設定保存が完了しました。
+2025-07-26 22:03:55 [    INFO] root:1108 - データベース接続を閉じました。
+2025-07-26 22:03:55 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:03:55 [    INFO] root:427 - ダッシュボードDB情報更新完了: sqlite (C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\jra_data_fallback.db)
+2025-07-26 22:03:55 [    INFO] src.services.settings_manager:161 - データベース設定を更新しました
+2025-07-26 22:03:55 [    INFO] root:340 - データベース設定変更を検知しました。ダッシュボードを更新します。
+2025-07-26 22:03:55 [    INFO] root:1108 - データベース接続を閉じました。
+2025-07-26 22:03:55 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:03:55 [    INFO] root:427 - ダッシュボードDB情報更新完了: sqlite (C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\jra_data_fallback.db)
+2025-07-26 22:03:55 [    INFO] root:1051 - データベース設定が更新されました。
+2025-07-26 22:03:55 [    INFO] src.services.settings_manager:126 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-26 22:03:55 [    INFO] root:382 - 設定保存が完了しました。
+2025-07-26 22:03:55 [    INFO] root:1108 - データベース接続を閉じました。
+2025-07-26 22:03:55 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:03:55 [    INFO] root:427 - ダッシュボードDB情報更新完了: sqlite (C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\jra_data_fallback.db)
+2025-07-26 22:03:55 [    INFO] src.services.settings_manager:190 - JV-Link設定を更新しました
+2025-07-26 22:03:55 [    INFO] root:371 - JV-Link設定変更を検知しました。
+2025-07-26 22:03:55 [    INFO] root:1057 - JV-Link設定が更新されました。
+2025-07-26 22:03:55 [    INFO] root:1065 - 設定が正常に保存されました。
+2025-07-26 22:04:09 [    INFO] Statemachine.Idle:24 - Starting data processing...
+2025-07-26 22:04:09 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-26 22:04:09 [    INFO] Statemachine.RequestingData:67 - Entering state: RequestingData
+2025-07-26 22:04:09 [   DEBUG] Statemachine.RequestingData:93 - UI status update not available for state: RequestingData
+2025-07-26 22:04:09 [   ERROR] root:689 - JvLinkManager Error: JV-Linkが初期化されていません。
+2025-07-26 22:04:09 [   ERROR] Statemachine.RequestingData:242 - Error in state RequestingData: JV-Linkが初期化されていません。
+2025-07-26 22:04:09 [   ERROR] Statemachine.RequestingData:244 - Context: {'source': 'JvLinkManager', 'message': 'JV-Linkが初期化されていません。'}
+2025-07-26 22:04:09 [    INFO] Statemachine.RequestingData:80 - Exiting state: RequestingData
+2025-07-26 22:04:09 [    INFO] Statemachine.Error:67 - Entering state: Error
+2025-07-26 22:04:09 [   DEBUG] Statemachine.Error:93 - UI status update not available for state: Error
+2025-07-26 22:04:12 [   ERROR] Statemachine.Error:405 - Error state entered: JV-Linkが初期化されていません。
+2025-07-26 22:04:12 [   ERROR] Statemachine.Error:407 - Context: {'source': 'JvLinkManager', 'message': 'JV-Linkが初期化されていません。'}
+2025-07-26 22:04:12 [    INFO] root:170 - State transition completed: -> Error
+2025-07-26 22:04:12 [    INFO] Statemachine.Error:80 - Exiting state: Error
+2025-07-26 22:04:12 [    INFO] Statemachine.PollingDownload:67 - Entering state: PollingDownload
+2025-07-26 22:04:12 [   DEBUG] Statemachine.PollingDownload:93 - UI status update not available for state: PollingDownload
+2025-07-26 22:04:12 [   ERROR] Statemachine.PollingDownload:163 - Failed to setup progress monitoring: 'PySide6.QtCore.SignalInstance' object has no attribute 'receivers'
+2025-07-26 22:04:12 [    INFO] root:170 - State transition completed: -> PollingDownload
+2025-07-26 22:04:12 [    INFO] root:170 - State transition completed: -> RequestingData
+2025-07-26 22:04:17 [    INFO] root:962 - 速報イベントの監視開始を指示します。
+2025-07-26 22:04:17 [    INFO] root:409 - 速報イベント監視ワーカーを起動します。
+2025-07-26 22:04:17 [    INFO] root:185 - リアルタイムイベントの監視を開始します...
+2025-07-26 22:04:17 [   ERROR] root:213 - JvRealtimeWorkerでエラーが発生: 'NoneType' object has no attribute 'JVWatchEvent'
+2025-07-26 22:04:17 [    INFO] root:217 - リアルタイムイベントの監視ループを終了します。
+2025-07-26 22:04:17 [   ERROR] root:689 - JvLinkManager Error: リアルタイム監視エラー: (<class 'AttributeError'>, AttributeError("'NoneType' object has no attribute 'JVWatchEvent'"), 'Traceback (most recent call last):\n  File "C:\\Users\\yuusu\\Desktop\\JRA-VANアプリ\\DataBriocks\\src\\services\\jvlink_manager.py", line 189, in run\n    rtn_code = self.jvlink.JVWatchEvent()\n               ^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: \'NoneType\' object has no attribute \'JVWatchEvent\'\n')
+2025-07-26 22:04:17 [   ERROR] Statemachine.PollingDownload:242 - Error in state PollingDownload: リアルタイム監視エラー: (<class 'AttributeError'>, AttributeError("'NoneType' object has no attribute 'JVWatchEvent'"), 'Traceback (most recent call last):\n  File "C:\\Users\\yuusu\\Desktop\\JRA-VANアプリ\\DataBriocks\\src\\services\\jvlink_manager.py", line 189, in run\n    rtn_code = self.jvlink.JVWatchEvent()\n               ^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: \'NoneType\' object has no attribute \'JVWatchEvent\'\n')
+2025-07-26 22:04:17 [   ERROR] Statemachine.PollingDownload:244 - Context: {'source': 'JvLinkManager', 'message': 'リアルタイム監視エラー: (<class \'AttributeError\'>, AttributeError("\'NoneType\' object has no attribute \'JVWatchEvent\'"), \'Traceback (most recent call last):\\n  File "C:\\\\Users\\\\yuusu\\\\Desktop\\\\JRA-VANアプリ\\\\DataBriocks\\\\src\\\\services\\\\jvlink_manager.py", line 189, in run\\n    rtn_code = self.jvlink.JVWatchEvent()\\n               ^^^^^^^^^^^^^^^^^^^^^^^^\\nAttributeError: \\\'NoneType\\\' object has no attribute \\\'JVWatchEvent\\\'\\n\')'}
+2025-07-26 22:04:17 [    INFO] Statemachine.PollingDownload:80 - Exiting state: PollingDownload
+2025-07-26 22:04:17 [    INFO] Statemachine.Error:67 - Entering state: Error
+2025-07-26 22:04:17 [   DEBUG] Statemachine.Error:93 - UI status update not available for state: Error
+2025-07-26 22:04:17 [    INFO] root:427 - リアルタイムワーカーが終了しました。
+2025-07-26 22:04:20 [   ERROR] Statemachine.Error:405 - Error state entered: リアルタイム監視エラー: (<class 'AttributeError'>, AttributeError("'NoneType' object has no attribute 'JVWatchEvent'"), 'Traceback (most recent call last):\n  File "C:\\Users\\yuusu\\Desktop\\JRA-VANアプリ\\DataBriocks\\src\\services\\jvlink_manager.py", line 189, in run\n    rtn_code = self.jvlink.JVWatchEvent()\n               ^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: \'NoneType\' object has no attribute \'JVWatchEvent\'\n')
+2025-07-26 22:04:20 [   ERROR] Statemachine.Error:407 - Context: {'source': 'JvLinkManager', 'message': 'リアルタイム監視エラー: (<class \'AttributeError\'>, AttributeError("\'NoneType\' object has no attribute \'JVWatchEvent\'"), \'Traceback (most recent call last):\\n  File "C:\\\\Users\\\\yuusu\\\\Desktop\\\\JRA-VANアプリ\\\\DataBriocks\\\\src\\\\services\\\\jvlink_manager.py", line 189, in run\\n    rtn_code = self.jvlink.JVWatchEvent()\\n               ^^^^^^^^^^^^^^^^^^^^^^^^\\nAttributeError: \\\'NoneType\\\' object has no attribute \\\'JVWatchEvent\\\'\\n\')'}
+2025-07-26 22:04:20 [    INFO] root:170 - State transition completed: -> Error
+2025-07-26 22:07:59 [    INFO] root:145 - ============================================================
+2025-07-26 22:07:59 [    INFO] root:146 - JRA-Data Collector アプリケーションを開始しました
+2025-07-26 22:07:59 [    INFO] root:147 - ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250726.log
+2025-07-26 22:07:59 [    INFO] root:148 - ログレベル: ファイル=DEBUG, コンソール=INFO
+2025-07-26 22:07:59 [    INFO] root:149 - ============================================================
+2025-07-26 22:07:59 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-26 22:07:59 [   DEBUG] Statemachine.Idle:93 - UI status update not available for state: Idle
+2025-07-26 22:07:59 [    INFO] root:170 - State transition completed: -> Idle
+2025-07-26 22:07:59 [    INFO] root:229 - アプリケーションの初期化を開始します。
+2025-07-26 22:07:59 [    INFO] root:255 - UIとコントローラーの接続を初期化します。
+2025-07-26 22:07:59 [    INFO] root:1108 - データベース接続を閉じました。
+2025-07-26 22:07:59 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:07:59 [    INFO] root:427 - ダッシュボードDB情報更新完了: sqlite (C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\jra_data_fallback.db)
+2025-07-26 22:07:59 [    INFO] root:244 - JV-Link設定済み。必要に応じて手動で接続してください。
+2025-07-26 22:07:59 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:07:59 [    INFO] root:251 - アプリケーションの初期化が完了しました。
+2025-07-26 22:07:59 [    INFO] root:209 - アプリケーション初期化完了
+2025-07-26 22:08:05 [    INFO] src.services.settings_manager:126 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-26 22:08:05 [    INFO] root:382 - 設定保存が完了しました。
+2025-07-26 22:08:05 [    INFO] root:1108 - データベース接続を閉じました。
+2025-07-26 22:08:05 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:08:05 [    INFO] root:427 - ダッシュボードDB情報更新完了: sqlite (C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\jra_data_fallback.db)
+2025-07-26 22:08:05 [    INFO] src.services.settings_manager:161 - データベース設定を更新しました
+2025-07-26 22:08:05 [    INFO] root:340 - データベース設定変更を検知しました。ダッシュボードを更新します。
+2025-07-26 22:08:05 [    INFO] root:1108 - データベース接続を閉じました。
+2025-07-26 22:08:05 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:08:05 [    INFO] root:427 - ダッシュボードDB情報更新完了: sqlite (C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\jra_data_fallback.db)
+2025-07-26 22:08:05 [    INFO] root:1051 - データベース設定が更新されました。
+2025-07-26 22:08:05 [    INFO] src.services.settings_manager:126 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-26 22:08:05 [    INFO] root:382 - 設定保存が完了しました。
+2025-07-26 22:08:05 [    INFO] root:1108 - データベース接続を閉じました。
+2025-07-26 22:08:05 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:08:05 [    INFO] root:427 - ダッシュボードDB情報更新完了: sqlite (C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\jra_data_fallback.db)
+2025-07-26 22:08:05 [    INFO] src.services.settings_manager:190 - JV-Link設定を更新しました
+2025-07-26 22:08:05 [    INFO] root:371 - JV-Link設定変更を検知しました。
+2025-07-26 22:08:05 [    INFO] root:1057 - JV-Link設定が更新されました。
+2025-07-26 22:08:05 [    INFO] root:1065 - 設定が正常に保存されました。
+2025-07-26 22:08:11 [    INFO] src.services.settings_manager:126 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-26 22:08:11 [    INFO] root:382 - 設定保存が完了しました。
+2025-07-26 22:08:12 [    INFO] root:1108 - データベース接続を閉じました。
+2025-07-26 22:08:12 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:08:12 [    INFO] root:427 - ダッシュボードDB情報更新完了: sqlite (C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\jra_data_fallback.db)
+2025-07-26 22:08:12 [    INFO] src.services.settings_manager:161 - データベース設定を更新しました
+2025-07-26 22:08:12 [    INFO] root:340 - データベース設定変更を検知しました。ダッシュボードを更新します。
+2025-07-26 22:08:12 [    INFO] root:1108 - データベース接続を閉じました。
+2025-07-26 22:08:12 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:08:12 [    INFO] root:427 - ダッシュボードDB情報更新完了: sqlite (C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\jra_data_fallback.db)
+2025-07-26 22:08:12 [    INFO] root:1051 - データベース設定が更新されました。
+2025-07-26 22:08:12 [    INFO] src.services.settings_manager:126 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-26 22:08:12 [    INFO] root:382 - 設定保存が完了しました。
+2025-07-26 22:08:12 [    INFO] root:1108 - データベース接続を閉じました。
+2025-07-26 22:08:12 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:08:12 [    INFO] root:427 - ダッシュボードDB情報更新完了: sqlite (C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\jra_data_fallback.db)
+2025-07-26 22:08:12 [    INFO] src.services.settings_manager:190 - JV-Link設定を更新しました
+2025-07-26 22:08:12 [    INFO] root:371 - JV-Link設定変更を検知しました。
+2025-07-26 22:08:12 [    INFO] root:1057 - JV-Link設定が更新されました。
+2025-07-26 22:08:12 [    INFO] root:1065 - 設定が正常に保存されました。
+2025-07-26 22:08:28 [    INFO] Statemachine.Idle:24 - Starting data processing...
+2025-07-26 22:08:28 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-26 22:08:28 [    INFO] Statemachine.RequestingData:67 - Entering state: RequestingData
+2025-07-26 22:08:28 [   DEBUG] Statemachine.RequestingData:93 - UI status update not available for state: RequestingData
+2025-07-26 22:08:28 [   ERROR] root:689 - JvLinkManager Error: JV-Linkが初期化されていません。
+2025-07-26 22:08:28 [   ERROR] Statemachine.RequestingData:242 - Error in state RequestingData: JV-Linkが初期化されていません。
+2025-07-26 22:08:28 [   ERROR] Statemachine.RequestingData:244 - Context: {'source': 'JvLinkManager', 'message': 'JV-Linkが初期化されていません。'}
+2025-07-26 22:08:28 [    INFO] Statemachine.RequestingData:80 - Exiting state: RequestingData
+2025-07-26 22:08:28 [    INFO] Statemachine.Error:67 - Entering state: Error
+2025-07-26 22:08:28 [   DEBUG] Statemachine.Error:93 - UI status update not available for state: Error
+2025-07-26 22:08:31 [   ERROR] Statemachine.Error:405 - Error state entered: JV-Linkが初期化されていません。
+2025-07-26 22:08:31 [   ERROR] Statemachine.Error:407 - Context: {'source': 'JvLinkManager', 'message': 'JV-Linkが初期化されていません。'}
+2025-07-26 22:08:31 [    INFO] root:170 - State transition completed: -> Error
+2025-07-26 22:08:31 [    INFO] Statemachine.Error:80 - Exiting state: Error
+2025-07-26 22:08:31 [    INFO] Statemachine.PollingDownload:67 - Entering state: PollingDownload
+2025-07-26 22:08:31 [   DEBUG] Statemachine.PollingDownload:93 - UI status update not available for state: PollingDownload
+2025-07-26 22:08:31 [   ERROR] Statemachine.PollingDownload:163 - Failed to setup progress monitoring: 'PySide6.QtCore.SignalInstance' object has no attribute 'receivers'
+2025-07-26 22:08:31 [    INFO] root:170 - State transition completed: -> PollingDownload
+2025-07-26 22:08:31 [    INFO] root:170 - State transition completed: -> RequestingData
+2025-07-26 22:08:32 [    INFO] root:962 - 速報イベントの監視開始を指示します。
+2025-07-26 22:08:32 [    INFO] root:409 - 速報イベント監視ワーカーを起動します。
+2025-07-26 22:08:32 [    INFO] root:185 - リアルタイムイベントの監視を開始します...
+2025-07-26 22:08:32 [   ERROR] root:213 - JvRealtimeWorkerでエラーが発生: 'NoneType' object has no attribute 'JVWatchEvent'
+2025-07-26 22:08:32 [    INFO] root:217 - リアルタイムイベントの監視ループを終了します。
+2025-07-26 22:08:32 [   ERROR] root:689 - JvLinkManager Error: リアルタイム監視エラー: (<class 'AttributeError'>, AttributeError("'NoneType' object has no attribute 'JVWatchEvent'"), 'Traceback (most recent call last):\n  File "C:\\Users\\yuusu\\Desktop\\JRA-VANアプリ\\DataBriocks\\src\\services\\jvlink_manager.py", line 189, in run\n    rtn_code = self.jvlink.JVWatchEvent()\n               ^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: \'NoneType\' object has no attribute \'JVWatchEvent\'\n')
+2025-07-26 22:08:32 [   ERROR] Statemachine.PollingDownload:242 - Error in state PollingDownload: リアルタイム監視エラー: (<class 'AttributeError'>, AttributeError("'NoneType' object has no attribute 'JVWatchEvent'"), 'Traceback (most recent call last):\n  File "C:\\Users\\yuusu\\Desktop\\JRA-VANアプリ\\DataBriocks\\src\\services\\jvlink_manager.py", line 189, in run\n    rtn_code = self.jvlink.JVWatchEvent()\n               ^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: \'NoneType\' object has no attribute \'JVWatchEvent\'\n')
+2025-07-26 22:08:32 [   ERROR] Statemachine.PollingDownload:244 - Context: {'source': 'JvLinkManager', 'message': 'リアルタイム監視エラー: (<class \'AttributeError\'>, AttributeError("\'NoneType\' object has no attribute \'JVWatchEvent\'"), \'Traceback (most recent call last):\\n  File "C:\\\\Users\\\\yuusu\\\\Desktop\\\\JRA-VANアプリ\\\\DataBriocks\\\\src\\\\services\\\\jvlink_manager.py", line 189, in run\\n    rtn_code = self.jvlink.JVWatchEvent()\\n               ^^^^^^^^^^^^^^^^^^^^^^^^\\nAttributeError: \\\'NoneType\\\' object has no attribute \\\'JVWatchEvent\\\'\\n\')'}
+2025-07-26 22:08:32 [    INFO] Statemachine.PollingDownload:80 - Exiting state: PollingDownload
+2025-07-26 22:08:32 [    INFO] Statemachine.Error:67 - Entering state: Error
+2025-07-26 22:08:32 [   DEBUG] Statemachine.Error:93 - UI status update not available for state: Error
+2025-07-26 22:08:32 [    INFO] root:427 - リアルタイムワーカーが終了しました。
+2025-07-26 22:08:36 [   ERROR] Statemachine.Error:405 - Error state entered: リアルタイム監視エラー: (<class 'AttributeError'>, AttributeError("'NoneType' object has no attribute 'JVWatchEvent'"), 'Traceback (most recent call last):\n  File "C:\\Users\\yuusu\\Desktop\\JRA-VANアプリ\\DataBriocks\\src\\services\\jvlink_manager.py", line 189, in run\n    rtn_code = self.jvlink.JVWatchEvent()\n               ^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: \'NoneType\' object has no attribute \'JVWatchEvent\'\n')
+2025-07-26 22:08:36 [   ERROR] Statemachine.Error:407 - Context: {'source': 'JvLinkManager', 'message': 'リアルタイム監視エラー: (<class \'AttributeError\'>, AttributeError("\'NoneType\' object has no attribute \'JVWatchEvent\'"), \'Traceback (most recent call last):\\n  File "C:\\\\Users\\\\yuusu\\\\Desktop\\\\JRA-VANアプリ\\\\DataBriocks\\\\src\\\\services\\\\jvlink_manager.py", line 189, in run\\n    rtn_code = self.jvlink.JVWatchEvent()\\n               ^^^^^^^^^^^^^^^^^^^^^^^^\\nAttributeError: \\\'NoneType\\\' object has no attribute \\\'JVWatchEvent\\\'\\n\')'}
+2025-07-26 22:08:36 [    INFO] root:170 - State transition completed: -> Error
+2025-07-26 22:17:28 [    INFO] root:145 - ============================================================
+2025-07-26 22:17:28 [    INFO] root:146 - JRA-Data Collector アプリケーションを開始しました
+2025-07-26 22:17:28 [    INFO] root:147 - ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250726.log
+2025-07-26 22:17:28 [    INFO] root:148 - ログレベル: ファイル=DEBUG, コンソール=INFO
+2025-07-26 22:17:28 [    INFO] root:149 - ============================================================
+2025-07-26 22:17:28 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-26 22:17:28 [   DEBUG] Statemachine.Idle:93 - UI status update not available for state: Idle
+2025-07-26 22:17:28 [    INFO] root:170 - State transition completed: -> Idle
+2025-07-26 22:17:28 [    INFO] root:229 - アプリケーションの初期化を開始します。
+2025-07-26 22:17:28 [    INFO] root:255 - UIとコントローラーの接続を初期化します。
+2025-07-26 22:17:28 [    INFO] root:1108 - データベース接続を閉じました。
+2025-07-26 22:17:28 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:17:28 [    INFO] root:525 - ダッシュボードDB情報更新完了: sqlite (C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\jra_data_fallback.db)
+2025-07-26 22:17:28 [    INFO] root:244 - JV-Link設定済み。必要に応じて手動で接続してください。
+2025-07-26 22:17:28 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:17:28 [    INFO] root:251 - アプリケーションの初期化が完了しました。
+2025-07-26 22:17:28 [    INFO] root:209 - アプリケーション初期化完了
+2025-07-26 22:17:39 [    INFO] root:1229 - データベース接続テストを開始します: PostgreSQL
+2025-07-26 22:17:41 [    INFO] src.services.settings_manager:126 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-26 22:17:41 [    INFO] root:480 - 設定保存が完了しました。
+2025-07-26 22:17:41 [    INFO] root:1108 - データベース接続を閉じました。
+2025-07-26 22:17:41 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:17:41 [    INFO] root:525 - ダッシュボードDB情報更新完了: sqlite (C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\jra_data_fallback.db)
+2025-07-26 22:17:41 [    INFO] src.services.settings_manager:161 - データベース設定を更新しました
+2025-07-26 22:17:41 [    INFO] root:438 - データベース設定変更を検知しました。ダッシュボードを更新します。
+2025-07-26 22:17:41 [    INFO] root:1108 - データベース接続を閉じました。
+2025-07-26 22:17:41 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:17:41 [    INFO] root:525 - ダッシュボードDB情報更新完了: sqlite (C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\jra_data_fallback.db)
+2025-07-26 22:17:41 [    INFO] root:1199 - データベース設定が更新されました。
+2025-07-26 22:17:41 [    INFO] src.services.settings_manager:126 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-26 22:17:41 [    INFO] root:480 - 設定保存が完了しました。
+2025-07-26 22:17:41 [    INFO] root:1108 - データベース接続を閉じました。
+2025-07-26 22:17:41 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:17:41 [    INFO] root:525 - ダッシュボードDB情報更新完了: sqlite (C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\jra_data_fallback.db)
+2025-07-26 22:17:41 [    INFO] src.services.settings_manager:190 - JV-Link設定を更新しました
+2025-07-26 22:17:41 [    INFO] root:469 - JV-Link設定変更を検知しました。
+2025-07-26 22:17:41 [    INFO] root:1205 - JV-Link設定が更新されました。
+2025-07-26 22:17:41 [    INFO] root:1213 - 設定が正常に保存されました。
+2025-07-26 22:17:49 [    INFO] root:723 - セットアップデータ取得を開始します。
+2025-07-26 22:17:52 [    INFO] root:324 - JV-Link状態変更: UNINITIALIZED -> INITIALIZING
+2025-07-26 22:17:52 [    INFO] root:354 - JV-Linkの初期化を開始します...
+2025-07-26 22:17:52 [    INFO] root:359 - JV-Linkファイルが見つかりました: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\JV-Link\JV-Link.exe
+2025-07-26 22:17:52 [    INFO] root:378 - COMオブジェクト 'JVDTLab.JVLink' を試行中...
+2025-07-26 22:17:52 [ WARNING] root:383 - COMオブジェクト 'JVDTLab.JVLink' の作成に失敗: (-2147221164, 'クラスが登録されていません', None, None)
+2025-07-26 22:17:52 [    INFO] root:378 - COMオブジェクト 'JVDTLAB.JVLink.1' を試行中...
+2025-07-26 22:17:52 [ WARNING] root:383 - COMオブジェクト 'JVDTLAB.JVLink.1' の作成に失敗: (-2147221164, 'クラスが登録されていません', None, None)
+2025-07-26 22:17:52 [    INFO] root:378 - COMオブジェクト 'JVDTLAB.JVLink' を試行中...
+2025-07-26 22:17:52 [ WARNING] root:383 - COMオブジェクト 'JVDTLAB.JVLink' の作成に失敗: (-2147221164, 'クラスが登録されていません', None, None)
+2025-07-26 22:17:52 [    INFO] root:378 - COMオブジェクト 'JVLink.Application' を試行中...
+2025-07-26 22:17:52 [ WARNING] root:383 - COMオブジェクト 'JVLink.Application' の作成に失敗: (-2147221005, 'クラス文字列が無効です', None, None)
+2025-07-26 22:17:52 [    INFO] root:378 - COMオブジェクト 'JVLink.JVLink.1' を試行中...
+2025-07-26 22:17:52 [ WARNING] root:383 - COMオブジェクト 'JVLink.JVLink.1' の作成に失敗: (-2147221005, 'クラス文字列が無効です', None, None)
+2025-07-26 22:17:52 [    INFO] root:378 - COMオブジェクト 'JVLink.JVLink' を試行中...
+2025-07-26 22:17:52 [ WARNING] root:383 - COMオブジェクト 'JVLink.JVLink' の作成に失敗: (-2147221005, 'クラス文字列が無効です', None, None)
+2025-07-26 22:17:52 [   ERROR] root:400 - JV-Linkの初期化中に例外が発生しました: 有効なJV-Link COMオブジェクトが見つかりません。JV-Linkが正しくインストール・登録されているか確認してください。
+2025-07-26 22:17:52 [    INFO] root:324 - JV-Link状態変更: INITIALIZING -> ERROR
+2025-07-26 22:18:13 [    INFO] root:723 - セットアップデータ取得を開始します。
+2025-07-26 22:18:16 [   ERROR] root:331 - initializeを実行するには、状態が['UNINITIALIZED']である必要があります。現在の状態: ERROR
+2025-07-26 22:18:19 [   ERROR] root:1071 - JV-Linkが初期化されていません。まず設定画面からJV-Linkを初期化してください。
+2025-07-26 22:18:19 [    INFO] root:1110 - 速報イベントの監視停止を指示します。
+2025-07-26 22:18:19 [ WARNING] root:527 - 速報イベントは監視されていません。
+2025-07-26 22:18:22 [    INFO] root:746 - 差分データ更新を開始します。
+2025-07-26 22:18:22 [   ERROR] root:331 - initializeを実行するには、状態が['UNINITIALIZED']である必要があります。現在の状態: ERROR
+2025-07-26 22:18:38 [    INFO] src.services.settings_manager:126 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-26 22:18:38 [    INFO] root:480 - 設定保存が完了しました。
+2025-07-26 22:18:38 [    INFO] root:1108 - データベース接続を閉じました。
+2025-07-26 22:18:38 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:18:38 [    INFO] root:525 - ダッシュボードDB情報更新完了: sqlite (C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\jra_data_fallback.db)
+2025-07-26 22:18:38 [    INFO] src.services.settings_manager:161 - データベース設定を更新しました
+2025-07-26 22:18:38 [    INFO] root:438 - データベース設定変更を検知しました。ダッシュボードを更新します。
+2025-07-26 22:18:38 [    INFO] root:1108 - データベース接続を閉じました。
+2025-07-26 22:18:38 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:18:38 [    INFO] root:525 - ダッシュボードDB情報更新完了: sqlite (C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\jra_data_fallback.db)
+2025-07-26 22:18:38 [    INFO] root:1199 - データベース設定が更新されました。
+2025-07-26 22:18:38 [    INFO] src.services.settings_manager:126 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-26 22:18:38 [    INFO] root:480 - 設定保存が完了しました。
+2025-07-26 22:18:38 [    INFO] root:1108 - データベース接続を閉じました。
+2025-07-26 22:18:38 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:18:38 [    INFO] root:525 - ダッシュボードDB情報更新完了: sqlite (C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\jra_data_fallback.db)
+2025-07-26 22:18:38 [    INFO] src.services.settings_manager:190 - JV-Link設定を更新しました
+2025-07-26 22:18:38 [    INFO] root:469 - JV-Link設定変更を検知しました。
+2025-07-26 22:18:38 [    INFO] root:1205 - JV-Link設定が更新されました。
+2025-07-26 22:18:38 [    INFO] root:1213 - 設定が正常に保存されました。
+2025-07-26 22:18:41 [    INFO] root:723 - セットアップデータ取得を開始します。
+2025-07-26 22:18:42 [   ERROR] root:331 - initializeを実行するには、状態が['UNINITIALIZED']である必要があります。現在の状態: ERROR
+2025-07-26 22:20:48 [    INFO] root:145 - ============================================================
+2025-07-26 22:20:48 [    INFO] root:146 - JRA-Data Collector アプリケーションを開始しました
+2025-07-26 22:20:48 [    INFO] root:147 - ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250726.log
+2025-07-26 22:20:48 [    INFO] root:148 - ログレベル: ファイル=DEBUG, コンソール=INFO
+2025-07-26 22:20:48 [    INFO] root:149 - ============================================================
+2025-07-26 22:20:48 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-26 22:20:48 [   DEBUG] Statemachine.Idle:93 - UI status update not available for state: Idle
+2025-07-26 22:20:48 [    INFO] root:170 - State transition completed: -> Idle
+2025-07-26 22:20:48 [    INFO] root:229 - アプリケーションの初期化を開始します。
+2025-07-26 22:20:48 [    INFO] root:255 - UIとコントローラーの接続を初期化します。
+2025-07-26 22:20:48 [    INFO] root:1108 - データベース接続を閉じました。
+2025-07-26 22:20:48 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:20:48 [    INFO] root:525 - ダッシュボードDB情報更新完了: sqlite (C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\jra_data_fallback.db)
+2025-07-26 22:20:48 [    INFO] root:244 - JV-Link設定済み。必要に応じて手動で接続してください。
+2025-07-26 22:20:48 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:20:48 [    INFO] root:251 - アプリケーションの初期化が完了しました。
+2025-07-26 22:20:48 [    INFO] root:209 - アプリケーション初期化完了
+2025-07-26 22:20:56 [    INFO] src.services.settings_manager:126 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-26 22:20:56 [    INFO] root:480 - 設定保存が完了しました。
+2025-07-26 22:20:56 [    INFO] root:1108 - データベース接続を閉じました。
+2025-07-26 22:20:56 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:20:56 [    INFO] root:525 - ダッシュボードDB情報更新完了: sqlite (C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\jra_data_fallback.db)
+2025-07-26 22:20:56 [    INFO] src.services.settings_manager:161 - データベース設定を更新しました
+2025-07-26 22:20:56 [    INFO] root:438 - データベース設定変更を検知しました。ダッシュボードを更新します。
+2025-07-26 22:20:56 [    INFO] root:1108 - データベース接続を閉じました。
+2025-07-26 22:20:56 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:20:56 [    INFO] root:525 - ダッシュボードDB情報更新完了: sqlite (C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\jra_data_fallback.db)
+2025-07-26 22:20:56 [    INFO] root:1199 - データベース設定が更新されました。
+2025-07-26 22:20:56 [    INFO] src.services.settings_manager:126 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-26 22:20:56 [    INFO] root:480 - 設定保存が完了しました。
+2025-07-26 22:20:56 [    INFO] root:1108 - データベース接続を閉じました。
+2025-07-26 22:20:56 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:20:56 [    INFO] root:525 - ダッシュボードDB情報更新完了: sqlite (C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\jra_data_fallback.db)
+2025-07-26 22:20:56 [    INFO] src.services.settings_manager:190 - JV-Link設定を更新しました
+2025-07-26 22:20:56 [    INFO] root:469 - JV-Link設定変更を検知しました。
+2025-07-26 22:20:56 [    INFO] root:1205 - JV-Link設定が更新されました。
+2025-07-26 22:20:56 [    INFO] root:1213 - 設定が正常に保存されました。
+2025-07-26 22:20:59 [    INFO] src.services.settings_manager:126 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-26 22:20:59 [    INFO] root:480 - 設定保存が完了しました。
+2025-07-26 22:20:59 [    INFO] root:1108 - データベース接続を閉じました。
+2025-07-26 22:20:59 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:20:59 [    INFO] root:525 - ダッシュボードDB情報更新完了: sqlite (C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\jra_data_fallback.db)
+2025-07-26 22:20:59 [    INFO] src.services.settings_manager:161 - データベース設定を更新しました
+2025-07-26 22:20:59 [    INFO] root:438 - データベース設定変更を検知しました。ダッシュボードを更新します。
+2025-07-26 22:20:59 [    INFO] root:1108 - データベース接続を閉じました。
+2025-07-26 22:20:59 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:20:59 [    INFO] root:525 - ダッシュボードDB情報更新完了: sqlite (C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\jra_data_fallback.db)
+2025-07-26 22:20:59 [    INFO] root:1199 - データベース設定が更新されました。
+2025-07-26 22:20:59 [    INFO] src.services.settings_manager:126 - 設定ファイル保存成功: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\settings.ini
+2025-07-26 22:20:59 [    INFO] root:480 - 設定保存が完了しました。
+2025-07-26 22:20:59 [    INFO] root:1108 - データベース接続を閉じました。
+2025-07-26 22:20:59 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:20:59 [    INFO] root:525 - ダッシュボードDB情報更新完了: sqlite (C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\jra_data_fallback.db)
+2025-07-26 22:20:59 [    INFO] src.services.settings_manager:190 - JV-Link設定を更新しました
+2025-07-26 22:20:59 [    INFO] root:469 - JV-Link設定変更を検知しました。
+2025-07-26 22:20:59 [    INFO] root:1205 - JV-Link設定が更新されました。
+2025-07-26 22:20:59 [    INFO] root:1213 - 設定が正常に保存されました。
+2025-07-26 22:21:03 [    INFO] root:723 - セットアップデータ取得を開始します。
+2025-07-26 22:21:04 [    INFO] root:324 - JV-Link状態変更: UNINITIALIZED -> INITIALIZING
+2025-07-26 22:21:04 [    INFO] root:354 - JV-Linkの初期化を開始します...
+2025-07-26 22:21:04 [    INFO] root:359 - JV-Linkファイルが見つかりました: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\JV-Link\JV-Link.exe
+2025-07-26 22:21:04 [    INFO] root:378 - COMオブジェクト 'JVDTLab.JVLink' を試行中...
+2025-07-26 22:21:04 [ WARNING] root:383 - COMオブジェクト 'JVDTLab.JVLink' の作成に失敗: (-2147221164, 'クラスが登録されていません', None, None)
+2025-07-26 22:21:04 [    INFO] root:378 - COMオブジェクト 'JVDTLAB.JVLink.1' を試行中...
+2025-07-26 22:21:04 [ WARNING] root:383 - COMオブジェクト 'JVDTLAB.JVLink.1' の作成に失敗: (-2147221164, 'クラスが登録されていません', None, None)
+2025-07-26 22:21:04 [    INFO] root:378 - COMオブジェクト 'JVDTLAB.JVLink' を試行中...
+2025-07-26 22:21:04 [ WARNING] root:383 - COMオブジェクト 'JVDTLAB.JVLink' の作成に失敗: (-2147221164, 'クラスが登録されていません', None, None)
+2025-07-26 22:21:04 [    INFO] root:378 - COMオブジェクト 'JVLink.Application' を試行中...
+2025-07-26 22:21:04 [ WARNING] root:383 - COMオブジェクト 'JVLink.Application' の作成に失敗: (-2147221005, 'クラス文字列が無効です', None, None)
+2025-07-26 22:21:04 [    INFO] root:378 - COMオブジェクト 'JVLink.JVLink.1' を試行中...
+2025-07-26 22:21:04 [ WARNING] root:383 - COMオブジェクト 'JVLink.JVLink.1' の作成に失敗: (-2147221005, 'クラス文字列が無効です', None, None)
+2025-07-26 22:21:04 [    INFO] root:378 - COMオブジェクト 'JVLink.JVLink' を試行中...
+2025-07-26 22:21:04 [ WARNING] root:383 - COMオブジェクト 'JVLink.JVLink' の作成に失敗: (-2147221005, 'クラス文字列が無効です', None, None)
+2025-07-26 22:21:04 [   ERROR] root:400 - JV-Linkの初期化中に例外が発生しました: 有効なJV-Link COMオブジェクトが見つかりません。JV-Linkが正しくインストール・登録されているか確認してください。
+2025-07-26 22:21:04 [    INFO] root:324 - JV-Link状態変更: INITIALIZING -> ERROR
+2025-07-26 22:30:47 [    INFO] root:145 - ============================================================
+2025-07-26 22:30:47 [    INFO] root:146 - JRA-Data Collector アプリケーションを開始しました
+2025-07-26 22:30:47 [    INFO] root:147 - ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250726.log
+2025-07-26 22:30:47 [    INFO] root:148 - ログレベル: ファイル=DEBUG, コンソール=INFO
+2025-07-26 22:30:47 [    INFO] root:149 - ============================================================
+2025-07-26 22:30:47 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-26 22:30:47 [   DEBUG] Statemachine.Idle:93 - UI status update not available for state: Idle
+2025-07-26 22:30:47 [    INFO] root:170 - State transition completed: -> Idle
+2025-07-26 22:30:47 [    INFO] root:229 - アプリケーションの初期化を開始します。
+2025-07-26 22:30:47 [    INFO] root:255 - UIとコントローラーの接続を初期化します。
+2025-07-26 22:30:48 [    INFO] root:1108 - データベース接続を閉じました。
+2025-07-26 22:30:48 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:30:48 [    INFO] root:488 - ダッシュボードDB情報更新完了: sqlite (C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\jra_data_fallback.db)
+2025-07-26 22:30:48 [   ERROR] root:234 - アプリケーション初期化エラー: 'ConfigManager' object has no attribute 'get_jvlink_config'
+2025-07-26 22:31:44 [    INFO] root:145 - ============================================================
+2025-07-26 22:31:44 [    INFO] root:146 - JRA-Data Collector アプリケーションを開始しました
+2025-07-26 22:31:44 [    INFO] root:147 - ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250726.log
+2025-07-26 22:31:44 [    INFO] root:148 - ログレベル: ファイル=DEBUG, コンソール=INFO
+2025-07-26 22:31:44 [    INFO] root:149 - ============================================================
+2025-07-26 22:31:44 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-26 22:31:44 [   DEBUG] Statemachine.Idle:93 - UI status update not available for state: Idle
+2025-07-26 22:31:44 [    INFO] root:170 - State transition completed: -> Idle
+2025-07-26 22:31:44 [    INFO] root:229 - アプリケーションの初期化を開始します。
+2025-07-26 22:31:44 [    INFO] root:250 - UIとコントローラーの接続を初期化します。
+2025-07-26 22:31:44 [    INFO] root:1108 - データベース接続を閉じました。
+2025-07-26 22:31:44 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:31:44 [    INFO] root:483 - ダッシュボードDB情報更新完了: sqlite (C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\jra_data_fallback.db)
+2025-07-26 22:31:44 [    INFO] root:239 - JV-Link設定はWindowsレジストリで管理されます。設定画面から公式ダイアログを開いて設定してください。
+2025-07-26 22:31:44 [    INFO] root:1054 - データサマリーを取得します。
+2025-07-26 22:31:44 [    INFO] root:246 - アプリケーションの初期化が完了しました。
+2025-07-26 22:31:44 [    INFO] root:209 - アプリケーション初期化完了
+2025-07-26 22:31:52 [    INFO] root:1500 - JV-Link公式設定ダイアログを開きます。
+2025-07-26 22:31:52 [   ERROR] root:1522 - JV-Link COMオブジェクトの作成に失敗: (-2147221164, 'クラスが登録されていません', None, None)
