@@ -7,7 +7,7 @@ Error State Management for JRA-Data Collector
 
 from datetime import datetime
 from typing import Optional, Dict, Any
-from PyQt5.QtCore import QObject, pyqtSignal as Signal
+from PyQt5.QtCore import pyqtSignal as Signal
 
 from .base import AppState
 from ..workers.signals import LoggerMixin, LogRecord

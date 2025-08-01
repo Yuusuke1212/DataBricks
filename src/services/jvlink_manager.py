@@ -1,15 +1,17 @@
+"""
+JRA-VANデータ取得マネージャー - Clean Architecture準拠
+JV-Link COMコンポーネントとのインターフェースを提供
+
+修正点: レスポンシブなCancelボタン対応
+"""
+
 import logging
-import sys
-import time
-import traceback
+import os
+from pathlib import Path
+from enum import Enum
+from PySide6.QtCore import QObject, Signal, QRunnable, Slot, QThreadPool
 import pythoncom
 import win32com.client
-import os
-from enum import Enum
-from typing import Optional, Dict, Any
-from pathlib import Path
-
-from PyQt5.QtCore import QObject, pyqtSignal as Signal, QRunnable, pyqtSlot as Slot, QThreadPool
 
 # JV-Link状態管理
 
@@ -60,7 +62,7 @@ class JvDataWorker(QRunnable):
         self.data_spec_list = data_spec_list
         self.signals = WorkerSignals()
         self.is_cancelled = False
-        
+
         # JV-Link.exeのディレクトリを取得
         try:
             from ..services.settings_manager import get_config_manager
@@ -218,7 +220,7 @@ class JvDataWorker(QRunnable):
     def _safe_jv_open(self, data_spec, from_date, option):
         """JVOpenを安全に実行（ワーキングディレクトリ変更付き）"""
         original_cwd = Path.cwd()
-        
+
         try:
             # JV-Link.exeがあるディレクトリに一時的に移動
             if self.jvlink_dir.exists():
@@ -226,10 +228,10 @@ class JvDataWorker(QRunnable):
                 logging.debug(f"ワーキングディレクトリを一時的に変更: {self.jvlink_dir}")
             else:
                 logging.warning(f"JV-Linkディレクトリが存在しません: {self.jvlink_dir}")
-            
+
             # 実際のJVOpen呼び出し
             return self.jvlink.JVOpen(data_spec, from_date, option)
-            
+
         finally:
             # 必ずワーキングディレクトリを元に戻す
             os.chdir(original_cwd)
@@ -357,6 +359,26 @@ class JvLinkManager(QObject):
         JvLinkManager._initialized = True
         logging.info("JvLinkManagerがシングルトンインスタンスとして初期化されました。")
 
+    def async_initialize(self):
+        """
+        非同期初期化メソッド（課題3: 起動速度改善）
+        UI表示後にバックグラウンドで実行される軽量な初期化処理
+        """
+        try:
+            logging.info("JvLinkManagerの非同期初期化を開始します...")
+
+            # JV-Linkプロセスの確認（軽量チェックのみ）
+            if self._current_state == JVLinkState.UNINITIALIZED:
+                # ★修正★: READY → INITIALIZED に変更
+                self._change_state(JVLinkState.INITIALIZED)
+                logging.info("JV-LinkステータスをINITIALIZEDに設定しました")
+
+            logging.info("JvLinkManagerの非同期初期化が完了しました")
+
+        except Exception as e:
+            logging.error(f"JvLinkManager非同期初期化エラー: {e}")
+            # エラーが発生してもアプリケーション全体をクラッシュさせない
+
     def _with_jvlink_working_directory(self, func, *args, **kwargs):
         """
         JV-Link COMメソッド呼び出しを、適切なワーキングディレクトリで実行する
@@ -370,7 +392,7 @@ class JvLinkManager(QObject):
             関数の戻り値
         """
         original_cwd = Path.cwd()
-        
+
         try:
             # JV-Link.exeがあるディレクトリに一時的に移動
             if self.jvlink_dir.exists():
@@ -378,10 +400,10 @@ class JvLinkManager(QObject):
                 logging.debug(f"ワーキングディレクトリを一時的に変更: {self.jvlink_dir}")
             else:
                 logging.warning(f"JV-Linkディレクトリが存在しません: {self.jvlink_dir}")
-            
+
             # 実際のCOM呼び出しを実行
             return func(*args, **kwargs)
-            
+
         finally:
             # 必ずワーキングディレクトリを元に戻す
             os.chdir(original_cwd)
@@ -408,14 +430,37 @@ class JvLinkManager(QObject):
         if self._current_state != new_state:
             old_state = self._current_state
             self._current_state = new_state
-            logging.info(
-                f"JV-Link状態変更: {old_state.value} -> {new_state.value}")
-            self.state_changed.emit(new_state.value)
+
+            # ★修正★: 型安全なstate.valueアクセス
+            try:
+                old_state_str = old_state.value if hasattr(old_state, 'value') else str(old_state)
+                new_state_str = new_state.value if hasattr(new_state, 'value') else str(new_state)
+            except (AttributeError, TypeError):
+                old_state_str = str(old_state)
+                new_state_str = str(new_state)
+
+            logging.info(f"JV-Link状態変更: {old_state_str} -> {new_state_str}")
+
+            # ★修正★: シグナル発行も型安全に
+            try:
+                state_emit_value = new_state.value if hasattr(new_state, 'value') else str(new_state)
+            except (AttributeError, TypeError):
+                state_emit_value = str(new_state)
+
+            self.state_changed.emit(state_emit_value)
 
     def _validate_state(self, required_states: list, operation_name: str):
         """指定された操作に必要な状態かチェック"""
         if self._current_state not in required_states:
-            error_msg = f"{operation_name}を実行するには、状態が{[s.value for s in required_states]}である必要があります。現在の状態: {self._current_state.value}"
+            # ★修正★: 型安全なstate.valueアクセス
+            try:
+                required_states_str = [s.value if hasattr(s, 'value') else str(s) for s in required_states]
+                current_state_str = self._current_state.value if hasattr(self._current_state, 'value') else str(self._current_state)
+            except (AttributeError, TypeError):
+                required_states_str = [str(s) for s in required_states]
+                current_state_str = str(self._current_state)
+
+            error_msg = f"{operation_name}を実行するには、状態が{required_states_str}である必要があります。現在の状態: {current_state_str}"
             logging.error(error_msg)
             raise JVLinkStateError(error_msg)
 

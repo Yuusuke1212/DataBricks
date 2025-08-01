@@ -1,11 +1,10 @@
 import logging
 import pandas as pd
 import json
-from pathlib import Path
 import queue
 import threading
 import time
-from typing import Dict, List, Optional, Callable
+from typing import Dict, List
 from PyQt5.QtCore import QObject, pyqtSignal as Signal
 
 
@@ -106,7 +105,7 @@ class EtlDataPipeline(QObject):
         batch_start_time = time.time()
         total_records = sum(len(records) for records in batch_data.values())
 
-        logging.info(f"=== バッチ処理開始 ===")
+        logging.info("=== バッチ処理開始 ===")
         logging.info(
             f"バッチサイズ: {total_records} レコード, データ種別数: {len(batch_data)}")
         for data_spec, records in batch_data.items():
@@ -171,7 +170,7 @@ class EtlDataPipeline(QObject):
                 self.pipeline_error.emit(f"バッチ処理エラー ({data_spec}): {e}")
 
         batch_duration = time.time() - batch_start_time
-        logging.info(f"=== バッチ処理完了 ===")
+        logging.info("=== バッチ処理完了 ===")
         logging.info(f"バッチ処理時間: {batch_duration:.2f}秒, "
                      f"処理速度: {total_records/batch_duration:.1f} レコード/秒, "
                      f"累積処理件数: {self.processed_count}")
@@ -182,8 +181,8 @@ class EtlDataPipeline(QObject):
         キューからデータを取得してETL・DB格納処理を実行
         """
         logging.info("ETL コンシューマーワーカーを開始しました。")
-        logging.info(f"  - バッチサイズ: 50 レコード")
-        logging.info(f"  - 処理間隔: 2.0 秒")
+        logging.info("  - バッチサイズ: 50 レコード")
+        logging.info("  - 処理間隔: 2.0 秒")
         logging.info(f"  - キューサイズ上限: {self.data_queue.maxsize}")
 
         batch_data = {}  # data_spec -> [raw_data_list]
@@ -243,7 +242,7 @@ class EtlDataPipeline(QObject):
                     current_time = time.time()
                     if (batch_data and
                             (current_time - last_process_time) >= process_interval):
-                        logging.debug(f"タイムアウト処理: バッチ処理を実行します。")
+                        logging.debug("タイムアウト処理: バッチ処理を実行します。")
                         self._process_batch(batch_data)
                         batch_data = {}
                         last_process_time = current_time

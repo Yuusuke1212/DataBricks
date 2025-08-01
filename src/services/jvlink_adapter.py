@@ -15,6 +15,9 @@ from pathlib import Path
 from typing import Optional, Dict, Any, Tuple
 from datetime import datetime
 
+# カスタム定数のインポート
+from ..constants import ApplicationConstants
+
 # psutilによるプロセス管理
 try:
     import psutil
@@ -145,9 +148,26 @@ class JVLinkAdapter:
             self.logger.info(f"JV-Linkを起動します: {self.jvlink_path}")
             subprocess.Popen([self.jvlink_path])
 
-            # プロセスが完全に起動し、COMサーバーが準備完了するまで待機
-            self.logger.info("プロセス起動後、5秒間待機します...")
-            time.sleep(5)
+            # ★重要★: 効率的なポーリング処理に変更（固定的な待機を廃止）
+            max_wait_time = ApplicationConstants.JVLINK_MAX_WAIT_TIME  # 最大5秒待機
+            poll_interval = ApplicationConstants.JVLINK_PROCESS_CHECK_INTERVAL  # 0.2秒ごとに確認
+            start_time = time.time()
+            
+            self.logger.info(f"COMオブジェクトの準備完了をポーリング中（最大{max_wait_time}秒）...")
+            
+            while time.time() - start_time < max_wait_time:
+                try:
+                    # COMオブジェクトのディスパッチを試行してプロセス準備完了を確認
+                    test_com = win32com.client.Dispatch("JVDTLab.JVLink")
+                    self.logger.info(f"COMオブジェクトの準備完了を確認しました（{time.time() - start_time:.2f}秒後）")
+                    return True
+                except Exception:
+                    # まだ準備ができていない場合は短時間待機して再試行
+                    time.sleep(poll_interval)
+            
+            # タイムアウトした場合
+            self.logger.warning(f"JV-LinkのCOMサーバー準備完了の確認がタイムアウトしました（{max_wait_time}秒）")
+            return False
 
         except FileNotFoundError:
             raise JVLinkResourceError(
@@ -222,21 +242,21 @@ class JVLinkAdapter:
                     self.logger.info(f"ワーキングディレクトリを一時的に変更: {jvlink_dir}")
                 else:
                     self.logger.warning(f"JV-Linkディレクトリが存在しません: {jvlink_dir}")
-                
+
                 # JVInit実行（仕様準拠：ソフトウェアIDを明示的に設定）
                 software_id = "DataBricks/1.0.0"  # アプリケーションを識別するユニークなID
                 self.logger.info(f"JV-Linkを初期化します。ソフトウェアID: {software_id}")
                 
                 init_result = self.jvlink_com_obj.JVInit(software_id)
 
-                # 結果チェック
-                check_jvlink_result(
-                    init_result,
-                    "JVInit",
+            # 結果チェック
+            check_jvlink_result(
+                init_result,
+                "JVInit",
                     {'software_id': software_id}
-                )
+            )
 
-                self.logger.info("JV-Linkの初期化に成功しました")
+            self.logger.info("JV-Linkの初期化に成功しました")
 
             finally:
                 # 必ずワーキングディレクトリを元に戻す

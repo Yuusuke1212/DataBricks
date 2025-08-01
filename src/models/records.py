@@ -6,10 +6,9 @@ YAML仕様ファイルに基づく型安全なdataclassモデル
 データ構造を定義し、ETLパイプライン全体で使用される
 """
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Optional, List, Dict, Any
-from datetime import datetime, date, time
-from decimal import Decimal
+from datetime import datetime
 
 
 @dataclass

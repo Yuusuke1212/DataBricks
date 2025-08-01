@@ -11,10 +11,8 @@ ProcessPoolExecutorを活用してCPU集約的なETL処理を並列化し、
 
 import logging
 import pandas as pd
-import json
 import time
-from pathlib import Path
-from typing import Dict, List, Optional, Callable, Any, Tuple
+from typing import Dict, List, Optional, Callable, Any
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from multiprocessing import cpu_count
 import traceback

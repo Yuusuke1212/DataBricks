@@ -1,8 +1,7 @@
-from PySide6.QtCore import Qt, QTimer
-from PySide6.QtWidgets import QWidget, QVBoxLayout, QFrame, QStackedWidget, QLabel, QHBoxLayout, QStatusBar
-from qfluentwidgets import (NavigationInterface, NavigationItemPosition, MessageBox,
-                            SubtitleLabel, setTheme, Theme, FluentWindow, NavigationAvatarWidget,
-                            setFont, TitleLabel, InfoBar, InfoBarPosition, BodyLabel)
+from PySide6.QtCore import QTimer
+from PySide6.QtWidgets import QWidget, QHBoxLayout, QStatusBar
+from qfluentwidgets import (NavigationItemPosition, MessageBox,
+                            setTheme, Theme)
 from qfluentwidgets import FluentIcon as FIF
 
 from .dashboard_view import DashboardView
@@ -10,10 +9,11 @@ from .setup_dialog import SetupDialog
 from .export_view import ExportView
 from .settings_view import SettingsView
 from .etl_setting_view import DataRetrievalView  # リニューアルされたデータ取得画面
-from ..utils.theme_manager import get_theme_manager, initialize_theme_system, AppTheme
-from ..utils.feedback_system import initialize_feedback_system, get_feedback_system
-from ..utils.guidance_system import initialize_guidance_system, get_guidance_system
+from ..utils.theme_manager import initialize_theme_system, AppTheme
+from ..utils.feedback_system import initialize_feedback_system
+from ..utils.guidance_system import initialize_guidance_system
 from typing import Optional
+import logging
 
 
 class CustomStatusBar(QStatusBar):
@@ -69,11 +69,11 @@ class MainWindow(FluentWindow):
     def __init__(self, app_controller=None):
         super().__init__()
         self.app_controller = app_controller
-        
+
         # テーマシステムの初期化（Phase 1: 基盤構築）
         self.theme_manager = initialize_theme_system(AppTheme.DARK)
         self.theme_manager.themeChanged.connect(self._on_theme_changed)
-        
+
         # フィードバックシステムの初期化（Phase 2: コア機能の近代化）
         self.feedback_system = initialize_feedback_system(self)
 
@@ -86,12 +86,12 @@ class MainWindow(FluentWindow):
         if self.app_controller:
             self.initialize_views()
             self._setup_feedback_callbacks()
-            
+
     def _setup_feedback_callbacks(self):
         """フィードバックシステムのコールバックを設定"""
         if self.feedback_system:
             self.feedback_system.register_standard_callbacks(self)
-            
+
         if self.guidance_system:
             self.guidance_system.register_standard_callbacks(self)
 
@@ -126,9 +126,25 @@ class MainWindow(FluentWindow):
         self.initNavigation()
         print("  ↳ initNavigation() 呼び出し後")
 
-    def _icon(self, attr: str, fallback: str = "MORE"):
+    def _icon(self, attr: str, fallback: str = "HOME"):
         """Return icon attr if exists else fallback icon."""
-        return getattr(FIF, attr, getattr(FIF, fallback))
+        # ★修正★: 型安全なアイコンアクセス
+        try:
+            if hasattr(FIF, attr):
+                return getattr(FIF, attr)
+            elif hasattr(FIF, fallback):
+                return getattr(FIF, fallback)
+            else:
+                # 最終フォールバック: よく使われる基本アイコン
+                for basic_icon in ['HOME', 'FOLDER', 'INFO', 'MORE']:
+                    if hasattr(FIF, basic_icon):
+                        return getattr(FIF, basic_icon)
+                # 全て失敗した場合はNoneを返す
+                logging.warning(f"アイコン '{attr}' と '{fallback}' が見つかりません")
+                return None
+        except (AttributeError, TypeError) as e:
+            logging.warning(f"アイコンアクセスエラー: {e}")
+            return None
 
     def initNavigation(self):
         """
@@ -136,36 +152,40 @@ class MainWindow(FluentWindow):
         レポート セクション2.2: ナビゲーション設計に準拠
         """
         # ホーム (Dashboard) - レポート提案通り
-        self.addSubInterface(
-            self.dashboard_view,
-            self._icon("HOME", "DASHBOARD"), 
-            'ホーム'
-        )
-        
+        home_icon = self._icon("HOME", "FOLDER")
+        if home_icon:
+            self.addSubInterface(
+                self.dashboard_view,
+                home_icon,
+                'ホーム'
+            )
+
         # データ取得 (Data Retrieval) - レポート提案: ETL設定 → データ取得に変更
-        self.addSubInterface(
-            self.etl_setting_view,
-            self._icon("DOWNLOAD", "EDIT"), 
-            'データ取得'
-        )
-        
-        # データ出力 (Export) - レポート提案: データエクスポート → データ出力に変更  
-        self.addSubInterface(
-            self.export_view, 
-            self._icon("SHARE", "SAVE_AS"), 
-            'データ出力'
-        )
-        
-        # ナビゲーション区切り
-        self.navigationInterface.addSeparator()
-        
-        # 設定 (Settings) - レポート提案: アプリ設定 → 設定に変更
-        self.addSubInterface(
-            self.settings_view, 
-            self._icon("SETTING"), 
-            '設定', 
-            position=NavigationItemPosition.BOTTOM
-        )
+        data_icon = self._icon("DOWNLOAD", "FOLDER")
+        if data_icon:
+            self.addSubInterface(
+                self.etl_setting_view,
+                data_icon,
+                'データ取得'
+            )
+
+        # データ出力 (Data Export) - レポート提案通り
+        export_icon = self._icon("SAVE", "FOLDER")
+        if export_icon:
+            self.addSubInterface(
+                self.export_view,
+                export_icon,
+                'データ出力'
+            )
+
+        # 設定 (Settings) - レポート提案通り
+        settings_icon = self._icon("SETTING", "FOLDER")
+        if settings_icon:
+            self.addSubInterface(
+                self.settings_view,
+                settings_icon,
+                '設定'
+            )
 
     def initialize_connections(self):
         """コントローラーとのシグナル接続を行う"""
@@ -200,13 +220,19 @@ class MainWindow(FluentWindow):
         # ステータスバーのスタイル調整は initStatusBar() で実行
 
     def _apply_theme(self):
-        """現在のテーマを適用"""
-        palette = self.theme_manager.current_palette
-        
+        """テーマを適用"""
+        # qfluentwidgetsのテーマを設定
+        theme_str = self.settings_manager.get_theme()
+        theme = AppTheme.DARK if theme_str.upper() == 'DARK' else AppTheme.LIGHT
+        setTheme(Theme.DARK if theme == AppTheme.DARK else Theme.LIGHT)
+
         # カスタムスタイルシートの適用
-        custom_style = self.theme_manager.generate_stylesheet()
-        self.setStyleSheet(custom_style)
-        
+        try:
+            with open("src/styles.qss", "r", encoding="utf-8") as f:
+                self.setStyleSheet(f.read())
+        except FileNotFoundError:
+            logging.warning("src/styles.qss が見つかりません。")
+
     def _on_theme_changed(self, theme: AppTheme):
         """テーマ変更時のハンドラー"""
         self._apply_theme()
@@ -257,7 +283,6 @@ class MainWindow(FluentWindow):
 
     def show_error_dialog(self, error_message: str):
         """エラーダイアログを表示する"""
-        from qfluentwidgets import MessageBox
         MessageBox(
             "エラー",
             error_message,
@@ -266,7 +291,6 @@ class MainWindow(FluentWindow):
 
     def show_critical_error_dialog(self, title: str, message: str):
         """重大なエラーダイアログを表示する"""
-        from qfluentwidgets import MessageBox
         MessageBox(
             title,
             message,

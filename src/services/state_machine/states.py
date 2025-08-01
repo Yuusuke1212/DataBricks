@@ -4,9 +4,8 @@ Concrete State Classes for JRA-Data Collector
 アプリケーションの各ライフサイクル状態を実装する具象クラス群
 """
 
-from typing import Any, Dict, Optional
-import logging
-from .base import AppState, StateTransitionError
+from typing import Any, Dict
+from .base import AppState
 
 
 class IdleState(AppState):

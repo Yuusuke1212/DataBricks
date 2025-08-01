@@ -9,17 +9,14 @@
 
 from PySide6.QtCore import Qt, Signal
 from PySide6.QtWidgets import (
-    QDialog, QVBoxLayout, QHBoxLayout, QLabel, QStackedWidget,
-    QWizard, QWizardPage, QProgressBar, QSpacerItem, QSizePolicy
+    QVBoxLayout, QHBoxLayout, QWizard, QWizardPage
 )
-from PySide6.QtGui import QPixmap, QFont
 
 from qfluentwidgets import (
-    TitleLabel, SubtitleLabel, BodyLabel, CaptionLabel,
+    TitleLabel, BodyLabel, CaptionLabel,
     PrimaryPushButton, PushButton, CardWidget,
-    StrongBodyLabel, InfoBar, InfoBarPosition
+    StrongBodyLabel
 )
-from qfluentwidgets import FluentIcon as FIF
 
 
 class WelcomePage(QWizardPage):
@@ -139,10 +136,10 @@ class JVLinkSetupPage(QWizardPage):
         button_layout = QHBoxLayout()
         button_layout.addStretch()
 
-        # JV-Link設定ボタン
+        # ★修正★: PrimaryPushButtonからFluentIconを削除
         self.setup_button = PrimaryPushButton("JV-Link設定を開く")
-        self.setup_button.setIcon(FIF.SETTING.icon())  # コンストラクタではなくsetIconを使用
-        self.setup_button.clicked.connect(self.open_jvlink_setup)
+        self.setup_button.setFixedSize(200, 40)
+        self.setup_button.clicked.connect(self.open_jvlink_settings)
         button_layout.addWidget(self.setup_button)
 
         button_layout.addStretch()
@@ -175,7 +172,7 @@ class JVLinkSetupPage(QWizardPage):
     def show_setup_complete(self):
         """設定完了メッセージを表示"""
         self.clear_status()
-        
+
         success_card = CardWidget()
         success_layout = QVBoxLayout(success_card)
         success_layout.setContentsMargins(20, 15, 20, 15)
@@ -254,13 +251,13 @@ class DatabaseSetupPage(QWizardPage):
 
         layout.addWidget(info_card)
 
-        # セットアップボタン
+        # データベース設定ボタン
         button_layout = QHBoxLayout()
         button_layout.addStretch()
 
-        # データベース設定ボタン
+        # ★修正★: PushButtonからFluentIconを削除
         self.setup_button = PushButton("データベース設定を開く")
-        self.setup_button.setIcon(FIF.SETTING.icon())  # コンストラクタではなくsetIconを使用
+        self.setup_button.setFixedSize(200, 40)
         self.setup_button.clicked.connect(self.open_database_settings)
         button_layout.addWidget(self.setup_button)
 
@@ -304,7 +301,7 @@ class DatabaseSetupPage(QWizardPage):
             if hasattr(wizard, 'app_controller'):
                 db_info = wizard.app_controller.get_current_database_info()
                 config = db_info.get('config', {})
-                
+
                 title_label = StrongBodyLabel("現在の設定:")
                 settings_layout.addWidget(title_label)
 
@@ -515,4 +512,4 @@ class WelcomeWizard(QWizard):
 
         except Exception as e:
             import logging
-            logging.error(f"セットアップ完了マーク失敗: {e}") 
+            logging.error(f"セットアップ完了マーク失敗: {e}")

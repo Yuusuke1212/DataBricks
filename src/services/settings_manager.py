@@ -5,10 +5,11 @@ Clean Architecture原則に従った近代的な設定管理を提供
 
 import configparser
 import logging
-import os
 from pathlib import Path
 from typing import Dict, Any, Optional
-from datetime import datetime
+
+# カスタム定数とEnumのインポート
+from ..constants import DatabaseType
 
 # PyQtシグナル機構のサポート
 try:
@@ -131,10 +132,29 @@ class ConfigManager(QObject):
 
     # Database Configuration
     def get_db_config(self) -> Dict[str, Any]:
-        """データベース設定を取得"""
+        """データベース設定を取得（型安全な DatabaseType Enum を使用）"""
         try:
+            # 文字列としてDBタイプを読み込み
+            db_type_str = self.config.get('Database', 'type', fallback='SQLite')
+
+            # ★重要★: 型安全な文字列からEnumへの変換処理
+            try:
+                # 値が確実に文字列であることを保証
+                if not isinstance(db_type_str, str):
+                    self.logger.warning(f"データベース種別が文字列ではありません: {type(db_type_str)} = {db_type_str}. 'SQLite'を使用します。")
+                    db_type_str = 'SQLite'
+
+                db_type = DatabaseType.from_string(db_type_str)
+                self.logger.debug(f"データベース種別変換成功: '{db_type_str}' → {db_type}")
+            except (ValueError, AttributeError, TypeError) as e:
+                self.logger.warning(f"設定ファイルに不正なDBタイプ '{db_type_str}' が指定されています。SQLiteにフォールバックします。エラー: {e}")
+                db_type = DatabaseType.SQLITE
+            except Exception as e:
+                self.logger.error(f"予期しないエラーが発生しました: {e}. SQLiteにフォールバックします。")
+                db_type = DatabaseType.SQLITE
+
             return {
-                'type': self.config.get('Database', 'type', fallback='SQLite'),
+                'type': db_type,  # DatabaseType Enumとして返す
                 'host': self.config.get('Database', 'host', fallback='localhost'),
                 'port': self.config.getint('Database', 'port', fallback=5432),
                 'username': self.config.get('Database', 'username', fallback='postgres'),
@@ -143,7 +163,8 @@ class ConfigManager(QObject):
             }
         except Exception as e:
             self.logger.error(f"データベース設定取得エラー: {e}")
-            return {'type': 'SQLite', 'db_name': 'jra_data.db'}
+            # フォールバック時もDatabaseType Enumを使用
+            return {'type': DatabaseType.SQLITE, 'db_name': 'jra_data.db'}
 
     def update_db_config(self, **kwargs) -> None:
         """データベース設定を更新し、変更をシグナルで通知"""
@@ -327,7 +348,7 @@ class ConfigManager(QObject):
             raise
 
 # === Database Profile Management (複数DB設定サポート) ===
-    
+
     def get_database_profiles(self) -> Dict[str, Dict[str, Any]]:
         """
         保存されているすべてのデータベースプロファイルを取得
@@ -337,24 +358,24 @@ class ConfigManager(QObject):
         """
         try:
             profiles = {}
-            
+
             # メインのDatabase設定も含める
             if self.config.has_section('Database'):
                 profiles['default'] = self.get_db_config()
-            
+
             # 追加プロファイルを検索
             for section_name in self.config.sections():
                 if section_name.startswith('Database_'):
                     profile_name = section_name[9:]  # "Database_"を除去
                     profiles[profile_name] = self._get_profile_config(section_name)
-                    
+
             self.logger.info(f"データベースプロファイル {len(profiles)} 個を取得しました")
             return profiles
-            
+
         except Exception as e:
             self.logger.error(f"データベースプロファイル取得エラー: {e}")
             return {}
-    
+
     def _get_profile_config(self, section_name: str) -> Dict[str, Any]:
         """
         指定されたセクションからデータベース設定を取得
@@ -377,7 +398,7 @@ class ConfigManager(QObject):
         except Exception as e:
             self.logger.error(f"プロファイル設定取得エラー ({section_name}): {e}")
             return {'type': 'SQLite', 'db_name': 'jra_data.db'}
-    
+
     def save_database_profile(self, profile_name: str, db_config: Dict[str, Any]) -> None:
         """
         データベースプロファイルを保存
@@ -391,24 +412,28 @@ class ConfigManager(QObject):
                 section_name = 'Database'
             else:
                 section_name = f'Database_{profile_name}'
-            
+
             if not self.config.has_section(section_name):
                 self.config.add_section(section_name)
-            
+
             for key, value in db_config.items():
-                self.config.set(section_name, key, str(value))
-            
+                # ★修正★: DatabaseType Enumの場合は.valueを使用
+                if isinstance(value, DatabaseType):
+                    self.config.set(section_name, key, value.value)
+                else:
+                    self.config.set(section_name, key, str(value))
+
             self.save()
             self.logger.info(f"データベースプロファイル '{profile_name}' を保存しました")
-            
+
             # プロファイルが更新された場合の通知
             if QT_AVAILABLE:
                 self.database_config_updated.emit(db_config)
-                
+
         except Exception as e:
             self.logger.error(f"データベースプロファイル保存エラー: {e}")
             raise
-    
+
     def delete_database_profile(self, profile_name: str) -> None:
         """
         データベースプロファイルを削除
@@ -419,7 +444,7 @@ class ConfigManager(QObject):
         try:
             if profile_name == 'default':
                 raise ValueError("デフォルトプロファイルは削除できません")
-            
+
             section_name = f'Database_{profile_name}'
             if self.config.has_section(section_name):
                 self.config.remove_section(section_name)
@@ -427,11 +452,11 @@ class ConfigManager(QObject):
                 self.logger.info(f"データベースプロファイル '{profile_name}' を削除しました")
             else:
                 self.logger.warning(f"プロファイル '{profile_name}' が見つかりません")
-                
+
         except Exception as e:
             self.logger.error(f"データベースプロファイル削除エラー: {e}")
             raise
-    
+
     def get_active_database_profile(self) -> str:
         """
         現在アクティブなデータベースプロファイル名を取得
@@ -444,7 +469,7 @@ class ConfigManager(QObject):
         except Exception as e:
             self.logger.error(f"アクティブプロファイル取得エラー: {e}")
             return 'default'
-    
+
     def set_active_database_profile(self, profile_name: str) -> None:
         """
         アクティブなデータベースプロファイルを設定
@@ -455,21 +480,21 @@ class ConfigManager(QObject):
         try:
             if not self.config.has_section('Application'):
                 self.config.add_section('Application')
-            
+
             self.config.set('Application', 'active_database_profile', profile_name)
             self.save()
-            
+
             self.logger.info(f"アクティブデータベースプロファイルを '{profile_name}' に設定しました")
-            
+
             # アクティブプロファイル変更の通知
             if QT_AVAILABLE:
                 active_config = self.get_database_profile_config(profile_name)
                 self.database_config_updated.emit(active_config)
-                
+
         except Exception as e:
             self.logger.error(f"アクティブプロファイル設定エラー: {e}")
             raise
-    
+
     def get_database_profile_config(self, profile_name: str) -> Dict[str, Any]:
         """
         指定されたプロファイルのデータベース設定を取得
@@ -490,7 +515,7 @@ class ConfigManager(QObject):
                 else:
                     self.logger.warning(f"プロファイル '{profile_name}' が見つかりません。デフォルトを返します")
                     return self.get_db_config()
-                    
+
         except Exception as e:
             self.logger.error(f"プロファイル設定取得エラー ({profile_name}): {e}")
             return self.get_db_config()

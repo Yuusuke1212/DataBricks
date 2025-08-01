@@ -142,8 +142,16 @@ class BaseWorker(ABC, threading.Thread):
             if self._state != new_state:
                 old_state = self._state
                 self._state = new_state
-                self.logger.info(
-                    f"State transition: {old_state.value} -> {new_state.value}")
+
+                # ★修正★: 型安全なstate.valueアクセス
+                try:
+                    old_state_str = old_state.value if hasattr(old_state, 'value') else str(old_state)
+                    new_state_str = new_state.value if hasattr(new_state, 'value') else str(new_state)
+                except (AttributeError, TypeError):
+                    old_state_str = str(old_state)
+                    new_state_str = str(new_state)
+
+                self.logger.info(f"State transition: {old_state_str} -> {new_state_str}")
 
     @property
     def is_running(self) -> bool:
@@ -292,9 +300,15 @@ class BaseWorker(ABC, threading.Thread):
 
     def get_stats(self) -> Dict[str, Any]:
         """ワーカー統計情報を取得"""
+        # ★修正★: 型安全なstate.valueアクセス
+        try:
+            state_str = self.state.value if hasattr(self.state, 'value') else str(self.state)
+        except (AttributeError, TypeError):
+            state_str = str(self.state)
+
         return {
             "name": self.worker_name,
-            "state": self.state.value,
+            "state": state_str,
             "items_processed": self.items_processed,
             "processing_time": self.processing_time,
             "throughput": self.throughput,

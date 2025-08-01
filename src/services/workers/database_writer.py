@@ -4,14 +4,12 @@ Database Writer Worker for JRA-Data Collector
 構造化データをデータベースに効率的に書き込むローダーワーカー
 """
 
-from typing import Optional, Dict, Any, List
-import logging
+from typing import Optional, Dict, Any
 import time
-from queue import Queue
 import pandas as pd
 from collections import defaultdict
 
-from .base import QueueWorker, CancellationToken, ProgressInfo
+from .base import QueueWorker
 # 循環インポートを避けるため、DatabaseManagerは遅延インポートまたは依存性注入を使用
 
 

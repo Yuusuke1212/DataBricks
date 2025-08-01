@@ -9,15 +9,14 @@ Table 1「JV-Linkリターンコードとユーザーフィードバックのマ
 from enum import Enum
 from dataclasses import dataclass
 from typing import Dict, Optional, Callable
-from PySide6.QtCore import QObject, Signal, Qt
+from PySide6.QtCore import Qt
 from qfluentwidgets import InfoBar, InfoBarPosition, MessageBox
-from qfluentwidgets import FluentIcon as FIF
 
 
 class FeedbackType(Enum):
     """フィードバック種別"""
     SUCCESS = "success"
-    INFO = "info" 
+    INFO = "info"
     WARNING = "warning"
     ERROR = "error"
 
@@ -45,7 +44,7 @@ class JVLinkFeedbackSystem:
     JV-Linkリターンコード用フィードバックシステム
     レポート Table 1 に基づく実装
     """
-    
+
     # レポート Table 1: JV-Linkリターンコードとユーザーフィードバックのマッピング
     FEEDBACK_MAPPINGS: Dict[tuple, FeedbackMapping] = {
         # JVOpen リターンコード
@@ -55,7 +54,7 @@ class JVLinkFeedbackSystem:
             message="指定された条件に合致する新しいデータはありません。",
             duration=2000
         ),
-        
+
         ("JVOpen", -301): FeedbackMapping(
             type=FeedbackType.ERROR,
             title="認証失敗",
@@ -66,7 +65,7 @@ class JVLinkFeedbackSystem:
             ),
             duration=5000
         ),
-        
+
         ("JVOpen", -302): FeedbackMapping(
             type=FeedbackType.ERROR,
             title="利用キー期限切れ",
@@ -77,7 +76,7 @@ class JVLinkFeedbackSystem:
             ),
             duration=0  # 手動で閉じるまで表示
         ),
-        
+
         ("JVOpen", -303): FeedbackMapping(
             type=FeedbackType.WARNING,
             title="利用キー未設定",
@@ -88,14 +87,14 @@ class JVLinkFeedbackSystem:
             ),
             duration=0
         ),
-        
+
         ("JVOpen", -504): FeedbackMapping(
             type=FeedbackType.WARNING,
             title="サーバーメンテナンス",
             message="サーバーは現在メンテナンス中です。しばらく時間をおいてから再度お試しください。",
             duration=3000
         ),
-        
+
         # JVStatus リターンコード
         ("JVStatus", -502): FeedbackMapping(
             type=FeedbackType.ERROR,
@@ -107,7 +106,7 @@ class JVLinkFeedbackSystem:
             ),
             duration=5000
         ),
-        
+
         # JVRead リターンコード
         ("JVRead", -402): FeedbackMapping(
             type=FeedbackType.ERROR,
@@ -115,7 +114,7 @@ class JVLinkFeedbackSystem:
             message="ダウンロードしたファイルが破損しています。キャッシュをクリアして再試行します。",
             duration=5000
         ),
-        
+
         # JVClose リターンコード (成功)
         ("JVClose", 0): FeedbackMapping(
             type=FeedbackType.SUCCESS,
@@ -123,7 +122,7 @@ class JVLinkFeedbackSystem:
             message="データ取得処理が正常に終了しました。",
             duration=2000
         ),
-        
+
         # 汎用エラー
         ("Generic", -101): FeedbackMapping(
             type=FeedbackType.ERROR,
@@ -157,23 +156,23 @@ class JVLinkFeedbackSystem:
         # マッピングテーブルから対応するフィードバックを検索
         mapping_key = (api_method, return_code)
         feedback = self.FEEDBACK_MAPPINGS.get(mapping_key)
-        
+
         if not feedback:
             # 未定義のリターンコードの場合は汎用エラー
             feedback = FeedbackMapping(
                 type=FeedbackType.ERROR,
-                title="予期しないエラー", 
+                title="予期しないエラー",
                 message=f"{api_method}でエラーが発生しました (コード: {return_code})",
                 duration=5000
             )
-        
+
         self._display_feedback(feedback, context)
 
     def _display_feedback(self, feedback: FeedbackMapping, context: Dict = None):
         """フィードバックを実際に表示"""
         # InfoBarの表示
         info_bar = self._create_info_bar(feedback)
-        
+
         # 重大なエラーの場合は追加でモーダルダイアログを表示
         if feedback.type == FeedbackType.ERROR and feedback.duration == 0:
             self._show_error_dialog(feedback)
@@ -221,11 +220,11 @@ class JVLinkFeedbackSystem:
                 duration=feedback.duration,
                 parent=self.parent_widget
             )
-        
+
         # アクションボタンの追加
         if feedback.action:
             self._add_action_to_info_bar(info_bar, feedback.action)
-        
+
         return info_bar
 
     def _add_action_to_info_bar(self, info_bar: InfoBar, action: FeedbackAction):
@@ -245,14 +244,14 @@ class JVLinkFeedbackSystem:
             content=feedback.message,
             parent=self.parent_widget
         )
-        
+
         if feedback.action:
             # カスタムボタンの追加
             action_callback = self._get_action_callback(feedback.action)
             if action_callback:
                 dialog.yesButton.setText(feedback.action.text)
                 dialog.yesButton.clicked.connect(action_callback)
-        
+
         dialog.exec()
 
     def _get_action_callback(self, action: FeedbackAction) -> Optional[Callable]:
@@ -264,24 +263,24 @@ class JVLinkFeedbackSystem:
             "再試行": "retry_operation",
             "アプリケーション再起動": "restart_application"
         }
-        
+
         callback_key = action_map.get(action.text)
         if callback_key:
             return self.action_callbacks.get(callback_key)
-        
+
         return None
 
     def register_standard_callbacks(self, main_window):
         """標準的なアクションコールバックを登録"""
-        self.register_action_callback("open_settings", 
+        self.register_action_callback("open_settings",
                                     lambda: main_window.switchTo(main_window.settings_view))
-        
+
         self.register_action_callback("open_jra_van_site",
                                     lambda: self._open_external_url("https://jra-van.jp/"))
-        
+
         self.register_action_callback("retry_operation",
                                     lambda: main_window.retry_last_operation())
-        
+
         self.register_action_callback("restart_application",
                                     lambda: main_window.restart_application())
 
@@ -311,4 +310,4 @@ def initialize_feedback_system(parent_widget) -> JVLinkFeedbackSystem:
 def show_jvlink_feedback(api_method: str, return_code: int, context: Dict = None):
     """便利関数：JV-Linkフィードバックを表示"""
     if _feedback_system:
-        _feedback_system.show_feedback(api_method, return_code, context) 
+        _feedback_system.show_feedback(api_method, return_code, context)

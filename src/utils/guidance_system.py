@@ -8,7 +8,7 @@ TeachingTipコンポーネントを活用したコンテキストヘルプシス
 from enum import Enum
 from dataclasses import dataclass
 from typing import Dict, Optional, Callable
-from PySide6.QtCore import QObject, Signal, QPoint
+from PySide6.QtCore import QPoint
 from PySide6.QtWidgets import QWidget
 from qfluentwidgets import TeachingTip, InfoBarIcon, FluentIcon as FIF
 
@@ -38,7 +38,7 @@ class ContextualGuidanceSystem:
     専門的な設定項目に対してTeachingTipを使用した
     詳細説明とガイダンスを提供
     """
-    
+
     # レポート セクション4.3: 設定項目ガイダンス定義
     GUIDANCE_DEFINITIONS: Dict[str, GuidanceContent] = {
         # データ取得画面のガイダンス
@@ -49,7 +49,7 @@ class ContextualGuidanceSystem:
                        "初回取得時は「セットアップデータ」をお選びください。",
             icon="INFO"
         ),
-        
+
         "data_retrieval_option_week": GuidanceContent(
             title="今週データとは？",
             description="今週開催分のレース情報を全て取得します。\n"
@@ -57,7 +57,7 @@ class ContextualGuidanceSystem:
                        "今週のデータを確実に最新状態にしたい場合に使用します。",
             icon="CALENDAR"
         ),
-        
+
         "data_retrieval_option_setup": GuidanceContent(
             title="セットアップデータとは？",
             description="初期セットアップ用の全データを取得します。\n"
@@ -66,7 +66,7 @@ class ContextualGuidanceSystem:
                        "初回利用時のみ実行してください。",
             icon="DOWNLOAD"
         ),
-        
+
         "data_retrieval_dataspec": GuidanceContent(
             title="データ種別の選択方法",
             description="JRA-VANでは様々な種類のデータが提供されています：\n\n"
@@ -77,7 +77,7 @@ class ContextualGuidanceSystem:
             icon="DOCUMENT",
             action_text="詳細な仕様を確認",
         ),
-        
+
         # 設定画面のガイダンス
         "settings_service_key": GuidanceContent(
             title="JRA-VANサービスキーについて",
@@ -90,7 +90,7 @@ class ContextualGuidanceSystem:
             icon="CONNECT",
             action_text="JRA-VAN公式サイトを開く"
         ),
-        
+
         "settings_data_save": GuidanceContent(
             title="ローカルデータ保存について",
             description="取得したデータをローカルファイルとして保存するかを設定します。\n\n"
@@ -104,7 +104,7 @@ class ContextualGuidanceSystem:
                        "• 再取得が必要",
             icon="SAVE"
         ),
-        
+
         "settings_theme": GuidanceContent(
             title="テーマ設定について",
             description="アプリケーションの外観を変更できます。\n\n"
@@ -117,7 +117,7 @@ class ContextualGuidanceSystem:
                        "• 夜間作業に適している",
             icon="PALETTE"
         ),
-        
+
         # エクスポート画面のガイダンス
         "export_table_format": GuidanceContent(
             title="エクスポート形式の選択",
@@ -162,7 +162,7 @@ class ContextualGuidanceSystem:
 
         # TeachingTipを作成
         tip = self._create_teaching_tip(guidance, target_widget, position)
-        
+
         # アクションボタンがある場合はコールバックを設定
         if guidance.action_text and guidance.action_callback:
             # Note: TeachingTipのアクションボタン実装は
@@ -176,7 +176,7 @@ class ContextualGuidanceSystem:
         """TeachingTipを作成"""
         # アイコンの取得
         icon = getattr(FIF, guidance.icon, FIF.INFO)
-        
+
         # TeachingTipの作成
         tip = TeachingTip.create(
             target=target_widget,
@@ -187,7 +187,7 @@ class ContextualGuidanceSystem:
             tailPosition=TeachingTip.Position.TOP,
             parent=self.parent_widget
         )
-        
+
         return tip
 
     def hide_guidance(self, guidance_key: str):
@@ -208,9 +208,9 @@ class ContextualGuidanceSystem:
             "data_retrieval_dataspec",
             lambda: self._open_external_url("https://jra-van.jp/dlb/sdk/index.html")
         )
-        
+
         self.register_action_callback(
-            "settings_service_key", 
+            "settings_service_key",
             lambda: self._open_external_url("https://jra-van.jp/")
         )
 
@@ -225,19 +225,19 @@ class GuidanceHelperMixin:
     """
     ガイダンス機能をビューに追加するためのMixin
     """
-    
+
     def setup_guidance_system(self, parent_widget: QWidget):
         """ガイダンスシステムをセットアップ"""
         self.guidance_system = ContextualGuidanceSystem(parent_widget)
-        
+
     def add_guidance_to_widget(self, widget: QWidget, guidance_key: str, trigger_event: str = "hover"):
         """ウィジェットにガイダンスを追加"""
         if not hasattr(self, 'guidance_system'):
             return
-            
+
         def show_guidance():
             self.guidance_system.show_guidance(guidance_key, widget)
-            
+
         if trigger_event == "hover":
             widget.enterEvent = lambda event: show_guidance()
         elif trigger_event == "click":
@@ -247,15 +247,15 @@ class GuidanceHelperMixin:
     def create_help_button(self, guidance_key: str) -> 'QPushButton':
         """ヘルプボタンを作成"""
         from qfluentwidgets import TransparentToolButton
-        
+
         help_button = TransparentToolButton(FIF.HELP)
         help_button.setFixedSize(20, 20)
         help_button.setToolTip("ヘルプを表示")
-        
+
         def show_help():
             if hasattr(self, 'guidance_system'):
                 self.guidance_system.show_guidance(guidance_key, help_button)
-                
+
         help_button.clicked.connect(show_help)
         return help_button
 
@@ -279,4 +279,4 @@ def initialize_guidance_system(parent_widget: QWidget) -> ContextualGuidanceSyst
 def show_contextual_guidance(guidance_key: str, target_widget: QWidget):
     """便利関数：コンテキストガイダンスを表示"""
     if _guidance_system:
-        _guidance_system.show_guidance(guidance_key, target_widget) 
+        _guidance_system.show_guidance(guidance_key, target_widget)

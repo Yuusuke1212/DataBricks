@@ -12,7 +12,7 @@ WindowsのDLLサロゲート機能を有効化するレジストリ設定を自�
 import winreg
 import logging
 import sys
-from typing import Optional, Tuple, Dict, Any
+from typing import Optional, Dict, Any
 
 
 class RegistryConfigurationError(Exception):
@@ -360,14 +360,14 @@ def ensure_com_surrogate_for_jvlink() -> bool:
         else:
             logging.info(f"DLLサロゲートを有効化します (AppID: {appid})")
             if enable_dll_surrogate(appid):
-                logging.info(f"✅ DLLサロゲートの有効化が完了しました")
+                logging.info("✅ DLLサロゲートの有効化が完了しました")
 
                 # 成功後、再度確認
                 if check_dll_surrogate_enabled(appid):
-                    logging.info(f"🔍 DLLサロゲート設定の確認: 正常に有効化されています")
+                    logging.info("🔍 DLLサロゲート設定の確認: 正常に有効化されています")
                     return True
                 else:
-                    logging.warning(f"⚠️  DLLサロゲート設定後の確認で問題が見つかりました")
+                    logging.warning("⚠️  DLLサロゲート設定後の確認で問題が見つかりました")
                     return False
             else:
                 raise RegistryConfigurationError(

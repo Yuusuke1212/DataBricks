@@ -5,11 +5,10 @@ JV-Linkからデータを読み取り、生データキューに送信するプ�
 """
 
 from typing import Optional, Dict, List, Any, Tuple
-import logging
 import time
 from queue import Queue
 
-from .base import QueueWorker, CancellationToken, ProgressInfo
+from .base import QueueWorker, CancellationToken
 from ..jvlink_manager import JvLinkManager
 try:
     from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type

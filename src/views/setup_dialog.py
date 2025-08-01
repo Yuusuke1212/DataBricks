@@ -3,7 +3,7 @@ from PySide6.QtWidgets import (
     QDialog, QVBoxLayout, QHBoxLayout, QDialogButtonBox,
     QScrollArea, QWidget, QCheckBox, QPushButton, QGroupBox, QGridLayout
 )
-from qfluentwidgets import CalendarPicker, SubtitleLabel, BodyLabel, StrongBodyLabel
+from qfluentwidgets import CalendarPicker, BodyLabel, StrongBodyLabel
 
 
 class SetupDialog(QDialog):

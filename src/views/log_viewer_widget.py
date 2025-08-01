@@ -6,24 +6,18 @@
 """
 
 from datetime import datetime
-from typing import List, Optional, Dict, Any
-from dataclasses import asdict
+from typing import List
 
-from PySide6.QtCore import Qt, Signal
+from PySide6.QtCore import Signal
 from PySide6.QtWidgets import (
-    QWidget, QVBoxLayout, QHBoxLayout, QTableWidget, QTableWidgetItem,
-    QLineEdit, QComboBox, QPushButton, QSplitter, QTextEdit, QTextBrowser, QLabel,
-    QGroupBox, QCheckBox, QSpinBox, QDateTimeEdit, QFileDialog, QMessageBox,
-    QHeaderView, QAbstractItemView
+    QVBoxLayout, QHBoxLayout, QTextBrowser, QGroupBox, QFileDialog
 )
-from PySide6.QtGui import QFont, QColor, QPalette
+from PySide6.QtGui import QFont
 
 from qfluentwidgets import (
     CardWidget, StrongBodyLabel, BodyLabel, CaptionLabel,
-    PushButton, LineEdit, ComboBox, CheckBox, SpinBox,
-    PrimaryPushButton, TransparentPushButton
+    PushButton, LineEdit, ComboBox, CheckBox
 )
-from qfluentwidgets import FluentIcon as FIF
 
 from ..services.workers.signals import LogRecord
 
@@ -80,15 +74,13 @@ class LogViewerWidget(CardWidget):
 
         header_layout.addStretch()
 
-        # ヘッダーのコントロール
-        # クリアボタン
+        # ★修正★: PushButtonからFluentIconを削除
         self.clear_button = PushButton("クリア")
-        self.clear_button.setIcon(FIF.DELETE.icon())  # コンストラクタではなくsetIconを使用
+        self.clear_button.setFixedWidth(80)
         self.clear_button.clicked.connect(self.clear_logs)
-        
-        # エクスポートボタン
+
         self.export_button = PushButton("エクスポート")
-        self.export_button.setIcon(FIF.SAVE.icon())  # コンストラクタではなくsetIconを使用
+        self.export_button.setFixedWidth(100)
         self.export_button.clicked.connect(self.export_logs)
 
         header_layout.addWidget(self.clear_button)
@@ -394,7 +386,6 @@ class LogViewerWidget(CardWidget):
 
     def _export_logs(self):
         """ログをファイルにエクスポート"""
-        from PySide6.QtWidgets import QFileDialog
 
         filename, _ = QFileDialog.getSaveFileName(
             self,

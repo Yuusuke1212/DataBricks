@@ -6,7 +6,7 @@ Phase 3: Worker Pipeline統合対応
 """
 
 from __future__ import annotations
-from abc import ABC, abstractmethod
+from abc import ABC
 from typing import TYPE_CHECKING, Any, Dict, Optional
 import logging
 

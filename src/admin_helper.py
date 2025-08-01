@@ -11,7 +11,6 @@ import ctypes
 import sys
 import os
 import logging
-from typing import Optional
 
 
 def is_admin() -> bool:
@@ -98,7 +97,7 @@ def request_admin_privileges() -> None:
                 31: "指定された関数はサポートされていません"
             }
             error_msg = error_messages.get(result, f"不明なエラー (コード: {result})")
-            
+
             # 特別なケース：ユーザーがUACをキャンセルした場合（通常はエラーコード5）
             if result == 5:
                 logging.warning("ユーザーがUACプロンプトをキャンセルしました")
@@ -108,14 +107,14 @@ def request_admin_privileges() -> None:
                 logging.error(f"管理者権限での再起動に失敗: {error_msg}")
                 print(f"❌ 管理者権限での再起動に失敗: {error_msg}")
                 print("   手動で管理者権限でアプリケーションを起動してください。")
-            
+
             input("Enterキーを押して終了...")
             sys.exit(1)
         else:
             # 成功時
             logging.info(f"管理者権限での再起動を開始しました（結果コード: {result}）")
             logging.info("現在のプロセスを終了します")
-            
+
             # 少し待機してから終了（新しいプロセスの起動を待つ）
             import time
             time.sleep(0.5)

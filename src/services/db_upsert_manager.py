@@ -6,11 +6,12 @@ dataclassを受け取り、データベース種別に応じた最適なUPSERT�
 """
 
 import logging
-from typing import List, Dict, Any, Optional
-from sqlalchemy import text, Engine
+from typing import List, Dict, Any
+from sqlalchemy import text
 from sqlalchemy.exc import IntegrityError
 
 from ..exceptions import DatabaseError, DatabaseIntegrityError
+from ..services.db_manager import DatabaseManager
 
 
 logger = logging.getLogger(__name__)
@@ -23,7 +24,7 @@ class UpsertManager:
     MySQL、PostgreSQL、SQLite対応の効率的なUPSERT操作を提供
     """
 
-    def __init__(self, engine: Engine, db_type: str):
+    def __init__(self, db_manager: DatabaseManager):
         """
         UpsertManagerを初期化
 
@@ -31,9 +32,10 @@ class UpsertManager:
             engine: SQLAlchemyエンジン
             db_type: データベース種別 ('mysql', 'postgresql', 'sqlite')
         """
-        self.engine = engine
-        self.db_type = db_type.lower()
-        self.logger = logging.getLogger(__name__)
+        self.db_manager = db_manager
+
+    def _get_connection(self):
+        return self.db_manager.get_connection()
 
     def upsert_records(self, table_name: str, records: List[Any],
                        primary_keys: List[str] = None) -> Dict[str, int]:
@@ -52,7 +54,7 @@ class UpsertManager:
             self.logger.warning("挿入するレコードがありません")
             return {'processed': 0, 'errors': 0}
 
-        if not self.engine:
+        if not self._get_connection():
             raise DatabaseError("データベース接続が確立されていません", operation="upsert")
 
         # dataclassを辞書に変換
@@ -63,14 +65,14 @@ class UpsertManager:
 
         # データベース種別に応じたUPSERT実行
         try:
-            if self.db_type == 'mysql':
+            if self.db_manager.db_type == 'mysql':
                 return self._mysql_upsert(table_name, record_dicts, primary_keys)
-            elif self.db_type == 'postgresql':
+            elif self.db_manager.db_type == 'postgresql':
                 return self._postgresql_upsert(table_name, record_dicts, primary_keys)
-            elif self.db_type == 'sqlite':
+            elif self.db_manager.db_type == 'sqlite':
                 return self._sqlite_upsert(table_name, record_dicts, primary_keys)
             else:
-                raise DatabaseError(f"サポートされていないデータベース種別: {self.db_type}")
+                raise DatabaseError(f"サポートされていないデータベース種別: {self.db_manager.db_type}")
 
         except Exception as e:
             self.logger.error(f"UPSERT操作中にエラーが発生: {e}")
@@ -205,7 +207,7 @@ class UpsertManager:
             batch_data.append(row_data)
 
         try:
-            with self.engine.begin() as conn:
+            with self._get_connection().begin() as conn:
                 result = conn.execute(text(sql), batch_data)
                 affected_rows = result.rowcount if hasattr(
                     result, 'rowcount') else len(batch_data)
@@ -227,7 +229,7 @@ class UpsertManager:
     def _get_sqlite_primary_keys(self, table_name: str) -> List[str]:
         """SQLiteテーブルの主キーカラムを取得"""
         try:
-            with self.engine.connect() as conn:
+            with self._get_connection().connect() as conn:
                 result = conn.execute(
                     text(f"PRAGMA table_info('{table_name}')"))
                 primary_keys = []
@@ -254,7 +256,7 @@ class UpsertManager:
 
 
 # ファクトリ関数
-def create_upsert_manager(engine: Engine, db_type: str) -> UpsertManager:
+def create_upsert_manager(db_manager: DatabaseManager) -> UpsertManager:
     """
     UpsertManagerインスタンスを作成
 
@@ -265,4 +267,4 @@ def create_upsert_manager(engine: Engine, db_type: str) -> UpsertManager:
     Returns:
         UpsertManagerインスタンス
     """
-    return UpsertManager(engine, db_type)
+    return UpsertManager(db_manager)

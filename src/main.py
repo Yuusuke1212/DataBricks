@@ -6,19 +6,17 @@ JRA-Data Collector メインアプリケーション
 日本語パス対応とUnicode例外処理を含む
 """
 
-from .monkey_patch_qfluent import patch_qfluentwidgets
 from .controllers.app_controller import AppController
 from .views.main_window import MainWindow
-from qfluentwidgets import FluentTranslator, FluentIcon
-import qfluentwidgets
-from PySide6.QtGui import QFont
-from PySide6.QtCore import Qt, QTranslator, QLocale
-from PySide6.QtWidgets import QApplication, QMessageBox
+from PySide6.QtWidgets import QApplication
 import sys
 import os
 import logging
 import types
 from pathlib import Path
+import traceback
+from datetime import datetime
+import platform
 
 # PySide6/PyQt5 互換性シム (最優先で実行)
 
@@ -89,31 +87,51 @@ setup_qt_unicode_environment()
 
 # ログ設定（Unicode対応）
 
-def setup_unicode_logging():
-    """Unicode対応のログ設定"""
+def setup_logging():
+    """ログ設定"""
     try:
-        log_format = '%(asctime)s [%(levelname)s] %(message)s'
-
-        # ログファイルのパスも安全に設定
-        log_dir = Path.cwd() / "logs"
+        # ログディレクトリの作成
+        log_dir = Path(__file__).parent.parent / "logs"
         log_dir.mkdir(exist_ok=True)
-        log_file = log_dir / "jra_data_collector.log"
 
+        # ログファイル名（日付付き）
+        today = datetime.now().strftime('%Y%m%d')
+        log_file = log_dir / f"jra_data_collector_{today}.log"
+
+        # ★修正★: デバッグモードでログレベルをDEBUGに設定
         logging.basicConfig(
-            level=logging.INFO,
-            format=log_format,
+            level=logging.DEBUG,  # INFOからDEBUGに変更
+            format='%(asctime)s [%(levelname)s] %(name)s:%(lineno)d - %(message)s',  # 行番号も追加
             handlers=[
                 logging.FileHandler(str(log_file), encoding='utf-8'),
                 logging.StreamHandler(sys.stdout)
-            ]
+            ],
+            force=True
         )
 
-        print(f"ログファイル設定: {log_file}")
+        # ★追加★: デバッグ用の追加情報
+        logging.debug("=" * 80)
+        logging.debug("DEBUG MODE ENABLED - 詳細デバッグ情報を出力します")
+        logging.debug("=" * 80)
+        logging.debug(f"ログファイル: {log_file}")
+        logging.debug("ログレベル: DEBUG")
+        logging.debug(f"Python実行可能ファイル: {sys.executable}")
+        logging.debug(f"Pythonパス: {sys.path}")
+        logging.debug(f"環境変数 PYTHONPATH: {os.environ.get('PYTHONPATH', 'Not set')}")
+        logging.debug(f"プラットフォーム: {sys.platform}")
+        logging.debug(f"アーキテクチャ: {platform.architecture()}")
+        logging.debug("=" * 80)
+
+        return log_file
 
     except Exception as e:
+        # ログ設定に失敗した場合の基本設定
         print(f"ログ設定エラー: {e}")
-        # フォールバック: 基本的なログ設定
-        logging.basicConfig(level=logging.INFO, format=log_format)
+        logging.basicConfig(
+            level=logging.DEBUG,
+            format='%(asctime)s [%(levelname)s] %(message)s'
+        )
+        return None
 
 
 def handle_unicode_exception(exc_type, exc_value, exc_traceback):
@@ -155,147 +173,121 @@ def handle_unicode_exception(exc_type, exc_value, exc_traceback):
         sys.__excepthook__(exc_type, exc_value, exc_traceback)
 
 
-def launch_gui():
-    """
-    GUIアプリケーションを起動する関数
-
-    run.pyから呼び出されることを想定したGUI起動のエントリーポイント
-    """
+def launch_gui(is_admin):
+    """GUIアプリケーションを起動する"""
     try:
-        logging.info("launch_gui()関数を開始します")
-        
-        # グローバル例外ハンドラーを設定
-        sys.excepthook = handle_unicode_exception
-
-        # Unicode対応ログ設定
-        setup_unicode_logging()
-
-        logging.info(
-            "============================================================")
-        logging.info("JRA-Data Collector GUIアプリケーションを開始")
-        logging.info(f"Python バージョン: {sys.version}")
-        logging.info(f"作業ディレクトリ: {Path.cwd()}")
-        logging.info(f"ファイルシステムエンコーディング: {sys.getfilesystemencoding()}")
-        logging.info(f"引数: {sys.argv}")
-        logging.info(
-            "============================================================")
-
-        # アプリケーション設定
-        logging.info("QApplicationの高DPI設定を構成します")
-        QApplication.setHighDpiScaleFactorRoundingPolicy(
-            Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
-        QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
-        QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
+        logging.info("GUIの起動を開始します...")
+        if not is_admin:
+            logging.warning("非管理者権限です。一部機能が制限される可能性があります。")
 
         logging.info("QApplicationインスタンスを作成します")
         app = QApplication(sys.argv)
         logging.info("QApplicationインスタンスの作成が完了しました")
 
-        # Unicode対応フォント設定
-        try:
-            font = QFont("Yu Gothic UI", 9)  # 日本語対応フォント
-            if not font.exactMatch():
-                font = QFont("Meiryo UI", 9)  # フォールバック
-            if not font.exactMatch():
-                font = QFont("MS UI Gothic", 9)  # さらなるフォールバック
-            app.setFont(font)
-        except Exception as e:
-            logging.warning(f"フォント設定エラー: {e}")
-
-        # 翻訳設定
-        try:
-            # FluentTranslatorの正しい初期化方法を使用
-            translator = FluentTranslator(QLocale(QLocale.Language.Japanese, QLocale.Country.Japan))
-            app.installTranslator(translator)
-        except Exception as e:
-            logging.warning(f"翻訳設定エラー: {e}")
-            # フォールバック: 翻訳設定をスキップして続行
-            logging.info("翻訳設定をスキップして続行します")
-
-        # モンキーパッチ適用
-        try:
-            patch_qfluentwidgets()
-            logging.info("QFluent モンキーパッチ適用完了")
-        except Exception as e:
-            logging.warning(f"モンキーパッチ適用エラー: {e}")
-
-        # メインウィンドウとコントローラー初期化
-        main_win = MainWindow()
+        main_win = None
+        controller = None
 
         try:
-            controller = AppController(main_window=main_win)
+            logging.info("メインウィンドウの初期化を開始...")
+            main_win = MainWindow()
+            logging.info("メインウィンドウの初期化が完了しました")
 
-            # 循環依存を解決するための2段階初期化
-            main_win.app_controller = controller
-            main_win.initialize_views()
-            controller.initialize_app()
+            logging.info("AppControllerの初期化を開始...")
+            controller = AppController(main_win)
+            logging.info("AppControllerの初期化が完了しました")
 
-            logging.info("アプリケーション初期化完了")
-
-            # メインウィンドウを表示
-            logging.info("メインウィンドウを表示します")
+            logging.info("メインウィンドウを表示します...")
             main_win.show()
+            logging.info("メインウィンドウの表示が完了しました")
 
-            # アプリケーション実行（メインイベントループ開始）
-            logging.info("🎯 QtアプリケーションのメインループCapp.exec())を開始します")
+            logging.info("アプリケーションのイベントループを開始します...")
             exit_code = app.exec()
-            logging.info(f"Qtアプリケーションが終了しました。終了コード: {exit_code}")
-            
+            logging.info(f"アプリケーションのイベントループが終了しました。終了コード: {exit_code}")
             return exit_code
 
-        except UnicodeDecodeError as e:
-            error_msg = f"アプリケーション初期化時のUnicodeエラー: {e}"
-            logging.error(error_msg)
+        except Exception as init_error:
+            logging.critical("アプリケーションの初期化中に致命的なエラーが発生しました", exc_info=True)
+            error_traceback = traceback.format_exc()
+            logging.error(f"初期化エラー: {init_error}")
+            logging.error(f"詳細スタックトレース:\n{error_traceback}")
 
-            # ユーザーにわかりやすいエラーメッセージを表示
-            QMessageBox.critical(
-                None,
-                "Unicode エラー",
-                f"日本語を含むパスでUnicodeエラーが発生しました。\n\n"
-                f"対処法:\n"
-                f"1. アプリケーションを英数字のみのパスに移動\n"
-                f"2. または環境変数 PYTHONUTF8=1 を設定\n\n"
-                f"詳細: {e}"
-            )
-            return 1
+            # エラー箇所の特定情報
+            frame = traceback.extract_tb(init_error.__traceback__)[-1]
+            logging.error(f"エラー発生ファイル: {frame.filename}")
+            logging.error(f"エラー発生行: {frame.lineno}")
+            logging.error(f"エラー発生関数: {frame.name}")
+            logging.error(f"エラー発生コード: {frame.line}")
 
-        except Exception as e:
-            logging.error(f"アプリケーション初期化エラー: {e}")
+            # コンソールにもエラー出力
+            print("CRITICAL ERROR: アプリケーション初期化に失敗しました")
+            print(f"エラー: {init_error}")
+            log_file_path = Path.cwd() / "logs" / f"jra_data_collector_{datetime.now().strftime('%Y%m%d')}.log"
+            print("詳細は以下のログファイルを確認してください:")
+            print(f"  {log_file_path}")
 
-            QMessageBox.critical(
-                None,
-                "初期化エラー",
-                f"アプリケーションの初期化に失敗しました。\n\n詳細: {e}"
-            )
+            # エラーが発生しても、appインスタンスがあればイベントループを実行
+            if 'app' in locals() and isinstance(app, QApplication):
+                return sys.exit(app.exec())
             return 1
 
     except Exception as e:
-        error_msg = f"GUIアプリケーション起動時の致命的エラー: {e}"
-        logging.exception(error_msg)  # スタックトレースも含めてログに記録
-        print(f"❌ {error_msg}")
-        
-        # 可能であればエラーダイアログも表示
-        try:
-            # QApplicationは既にインポート済みなので、ローカルインポートは不要
-            if not QApplication.instance():
-                _ = QApplication(sys.argv)
-            QMessageBox.critical(None, "アプリケーション起動エラー", 
-                               f"GUIアプリケーションの起動に失敗しました:\n{e}")
-        except ImportError:
-            print("GUI環境でないため、エラーダイアログを表示できません")
-        except Exception as dialog_error:
-            logging.warning(f"エラーダイアログの表示に失敗: {dialog_error}")
-        
-        return 1
+        # 最上位レベルの例外ハンドリング
+        error_traceback = traceback.format_exc()
+        logging.error(f"launch_gui() 全体で予期せぬエラーが発生しました: {e}")
+        logging.error(f"詳細スタックトレース:\n{error_traceback}")
+        print(f"FATAL ERROR: {e}")
+        return 1  # エラー終了コード
+
+    finally:
+        logging.info("launch_gui()から戻りました。")
+        # デバッグ情報の追加出力
+        if 'controller' in locals() and controller:
+            logging.debug(f"コントローラーの状態: {controller.jvlink_manager.current_state}")
+        if 'main_win' in locals() and main_win:
+            logging.debug(f"メインウィンドウは表示されていましたか？ {'はい' if main_win.isVisible() else 'いいえ'}")
+        logging.debug("アプリケーションを完全に終了します。")
 
 
 def main():
-    """
-    メインアプリケーション関数（Unicode対応強化）
+    """アプリケーションのエントリポイント"""
+    log_file = None
+    try:
+        # ログ設定を初期化
+        # この時点でデバッグモードが有効かどうかが決まる
+        log_file = setup_logging()
 
-    従来の互換性を保つためのラッパー関数
-    """
-    return launch_gui()
+        # 管理者権限チェック
+        is_admin = check_admin_privileges()
+
+        if not is_admin:
+            # 管理者権限で再起動を試みる
+            if relaunch_as_admin():
+                # 再起動が開始されたので、現在のプロセスは終了
+                return 0
+            else:
+                # ユーザーがUACをキャンセルした場合など
+                logging.warning("管理者権限での再起動ができませんでした。")
+                # GUIは起動せず終了
+                return 1
+
+        # is_adminがTrueの場合のみGUIを起動
+        # GUI アプリケーション起動
+        return launch_gui(is_admin=True)
+
+    except KeyboardInterrupt:
+        logging.info("CTRL+C が検出されました。アプリケーションを終了します。")
+        print("\nアプリケーションを終了します。")
+        return 0
+    except Exception as e:
+        # main関数レベルでの最終的な例外キャッチ
+        logging.critical("main() で予期せぬクリティカルエラーが発生しました。", exc_info=True)
+        print(f"FATAL ERROR in main(): {e}")
+        if log_file:
+            print(f"詳細はログファイルを参照してください: {log_file}")
+        return 1
+    finally:
+        logging.info("🏁 main() function completed")
+        print("🏁 main() function completed")
 
 
 if __name__ == "__main__":

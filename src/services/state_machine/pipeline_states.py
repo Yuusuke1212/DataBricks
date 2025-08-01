@@ -5,15 +5,13 @@ Pipeline Processing States for JRA-Data Collector Phase 3
 ProcessPoolExecutorを活用してCPU集約的なETL処理を最適化。
 """
 
-from typing import Any, Dict, Optional, List
-import logging
+from typing import Any, Dict, Optional
 import time
-from concurrent.futures import ProcessPoolExecutor, as_completed
+from concurrent.futures import ProcessPoolExecutor
 from multiprocessing import cpu_count
 
-from .base import AppState, StateTransitionError
+from .base import AppState
 from ..workers.base import ProgressInfo
-from ..workers.pipeline_coordinator import PipelineCoordinator
 
 
 class PipelineProcessingState(AppState):
@@ -54,7 +52,7 @@ class PipelineProcessingState(AppState):
         super().on_enter()
         self.start_time = time.time()
 
-        self._logger.info(f"Starting high-performance pipeline processing...")
+        self._logger.info("Starting high-performance pipeline processing...")
         self._logger.info(f"CPU cores available: {self.cpu_cores}")
         self._logger.info(
             f"Process pool size: {self.optimal_process_pool_size}")

@@ -1,7 +1,7 @@
 import logging
 import os
 import pandas as pd
-from PyQt5.QtCore import QObject, QRunnable, pyqtSignal as Signal, QThreadPool, pyqtSlot as Slot
+from PySide6.QtCore import QObject, QRunnable, Signal, QThreadPool, Slot
 
 from .db_manager import DatabaseManager
 

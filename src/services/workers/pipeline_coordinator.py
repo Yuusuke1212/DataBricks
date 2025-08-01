@@ -8,11 +8,10 @@ State Machine との連携を担うコーディネーター
 from typing import Dict, List, Any, Optional, Callable
 import logging
 import time
-import queue
 from queue import Queue
 from threading import Event
 
-from .base import BaseWorker, CancellationToken, ProgressInfo, WorkerState
+from .base import BaseWorker, CancellationToken, ProgressInfo
 from .jvlink_reader import JvLinkReaderWorker
 from .etl_processor_worker import EtlProcessorWorker
 from .database_writer import DatabaseWriterWorker

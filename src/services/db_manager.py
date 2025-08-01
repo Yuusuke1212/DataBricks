@@ -1,13 +1,17 @@
 import os
 import logging
 import pandas as pd
-from typing import Dict, List, Any, Optional
+from typing import Dict, List, Any
 from sqlalchemy import create_engine, inspect, text
-from sqlalchemy.orm import sessionmaker, declarative_base
+from sqlalchemy.orm import sessionmaker
 from sqlalchemy.exc import OperationalError, IntegrityError
+import threading
+
+# カスタム定数とEnumのインポート
+from ..constants import DatabaseType
 
 from ..services.workers.signals import LoggerMixin
-from ..exceptions import DatabaseError, DatabaseConnectionError, DatabaseIntegrityError
+from ..exceptions import DatabaseError, DatabaseIntegrityError
 
 # 修正点3: データベース固有のエラーを捕捉するためにインポート
 try:
@@ -39,26 +43,44 @@ class DatabaseManager(LoggerMixin):
         LoggerMixin.__init__(self, "データベース管理", "DatabaseManager")
 
         self.settings_manager = settings_manager
+        self.logger = logging.getLogger(__name__)
         self.engine = None
-        self.Session = None
+        self.session_factory = None
         self._db_type = None
         self._db_name = None
+        self._is_connected = False
+        self._connection_lock = threading.Lock()
 
-        self.emit_log("INFO", "DatabaseManagerを初期化しています...")
+        # 非同期初期化フラグ
+        self._async_initialized = False
 
-        # データベース接続を試行（失敗してもアプリケーション起動は継続）
+        # Upsert Manager初期化
+        self.upsert_manager = None
+
+        # ★課題3対応★: コンストラクタでの重い処理を削除（非同期初期化に移行）
+        # 従来のself.connect()呼び出しは削除
+
+    def async_initialize(self):
+        """
+        非同期初期化メソッド（課題3: 起動速度改善）
+        UI表示後にバックグラウンドで実行される軽量な初期化処理
+        """
+        if self._async_initialized:
+            self.emit_log("DEBUG", "DatabaseManagerは既に非同期初期化済みです")
+            return
+
         try:
-            self.connect()
-        except Exception as e:
-            self.emit_log(
-                "ERROR", f"データベース接続に失敗しました。アプリケーションはオフラインモードで起動します: {e}")
-            self.engine = None
-            self.Session = None
-            self._db_type = "offline"
-            self._db_name = "未接続"
+            self.emit_log("INFO", "DatabaseManagerの非同期初期化を開始します...")
 
-        logging.basicConfig(level=logging.INFO,
-                            format='%(asctime)s - %(levelname)s - %(message)s')
+            # データベース接続を試行（エラーハンドリング付き）
+            self.connect()
+
+            self._async_initialized = True
+            self.emit_log("INFO", "DatabaseManagerの非同期初期化が完了しました")
+
+        except Exception as e:
+            self.emit_log("ERROR", f"DatabaseManager非同期初期化エラー: {e}")
+            # エラーが発生してもアプリケーション全体をクラッシュさせない
 
     def test_connection(self, db_config: dict, show_create_dialog: bool = True) -> tuple[bool, str]:
         """
@@ -558,26 +580,75 @@ class DatabaseManager(LoggerMixin):
             self.emit_log("ERROR", error_msg)
             return False, error_msg
 
-    def connect(self):
+    def disconnect(self):
+        """データベース接続を安全に切断"""
+        try:
+            if hasattr(self, '_connection') and self._connection:
+                self._connection.close()
+                self._connection = None
+                self.emit_log("INFO", "データベース接続を切断しました")
+        except Exception as e:
+            self.emit_log("WARNING", f"データベース切断中にエラー: {e}")
+
+    def connect(self, profile_name: str = None):
         """
         データベースに接続する
-
-        修正点3: 指定されたデータベースが存在しない場合は作成を試みる
+        
+        Args:
+            profile_name: 使用するデータベースプロファイル名（Noneの場合はデフォルト設定）
+        
+        Returns:
+            bool: 接続成功の場合True
         """
-        db_config = self.settings_manager.get_db_config()
-        db_type = db_config.get('type')
-        self._db_type = db_type.lower() if db_type else 'sqlite'
+        try:
+            if profile_name:
+                # 指定されたプロファイルの設定を取得
+                db_config = self.settings_manager.get_database_profile_config(profile_name)
+            else:
+                # デフォルト設定を取得
+                db_config = self.settings_manager.get_db_config()
 
-        if db_type == "SQLite":
-            self._connect_sqlite(db_config)
-        elif db_type == "MySQL":
-            self._connect_mysql(db_config)
-        elif db_type == "PostgreSQL":
-            self._connect_postgresql(db_config)
-        else:
-            error_msg = f"未サポートのデータベース種別: {db_type}"
-            self.emit_log("ERROR", error_msg)
-            raise ValueError(error_msg)
+            db_type = db_config.get('type', DatabaseType.SQLITE)
+
+            # ★修正★: 型安全性を強化してvalueエラーを防止
+            if isinstance(db_type, DatabaseType):
+                self._db_type = db_type.value  # .valueで文字列を取得
+            elif isinstance(db_type, str):
+                # 文字列の場合はDatabaseType Enumに変換を試行
+                try:
+                    db_type_enum = DatabaseType.from_string(db_type)
+                    self._db_type = db_type_enum.value
+                    db_type = db_type_enum  # 以降の処理で使用するためEnumに統一
+                    self.emit_log("INFO", f"データベース種別を文字列からEnumに変換しました: '{db_type}' → {db_type_enum}")
+                except (ValueError, ImportError) as e:
+                    # 変換失敗時はそのまま文字列として使用
+                    self._db_type = str(db_type)
+                    self.emit_log("WARNING", f"データベース種別の変換に失敗しました: {db_type}. 文字列として扱います。エラー: {e}")
+            else:
+                # その他の型の場合は文字列に変換
+                self._db_type = str(db_type)
+                self.emit_log("WARNING", f"未知のデータベース種別型: {type(db_type)}. 文字列として扱います。")
+
+            # 接続処理 - Enumと文字列の両方に対応
+            if (isinstance(db_type, DatabaseType) and db_type == DatabaseType.SQLITE) or \
+               (isinstance(db_type, str) and db_type.lower() == 'sqlite'):
+                self._connect_sqlite(db_config)
+            elif (isinstance(db_type, DatabaseType) and db_type == DatabaseType.MYSQL) or \
+                 (isinstance(db_type, str) and db_type.lower() == 'mysql'):
+                self._connect_mysql(db_config)
+            elif (isinstance(db_type, DatabaseType) and db_type == DatabaseType.POSTGRESQL) or \
+                 (isinstance(db_type, str) and db_type.lower() in ['postgresql', 'postgres']):
+                self._connect_postgresql(db_config)
+            else:
+                error_msg = f"未サポートのデータベース種別: {db_type} ({self._db_type})"
+                self.emit_log("ERROR", error_msg)
+                raise ValueError(error_msg)
+
+            return True
+
+        except Exception as e:
+            self.emit_log("ERROR", f"データベース接続エラー: {e}")
+            return False
 
     def connect_without_fallback(self, db_config: dict) -> tuple[bool, str]:
         """
@@ -593,16 +664,16 @@ class DatabaseManager(LoggerMixin):
             db_type = db_config.get('type')
             if not db_type:
                 return False, "データベースタイプが指定されていません"
-            
+
             # 一時的にDB情報を保存
             original_db_type = self._db_type
             original_db_name = self._db_name
             original_engine = self.engine
-            original_session = self.Session
-            
+            original_session = self.session_factory
+
             # 新しい設定で接続を試行
             self._db_type = db_type.lower()
-            
+
             try:
                 if db_type == "SQLite":
                     return self._connect_sqlite_with_result(db_config)
@@ -615,17 +686,17 @@ class DatabaseManager(LoggerMixin):
                     self._db_type = original_db_type
                     self._db_name = original_db_name
                     self.engine = original_engine
-                    self.Session = original_session
+                    self.session_factory = original_session
                     return False, f"未サポートのデータベース種別: {db_type}"
-                    
+
             except Exception as e:
                 # エラー時は元の状態に戻す
                 self._db_type = original_db_type
                 self._db_name = original_db_name
                 self.engine = original_engine
-                self.Session = original_session
+                self.session_factory = original_session
                 return False, f"接続エラー: {e}"
-                
+
         except Exception as e:
             return False, f"設定処理エラー: {e}"
 
@@ -666,14 +737,14 @@ class DatabaseManager(LoggerMixin):
                 version_info = result.fetchone()[0]
                 self.emit_log("INFO", f"SQLite接続成功: バージョン {version_info}")
 
-            self.Session = sessionmaker(bind=self.engine)
+            self.session_factory = sessionmaker(bind=self.engine)
 
         except Exception as e:
             error_msg = f"SQLite接続エラー: {e}"
             self.emit_log("ERROR", error_msg)
             # SQLiteは最後の手段なので、失敗時はNoneのまま
             self.engine = None
-            self.Session = None
+            self.session_factory = None
 
     def _connect_mysql(self, db_config: dict):
         """
@@ -773,7 +844,7 @@ class DatabaseManager(LoggerMixin):
                     self.emit_log(
                         "INFO", f"MySQL接続成功（試行{attempt_num}）: {version_info}")
 
-                self.Session = sessionmaker(bind=self.engine)
+                self.session_factory = sessionmaker(bind=self.engine)
                 return
 
             except OperationalError as e:
@@ -793,7 +864,7 @@ class DatabaseManager(LoggerMixin):
                         self.emit_log(
                             "INFO", f"MySQLデータベース '{database}' に再接続成功")
 
-                    self.Session = sessionmaker(bind=self.engine)
+                    self.session_factory = sessionmaker(bind=self.engine)
                     return
                 else:
                     # その他のOperationalErrorは次の接続方法を試行
@@ -923,7 +994,7 @@ class DatabaseManager(LoggerMixin):
                     self.emit_log(
                         "INFO", f"PostgreSQL接続成功（試行{attempt_num}）: {version_info[:100]}...")
 
-                self.Session = sessionmaker(bind=self.engine)
+                self.session_factory = sessionmaker(bind=self.engine)
                 return
 
             except OperationalError as e:
@@ -943,7 +1014,7 @@ class DatabaseManager(LoggerMixin):
                         self.emit_log(
                             "INFO", f"PostgreSQLデータベース '{database}' に再接続成功")
 
-                    self.Session = sessionmaker(bind=self.engine)
+                    self.session_factory = sessionmaker(bind=self.engine)
                     return
                 # 一時的にコメントアウト: インデントエラー修正のため
                 # else:
@@ -988,12 +1059,12 @@ class DatabaseManager(LoggerMixin):
             with self.engine.connect() as connection:
                 self.emit_log("INFO", "SQLiteフォールバック接続が成功しました")
 
-            self.Session = sessionmaker(bind=self.engine)
+            self.session_factory = sessionmaker(bind=self.engine)
 
         except Exception as fallback_error:
             self.emit_log("ERROR", f"SQLiteフォールバックも失敗: {fallback_error}")
             self.engine = None
-            self.Session = None
+            self.session_factory = None
 
     def _handle_mysql_db_creation(self, e: OperationalError, host: str, port: int,
                                   username: str, password: str, database: str) -> bool:
@@ -1196,7 +1267,7 @@ class DatabaseManager(LoggerMixin):
                 spec['table_name'] for spec in EtlProcessor.SPEC_DEFINITIONS.values()
             ]
 
-            with self.Session() as session:
+            with self.session_factory() as session:
                 for table_name in tracked_tables:
                     if table_name in table_names:
                         try:
@@ -1255,7 +1326,7 @@ class DatabaseManager(LoggerMixin):
         """
         try:
             self.emit_log("INFO", "データベース再接続を開始します")
-            
+
             # 既存の接続を安全に破棄
             if self.engine:
                 try:
@@ -1265,7 +1336,7 @@ class DatabaseManager(LoggerMixin):
                     self.emit_log("WARNING", f"既存接続の破棄中にエラー: {e}")
 
             # セッションファクトリもリセット
-            self.Session = None
+            self.session_factory = None
             self.engine = None
             self._db_type = None
             self._db_name = None
@@ -1283,7 +1354,7 @@ class DatabaseManager(LoggerMixin):
                     # SettingsManagerの設定を更新
                     self.settings_manager.update_db_config(**new_db_config)
                     self.emit_log("INFO", f"新しいデータベース設定を適用: {new_db_config.get('type', 'Unknown')}")
-                    
+
                 except Exception as e:
                     self.emit_log("ERROR", f"設定更新中にエラー: {e}")
                     return False, f"設定更新エラー: {e}"
@@ -1302,7 +1373,7 @@ class DatabaseManager(LoggerMixin):
                 # 設定が提供されていない場合は現在の設定で再接続
                 try:
                     self.connect()
-                    
+
                     # 最終的な接続状態を確認
                     if self.engine is not None:
                         try:
@@ -1315,12 +1386,12 @@ class DatabaseManager(LoggerMixin):
                                     conn.execute(text("SELECT 1"))
                                 elif self._db_type == 'postgresql':
                                     conn.execute(text("SELECT 1"))
-                            
+
                             # 接続テストに成功した場合
                             success_msg = f"{self._db_type} データベース '{self._db_name}' への再接続に成功しました"
                             self.emit_log("INFO", success_msg)
                             return True, success_msg
-                            
+
                         except Exception as test_error:
                             self.emit_log("ERROR", f"データベース接続テストに失敗: {test_error}")
                             return False, f"接続テストに失敗しました: {test_error}"
@@ -1626,7 +1697,7 @@ class DatabaseManager(LoggerMixin):
             port = int(db_config.get('port', 5432)) if db_config.get('port') else 5432
         except (ValueError, TypeError):
             port = 5432
-        
+
         username = db_config.get('username', 'postgres')
         password = db_config.get('password', '')
         database = db_config.get('database') or db_config.get('db_name', 'jra_data')
@@ -1692,7 +1763,7 @@ class DatabaseManager(LoggerMixin):
                     version_info = result.fetchone()[0]
                     self.emit_log("INFO", f"PostgreSQL接続成功（試行{attempt_num}）: {version_info[:100]}...")
 
-                self.Session = sessionmaker(bind=self.engine)
+                self.session_factory = sessionmaker(bind=self.engine)
                 return True, f"PostgreSQL接続に成功しました: {database}"
 
             except Exception as e:
@@ -1720,11 +1791,11 @@ class DatabaseManager(LoggerMixin):
             import os
             # ベースパス取得
             db_path = db_config.get('path', db_config.get('db_name', 'jra_data.db'))
-            
+
             # 相対パスの場合は絶対パスに変換
             if not os.path.isabs(db_path):
                 db_path = os.path.join(os.getcwd(), db_path)
-            
+
             # ディレクトリが存在しない場合は作成
             db_dir = os.path.dirname(db_path)
             if db_dir and not os.path.exists(db_dir):
@@ -1741,7 +1812,7 @@ class DatabaseManager(LoggerMixin):
                 connection.execute(text("SELECT 1"))
                 self.emit_log("INFO", f"SQLite接続成功: {db_path}")
 
-            self.Session = sessionmaker(bind=self.engine)
+            self.session_factory = sessionmaker(bind=self.engine)
             return True, f"SQLite接続に成功しました: {db_path}"
 
         except Exception as e:
@@ -1766,7 +1837,7 @@ class DatabaseManager(LoggerMixin):
             port = int(db_config.get('port', 3306)) if db_config.get('port') else 3306
         except (ValueError, TypeError):
             port = 3306
-        
+
         username = db_config.get('username', 'root')
         password = db_config.get('password', '')
         database = db_config.get('database') or db_config.get('db_name', 'jra_data')
@@ -1780,7 +1851,7 @@ class DatabaseManager(LoggerMixin):
             database_encoded = urllib.parse.quote(database, safe='', encoding='utf-8')
 
             connection_string = f"mysql+pymysql://{username_encoded}:{password_encoded}@{host}:{port}/{database_encoded}?charset=utf8mb4"
-            
+
             self.emit_log("INFO", f"MySQL接続を試行: {connection_string.replace(password_encoded, '***')}")
 
             self.engine = create_engine(
@@ -1796,7 +1867,7 @@ class DatabaseManager(LoggerMixin):
                 version_info = result.fetchone()[0]
                 self.emit_log("INFO", f"MySQL接続成功: {version_info}")
 
-            self.Session = sessionmaker(bind=self.engine)
+            self.session_factory = sessionmaker(bind=self.engine)
             return True, f"MySQL接続に成功しました: {database}"
 
         except Exception as e:
