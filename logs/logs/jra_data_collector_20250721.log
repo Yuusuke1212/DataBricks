@@ -1,0 +1,1022 @@
+2025-07-21 10:43:29 [    INFO] root:121 - ============================================================
+2025-07-21 10:43:29 [    INFO] root:122 - JRA-Data Collector アプリケーションを開始しました
+2025-07-21 10:43:29 [    INFO] root:123 - ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250721.log
+2025-07-21 10:43:29 [    INFO] root:124 - ログレベル: ファイル=DEBUG, コンソール=INFO
+2025-07-21 10:43:29 [    INFO] root:125 - ============================================================
+2025-07-21 10:43:29 [    INFO] root:229 - アプリケーションの初期化を開始します。
+2025-07-21 10:43:29 [    INFO] root:256 - UIとコントローラーの接続を初期化します。
+2025-07-21 10:43:29 [    INFO] root:258 - データベース接続を閉じました。
+2025-07-21 10:43:29 [    INFO] root:114 - SQLite database connected successfully.
+2025-07-21 10:43:29 [    INFO] root:45 - JV-Linkアダプター初期化を開始します...
+2025-07-21 10:43:29 [    INFO] root:80 - JV-Link実行ファイルが見つかりました: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\JV-Link\JV-Link.exe
+2025-07-21 10:43:29 [    INFO] root:106 - JV-Linkアプリケーションを起動しました
+2025-07-21 10:43:31 [    INFO] root:204 - データサマリーを取得します。
+2025-07-21 10:43:31 [    INFO] root:252 - アプリケーションの初期化が完了しました。
+2025-07-21 10:43:38 [    INFO] root:647 - 設定が正常に保存されました。
+2025-07-21 10:43:39 [    INFO] root:258 - データベース接続を閉じました。
+2025-07-21 10:43:39 [    INFO] root:114 - SQLite database connected successfully.
+2025-07-21 10:43:39 [    INFO] root:647 - 設定が正常に保存されました。
+2025-07-21 10:43:39 [    INFO] root:258 - データベース接続を閉じました。
+2025-07-21 10:43:39 [    INFO] root:114 - SQLite database connected successfully.
+2025-07-21 10:43:56 [    INFO] root:660 - データベース接続テストを開始します: PostgreSQL
+2025-07-21 10:43:57 [    INFO] root:660 - データベース接続テストを開始します: PostgreSQL
+2025-07-21 10:45:09 [    INFO] root:121 - ============================================================
+2025-07-21 10:45:09 [    INFO] root:122 - JRA-Data Collector アプリケーションを開始しました
+2025-07-21 10:45:09 [    INFO] root:123 - ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250721.log
+2025-07-21 10:45:09 [    INFO] root:124 - ログレベル: ファイル=DEBUG, コンソール=INFO
+2025-07-21 10:45:09 [    INFO] root:125 - ============================================================
+2025-07-21 10:45:09 [    INFO] root:229 - アプリケーションの初期化を開始します。
+2025-07-21 10:45:09 [    INFO] root:256 - UIとコントローラーの接続を初期化します。
+2025-07-21 10:45:09 [    INFO] root:258 - データベース接続を閉じました。
+2025-07-21 10:45:09 [    INFO] root:114 - SQLite database connected successfully.
+2025-07-21 10:45:09 [    INFO] root:45 - JV-Linkアダプター初期化を開始します...
+2025-07-21 10:45:09 [    INFO] root:80 - JV-Link実行ファイルが見つかりました: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\JV-Link\JV-Link.exe
+2025-07-21 10:45:09 [    INFO] root:106 - JV-Linkアプリケーションを起動しました
+2025-07-21 10:45:11 [    INFO] root:204 - データサマリーを取得します。
+2025-07-21 10:45:11 [    INFO] root:252 - アプリケーションの初期化が完了しました。
+2025-07-21 10:45:26 [    INFO] root:139 - アプリケーション状態変更: idle -> downloading
+2025-07-21 10:45:26 [    INFO] root:410 - 一括データの取得処理を開始します。開始日: 19860101, データ種別: ['RACE', 'UM', 'KS', 'CH', 'BR', 'BN', 'SE', 'HR', 'O1', 'O2', 'O3', 'O4', 'O5', 'O6', 'AV', 'HY', 'CS', 'CZ', 'CC', 'RC', 'SV', 'JC', 'RA', 'JG', 'WF', 'WH', 'WE', 'TK', 'JO']
+2025-07-21 10:45:38 [    INFO] root:660 - データベース接続テストを開始します: SQLite
+2025-07-21 10:45:40 [    INFO] root:660 - データベース接続テストを開始します: SQLite
+2025-07-21 10:45:42 [    INFO] root:647 - 設定が正常に保存されました。
+2025-07-21 10:45:42 [    INFO] root:258 - データベース接続を閉じました。
+2025-07-21 10:45:42 [    INFO] root:114 - SQLite database connected successfully.
+2025-07-21 10:45:42 [    INFO] root:647 - 設定が正常に保存されました。
+2025-07-21 10:45:42 [    INFO] root:258 - データベース接続を閉じました。
+2025-07-21 10:45:42 [    INFO] root:114 - SQLite database connected successfully.
+2025-07-21 12:03:46 [    INFO] root:120 - ============================================================
+2025-07-21 12:03:46 [    INFO] root:121 - JRA-Data Collector アプリケーションを開始しました
+2025-07-21 12:03:46 [    INFO] root:122 - ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250721.log
+2025-07-21 12:03:46 [    INFO] root:123 - ログレベル: ファイル=DEBUG, コンソール=INFO
+2025-07-21 12:03:46 [    INFO] root:124 - ============================================================
+2025-07-21 12:03:46 [    INFO] Statemachine.Idle:52 - Entering state: Idle
+2025-07-21 12:03:46 [    INFO] root:145 - State transition completed: -> Idle
+2025-07-21 12:03:46 [    INFO] root:202 - アプリケーションの初期化を開始します。
+2025-07-21 12:03:46 [    INFO] root:229 - UIとコントローラーの接続を初期化します。
+2025-07-21 12:03:46 [    INFO] root:258 - データベース接続を閉じました。
+2025-07-21 12:03:46 [    INFO] root:114 - SQLite database connected successfully.
+2025-07-21 12:03:46 [    INFO] root:45 - JV-Linkアダプター初期化を開始します...
+2025-07-21 12:03:46 [    INFO] root:80 - JV-Link実行ファイルが見つかりました: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\JV-Link\JV-Link.exe
+2025-07-21 12:03:46 [    INFO] root:106 - JV-Linkアプリケーションを起動しました
+2025-07-21 12:03:48 [    INFO] root:204 - データサマリーを取得します。
+2025-07-21 12:03:48 [    INFO] root:225 - アプリケーションの初期化が完了しました。
+2025-07-21 12:03:58 [    INFO] root:695 - 設定が正常に保存されました。
+2025-07-21 12:03:58 [    INFO] root:258 - データベース接続を閉じました。
+2025-07-21 12:03:58 [    INFO] root:114 - SQLite database connected successfully.
+2025-07-21 12:03:58 [    INFO] root:695 - 設定が正常に保存されました。
+2025-07-21 12:03:58 [    INFO] root:258 - データベース接続を閉じました。
+2025-07-21 12:03:58 [    INFO] root:114 - SQLite database connected successfully.
+2025-07-21 12:04:13 [    INFO] Statemachine.Idle:24 - Starting data processing...
+2025-07-21 12:04:13 [    INFO] Statemachine.Idle:62 - Exiting state: Idle
+2025-07-21 12:04:13 [    INFO] Statemachine.RequestingData:52 - Entering state: RequestingData
+2025-07-21 12:04:13 [   ERROR] Statemachine.RequestingData:97 - Error in state RequestingData: JVLinkAdapter.get_data_async() got an unexpected keyword argument 'data_spec_list'
+2025-07-21 12:04:13 [   ERROR] Statemachine.RequestingData:99 - Context: {'operation': 'data_request', 'params': {'from_date': '19860101', 'data_spec_list': ['RACE', 'UM', 'KS', 'CH', 'BR', 'BN', 'SE', 'HR', 'O1', 'O2', 'O3', 'O4', 'O5', 'O6', 'AV', 'HY', 'CS', 'CZ', 'CC', 'RC', 'SV', 'JC', 'RA', 'JG', 'WF', 'WH', 'WE', 'TK', 'JO'], 'option': 3}}
+2025-07-21 12:04:13 [    INFO] Statemachine.RequestingData:62 - Exiting state: RequestingData
+2025-07-21 12:04:13 [    INFO] Statemachine.Error:52 - Entering state: Error
+2025-07-21 12:04:19 [   ERROR] Statemachine.Error:405 - Error state entered: JVLinkAdapter.get_data_async() got an unexpected keyword argument 'data_spec_list'
+2025-07-21 12:04:19 [   ERROR] Statemachine.Error:407 - Context: {'operation': 'data_request', 'params': {'from_date': '19860101', 'data_spec_list': ['RACE', 'UM', 'KS', 'CH', 'BR', 'BN', 'SE', 'HR', 'O1', 'O2', 'O3', 'O4', 'O5', 'O6', 'AV', 'HY', 'CS', 'CZ', 'CC', 'RC', 'SV', 'JC', 'RA', 'JG', 'WF', 'WH', 'WE', 'TK', 'JO'], 'option': 3}}
+2025-07-21 12:04:19 [    INFO] root:145 - State transition completed: -> Error
+2025-07-21 12:04:19 [    INFO] root:145 - State transition completed: -> RequestingData
+2025-07-21 12:51:32 [    INFO] root:129 - ============================================================
+2025-07-21 12:51:32 [    INFO] root:130 - JRA-Data Collector アプリケーションを開始しました
+2025-07-21 12:51:32 [    INFO] root:131 - ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250721.log
+2025-07-21 12:51:32 [    INFO] root:132 - ログレベル: ファイル=DEBUG, コンソール=INFO
+2025-07-21 12:51:32 [    INFO] root:133 - ============================================================
+2025-07-21 12:51:32 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 12:51:32 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 12:51:32 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 12:51:32 [    INFO] root:211 - アプリケーションの初期化を開始します。
+2025-07-21 12:51:32 [    INFO] root:238 - UIとコントローラーの接続を初期化します。
+2025-07-21 12:51:32 [    INFO] root:258 - データベース接続を閉じました。
+2025-07-21 12:51:32 [    INFO] root:114 - SQLite database connected successfully.
+2025-07-21 12:51:32 [    INFO] root:45 - JV-Linkアダプター初期化を開始します...
+2025-07-21 12:51:32 [    INFO] root:80 - JV-Link実行ファイルが見つかりました: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\JV-Link\JV-Link.exe
+2025-07-21 12:51:32 [    INFO] root:106 - JV-Linkアプリケーションを起動しました
+2025-07-21 12:51:34 [    INFO] root:204 - データサマリーを取得します。
+2025-07-21 12:51:34 [    INFO] root:234 - アプリケーションの初期化が完了しました。
+2025-07-21 12:51:53 [    INFO] root:704 - 設定が正常に保存されました。
+2025-07-21 12:51:53 [    INFO] root:258 - データベース接続を閉じました。
+2025-07-21 12:51:53 [    INFO] root:114 - SQLite database connected successfully.
+2025-07-21 12:51:53 [    INFO] root:704 - 設定が正常に保存されました。
+2025-07-21 12:51:53 [    INFO] root:258 - データベース接続を閉じました。
+2025-07-21 12:51:53 [    INFO] root:114 - SQLite database connected successfully.
+2025-07-21 12:52:16 [    INFO] root:719 - データベース接続テストを開始します: PostgreSQL
+2025-07-21 12:52:16 [   ERROR] root:286 - 接続テスト中にエラーが発生しました: (psycopg2.OperationalError) connection to server on socket "@localhost/.s.PGSQL.5432" failed: Invalid argument (0x00002726/10022)
+	Is the server running locally and accepting connections on that socket?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-21 12:52:26 [    INFO] root:719 - データベース接続テストを開始します: PostgreSQL
+2025-07-21 12:52:26 [   ERROR] root:286 - 接続テスト中にエラーが発生しました: (psycopg2.OperationalError) connection to server on socket "@localhost/.s.PGSQL.5432" failed: Invalid argument (0x00002726/10022)
+	Is the server running locally and accepting connections on that socket?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-21 12:52:48 [    INFO] root:719 - データベース接続テストを開始します: PostgreSQL
+2025-07-21 12:52:48 [   ERROR] root:286 - 接続テスト中にエラーが発生しました: (psycopg2.OperationalError) connection to server on socket "@localhost/.s.PGSQL.5432" failed: Invalid argument (0x00002726/10022)
+	Is the server running locally and accepting connections on that socket?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-21 12:52:49 [    INFO] root:719 - データベース接続テストを開始します: PostgreSQL
+2025-07-21 12:52:49 [   ERROR] root:286 - 接続テスト中にエラーが発生しました: (psycopg2.OperationalError) connection to server on socket "@localhost/.s.PGSQL.5432" failed: Invalid argument (0x00002726/10022)
+	Is the server running locally and accepting connections on that socket?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-21 12:52:57 [    INFO] root:719 - データベース接続テストを開始します: PostgreSQL
+2025-07-21 12:52:57 [   ERROR] root:286 - 接続テスト中にエラーが発生しました: (psycopg2.OperationalError) connection to server on socket "@localhost/.s.PGSQL.5432" failed: Invalid argument (0x00002726/10022)
+	Is the server running locally and accepting connections on that socket?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-21 12:52:59 [    INFO] root:719 - データベース接続テストを開始します: PostgreSQL
+2025-07-21 12:52:59 [   ERROR] root:286 - 接続テスト中にエラーが発生しました: (psycopg2.OperationalError) connection to server on socket "@localhost/.s.PGSQL.5432" failed: Invalid argument (0x00002726/10022)
+	Is the server running locally and accepting connections on that socket?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-21 12:53:27 [    INFO] root:719 - データベース接続テストを開始します: PostgreSQL
+2025-07-21 12:53:27 [   ERROR] root:286 - 接続テスト中にエラーが発生しました: (psycopg2.OperationalError) connection to server on socket "@localhost/.s.PGSQL.5432" failed: Invalid argument (0x00002726/10022)
+	Is the server running locally and accepting connections on that socket?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-21 12:53:30 [    INFO] root:719 - データベース接続テストを開始します: PostgreSQL
+2025-07-21 12:53:30 [   ERROR] root:286 - 接続テスト中にエラーが発生しました: (psycopg2.OperationalError) connection to server on socket "@localhost/.s.PGSQL.5432" failed: Invalid argument (0x00002726/10022)
+	Is the server running locally and accepting connections on that socket?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-21 12:54:16 [    INFO] Statemachine.Idle:24 - Starting data processing...
+2025-07-21 12:54:16 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 12:54:16 [    INFO] Statemachine.RequestingData:67 - Entering state: RequestingData
+2025-07-21 12:54:16 [ WARNING] Statemachine.RequestingData:71 - Failed to update UI status: 'RequestingDataState' object has no attribute '_update_ui_status'
+2025-07-21 12:54:16 [   ERROR] Statemachine.RequestingData:227 - Error in state RequestingData: JVLinkAdapter.get_data_async() got an unexpected keyword argument 'data_spec_list'
+2025-07-21 12:54:16 [   ERROR] Statemachine.RequestingData:229 - Context: {'operation': 'data_request', 'params': {'from_date': '19860101', 'data_spec_list': ['RACE', 'UM', 'KS', 'CH', 'BR', 'BN', 'SE', 'HR', 'O1', 'O2', 'O3', 'O4', 'O5', 'O6', 'AV', 'HY', 'CS', 'CZ', 'CC', 'RC', 'SV', 'JC', 'RA', 'JG', 'WF', 'WH', 'WE', 'TK', 'JO'], 'option': 3}}
+2025-07-21 12:54:16 [    INFO] Statemachine.RequestingData:80 - Exiting state: RequestingData
+2025-07-21 12:54:16 [    INFO] Statemachine.Error:67 - Entering state: Error
+2025-07-21 12:54:16 [ WARNING] Statemachine.Error:71 - Failed to update UI status: 'ErrorState' object has no attribute '_update_ui_status'
+2025-07-21 12:54:26 [   ERROR] Statemachine.Error:405 - Error state entered: JVLinkAdapter.get_data_async() got an unexpected keyword argument 'data_spec_list'
+2025-07-21 12:54:26 [   ERROR] Statemachine.Error:407 - Context: {'operation': 'data_request', 'params': {'from_date': '19860101', 'data_spec_list': ['RACE', 'UM', 'KS', 'CH', 'BR', 'BN', 'SE', 'HR', 'O1', 'O2', 'O3', 'O4', 'O5', 'O6', 'AV', 'HY', 'CS', 'CZ', 'CC', 'RC', 'SV', 'JC', 'RA', 'JG', 'WF', 'WH', 'WE', 'TK', 'JO'], 'option': 3}}
+2025-07-21 12:54:26 [    INFO] root:154 - State transition completed: -> Error
+2025-07-21 12:54:26 [    INFO] root:154 - State transition completed: -> RequestingData
+2025-07-21 12:54:33 [    INFO] Statemachine.Error:382 - Attempting to recover from error state...
+2025-07-21 12:54:33 [    INFO] Statemachine.Error:80 - Exiting state: Error
+2025-07-21 12:54:33 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 12:54:33 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 12:54:33 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 13:12:51 [    INFO] root:129 - ============================================================
+2025-07-21 13:12:51 [    INFO] root:130 - JRA-Data Collector アプリケーションを開始しました
+2025-07-21 13:12:51 [    INFO] root:131 - ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250721.log
+2025-07-21 13:12:51 [    INFO] root:132 - ログレベル: ファイル=DEBUG, コンソール=INFO
+2025-07-21 13:12:51 [    INFO] root:133 - ============================================================
+2025-07-21 13:12:51 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 13:12:51 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 13:12:51 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 13:12:51 [    INFO] root:211 - アプリケーションの初期化を開始します。
+2025-07-21 13:12:51 [    INFO] root:238 - UIとコントローラーの接続を初期化します。
+2025-07-21 13:12:51 [    INFO] root:258 - データベース接続を閉じました。
+2025-07-21 13:12:51 [    INFO] root:114 - SQLite database connected successfully.
+2025-07-21 13:12:51 [    INFO] root:45 - JV-Linkアダプター初期化を開始します...
+2025-07-21 13:12:51 [    INFO] root:80 - JV-Link実行ファイルが見つかりました: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\JV-Link\JV-Link.exe
+2025-07-21 13:12:51 [    INFO] root:106 - JV-Linkアプリケーションを起動しました
+2025-07-21 13:12:53 [    INFO] root:204 - データサマリーを取得します。
+2025-07-21 13:12:53 [    INFO] root:234 - アプリケーションの初期化が完了しました。
+2025-07-21 13:13:03 [    INFO] root:704 - 設定が正常に保存されました。
+2025-07-21 13:13:03 [    INFO] root:258 - データベース接続を閉じました。
+2025-07-21 13:13:03 [    INFO] root:114 - SQLite database connected successfully.
+2025-07-21 13:13:03 [    INFO] root:704 - 設定が正常に保存されました。
+2025-07-21 13:13:03 [    INFO] root:258 - データベース接続を閉じました。
+2025-07-21 13:13:03 [    INFO] root:114 - SQLite database connected successfully.
+2025-07-21 13:13:50 [    INFO] root:719 - データベース接続テストを開始します: PostgreSQL
+2025-07-21 13:13:51 [   ERROR] root:286 - 接続テスト中にエラーが発生しました: (psycopg2.OperationalError) connection to server on socket "@localhost/.s.PGSQL.5432" failed: Invalid argument (0x00002726/10022)
+	Is the server running locally and accepting connections on that socket?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-21 13:13:52 [    INFO] root:719 - データベース接続テストを開始します: PostgreSQL
+2025-07-21 13:13:52 [   ERROR] root:286 - 接続テスト中にエラーが発生しました: (psycopg2.OperationalError) connection to server on socket "@localhost/.s.PGSQL.5432" failed: Invalid argument (0x00002726/10022)
+	Is the server running locally and accepting connections on that socket?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-21 13:14:04 [    INFO] root:719 - データベース接続テストを開始します: SQLite
+2025-07-21 13:14:05 [    INFO] root:719 - データベース接続テストを開始します: SQLite
+2025-07-21 13:14:10 [    INFO] Statemachine.Idle:24 - Starting data processing...
+2025-07-21 13:14:10 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 13:14:10 [    INFO] Statemachine.RequestingData:67 - Entering state: RequestingData
+2025-07-21 13:14:10 [ WARNING] Statemachine.RequestingData:71 - Failed to update UI status: 'RequestingDataState' object has no attribute '_update_ui_status'
+2025-07-21 13:14:10 [   ERROR] Statemachine.RequestingData:227 - Error in state RequestingData: JVLinkAdapter.get_data_async() got an unexpected keyword argument 'data_spec_list'
+2025-07-21 13:14:10 [   ERROR] Statemachine.RequestingData:229 - Context: {'operation': 'data_request', 'params': {'from_date': '19860101', 'data_spec_list': ['RACE', 'UM', 'KS', 'CH', 'BR', 'BN', 'SE', 'HR', 'O1', 'O2', 'O3', 'O4', 'O5', 'O6', 'AV', 'HY', 'CS', 'CZ', 'CC', 'RC', 'SV', 'JC', 'RA', 'JG', 'WF', 'WH', 'WE', 'TK', 'JO'], 'option': 3}}
+2025-07-21 13:14:10 [    INFO] Statemachine.RequestingData:80 - Exiting state: RequestingData
+2025-07-21 13:14:10 [    INFO] Statemachine.Error:67 - Entering state: Error
+2025-07-21 13:14:10 [ WARNING] Statemachine.Error:71 - Failed to update UI status: 'ErrorState' object has no attribute '_update_ui_status'
+2025-07-21 13:14:14 [   ERROR] Statemachine.Error:405 - Error state entered: JVLinkAdapter.get_data_async() got an unexpected keyword argument 'data_spec_list'
+2025-07-21 13:14:14 [   ERROR] Statemachine.Error:407 - Context: {'operation': 'data_request', 'params': {'from_date': '19860101', 'data_spec_list': ['RACE', 'UM', 'KS', 'CH', 'BR', 'BN', 'SE', 'HR', 'O1', 'O2', 'O3', 'O4', 'O5', 'O6', 'AV', 'HY', 'CS', 'CZ', 'CC', 'RC', 'SV', 'JC', 'RA', 'JG', 'WF', 'WH', 'WE', 'TK', 'JO'], 'option': 3}}
+2025-07-21 13:14:14 [    INFO] root:154 - State transition completed: -> Error
+2025-07-21 13:14:14 [    INFO] root:154 - State transition completed: -> RequestingData
+2025-07-21 13:14:17 [    INFO] root:619 - 速報イベントの監視開始を指示します。
+2025-07-21 13:14:17 [    INFO] root:169 - リアルタイムイベント監視開始（JVLinkAdapter）
+2025-07-21 13:14:17 [    INFO] root:159 - リアルタイム監視開始要求を受信（JVLinkAdapter）
+2025-07-21 13:14:19 [    INFO] Statemachine.Error:382 - Attempting to recover from error state...
+2025-07-21 13:14:19 [    INFO] Statemachine.Error:80 - Exiting state: Error
+2025-07-21 13:14:19 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 13:14:19 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 13:14:19 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 13:14:25 [    INFO] Statemachine.Idle:24 - Starting data processing...
+2025-07-21 13:14:25 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 13:14:25 [    INFO] Statemachine.RequestingData:67 - Entering state: RequestingData
+2025-07-21 13:14:25 [ WARNING] Statemachine.RequestingData:71 - Failed to update UI status: 'RequestingDataState' object has no attribute '_update_ui_status'
+2025-07-21 13:14:25 [   ERROR] Statemachine.RequestingData:227 - Error in state RequestingData: JVLinkAdapter.get_data_async() got an unexpected keyword argument 'data_spec_list'
+2025-07-21 13:14:25 [   ERROR] Statemachine.RequestingData:229 - Context: {'operation': 'data_request', 'params': {'from_date': '', 'data_spec_list': ['RACE'], 'option': 1}}
+2025-07-21 13:14:25 [    INFO] Statemachine.RequestingData:80 - Exiting state: RequestingData
+2025-07-21 13:14:25 [    INFO] Statemachine.Error:67 - Entering state: Error
+2025-07-21 13:14:25 [ WARNING] Statemachine.Error:71 - Failed to update UI status: 'ErrorState' object has no attribute '_update_ui_status'
+2025-07-21 13:14:26 [   ERROR] Statemachine.Error:405 - Error state entered: JVLinkAdapter.get_data_async() got an unexpected keyword argument 'data_spec_list'
+2025-07-21 13:14:26 [   ERROR] Statemachine.Error:407 - Context: {'operation': 'data_request', 'params': {'from_date': '', 'data_spec_list': ['RACE'], 'option': 1}}
+2025-07-21 13:14:26 [    INFO] root:154 - State transition completed: -> Error
+2025-07-21 13:14:26 [    INFO] root:154 - State transition completed: -> RequestingData
+2025-07-21 13:14:28 [    INFO] root:624 - 速報イベントの監視停止を指示します。
+2025-07-21 13:14:28 [    INFO] root:174 - リアルタイムイベント監視停止（JVLinkAdapter）
+2025-07-21 13:14:28 [    INFO] root:164 - リアルタイム監視停止要求を受信（JVLinkAdapter）
+2025-07-21 13:19:52 [    INFO] root:129 - ============================================================
+2025-07-21 13:19:52 [    INFO] root:130 - JRA-Data Collector アプリケーションを開始しました
+2025-07-21 13:19:52 [    INFO] root:131 - ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250721.log
+2025-07-21 13:19:52 [    INFO] root:132 - ログレベル: ファイル=DEBUG, コンソール=INFO
+2025-07-21 13:19:52 [    INFO] root:133 - ============================================================
+2025-07-21 13:19:52 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 13:19:52 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 13:19:52 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 13:19:52 [    INFO] root:211 - アプリケーションの初期化を開始します。
+2025-07-21 13:19:52 [    INFO] root:238 - UIとコントローラーの接続を初期化します。
+2025-07-21 13:19:52 [    INFO] root:276 - データベース接続を閉じました。
+2025-07-21 13:19:52 [    INFO] root:132 - SQLite database connected successfully.
+2025-07-21 13:19:52 [    INFO] root:45 - JV-Linkアダプター初期化を開始します...
+2025-07-21 13:19:52 [    INFO] root:80 - JV-Link実行ファイルが見つかりました: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\JV-Link\JV-Link.exe
+2025-07-21 13:19:52 [    INFO] root:106 - JV-Linkアプリケーションを起動しました
+2025-07-21 13:19:54 [    INFO] root:222 - データサマリーを取得します。
+2025-07-21 13:19:54 [    INFO] root:234 - アプリケーションの初期化が完了しました。
+2025-07-21 13:20:03 [    INFO] root:704 - 設定が正常に保存されました。
+2025-07-21 13:20:03 [    INFO] root:276 - データベース接続を閉じました。
+2025-07-21 13:20:03 [    INFO] root:132 - SQLite database connected successfully.
+2025-07-21 13:20:03 [    INFO] root:704 - 設定が正常に保存されました。
+2025-07-21 13:20:03 [    INFO] root:276 - データベース接続を閉じました。
+2025-07-21 13:20:03 [    INFO] root:132 - SQLite database connected successfully.
+2025-07-21 13:20:27 [    INFO] root:719 - データベース接続テストを開始します: PostgreSQL
+2025-07-21 13:20:27 [   ERROR] root:304 - 接続テスト中にエラーが発生しました: (psycopg2.OperationalError) connection to server on socket "@localhost/.s.PGSQL.5432" failed: Invalid argument (0x00002726/10022)
+	Is the server running locally and accepting connections on that socket?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-21 13:20:34 [    INFO] root:719 - データベース接続テストを開始します: PostgreSQL
+2025-07-21 13:20:34 [   ERROR] root:304 - 接続テスト中にエラーが発生しました: (psycopg2.OperationalError) connection to server on socket "@localhost/.s.PGSQL.5432" failed: Invalid argument (0x00002726/10022)
+	Is the server running locally and accepting connections on that socket?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-21 13:20:41 [    INFO] root:704 - 設定が正常に保存されました。
+2025-07-21 13:20:41 [    INFO] root:276 - データベース接続を閉じました。
+2025-07-21 13:20:41 [   ERROR] root:135 - Database connection failed: 'utf-8' codec can't decode byte 0x83 in position 63: invalid start byte
+2025-07-21 13:20:41 [    INFO] root:704 - 設定が正常に保存されました。
+2025-07-21 13:20:41 [   ERROR] root:135 - Database connection failed: 'utf-8' codec can't decode byte 0x83 in position 63: invalid start byte
+2025-07-21 13:20:49 [    INFO] Statemachine.Idle:24 - Starting data processing...
+2025-07-21 13:20:49 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 13:20:49 [    INFO] Statemachine.RequestingData:67 - Entering state: RequestingData
+2025-07-21 13:20:49 [ WARNING] Statemachine.RequestingData:71 - Failed to update UI status: 'RequestingDataState' object has no attribute '_update_ui_status'
+2025-07-21 13:20:49 [    INFO] root:127 - ファイルベースデータ取得開始: ['RACE', 'UM', 'KS', 'CH', 'BR', 'BN', 'SE', 'HR', 'O1', 'O2', 'O3', 'O4', 'O5', 'O6', 'AV', 'HY', 'CS', 'CZ', 'CC', 'RC', 'SV', 'JC', 'RA', 'JG', 'WF', 'WH', 'WE', 'TK', 'JO'], 19860101
+2025-07-21 13:20:49 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 13:20:50 [    INFO] root:370 - 受信データが空でした。
+2025-07-21 13:20:50 [    INFO] root:409 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 13:20:50 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 13:20:50 [    INFO] Statemachine.RequestingData:80 - Exiting state: RequestingData
+2025-07-21 13:20:50 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 13:20:50 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 13:20:50 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 13:20:50 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 13:20:51 [    INFO] root:370 - 受信データが空でした。
+2025-07-21 13:20:51 [    INFO] root:409 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 13:20:51 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 13:20:51 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 13:20:51 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 13:20:51 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 13:20:51 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 13:20:51 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 13:20:52 [    INFO] root:370 - 受信データが空でした。
+2025-07-21 13:20:52 [    INFO] root:409 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 13:20:52 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 13:20:52 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 13:20:52 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 13:20:52 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 13:20:52 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 13:20:52 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 13:20:53 [    INFO] root:370 - 受信データが空でした。
+2025-07-21 13:20:53 [    INFO] root:409 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 13:20:53 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 13:20:53 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 13:20:53 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 13:20:53 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 13:20:53 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 13:20:53 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 13:20:54 [    INFO] root:370 - 受信データが空でした。
+2025-07-21 13:20:54 [    INFO] root:409 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 13:20:54 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 13:20:54 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 13:20:54 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 13:20:54 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 13:20:54 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 13:20:54 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 13:20:55 [    INFO] root:370 - 受信データが空でした。
+2025-07-21 13:20:55 [    INFO] root:409 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 13:20:55 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 13:20:55 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 13:20:55 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 13:20:55 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 13:20:55 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 13:20:55 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 13:20:56 [    INFO] root:370 - 受信データが空でした。
+2025-07-21 13:20:56 [    INFO] root:409 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 13:20:56 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 13:20:56 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 13:20:56 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 13:20:56 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 13:20:56 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 13:20:56 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 13:20:57 [    INFO] root:370 - 受信データが空でした。
+2025-07-21 13:20:57 [    INFO] root:409 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 13:20:57 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 13:20:57 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 13:20:57 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 13:20:57 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 13:20:57 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 13:20:57 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 13:20:58 [    INFO] root:370 - 受信データが空でした。
+2025-07-21 13:20:58 [    INFO] root:409 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 13:20:58 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 13:20:58 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 13:20:58 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 13:20:58 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 13:20:58 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 13:20:58 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 13:20:59 [    INFO] root:370 - 受信データが空でした。
+2025-07-21 13:20:59 [    INFO] root:409 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 13:20:59 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 13:20:59 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 13:20:59 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 13:20:59 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 13:20:59 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 13:20:59 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 13:21:00 [    INFO] root:370 - 受信データが空でした。
+2025-07-21 13:21:00 [    INFO] root:409 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 13:21:00 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 13:21:00 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 13:21:00 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 13:21:00 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 13:21:00 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 13:21:00 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 13:21:01 [    INFO] root:370 - 受信データが空でした。
+2025-07-21 13:21:01 [    INFO] root:409 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 13:21:01 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 13:21:01 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 13:21:01 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 13:21:01 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 13:21:01 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 13:21:01 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 13:21:02 [    INFO] root:370 - 受信データが空でした。
+2025-07-21 13:21:02 [    INFO] root:409 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 13:21:02 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 13:21:02 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 13:21:02 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 13:21:02 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 13:21:02 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 13:21:02 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 13:21:03 [    INFO] root:370 - 受信データが空でした。
+2025-07-21 13:21:03 [    INFO] root:409 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 13:21:03 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 13:21:03 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 13:21:03 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 13:21:03 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 13:21:03 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 13:21:03 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 13:21:04 [    INFO] root:370 - 受信データが空でした。
+2025-07-21 13:21:04 [    INFO] root:409 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 13:21:04 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 13:21:04 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 13:21:04 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 13:21:04 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 13:21:04 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 13:21:04 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 13:21:05 [    INFO] root:370 - 受信データが空でした。
+2025-07-21 13:21:05 [    INFO] root:409 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 13:21:05 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 13:21:05 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 13:21:05 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 13:21:05 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 13:21:05 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 13:21:05 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 13:21:06 [    INFO] root:370 - 受信データが空でした。
+2025-07-21 13:21:06 [    INFO] root:409 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 13:21:06 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 13:21:06 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 13:21:06 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 13:21:06 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 13:21:06 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 13:21:06 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 13:21:07 [    INFO] root:370 - 受信データが空でした。
+2025-07-21 13:21:07 [    INFO] root:409 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 13:21:07 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 13:21:07 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 13:21:07 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 13:21:07 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 13:21:07 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 13:21:07 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 13:21:08 [    INFO] root:370 - 受信データが空でした。
+2025-07-21 13:21:08 [    INFO] root:409 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 13:21:08 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 13:21:08 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 13:21:08 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 13:21:08 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 13:21:08 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 13:21:08 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 13:21:09 [    INFO] root:370 - 受信データが空でした。
+2025-07-21 13:21:09 [    INFO] root:409 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 13:21:09 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 13:21:09 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 13:21:09 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 13:21:09 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 13:21:09 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 13:21:09 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 13:21:10 [    INFO] root:370 - 受信データが空でした。
+2025-07-21 13:21:10 [    INFO] root:409 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 13:21:10 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 13:21:10 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 13:21:10 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 13:21:10 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 13:21:10 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 13:21:10 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 13:21:11 [    INFO] root:370 - 受信データが空でした。
+2025-07-21 13:21:11 [    INFO] root:409 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 13:21:11 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 13:21:11 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 13:21:11 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 13:21:11 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 13:21:11 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 13:21:11 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 13:21:12 [    INFO] root:370 - 受信データが空でした。
+2025-07-21 13:21:12 [    INFO] root:409 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 13:21:12 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 13:21:12 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 13:21:12 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 13:21:12 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 13:21:12 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 13:21:12 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 13:21:13 [    INFO] root:370 - 受信データが空でした。
+2025-07-21 13:21:13 [    INFO] root:409 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 13:21:13 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 13:21:13 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 13:21:13 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 13:21:13 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 13:21:13 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 13:21:13 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 13:21:14 [    INFO] root:370 - 受信データが空でした。
+2025-07-21 13:21:14 [    INFO] root:409 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 13:21:14 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 13:21:14 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 13:21:14 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 13:21:14 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 13:21:14 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 13:21:14 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 13:21:15 [    INFO] root:370 - 受信データが空でした。
+2025-07-21 13:21:15 [    INFO] root:409 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 13:21:15 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 13:21:15 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 13:21:15 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 13:21:15 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 13:21:15 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 13:21:15 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 13:21:16 [    INFO] root:370 - 受信データが空でした。
+2025-07-21 13:21:16 [    INFO] root:409 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 13:21:16 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 13:21:16 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 13:21:16 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 13:21:16 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 13:21:16 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 13:21:16 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 13:21:17 [    INFO] root:370 - 受信データが空でした。
+2025-07-21 13:21:17 [    INFO] root:409 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 13:21:17 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 13:21:17 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 13:21:17 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 13:21:17 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 13:21:17 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 13:21:17 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 13:21:18 [    INFO] root:370 - 受信データが空でした。
+2025-07-21 13:21:18 [    INFO] root:409 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 13:21:18 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 13:21:18 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 13:21:18 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 13:21:18 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 13:21:18 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 13:21:18 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 13:21:18 [    INFO] Statemachine.PollingDownload:67 - Entering state: PollingDownload
+2025-07-21 13:21:18 [ WARNING] Statemachine.PollingDownload:71 - Failed to update UI status: 'PollingDownloadState' object has no attribute '_update_ui_status'
+2025-07-21 13:21:18 [   ERROR] Statemachine.PollingDownload:163 - Failed to setup progress monitoring: 'PySide6.QtCore.SignalInstance' object has no attribute 'receivers'
+2025-07-21 13:21:18 [    INFO] root:154 - State transition completed: -> PollingDownload
+2025-07-21 13:21:18 [    INFO] root:154 - State transition completed: -> RequestingData
+2025-07-21 13:21:43 [    INFO] root:719 - データベース接続テストを開始します: SQLite
+2025-07-21 13:21:44 [    INFO] root:719 - データベース接続テストを開始します: SQLite
+2025-07-21 16:39:12 [    INFO] root:129 - ============================================================
+2025-07-21 16:39:12 [    INFO] root:130 - JRA-Data Collector アプリケーションを開始しました
+2025-07-21 16:39:12 [    INFO] root:131 - ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250721.log
+2025-07-21 16:39:12 [    INFO] root:132 - ログレベル: ファイル=DEBUG, コンソール=INFO
+2025-07-21 16:39:12 [    INFO] root:133 - ============================================================
+2025-07-21 16:39:12 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 16:39:12 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 16:39:12 [    INFO] root:154 - State transition completed: -> Idle
+2025-07-21 16:39:12 [ WARNING] root:190 - データベースに接続されていないため、テーブル名を取得できません。
+2025-07-21 16:39:12 [ WARNING] root:190 - データベースに接続されていないため、テーブル名を取得できません。
+2025-07-21 16:39:12 [    INFO] root:211 - アプリケーションの初期化を開始します。
+2025-07-21 16:39:12 [    INFO] root:238 - UIとコントローラーの接続を初期化します。
+2025-07-21 16:39:12 [   ERROR] root:135 - Database connection failed: 'utf-8' codec can't decode byte 0x83 in position 63: invalid start byte
+2025-07-21 16:39:12 [    INFO] root:45 - JV-Linkアダプター初期化を開始します...
+2025-07-21 16:39:12 [    INFO] root:80 - JV-Link実行ファイルが見つかりました: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\JV-Link\JV-Link.exe
+2025-07-21 16:39:12 [    INFO] root:106 - JV-Linkアプリケーションを起動しました
+2025-07-21 16:39:14 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 16:39:14 [    INFO] root:234 - アプリケーションの初期化が完了しました。
+2025-07-21 17:04:15 [    INFO] root:137 - ============================================================
+2025-07-21 17:04:15 [    INFO] root:138 - JRA-Data Collector アプリケーションを開始しました
+2025-07-21 17:04:15 [    INFO] root:139 - ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250721.log
+2025-07-21 17:04:15 [    INFO] root:140 - ログレベル: ファイル=DEBUG, コンソール=INFO
+2025-07-21 17:04:15 [    INFO] root:141 - ============================================================
+2025-07-21 17:04:15 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 17:04:15 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 17:04:15 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 17:04:15 [ WARNING] root:190 - データベースに接続されていないため、テーブル名を取得できません。
+2025-07-21 17:04:15 [ WARNING] root:190 - データベースに接続されていないため、テーブル名を取得できません。
+2025-07-21 17:04:15 [    INFO] root:219 - アプリケーションの初期化を開始します。
+2025-07-21 17:04:15 [    INFO] root:246 - UIとコントローラーの接続を初期化します。
+2025-07-21 17:04:16 [   ERROR] root:135 - Database connection failed: 'utf-8' codec can't decode byte 0x83 in position 63: invalid start byte
+2025-07-21 17:04:16 [    INFO] root:45 - JV-Linkアダプター初期化を開始します...
+2025-07-21 17:04:16 [    INFO] root:80 - JV-Link実行ファイルが見つかりました: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\JV-Link\JV-Link.exe
+2025-07-21 17:04:16 [    INFO] root:106 - JV-Linkアプリケーションを起動しました
+2025-07-21 17:04:18 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 17:04:18 [    INFO] root:242 - アプリケーションの初期化が完了しました。
+2025-07-21 17:04:37 [    INFO] root:858 - データベース接続テストを開始します: PostgreSQL
+2025-07-21 17:04:37 [   ERROR] root:304 - 接続テスト中にエラーが発生しました: (psycopg2.OperationalError) connection to server on socket "@localhost/.s.PGSQL.5432" failed: Invalid argument (0x00002726/10022)
+	Is the server running locally and accepting connections on that socket?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-21 17:04:39 [    INFO] root:858 - データベース接続テストを開始します: PostgreSQL
+2025-07-21 17:04:39 [   ERROR] root:304 - 接続テスト中にエラーが発生しました: (psycopg2.OperationalError) connection to server on socket "@localhost/.s.PGSQL.5432" failed: Invalid argument (0x00002726/10022)
+	Is the server running locally and accepting connections on that socket?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-21 17:05:21 [    INFO] Statemachine.Idle:24 - Starting data processing...
+2025-07-21 17:05:21 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 17:05:21 [    INFO] Statemachine.RequestingData:67 - Entering state: RequestingData
+2025-07-21 17:05:21 [ WARNING] Statemachine.RequestingData:71 - Failed to update UI status: 'RequestingDataState' object has no attribute '_update_ui_status'
+2025-07-21 17:05:21 [    INFO] root:127 - ファイルベースデータ取得開始: ['RACE', 'UM', 'KS', 'CH', 'BR', 'BN', 'SE', 'HR', 'O1', 'O2', 'O3', 'O4', 'O5', 'O6', 'AV', 'HY', 'CS', 'CZ', 'CC', 'RC', 'SV', 'JC', 'RA', 'JG', 'WF', 'WH', 'WE', 'TK', 'JO'], 19860101
+2025-07-21 17:05:21 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 17:05:22 [    INFO] root:509 - 受信データが空でした。
+2025-07-21 17:05:22 [    INFO] root:548 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 17:05:22 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 17:05:22 [    INFO] Statemachine.RequestingData:80 - Exiting state: RequestingData
+2025-07-21 17:05:22 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 17:05:22 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 17:05:22 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 17:05:22 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 17:05:23 [    INFO] root:509 - 受信データが空でした。
+2025-07-21 17:05:23 [    INFO] root:548 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 17:05:23 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 17:05:23 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 17:05:23 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 17:05:23 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 17:05:23 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 17:05:23 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 17:05:24 [    INFO] root:509 - 受信データが空でした。
+2025-07-21 17:05:24 [    INFO] root:548 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 17:05:24 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 17:05:24 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 17:05:24 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 17:05:24 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 17:05:24 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 17:05:24 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 17:05:25 [    INFO] root:509 - 受信データが空でした。
+2025-07-21 17:05:25 [    INFO] root:548 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 17:05:25 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 17:05:25 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 17:05:25 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 17:05:25 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 17:05:25 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 17:05:25 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 17:05:26 [    INFO] root:509 - 受信データが空でした。
+2025-07-21 17:05:26 [    INFO] root:548 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 17:05:26 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 17:05:26 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 17:05:26 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 17:05:26 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 17:05:26 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 17:05:26 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 17:05:27 [    INFO] root:509 - 受信データが空でした。
+2025-07-21 17:05:27 [    INFO] root:548 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 17:05:27 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 17:05:27 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 17:05:27 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 17:05:27 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 17:05:27 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 17:05:27 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 17:05:28 [    INFO] root:509 - 受信データが空でした。
+2025-07-21 17:05:28 [    INFO] root:548 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 17:05:28 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 17:05:28 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 17:05:28 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 17:05:28 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 17:05:28 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 17:05:28 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 17:05:29 [    INFO] root:509 - 受信データが空でした。
+2025-07-21 17:05:29 [    INFO] root:548 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 17:05:29 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 17:05:29 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 17:05:29 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 17:05:29 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 17:05:29 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 17:05:29 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 17:05:30 [    INFO] root:509 - 受信データが空でした。
+2025-07-21 17:05:30 [    INFO] root:548 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 17:05:30 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 17:05:30 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 17:05:30 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 17:05:30 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 17:05:30 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 17:05:30 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 17:05:31 [    INFO] root:509 - 受信データが空でした。
+2025-07-21 17:05:31 [    INFO] root:548 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 17:05:31 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 17:05:31 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 17:05:31 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 17:05:31 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 17:05:31 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 17:05:31 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 17:05:32 [    INFO] root:509 - 受信データが空でした。
+2025-07-21 17:05:32 [    INFO] root:548 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 17:05:32 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 17:05:32 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 17:05:32 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 17:05:32 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 17:05:32 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 17:05:32 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 17:05:33 [    INFO] root:509 - 受信データが空でした。
+2025-07-21 17:05:33 [    INFO] root:548 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 17:05:33 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 17:05:33 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 17:05:33 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 17:05:33 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 17:05:33 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 17:05:33 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 17:05:34 [    INFO] root:509 - 受信データが空でした。
+2025-07-21 17:05:34 [    INFO] root:548 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 17:05:34 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 17:05:34 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 17:05:34 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 17:05:34 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 17:05:34 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 17:05:34 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 17:05:35 [    INFO] root:509 - 受信データが空でした。
+2025-07-21 17:05:35 [    INFO] root:548 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 17:05:35 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 17:05:35 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 17:05:35 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 17:05:35 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 17:05:35 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 17:05:35 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 17:05:36 [    INFO] root:509 - 受信データが空でした。
+2025-07-21 17:05:36 [    INFO] root:548 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 17:05:36 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 17:05:36 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 17:05:36 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 17:05:36 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 17:05:36 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 17:05:36 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 17:05:37 [    INFO] root:509 - 受信データが空でした。
+2025-07-21 17:05:37 [    INFO] root:548 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 17:05:37 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 17:05:37 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 17:05:37 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 17:05:37 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 17:05:37 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 17:05:37 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 17:05:38 [    INFO] root:509 - 受信データが空でした。
+2025-07-21 17:05:38 [    INFO] root:548 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 17:05:38 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 17:05:38 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 17:05:38 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 17:05:38 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 17:05:38 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 17:05:38 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 17:05:39 [    INFO] root:509 - 受信データが空でした。
+2025-07-21 17:05:39 [    INFO] root:548 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 17:05:39 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 17:05:39 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 17:05:39 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 17:05:39 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 17:05:39 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 17:05:39 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 17:05:40 [    INFO] root:509 - 受信データが空でした。
+2025-07-21 17:05:40 [    INFO] root:548 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 17:05:40 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 17:05:40 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 17:05:40 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 17:05:40 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 17:05:40 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 17:05:40 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 17:05:41 [    INFO] root:509 - 受信データが空でした。
+2025-07-21 17:05:41 [    INFO] root:548 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 17:05:41 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 17:05:41 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 17:05:41 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 17:05:41 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 17:05:41 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 17:05:41 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 17:05:42 [    INFO] root:509 - 受信データが空でした。
+2025-07-21 17:05:42 [    INFO] root:548 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 17:05:42 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 17:05:42 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 17:05:42 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 17:05:42 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 17:05:42 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 17:05:42 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 17:05:43 [    INFO] root:509 - 受信データが空でした。
+2025-07-21 17:05:43 [    INFO] root:548 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 17:05:43 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 17:05:43 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 17:05:43 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 17:05:43 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 17:05:43 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 17:05:43 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 17:05:44 [    INFO] root:509 - 受信データが空でした。
+2025-07-21 17:05:44 [    INFO] root:548 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 17:05:44 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 17:05:44 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 17:05:44 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 17:05:44 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 17:05:44 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 17:05:44 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 17:05:45 [    INFO] root:509 - 受信データが空でした。
+2025-07-21 17:05:45 [    INFO] root:548 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 17:05:45 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 17:05:45 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 17:05:45 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 17:05:45 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 17:05:45 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 17:05:45 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 17:05:46 [    INFO] root:509 - 受信データが空でした。
+2025-07-21 17:05:46 [    INFO] root:548 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 17:05:46 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 17:05:46 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 17:05:46 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 17:05:46 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 17:05:46 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 17:05:46 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 17:05:47 [    INFO] root:509 - 受信データが空でした。
+2025-07-21 17:05:47 [    INFO] root:548 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 17:05:47 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 17:05:47 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 17:05:48 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 17:05:48 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 17:05:48 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 17:05:48 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 17:05:49 [    INFO] root:509 - 受信データが空でした。
+2025-07-21 17:05:49 [    INFO] root:548 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 17:05:49 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 17:05:49 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 17:05:49 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 17:05:49 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 17:05:49 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 17:05:49 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 17:05:50 [    INFO] root:509 - 受信データが空でした。
+2025-07-21 17:05:50 [    INFO] root:548 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 17:05:50 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 17:05:50 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 17:05:50 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 17:05:50 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 17:05:50 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 17:05:50 [    INFO] root:157 - JV-Linkアプリケーションにデータ取得を要求中...
+2025-07-21 17:05:51 [    INFO] root:509 - 受信データが空でした。
+2025-07-21 17:05:51 [    INFO] root:548 - 全処理が完了しました。最終同期日時を更新します: 
+2025-07-21 17:05:51 [ WARNING] root:219 - データベースに接続されていないため、サマリーを取得できません。
+2025-07-21 17:05:51 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 17:05:51 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 17:05:51 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 17:05:51 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 17:05:51 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 17:05:51 [    INFO] Statemachine.PollingDownload:67 - Entering state: PollingDownload
+2025-07-21 17:05:51 [ WARNING] Statemachine.PollingDownload:71 - Failed to update UI status: 'PollingDownloadState' object has no attribute '_update_ui_status'
+2025-07-21 17:05:51 [   ERROR] Statemachine.PollingDownload:163 - Failed to setup progress monitoring: 'PySide6.QtCore.SignalInstance' object has no attribute 'receivers'
+2025-07-21 17:05:51 [    INFO] root:162 - State transition completed: -> PollingDownload
+2025-07-21 17:05:51 [    INFO] root:162 - State transition completed: -> RequestingData
+2025-07-21 17:06:18 [    INFO] root:758 - 速報イベントの監視開始を指示します。
+2025-07-21 17:06:18 [    INFO] root:176 - リアルタイムイベント監視開始（JVLinkAdapter）
+2025-07-21 17:06:18 [    INFO] root:166 - リアルタイム監視開始要求を受信（JVLinkAdapter）
+2025-07-21 17:06:21 [    INFO] root:763 - 速報イベントの監視停止を指示します。
+2025-07-21 17:06:21 [    INFO] root:181 - リアルタイムイベント監視停止（JVLinkAdapter）
+2025-07-21 17:06:21 [    INFO] root:171 - リアルタイム監視停止要求を受信（JVLinkAdapter）
+2025-07-21 19:13:04 [    INFO] root:137 - ============================================================
+2025-07-21 19:13:04 [    INFO] root:138 - JRA-Data Collector アプリケーションを開始しました
+2025-07-21 19:13:04 [    INFO] root:139 - ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250721.log
+2025-07-21 19:13:04 [    INFO] root:140 - ログレベル: ファイル=DEBUG, コンソール=INFO
+2025-07-21 19:13:04 [    INFO] root:141 - ============================================================
+2025-07-21 19:13:04 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 19:13:04 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 19:13:04 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 19:13:04 [ WARNING] root:399 - データベースに接続されていないため、テーブル名を取得できません。
+2025-07-21 19:13:04 [ WARNING] root:399 - データベースに接続されていないため、テーブル名を取得できません。
+2025-07-21 19:13:04 [    INFO] root:219 - アプリケーションの初期化を開始します。
+2025-07-21 19:13:04 [    INFO] root:246 - UIとコントローラーの接続を初期化します。
+2025-07-21 19:13:53 [    INFO] root:137 - ============================================================
+2025-07-21 19:13:53 [    INFO] root:138 - JRA-Data Collector アプリケーションを開始しました
+2025-07-21 19:13:53 [    INFO] root:139 - ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250721.log
+2025-07-21 19:13:53 [    INFO] root:140 - ログレベル: ファイル=DEBUG, コンソール=INFO
+2025-07-21 19:13:53 [    INFO] root:141 - ============================================================
+2025-07-21 19:13:53 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 19:13:53 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 19:13:53 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 19:13:53 [ WARNING] root:399 - データベースに接続されていないため、テーブル名を取得できません。
+2025-07-21 19:13:54 [ WARNING] root:399 - データベースに接続されていないため、テーブル名を取得できません。
+2025-07-21 19:13:54 [    INFO] root:219 - アプリケーションの初期化を開始します。
+2025-07-21 19:13:54 [    INFO] root:246 - UIとコントローラーの接続を初期化します。
+2025-07-21 19:14:22 [    INFO] root:137 - ============================================================
+2025-07-21 19:14:22 [    INFO] root:138 - JRA-Data Collector アプリケーションを開始しました
+2025-07-21 19:14:22 [    INFO] root:139 - ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250721.log
+2025-07-21 19:14:22 [    INFO] root:140 - ログレベル: ファイル=DEBUG, コンソール=INFO
+2025-07-21 19:14:22 [    INFO] root:141 - ============================================================
+2025-07-21 19:14:22 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 19:14:22 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 19:14:22 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 19:14:22 [ WARNING] root:399 - データベースに接続されていないため、テーブル名を取得できません。
+2025-07-21 19:14:22 [ WARNING] root:399 - データベースに接続されていないため、テーブル名を取得できません。
+2025-07-21 19:14:22 [    INFO] root:219 - アプリケーションの初期化を開始します。
+2025-07-21 19:14:22 [    INFO] root:246 - UIとコントローラーの接続を初期化します。
+2025-07-21 19:21:27 [    INFO] root:137 - ============================================================
+2025-07-21 19:21:27 [    INFO] root:138 - JRA-Data Collector アプリケーションを開始しました
+2025-07-21 19:21:27 [    INFO] root:139 - ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250721.log
+2025-07-21 19:21:27 [    INFO] root:140 - ログレベル: ファイル=DEBUG, コンソール=INFO
+2025-07-21 19:21:27 [    INFO] root:141 - ============================================================
+2025-07-21 19:21:27 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 19:21:27 [ WARNING] Statemachine.Idle:71 - Failed to update UI status: 'IdleState' object has no attribute '_update_ui_status'
+2025-07-21 19:21:27 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 19:21:27 [   ERROR] root:234 - アプリケーション初期化エラー: name 'FIF' is not defined
+2025-07-21 19:22:52 [    INFO] root:137 - ============================================================
+2025-07-21 19:22:52 [    INFO] root:138 - JRA-Data Collector アプリケーションを開始しました
+2025-07-21 19:22:52 [    INFO] root:139 - ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250721.log
+2025-07-21 19:22:52 [    INFO] root:140 - ログレベル: ファイル=DEBUG, コンソール=INFO
+2025-07-21 19:22:52 [    INFO] root:141 - ============================================================
+2025-07-21 19:22:52 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 19:22:52 [   DEBUG] Statemachine.Idle:93 - UI status update not available for state: Idle
+2025-07-21 19:22:52 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 19:22:52 [   ERROR] root:234 - アプリケーション初期化エラー: name 'QTextBrowser' is not defined
+2025-07-21 19:23:27 [    INFO] root:137 - ============================================================
+2025-07-21 19:23:27 [    INFO] root:138 - JRA-Data Collector アプリケーションを開始しました
+2025-07-21 19:23:27 [    INFO] root:139 - ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250721.log
+2025-07-21 19:23:27 [    INFO] root:140 - ログレベル: ファイル=DEBUG, コンソール=INFO
+2025-07-21 19:23:27 [    INFO] root:141 - ============================================================
+2025-07-21 19:23:27 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 19:23:27 [   DEBUG] Statemachine.Idle:93 - UI status update not available for state: Idle
+2025-07-21 19:23:27 [    INFO] root:162 - State transition completed: -> Idle
+2025-07-21 19:23:27 [    INFO] root:219 - アプリケーションの初期化を開始します。
+2025-07-21 19:23:27 [    INFO] root:246 - UIとコントローラーの接続を初期化します。
+2025-07-21 19:23:27 [    INFO] root:619 - データベース接続を閉じました。
+2025-07-21 19:23:27 [   ERROR] root:234 - アプリケーション初期化エラー: 'AppController' object has no attribute 'emit_log'
+2025-07-21 19:24:42 [    INFO] root:145 - ============================================================
+2025-07-21 19:24:42 [    INFO] root:146 - JRA-Data Collector アプリケーションを開始しました
+2025-07-21 19:24:42 [    INFO] root:147 - ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250721.log
+2025-07-21 19:24:42 [    INFO] root:148 - ログレベル: ファイル=DEBUG, コンソール=INFO
+2025-07-21 19:24:42 [    INFO] root:149 - ============================================================
+2025-07-21 19:24:42 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 19:24:42 [   DEBUG] Statemachine.Idle:93 - UI status update not available for state: Idle
+2025-07-21 19:24:42 [    INFO] root:170 - State transition completed: -> Idle
+2025-07-21 19:24:42 [    INFO] root:227 - アプリケーションの初期化を開始します。
+2025-07-21 19:24:42 [    INFO] root:254 - UIとコントローラーの接続を初期化します。
+2025-07-21 19:24:42 [    INFO] root:619 - データベース接続を閉じました。
+2025-07-21 19:24:42 [   ERROR] root:234 - アプリケーション初期化エラー: JVLinkAdapter.initialize() takes 1 positional argument but 2 were given
+2025-07-21 19:25:50 [    INFO] root:145 - ============================================================
+2025-07-21 19:25:50 [    INFO] root:146 - JRA-Data Collector アプリケーションを開始しました
+2025-07-21 19:25:50 [    INFO] root:147 - ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250721.log
+2025-07-21 19:25:50 [    INFO] root:148 - ログレベル: ファイル=DEBUG, コンソール=INFO
+2025-07-21 19:25:50 [    INFO] root:149 - ============================================================
+2025-07-21 19:25:50 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 19:25:50 [   DEBUG] Statemachine.Idle:93 - UI status update not available for state: Idle
+2025-07-21 19:25:50 [    INFO] root:170 - State transition completed: -> Idle
+2025-07-21 19:25:51 [    INFO] root:227 - アプリケーションの初期化を開始します。
+2025-07-21 19:25:51 [    INFO] root:254 - UIとコントローラーの接続を初期化します。
+2025-07-21 19:25:51 [    INFO] root:619 - データベース接続を閉じました。
+2025-07-21 19:25:56 [   ERROR] root:617 - JvLinkManager Error: JV-Linkプロセスの起動に失敗しました。
+2025-07-21 19:25:56 [   ERROR] Statemachine.Idle:242 - Error in state Idle: JV-Linkプロセスの起動に失敗しました。
+2025-07-21 19:25:56 [   ERROR] Statemachine.Idle:244 - Context: {'source': 'JvLinkManager', 'message': 'JV-Linkプロセスの起動に失敗しました。'}
+2025-07-21 19:25:56 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 19:25:56 [    INFO] Statemachine.Error:67 - Entering state: Error
+2025-07-21 19:25:56 [   DEBUG] Statemachine.Error:93 - UI status update not available for state: Error
+2025-07-21 19:25:59 [   ERROR] Statemachine.Error:405 - Error state entered: JV-Linkプロセスの起動に失敗しました。
+2025-07-21 19:25:59 [   ERROR] Statemachine.Error:407 - Context: {'source': 'JvLinkManager', 'message': 'JV-Linkプロセスの起動に失敗しました。'}
+2025-07-21 19:25:59 [    INFO] root:170 - State transition completed: -> Error
+2025-07-21 19:25:59 [   ERROR] root:617 - JvLinkManager Error: JV-Linkの初期化に失敗しました: JV-Linkプロセスの起動に失敗しました。
+2025-07-21 19:25:59 [   ERROR] Statemachine.Error:242 - Error in state Error: JV-Linkの初期化に失敗しました: JV-Linkプロセスの起動に失敗しました。
+2025-07-21 19:25:59 [   ERROR] Statemachine.Error:244 - Context: {'source': 'JvLinkManager', 'message': 'JV-Linkの初期化に失敗しました: JV-Linkプロセスの起動に失敗しました。'}
+2025-07-21 19:25:59 [    INFO] Statemachine.Error:80 - Exiting state: Error
+2025-07-21 19:25:59 [    INFO] Statemachine.Error:67 - Entering state: Error
+2025-07-21 19:25:59 [   DEBUG] Statemachine.Error:93 - UI status update not available for state: Error
+2025-07-21 19:26:00 [   ERROR] Statemachine.Error:405 - Error state entered: JV-Linkの初期化に失敗しました: JV-Linkプロセスの起動に失敗しました。
+2025-07-21 19:26:00 [   ERROR] Statemachine.Error:407 - Context: {'source': 'JvLinkManager', 'message': 'JV-Linkの初期化に失敗しました: JV-Linkプロセスの起動に失敗しました。'}
+2025-07-21 19:26:00 [    INFO] root:170 - State transition completed: -> Error
+2025-07-21 19:26:00 [   ERROR] root:234 - アプリケーション初期化エラー: JV-Linkプロセスの起動に失敗しました。
+2025-07-21 19:31:06 [    INFO] root:145 - ============================================================
+2025-07-21 19:31:06 [    INFO] root:146 - JRA-Data Collector アプリケーションを開始しました
+2025-07-21 19:31:06 [    INFO] root:147 - ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250721.log
+2025-07-21 19:31:06 [    INFO] root:148 - ログレベル: ファイル=DEBUG, コンソール=INFO
+2025-07-21 19:31:06 [    INFO] root:149 - ============================================================
+2025-07-21 19:31:06 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 19:31:06 [   DEBUG] Statemachine.Idle:93 - UI status update not available for state: Idle
+2025-07-21 19:31:06 [    INFO] root:170 - State transition completed: -> Idle
+2025-07-21 19:31:06 [    INFO] root:229 - アプリケーションの初期化を開始します。
+2025-07-21 19:31:06 [    INFO] root:255 - UIとコントローラーの接続を初期化します。
+2025-07-21 19:31:06 [    INFO] root:619 - データベース接続を閉じました。
+2025-07-21 19:31:06 [    INFO] root:244 - JV-Link設定済み。必要に応じて手動で接続してください。
+2025-07-21 19:31:06 [    INFO] root:565 - データサマリーを取得します。
+2025-07-21 19:31:06 [    INFO] root:251 - アプリケーションの初期化が完了しました。
+2025-07-21 19:31:06 [    INFO] root:209 - アプリケーション初期化完了
+2025-07-21 19:31:36 [    INFO] root:976 - 設定が正常に保存されました。
+2025-07-21 19:31:36 [    INFO] root:619 - データベース接続を閉じました。
+2025-07-21 19:31:36 [    INFO] root:976 - 設定が正常に保存されました。
+2025-07-21 19:31:36 [    INFO] root:619 - データベース接続を閉じました。
+2025-07-21 19:31:43 [    INFO] root:991 - データベース接続テストを開始します: PostgreSQL
+2025-07-21 19:31:43 [   ERROR] root:647 - 接続テスト中にエラーが発生しました: (psycopg2.OperationalError) connection to server on socket "@localhost/.s.PGSQL.5432" failed: Invalid argument (0x00002726/10022)
+	Is the server running locally and accepting connections on that socket?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-21 19:31:44 [    INFO] root:991 - データベース接続テストを開始します: PostgreSQL
+2025-07-21 19:31:44 [   ERROR] root:647 - 接続テスト中にエラーが発生しました: (psycopg2.OperationalError) connection to server on socket "@localhost/.s.PGSQL.5432" failed: Invalid argument (0x00002726/10022)
+	Is the server running locally and accepting connections on that socket?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-21 19:31:47 [    INFO] root:976 - 設定が正常に保存されました。
+2025-07-21 19:31:47 [    INFO] root:619 - データベース接続を閉じました。
+2025-07-21 19:31:47 [    INFO] root:976 - 設定が正常に保存されました。
+2025-07-21 19:31:47 [    INFO] root:619 - データベース接続を閉じました。
+2025-07-21 19:31:58 [    INFO] Statemachine.Idle:24 - Starting data processing...
+2025-07-21 19:31:58 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 19:31:58 [    INFO] Statemachine.RequestingData:67 - Entering state: RequestingData
+2025-07-21 19:31:58 [   DEBUG] Statemachine.RequestingData:93 - UI status update not available for state: RequestingData
+2025-07-21 19:31:58 [   ERROR] Statemachine.RequestingData:242 - Error in state RequestingData: 'JVLinkAdapter' object has no attribute 'get_data_async'
+2025-07-21 19:31:58 [   ERROR] Statemachine.RequestingData:244 - Context: {'operation': 'data_request', 'params': {'from_date': '19860101', 'data_spec_list': ['RACE', 'UM', 'KS', 'CH', 'BR', 'BN', 'SE', 'HR', 'O1', 'O2', 'O3', 'O4', 'O5', 'O6', 'AV', 'HY', 'CS', 'CZ', 'CC', 'RC', 'SV', 'JC', 'RA', 'JG', 'WF', 'WH', 'WE', 'TK', 'JO'], 'option': 3}}
+2025-07-21 19:31:58 [    INFO] Statemachine.RequestingData:80 - Exiting state: RequestingData
+2025-07-21 19:31:58 [    INFO] Statemachine.Error:67 - Entering state: Error
+2025-07-21 19:31:58 [   DEBUG] Statemachine.Error:93 - UI status update not available for state: Error
+2025-07-21 19:31:59 [   ERROR] Statemachine.Error:405 - Error state entered: 'JVLinkAdapter' object has no attribute 'get_data_async'
+2025-07-21 19:31:59 [   ERROR] Statemachine.Error:407 - Context: {'operation': 'data_request', 'params': {'from_date': '19860101', 'data_spec_list': ['RACE', 'UM', 'KS', 'CH', 'BR', 'BN', 'SE', 'HR', 'O1', 'O2', 'O3', 'O4', 'O5', 'O6', 'AV', 'HY', 'CS', 'CZ', 'CC', 'RC', 'SV', 'JC', 'RA', 'JG', 'WF', 'WH', 'WE', 'TK', 'JO'], 'option': 3}}
+2025-07-21 19:31:59 [    INFO] root:170 - State transition completed: -> Error
+2025-07-21 19:31:59 [    INFO] root:170 - State transition completed: -> RequestingData
+2025-07-21 19:36:55 [    INFO] root:145 - ============================================================
+2025-07-21 19:36:55 [    INFO] root:146 - JRA-Data Collector アプリケーションを開始しました
+2025-07-21 19:36:55 [    INFO] root:147 - ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250721.log
+2025-07-21 19:36:55 [    INFO] root:148 - ログレベル: ファイル=DEBUG, コンソール=INFO
+2025-07-21 19:36:55 [    INFO] root:149 - ============================================================
+2025-07-21 19:36:55 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 19:36:55 [   DEBUG] Statemachine.Idle:93 - UI status update not available for state: Idle
+2025-07-21 19:36:55 [    INFO] root:170 - State transition completed: -> Idle
+2025-07-21 19:36:55 [    INFO] root:229 - アプリケーションの初期化を開始します。
+2025-07-21 19:36:55 [    INFO] root:255 - UIとコントローラーの接続を初期化します。
+2025-07-21 19:36:55 [    INFO] root:855 - データベース接続を閉じました。
+2025-07-21 19:36:55 [    INFO] root:244 - JV-Link設定済み。必要に応じて手動で接続してください。
+2025-07-21 19:36:55 [    INFO] root:801 - データサマリーを取得します。
+2025-07-21 19:36:55 [    INFO] root:251 - アプリケーションの初期化が完了しました。
+2025-07-21 19:36:55 [    INFO] root:209 - アプリケーション初期化完了
+2025-07-21 19:37:04 [    INFO] root:1012 - データベース接続テストを開始します: PostgreSQL
+2025-07-21 19:37:09 [    INFO] root:1012 - データベース接続テストを開始します: PostgreSQL
+2025-07-21 19:37:16 [    INFO] root:1012 - データベース接続テストを開始します: PostgreSQL
+2025-07-21 19:37:17 [    INFO] root:1012 - データベース接続テストを開始します: PostgreSQL
+2025-07-21 19:37:20 [    INFO] root:1012 - データベース接続テストを開始します: PostgreSQL
+2025-07-21 19:37:49 [    INFO] root:1012 - データベース接続テストを開始します: PostgreSQL
+2025-07-21 19:37:54 [    INFO] root:1012 - データベース接続テストを開始します: MySQL
+2025-07-21 19:44:45 [    INFO] root:145 - ============================================================
+2025-07-21 19:44:45 [    INFO] root:146 - JRA-Data Collector アプリケーションを開始しました
+2025-07-21 19:44:45 [    INFO] root:147 - ログファイル: C:\Users\yuusu\Desktop\JRA-VANアプリ\DataBriocks\logs\jra_data_collector_20250721.log
+2025-07-21 19:44:45 [    INFO] root:148 - ログレベル: ファイル=DEBUG, コンソール=INFO
+2025-07-21 19:44:45 [    INFO] root:149 - ============================================================
+2025-07-21 19:44:45 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 19:44:45 [   DEBUG] Statemachine.Idle:93 - UI status update not available for state: Idle
+2025-07-21 19:44:45 [    INFO] root:170 - State transition completed: -> Idle
+2025-07-21 19:44:45 [    INFO] root:229 - アプリケーションの初期化を開始します。
+2025-07-21 19:44:45 [    INFO] root:255 - UIとコントローラーの接続を初期化します。
+2025-07-21 19:44:45 [    INFO] root:1105 - データベース接続を閉じました。
+2025-07-21 19:44:45 [    INFO] root:244 - JV-Link設定済み。必要に応じて手動で接続してください。
+2025-07-21 19:44:45 [    INFO] root:1051 - データサマリーを取得します。
+2025-07-21 19:44:45 [    INFO] root:251 - アプリケーションの初期化が完了しました。
+2025-07-21 19:44:45 [    INFO] root:209 - アプリケーション初期化完了
+2025-07-21 19:44:57 [    INFO] root:1012 - データベース接続テストを開始します: PostgreSQL
+2025-07-21 19:45:02 [    INFO] root:1012 - データベース接続テストを開始します: PostgreSQL
+2025-07-21 19:46:32 [    INFO] Statemachine.Idle:24 - Starting data processing...
+2025-07-21 19:46:32 [    INFO] Statemachine.Idle:80 - Exiting state: Idle
+2025-07-21 19:46:32 [    INFO] Statemachine.RequestingData:67 - Entering state: RequestingData
+2025-07-21 19:46:32 [   DEBUG] Statemachine.RequestingData:93 - UI status update not available for state: RequestingData
+2025-07-21 19:46:32 [   ERROR] Statemachine.RequestingData:242 - Error in state RequestingData: 'JVLinkAdapter' object has no attribute 'get_data_async'
+2025-07-21 19:46:32 [   ERROR] Statemachine.RequestingData:244 - Context: {'operation': 'data_request', 'params': {'from_date': '', 'data_spec_list': ['RACE'], 'option': 1}}
+2025-07-21 19:46:32 [    INFO] Statemachine.RequestingData:80 - Exiting state: RequestingData
+2025-07-21 19:46:32 [    INFO] Statemachine.Error:67 - Entering state: Error
+2025-07-21 19:46:32 [   DEBUG] Statemachine.Error:93 - UI status update not available for state: Error
+2025-07-21 19:46:34 [   ERROR] Statemachine.Error:405 - Error state entered: 'JVLinkAdapter' object has no attribute 'get_data_async'
+2025-07-21 19:46:34 [   ERROR] Statemachine.Error:407 - Context: {'operation': 'data_request', 'params': {'from_date': '', 'data_spec_list': ['RACE'], 'option': 1}}
+2025-07-21 19:46:34 [    INFO] root:170 - State transition completed: -> Error
+2025-07-21 19:46:34 [    INFO] root:170 - State transition completed: -> RequestingData
+2025-07-21 19:46:37 [    INFO] Statemachine.Error:382 - Attempting to recover from error state...
+2025-07-21 19:46:37 [    INFO] Statemachine.Error:80 - Exiting state: Error
+2025-07-21 19:46:37 [    INFO] Statemachine.Idle:67 - Entering state: Idle
+2025-07-21 19:46:37 [   DEBUG] Statemachine.Idle:93 - UI status update not available for state: Idle
+2025-07-21 19:46:37 [    INFO] root:170 - State transition completed: -> Idle
+2025-07-21 19:46:45 [    INFO] root:910 - 速報イベントの監視開始を指示します。
